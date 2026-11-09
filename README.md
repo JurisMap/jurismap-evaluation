@@ -209,4 +209,5 @@ separately as a same-family check (`config/models.yaml`). Prices and their sourc
 ## Licence and citation
 
 Code: MIT (`LICENSE`). Data and results: CC BY 4.0 (`LICENSE-DATA.md`). Please cite the paper, this
-repository (`CITATION.cff`) and the data archive (https://doi.org/10.5281/zenodo.24065101).
+code (https://doi.org/10.5281/zenodo.24081246; `CITATION.cff`) and the data archive
+(https://doi.org/10.5281/zenodo.24065101).

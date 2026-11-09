@@ -6,7 +6,7 @@ version: 1.0.0
 license: MIT
 # The data and results are CC BY 4.0 (LICENSE-DATA.md).
 repository-code: https://github.com/JurisMap/jurismap-evaluation
-# doi: 10.5281/zenodo.<record>   (the code's own DOI, to fill after the first GitHub release is archived)
+doi: 10.5281/zenodo.24081246
 identifiers:
   - type: doi
     value: 10.5281/zenodo.24065101
