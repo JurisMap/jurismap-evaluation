@@ -1,0 +1,132 @@
+{
+  "decisions": 2390,
+  "rebuild": {
+    "compression": {
+      "model": "gemini-3.7-flash",
+      "thinking_level": "low",
+      "max_output_tokens": 8192,
+      "location": "global",
+      "finish_reasons": {
+        "FinishReason.STOP": 2386,
+        "FinishReason.MAX_TOKENS": 4
+      },
+      "model_versions": [
+        "gemini-3.7-flash"
+      ]
+    },
+    "embedding": {
+      "model": "gemini-embedding-001",
+      "vector": "unit-length sum of the unit-length embeddings of the full report and of the compressed report",
+      "shape": [
+        2390,
+        3072
+      ],
+      "nan": 0,
+      "norm_min": 0.9999999999999996,
+      "norm_max": 1.0000000000000002
+    },
+    "umap": {
+      "params": {
+        "n_neighbors": 10,
+        "min_dist": 0.0,
+        "n_components": 2,
+        "metric": "cosine",
+        "n_epochs": 2000,
+        "random_state": 42
+      },
+      "row_order": "acordao_hash",
+      "refit_identical": true,
+      "procrustes_disparity_refit": 6.198537286464669e-31,
+      "libraries": {
+        "umap-learn": "0.5.7",
+        "numba": "0.62.1",
+        "llvmlite": "0.45.1",
+        "pynndescent": "0.5.13",
+        "numpy": "2.1.3",
+        "scikit-learn": "1.6.1",
+        "scipy": "1.16.3"
+      }
+    }
+  },
+  "compression_ratio_chars": {
+    "production_gemini-2.5-flash-lite": {
+      "n": 2390,
+      "mean": 0.7405,
+      "sd": 0.0844,
+      "p05": 0.5978,
+      "p25": 0.7001,
+      "median": 0.7518,
+      "p75": 0.7951,
+      "p95": 0.8462,
+      "min": 0.2779,
+      "max": 1.6087
+    },
+    "v2_gemini-3.7-flash": {
+      "n": 2390,
+      "mean": 0.3505,
+      "sd": 0.127,
+      "p05": 0.1316,
+      "p25": 0.2605,
+      "median": 0.3587,
+      "p75": 0.4417,
+      "p95": 0.5436,
+      "min": 0.0394,
+      "max": 0.8103
+    },
+    "shared_production": {
+      "n": 1503,
+      "mean": 0.7489,
+      "sd": 0.0804,
+      "p05": 0.6159,
+      "p25": 0.7101,
+      "median": 0.7586,
+      "p75": 0.8004,
+      "p95": 0.8464,
+      "min": 0.2779,
+      "max": 1.6087
+    },
+    "shared_v2": {
+      "n": 1503,
+      "mean": 0.3342,
+      "sd": 0.1252,
+      "p05": 0.1223,
+      "p25": 0.24,
+      "median": 0.3389,
+      "p75": 0.4249,
+      "p95": 0.53,
+      "min": 0.0394,
+      "max": 0.705
+    }
+  },
+  "compressed_chars": {
+    "production": {
+      "n": 2390,
+      "mean": 3982.4301,
+      "sd": 1888.8808,
+      "p05": 1214.25,
+      "p25": 2422.25,
+      "median": 3837.5,
+      "p75": 5612.0,
+      "p95": 6809.2,
+      "min": 141.0,
+      "max": 10202.0
+    },
+    "v2": {
+      "n": 2390,
+      "mean": 2371.8799,
+      "sd": 2602.4291,
+      "p05": 682.9,
+      "p25": 1175.25,
+      "median": 1717.5,
+      "p75": 2612.5,
+      "p95": 6012.8,
+      "min": 87.0,
+      "max": 37775.0
+    }
+  },
+  "v2_ratio_above_1": 0,
+  "shared_decisions": 1503,
+  "dropped_empty_relatorio": [
+    "e96eb00f44c5248a"
+  ]
+}

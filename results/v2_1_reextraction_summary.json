@@ -1,0 +1,119 @@
+{
+  "decisions": 2391,
+  "reextracted": 2391,
+  "missing": 0,
+  "failed": 0,
+  "attempts": {
+    "total": 2394,
+    "finish_reasons": {
+      "FinishReason.STOP": 2394
+    },
+    "errors": 0,
+    "input_truncated": 0
+  },
+  "document_chars": {
+    "n": 2391,
+    "mean": 59046.2074,
+    "p05": 8708.5,
+    "p25": 17010.0,
+    "median": 65121.0,
+    "p75": 83184.0,
+    "p95": 123417.0
+  },
+  "documents_over_50000_chars": 1465,
+  "acordao_relatorio": {
+    "v2_0": {
+      "empty": 0,
+      "chars": {
+        "n": 2391,
+        "mean": 5416.9661,
+        "p05": 1738.5,
+        "p25": 3282.0,
+        "median": 5146.0,
+        "p75": 7486.5,
+        "p95": 8488.5
+      },
+      "ends_with_punctuation": 0.7378
+    },
+    "v2_1": {
+      "empty": 1,
+      "chars": {
+        "n": 2391,
+        "mean": 7847.22,
+        "p05": 1719.5,
+        "p25": 3303.0,
+        "median": 5266.0,
+        "p75": 9518.0,
+        "p95": 21308.0
+      },
+      "ends_with_punctuation": 0.9305
+    },
+    "identical_to_v2_0": 329,
+    "source_8gram_support": {
+      "n": 2390,
+      "mean": 0.9927,
+      "p05": 1.0,
+      "p25": 1.0,
+      "median": 1.0,
+      "p75": 1.0,
+      "p95": 1.0
+    },
+    "length_ratio_to_v1_shared": {
+      "n": 1503,
+      "mean": 1.3065,
+      "p05": 0.4755,
+      "p25": 0.9831,
+      "median": 0.9903,
+      "p75": 0.9946,
+      "p95": 1.0
+    }
+  },
+  "acordao_voto_relator": {
+    "v2_0": {
+      "empty": 848,
+      "chars": {
+        "n": 2391,
+        "mean": 2279.6826,
+        "p05": 0.0,
+        "p25": 0.0,
+        "median": 468.0,
+        "p75": 3148.0,
+        "p95": 8619.0
+      },
+      "ends_with_punctuation": 0.9611
+    },
+    "v2_1": {
+      "empty": 3,
+      "chars": {
+        "n": 2391,
+        "mean": 8023.3363,
+        "p05": 1562.0,
+        "p25": 3079.0,
+        "median": 4893.0,
+        "p75": 8830.5,
+        "p95": 25963.5
+      },
+      "ends_with_punctuation": 0.876
+    },
+    "identical_to_v2_0": 175,
+    "source_8gram_support": {
+      "n": 2388,
+      "mean": 0.992,
+      "p05": 1.0,
+      "p25": 1.0,
+      "median": 1.0,
+      "p75": 1.0,
+      "p95": 1.0
+    },
+    "length_ratio_to_v1_shared": {
+      "n": 1503,
+      "mean": 2.0539,
+      "p05": 0.639,
+      "p25": 0.9867,
+      "median": 0.9976,
+      "p75": 1.0031,
+      "p95": 7.6677
+    }
+  },
+  "v1_shared_decisions": 1503
+}

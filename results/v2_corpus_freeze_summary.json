@@ -1,0 +1,144 @@
+{
+  "table": "your-gcp-project.crsnsp.scraper_output",
+  "table_last_modified_utc": "2026-09-01T12:58:56.558000+00:00",
+  "snapshot_date": "2026-09-26",
+  "steps": {
+    "rows": 2724,
+    "rows_with_acordao_hash": 2394,
+    "rows_without_acordao_hash": 330,
+    "unique_acordao_hash": 2394,
+    "dropped_empty_relatorio": 3,
+    "dropped_future_sessions": 0,
+    "frozen_decisions": 2391
+  },
+  "same_title_and_report_under_other_hash": 10,
+  "frozen": {
+    "decisions": 2391,
+    "sessions": 90,
+    "sessions_with_null_number": 0,
+    "date_min": "2017-01-26",
+    "date_max": "2026-06-25",
+    "decisions_by_year": {
+      "2017": 120,
+      "2018": 95,
+      "2019": 136,
+      "2020": 371,
+      "2021": 579,
+      "2022": 327,
+      "2023": 459,
+      "2024": 186,
+      "2025": 80,
+      "2026": 38
+    },
+    "outcome": {
+      "Parcialmente provido": 979,
+      "Não provido": 870,
+      "Provido": 455,
+      "Não conhecido": 83,
+      "Extinto": 4
+    },
+    "with_production_embedding": 2391,
+    "export_timestamp_max": "2026-09-01 09:09:21.596378+00:00"
+  },
+  "shared_with_phase0_corpus": {
+    "phase0_decisions": 1523,
+    "shared": 0,
+    "phase0_not_in_frozen": 1523,
+    "frozen_not_in_phase0": 2391
+  },
+  "field_coverage": {
+    "acordao_base": {
+      "filled": 2379,
+      "total": 2391,
+      "by_year": {
+        "2017": {
+          "filled": 119,
+          "total": 120
+        },
+        "2018": {
+          "filled": 95,
+          "total": 95
+        },
+        "2019": {
+          "filled": 136,
+          "total": 136
+        },
+        "2020": {
+          "filled": 365,
+          "total": 371
+        },
+        "2021": {
+          "filled": 577,
+          "total": 579
+        },
+        "2022": {
+          "filled": 324,
+          "total": 327
+        },
+        "2023": {
+          "filled": 459,
+          "total": 459
+        },
+        "2024": {
+          "filled": 186,
+          "total": 186
+        },
+        "2025": {
+          "filled": 80,
+          "total": 80
+        },
+        "2026": {
+          "filled": 38,
+          "total": 38
+        }
+      }
+    },
+    "acordao_penalidade": {
+      "filled": 2373,
+      "total": 2391,
+      "by_year": {
+        "2017": {
+          "filled": 120,
+          "total": 120
+        },
+        "2018": {
+          "filled": 95,
+          "total": 95
+        },
+        "2019": {
+          "filled": 136,
+          "total": 136
+        },
+        "2020": {
+          "filled": 360,
+          "total": 371
+        },
+        "2021": {
+          "filled": 577,
+          "total": 579
+        },
+        "2022": {
+          "filled": 324,
+          "total": 327
+        },
+        "2023": {
+          "filled": 458,
+          "total": 459
+        },
+        "2024": {
+          "filled": 186,
+          "total": 186
+        },
+        "2025": {
+          "filled": 79,
+          "total": 80
+        },
+        "2026": {
+          "filled": 38,
+          "total": 38
+        }
+      }
+    }
+  },
+  "raw_session_dates_max": "2026-12-17 00:00:00+00:00"
+}

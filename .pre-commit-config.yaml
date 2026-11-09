@@ -1,0 +1,15 @@
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.28.0
+    hooks:
+      - id: gitleaks
+  - repo: local
+    hooks:
+      - id: block-private-data
+        name: block SUSEP / private data files
+        entry: python3 scripts/hooks/block_private_files.py
+        language: system
+        # Run on every staged path, whatever its type.
+        always_run: false
+        pass_filenames: true
+        types: [file]

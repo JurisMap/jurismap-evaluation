@@ -1,0 +1,60 @@
+{
+  "legal_basis": {
+    "audited": 60,
+    "with_label": 59,
+    "judged": 59,
+    "correct": 57,
+    "accuracy": 0.9661,
+    "wilson_95": [
+      0.8846,
+      0.9907
+    ]
+  },
+  "penalty_type": {
+    "audited": 60,
+    "with_label": 60,
+    "judged": 60,
+    "correct": 60,
+    "accuracy": 1.0,
+    "wilson_95": [
+      0.9398,
+      1.0
+    ]
+  },
+  "infringed_provision": {
+    "audited": 60,
+    "with_label": 35,
+    "judged": 35,
+    "correct": 35,
+    "accuracy": 1.0,
+    "wilson_95": [
+      0.9011,
+      1.0
+    ]
+  },
+  "infraction_category": {
+    "audited": 60,
+    "with_label": 60,
+    "judged": 60,
+    "correct": 57,
+    "accuracy": 0.95,
+    "wilson_95": [
+      0.863,
+      0.9829
+    ],
+    "corrections": [
+      {
+        "labelled": "C03",
+        "correct": "C03, C02"
+      },
+      {
+        "labelled": "C13",
+        "correct": "C13, C05"
+      },
+      {
+        "labelled": "C02",
+        "correct": "C03 as primary, C02 as secondary"
+      }
+    ]
+  }
+}

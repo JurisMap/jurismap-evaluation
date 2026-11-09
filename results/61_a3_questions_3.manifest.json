@@ -1,0 +1,392 @@
+{
+  "run_id": "20261011T175109Z-02b6e72e",
+  "script": "61_a3_questions",
+  "argv": [
+    "scripts/61_a3_questions.py",
+    "--freeze"
+  ],
+  "models": {
+    "material": "mistral-medium-3"
+  },
+  "params": {
+    "dev": false,
+    "freeze": true,
+    "questions": {
+      "seed": 20260926,
+      "templated": {
+        "outcome": {
+          "text": "Qual foi o resultado do julgamento do {title}?"
+        },
+        "rapporteur": {
+          "text": "Quem foi o Conselheiro Relator do {title}?"
+        },
+        "appellant": {
+          "text": "Quem figura como recorrente no {title}?"
+        },
+        "lawyer": {
+          "text": "Quem atuou como advogado do recorrente no {title}?"
+        },
+        "session_date": {
+          "text": "Em que data foi realizada a sessão de julgamento do {title}?"
+        },
+        "legal_basis": {
+          "text": "Qual é a base legal indicada para o julgamento do {title}?"
+        },
+        "penalty": {
+          "text": "Qual foi a penalidade aplicada no {title}?"
+        },
+        "count": {
+          "variants": {
+            "outcome": "Quantos dos recursos apresentados tiveram o resultado \"{value}\"?",
+            "rapporteur": "Quantos dos recursos apresentados tiveram como Conselheiro Relator {value}?",
+            "year": "Quantos dos recursos apresentados foram julgados em sessões do ano de {value}?"
+          }
+        }
+      },
+      "templated_by_set": [
+        [
+          "outcome",
+          "rapporteur",
+          "legal_basis",
+          "count"
+        ],
+        [
+          "appellant",
+          "lawyer",
+          "session_date",
+          "penalty"
+        ],
+        [
+          "outcome",
+          "lawyer",
+          "legal_basis",
+          "penalty"
+        ],
+        [
+          "rapporteur",
+          "appellant",
+          "session_date",
+          "count"
+        ],
+        [
+          "outcome",
+          "appellant",
+          "penalty",
+          "count"
+        ],
+        [
+          "rapporteur",
+          "lawyer",
+          "session_date",
+          "legal_basis"
+        ]
+      ],
+      "count_variant_by_set": [
+        "outcome",
+        null,
+        null,
+        "rapporteur",
+        "year",
+        null
+      ],
+      "unanswerable": {
+        "outside_process": {
+          "text": "Qual foi o resultado do julgamento do {title}?"
+        },
+        "appellant_cnpj": {
+          "text": "Qual é o número de inscrição no CNPJ do recorrente no {title}?"
+        }
+      },
+      "unanswerable_by_set": [
+        "outside_process",
+        "appellant_cnpj",
+        "outside_process",
+        "appellant_cnpj",
+        "outside_process",
+        "appellant_cnpj"
+      ],
+      "open": {
+        "arguments": "Quais foram os principais argumentos apresentados pelos recorrentes nos casos apresentados e como o Conselho os avaliou?",
+        "grounds": "Quais foram os principais fundamentos adotados pelos relatores para decidir os recursos apresentados?",
+        "compare_outcomes": "Compare os casos em que o recurso foi provido, total ou parcialmente, com aqueles em que não foi provido: o que explica a diferença de resultado?",
+        "compare_penalties": "Compare as penalidades aplicadas nos casos apresentados: quais são as semelhanças e as diferenças, e o que as explica?"
+      },
+      "open_by_set": [
+        [
+          "arguments",
+          "compare_outcomes"
+        ],
+        [
+          "grounds",
+          "compare_penalties"
+        ],
+        [
+          "arguments",
+          "compare_penalties"
+        ],
+        [
+          "grounds",
+          "compare_outcomes"
+        ],
+        [
+          "arguments",
+          "compare_outcomes"
+        ],
+        [
+          "grounds",
+          "compare_penalties"
+        ]
+      ],
+      "spot_check_share": 0.2
+    },
+    "material": {
+      "model": "judge_b",
+      "key_points": {
+        "min": 3,
+        "max": 6
+      },
+      "report_chars": {
+        "head": 5500,
+        "tail": 4000
+      },
+      "vote_chars": {
+        "head": 2500,
+        "tail": 3500
+      },
+      "reference_points": {
+        "min": 4,
+        "max": 8
+      }
+    },
+    "prompts_version": 1
+  },
+  "seeds": {
+    "questions": 20260926
+  },
+  "inputs": [
+    {
+      "path": "data/v2/a3/questions_draft_2.jsonl",
+      "sha256": "ff4dd7b8527925601f3550357d45896030ff4bc7e25945b9f5061026bac76b8a"
+    },
+    {
+      "path": "results/a3_questions_spot_check_2.xlsx",
+      "sha256": "15ed0868c31601c0c4aa506e1913cdc140dc652c5ec08f328f8f99a709026f50"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/v2/a3_questions.jsonl",
+      "sha256": "ff4dd7b8527925601f3550357d45896030ff4bc7e25945b9f5061026bac76b8a",
+      "bytes": 38482
+    },
+    {
+      "path": "results/a3_questions.csv",
+      "sha256": "a07f297f1cd50342b5c58f96fb4792f462a8ec85b18b99f0082a760614eae1eb",
+      "bytes": 28288
+    },
+    {
+      "path": "results/a3_questions_freeze.json",
+      "sha256": "33cc67c48d2fbab54795929318dac474bf056da89d92a97af1ad6c03521f6d59",
+      "bytes": 407
+    }
+  ],
+  "summary": {
+    "sha256": "ff4dd7b8527925601f3550357d45896030ff4bc7e25945b9f5061026bac76b8a",
+    "questions": 42,
+    "by_type": {
+      "templated": 24,
+      "open": 12,
+      "unanswerable": 6
+    },
+    "draft": "questions_draft_2.jsonl",
+    "checked_by_hugo": [
+      "S1-O2",
+      "S2-O2",
+      "S5-T1",
+      "S5-T2",
+      "S5-T3",
+      "S6-T1",
+      "S6-T2",
+      "S6-U1",
+      "S6-O2"
+    ],
+    "frozen_utc": "2026-10-11T17:51:11+00:00"
+  },
+  "started_utc": "2026-10-11T17:51:09.853+00:00",
+  "git": {
+    "eval": {
+      "path": ".",
+      "sha": "41a7c18c48dfdab4fff59d61f9e11d6decdda833",
+      "branch": "feature/phase-6-a3-chatbot",
+      "tag": null,
+      "dirty": true
+    },
+    "backend": {
+      "path": "../app/backend",
+      "sha": "9ab7f70ba5557a3d7548e17e9efaf2ece6ef9742",
+      "branch": "main",
+      "tag": "v2.4-eval-frozen",
+      "dirty": false
+    },
+    "frontend_v2": {
+      "path": "../app/frontend/jurismap-react-app",
+      "sha": "1af17ba99df5e49acdbfeb8fe43b8b03b903987b",
+      "branch": "main",
+      "tag": "v2.4-eval-frozen",
+      "dirty": false
+    },
+    "frontend_v1": {
+      "path": "../frontend_old",
+      "sha": "8183c0da1c08d7793fddaaafb894ab61114c61b2",
+      "branch": "legacy/streamlit-v1",
+      "tag": null,
+      "dirty": true
+    },
+    "scrapers": {
+      "path": "../scrapers",
+      "sha": "c5527ef9f1259ca97681aadc01c411bd4fb96299",
+      "branch": "main",
+      "tag": null,
+      "dirty": false
+    }
+  },
+  "config_hash": {
+    "combined": "08cc50d685b29480d3a779e6125b88d24e4e68afa3e2fdb0322e8eb4f66a37f3",
+    "files": {
+      "a1_candidates.yaml": "7ba7e026ae9b05074c0981aef94373530cd191b129fe70a9969e70ad2626f94d",
+      "a1_labels.yaml": "562f4ba802bfd2078bcf4c0ed6868eb4b8c01e0acbfaeb27e27c19a19daf397a",
+      "a1_methods.yaml": "2a23b67d05658e2ace4f734d938e481b30a4486ff3b03daee02f27ddaa8b479c",
+      "a1_taxonomy.yaml": "bb7b0b24a51462e7ab95be6fffc793dddbb0fdc8c2258e44efa0b017e2d960e6",
+      "a2_candidates.yaml": "adef29c08b96f5d377a24ad71381a5fd238672b9427cfd21200aade4b501a2bb",
+      "a2_map.yaml": "39fd2c6bd57bcc5d9537f4a4c78a3700984bd59b607df76a2d4194ba0bbdd73e",
+      "a3_chatbot.yaml": "0a2abb003a04380bea36f5614b1e60be030594612e7f2cdf936a1310279a262b",
+      "b3_codebook.yaml": "b8a1f818413d9955a04f4becf2f53982549729afab61a305dd0a1d6658afd34a",
+      "models.yaml": "4c9eed3b2f266f1a23892e5ed0d02a89ceaf9705d3257117e5030f7ba60cb88d",
+      "paths.yaml": "61c3de817460329805badbdaac43b7f295fca5c7a966f1c32821a20e8048c94f",
+      "prices.yaml": "5a90b6a9e120c27b35e8fc78f168a69f31a911ce6a9a764e785270d522fd67dd",
+      "seeds.yaml": "2ff85f9574ce585b9d825e5d4d3b9ebbdb00761ead36361440835c3143cd9421",
+      "v2.1_freeze.json": "e457af1b02bf6c631ea514ebd6fc25cd99a059704fa2d18f3888eb92119846de",
+      "v2.2_freeze.json": "37b912a3d2631129bb5fbdd6f05991ef59d426a7bf4c33e9e9ed9517322f28b5",
+      "v2.3_freeze.json": "ea357de13985f8119d7739a520cdec75acb1fab3127ba642cee196b67521cdab",
+      "v2.4_freeze.json": "778e449dc7496d51bef972038e396e8d16e21eee162473eb0188bfc97eecf400",
+      "v2_freeze.json": "c71f13f49d320ecec4c6003ff073c83ae60c99019ab0ea1d456116d4344fb3e3"
+    }
+  },
+  "python": {
+    "version": "3.12.3 (v3.12.3:f6650f9ad7, Apr  9 2024, 08:18:47) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "executable": ".venv/bin/python3",
+    "platform": "macOS-26.5.2-arm64-arm-64bit"
+  },
+  "ended_utc": "2026-10-11T17:51:11.140+00:00",
+  "status": "ok",
+  "packages": [
+    "-e file://.",
+    "annotated-doc==0.0.5",
+    "annotated-types==0.8.0",
+    "anyio==4.15.1",
+    "certifi==2026.7.22",
+    "cffi==2.1.1",
+    "cfgv==3.5.0",
+    "charset-normalizer==3.5.1",
+    "click==8.5.0",
+    "cloudpickle==3.1.2",
+    "contourpy==1.4.0",
+    "cryptography==50.0.1",
+    "cycler==0.12.1",
+    "db-dtypes==1.7.1",
+    "defusedxml==0.7.1",
+    "distlib==0.4.3",
+    "distro==1.9.0",
+    "et-xmlfile==2.0.0",
+    "faiss-cpu==1.15.1",
+    "filelock==4.0.3",
+    "fonttools==4.66.1",
+    "fsspec==2026.9.0",
+    "google-api-core==2.39.0",
+    "google-auth==2.58.1",
+    "google-cloud-bigquery==3.45.2",
+    "google-cloud-core==2.7.0",
+    "google-crc32c==1.9.0",
+    "google-genai==1.55.0",
+    "google-resumable-media==2.10.2",
+    "googleapis-common-protos==1.75.4",
+    "grpcio-status==1.84.0",
+    "grpcio==1.84.0",
+    "h11==0.16.0",
+    "hf-xet==1.7.0",
+    "httpcore==1.0.9",
+    "httpx==0.28.1",
+    "huggingface-hub==1.33.0",
+    "identify==2.6.19",
+    "idna==3.20",
+    "iniconfig==2.3.0",
+    "jinja2==3.1.6",
+    "joblib==1.6.0",
+    "kiwisolver==1.5.1",
+    "krippendorff==0.9.0",
+    "llvmlite==0.50.0",
+    "markdown-it-py==4.2.0",
+    "markupsafe==3.0.4",
+    "matplotlib==3.11.2",
+    "mdurl==0.1.2",
+    "mpmath==1.3.0",
+    "narwhals==2.26.0",
+    "networkx==3.7",
+    "nltk==3.10.3",
+    "nodeenv==1.11.0",
+    "numba==0.68.0",
+    "numpy==2.5.3",
+    "openpyxl==3.1.5",
+    "opentelemetry-api==1.45.0",
+    "opentsne==1.0.4",
+    "packaging==26.3",
+    "pacmap==0.9.1",
+    "pandas==3.0.6",
+    "pillow==12.3.0",
+    "platformdirs==4.11.15",
+    "pluggy==1.6.0",
+    "pre-commit==4.6.2",
+    "proto-plus==1.28.4",
+    "protobuf==7.36.2",
+    "pyarrow==25.0.1",
+    "pyasn1-modules==0.4.2",
+    "pyasn1==0.6.4",
+    "pycparser==3.0",
+    "pydantic-core==2.46.5",
+    "pydantic==2.13.5",
+    "pygments==2.21.0",
+    "pynndescent==0.6.0",
+    "pyparsing==3.3.3",
+    "pytest==9.1.1",
+    "python-dateutil==2.9.0.post0",
+    "python-discovery==1.6.1",
+    "python-dotenv==1.2.3",
+    "pyyaml==6.0.3",
+    "rank-bm25==0.2.2",
+    "regex==2026.9.29",
+    "requests==2.34.2",
+    "rich==15.0.0",
+    "safetensors==0.8.0",
+    "scikit-learn==1.9.1",
+    "scipy==1.18.1",
+    "sentence-transformers==6.1.0",
+    "setuptools==84.0.0",
+    "shellingham==1.5.4",
+    "six==1.17.0",
+    "sniffio==1.3.1",
+    "sympy==1.14.0",
+    "tenacity==9.1.4",
+    "threadpoolctl==3.7.0",
+    "tokenizers==0.23.2",
+    "torch==2.14.1",
+    "tqdm==4.70.1",
+    "transformers==5.19.0",
+    "typer==0.27.3",
+    "typing-extensions==4.16.0",
+    "typing-inspection==0.4.4",
+    "umap-learn==0.5.12",
+    "urllib3==2.8.0",
+    "virtualenv==21.12.1",
+    "websockets==15.0.1"
+  ]
+}

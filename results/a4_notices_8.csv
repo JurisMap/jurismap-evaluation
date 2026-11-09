@@ -1,0 +1,16 @@
+notice_id,acordao_hash,title,base_key,outcome,replaces,n_arguments,accepted,rewritten_after_review,hand_edited,outcome_amounts,notice_chars
+N01,b29ca016838e6067,Processo 15414.620785/2018-01 ,CIRC-SUSEP364/2008:art2,Provido,,8,[4],False,False,,908
+N02,f15aae9693aa8665,Processo 15414.628476/2019-33,CIRC-SUSEP364/2008:art2,Parcialmente provido,,5,[],False,False,"10000.00, 2000.00",1191
+N03,d6925a3dc6a6212a,Processo 15414.601812/2020-34,CIRC-SUSEP364/2008:art2,Não provido,,3,,False,False,,868
+N04,a002f142d626c99f,Processo 15414.607721 2018-98,CIRC-SUSEP256/2004:art33,Provido,440753cefcfb9b09,7,"[1, 2]",False,False,,1567
+N05,96737079ad4db072,Processo 15414.615888/2020-47,CIRC-SUSEP256/2004:art33,Parcialmente provido,,8,[8],True,True,,1900
+N06,a204227190babd0c,Processo 15414.617485/2020-32,CIRC-SUSEP256/2004:art33,Não provido,,5,,False,False,,1205
+N07,ba525137d2c277f5,Recurso 7387,CIRC-SUSEP302/2005:art72,Provido,,3,"[2, 3]",False,False,,1254
+N08,ca389ff09d83de86,Processo 15414.618609/2018-82,CIRC-SUSEP302/2005:art72,Parcialmente provido,,7,[7],False,False,,1550
+N09,02f86531cd1e4487,Processo 15414.604753 2018-31,CIRC-SUSEP302/2005:art72,Não provido,,3,,True,False,,1500
+N10,fe0c78eebaadd5f5,Processo 15414.613224/2017-48 - Apenso Processo SUSEP 15414.626972/2022-58,CC:art757|DL73/1966:art113|DL73/1966:art24,Provido,,11,"[1, 2]",True,True,,1483
+N11,37e08cc292d2c317,Processo 15414.633391/2018-96,CC:art757|DL73/1966:art113|DL73/1966:art24,Parcialmente provido,,7,[6],True,False,,1148
+N12,595cb4528377f61f,Processo 15414.626254/2019-86,CC:art757|DL73/1966:art113|DL73/1966:art24,Não provido,,7,,True,False,,1084
+N13,f9cc2df92e2968d5,Processo 15414.610895 2016-76,CIRC-SUSEP517/2015:art110,Provido,,2,"[1, 2]",False,False,10000.00,1631
+N14,94c85260bb8db98d,Processo 15414.608093/2016-04,CIRC-SUSEP517/2015:art110,Parcialmente provido,,7,[5],True,True,,1567
+N15,b55fac55063408aa,Processo 15414.608550/2016-52,CIRC-SUSEP517/2015:art110,Não provido,,10,,False,False,,831

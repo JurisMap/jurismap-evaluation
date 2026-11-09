@@ -1,0 +1,15 @@
+# Reference pipeline (reference/). The map libraries are pinned to the versions that fitted and serve
+# version 2's map: a refit reproduces the served coordinates exactly only with these versions
+# (and Python 3.12) and with the rows in acordao_hash order.
+umap-learn==0.5.7
+numba==0.61.0
+llvmlite==0.44.0
+pynndescent==0.5.13
+numpy==2.1.3
+scikit-learn==1.6.1
+scipy==1.15.2
+pandas==2.2.3
+pyarrow>=17
+# only for `query` and `check_reference.py --online` (calls the embedding model)
+google-genai==1.55.0
+google-auth>=2.38

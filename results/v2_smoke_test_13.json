@@ -1,0 +1,288 @@
+{
+  "run_dir": "smoke_20261019T183409Z",
+  "steps": {
+    "filters": {
+      "status": 200,
+      "advogados": 556,
+      "recorrentes": 1083,
+      "relatores": 55,
+      "resultados": 5,
+      "most_recent_date": "Thu, 25 Jun 2026 00:00:00 GMT",
+      "ok": true
+    },
+    "map": {
+      "status": 200,
+      "points": 763,
+      "x_range": [
+        -5.738640308380127,
+        14.418148040771484
+      ],
+      "ok": true
+    },
+    "chat_full_text": {
+      "status": 200,
+      "answer_chars": 6486,
+      "top_k_effective": 10,
+      "status_code": 200,
+      "latency_ms": 71541.4,
+      "llm_calls": 2,
+      "prompt_tokens": 55782,
+      "output_tokens": 1838,
+      "thoughts_tokens": 810,
+      "models": [
+        "gemini-3.7-flash",
+        "gemini-embedding-001"
+      ],
+      "agent_order": [],
+      "errors": [],
+      "ok": true
+    },
+    "chat_hierarchical": {
+      "status": 200,
+      "answer_chars": 9006,
+      "top_k_effective": 30,
+      "status_code": 200,
+      "latency_ms": 271066.2,
+      "llm_calls": 32,
+      "prompt_tokens": 229689,
+      "output_tokens": 19225,
+      "thoughts_tokens": 37972,
+      "models": [
+        "gemini-3.7-flash",
+        "gemini-embedding-001"
+      ],
+      "agent_order": [],
+      "errors": [],
+      "ok": true
+    },
+    "upload_template": {
+      "status": 200,
+      "ok": true
+    },
+    "upload_case": {
+      "status": 200,
+      "status_code": 200,
+      "latency_ms": 8181.3,
+      "llm_calls": 3,
+      "prompt_tokens": 1149,
+      "output_tokens": 389,
+      "thoughts_tokens": 0,
+      "models": [
+        "gemini-3.7-flash",
+        "gemini-embedding-001"
+      ],
+      "agent_order": [],
+      "errors": [],
+      "ok": true
+    },
+    "uploaded_case_on_map": {
+      "status": 200,
+      "coordinates": {
+        "x": [
+          -5.4092841148376465
+        ],
+        "y": [
+          -2.3943066596984863
+        ]
+      },
+      "ok": true
+    },
+    "preselected_cases": {
+      "cases": 10,
+      "similarity": [
+        0.932802,
+        0.931669,
+        0.930921,
+        0.928749,
+        0.928286,
+        0.927168,
+        0.926629,
+        0.926593,
+        0.926553,
+        0.926506
+      ],
+      "also_retrieved_by_the_chat_question": 1,
+      "ok": true
+    },
+    "defense_full": {
+      "status": 200,
+      "wall_s": 181.9,
+      "draft_chars": 12614,
+      "completed": true,
+      "supervisor_status": null,
+      "fact_check": {
+        "replaced": 0,
+        "flagged": 0,
+        "checked": 29
+      },
+      "stream_errors": [],
+      "status_code": 200,
+      "latency_ms": 181889.5,
+      "llm_calls": 8,
+      "prompt_tokens": 507228,
+      "output_tokens": 20269,
+      "thoughts_tokens": 7394,
+      "models": [
+        "gemini-3.7-flash"
+      ],
+      "agent_order": [
+        "DefenseStructureInterpreter",
+        "CaseInterpreter",
+        "LegalSearcher",
+        "DefenseCreator",
+        "MergerAgent"
+      ],
+      "errors": [],
+      "ok": true
+    },
+    "defense_single_prompt": {
+      "status": 200,
+      "wall_s": 67.0,
+      "draft_chars": 16047,
+      "completed": true,
+      "supervisor_status": null,
+      "fact_check": {
+        "replaced": 0,
+        "flagged": 0,
+        "checked": 31
+      },
+      "stream_errors": [],
+      "status_code": 200,
+      "latency_ms": 66938.7,
+      "llm_calls": 3,
+      "prompt_tokens": 393998,
+      "output_tokens": 5379,
+      "thoughts_tokens": 3048,
+      "models": [
+        "gemini-3.7-flash"
+      ],
+      "agent_order": [],
+      "errors": [],
+      "ok": true
+    },
+    "defense_no_legal_search": {
+      "status": 200,
+      "wall_s": 122.0,
+      "draft_chars": 18210,
+      "completed": true,
+      "supervisor_status": null,
+      "fact_check": {
+        "replaced": 0,
+        "flagged": 0,
+        "checked": 32
+      },
+      "stream_errors": [],
+      "status_code": 200,
+      "latency_ms": 121931.8,
+      "llm_calls": 6,
+      "prompt_tokens": 318733,
+      "output_tokens": 15407,
+      "thoughts_tokens": 5871,
+      "models": [
+        "gemini-3.7-flash"
+      ],
+      "agent_order": [
+        "DefenseStructureInterpreter",
+        "CaseInterpreter",
+        "DefenseCreator",
+        "MergerAgent"
+      ],
+      "errors": [],
+      "ok": true
+    },
+    "defense_no_precedents": {
+      "status": 200,
+      "wall_s": 107.9,
+      "draft_chars": 15074,
+      "completed": true,
+      "supervisor_status": null,
+      "fact_check": {
+        "replaced": 0,
+        "flagged": 0,
+        "checked": 33
+      },
+      "stream_errors": [],
+      "status_code": 200,
+      "latency_ms": 107835.2,
+      "llm_calls": 7,
+      "prompt_tokens": 37108,
+      "output_tokens": 14570,
+      "thoughts_tokens": 5450,
+      "models": [
+        "gemini-3.7-flash"
+      ],
+      "agent_order": [
+        "CaseInterpreter",
+        "DefenseStructureInterpreter",
+        "LegalSearcher",
+        "DefenseCreator",
+        "MergerAgent"
+      ],
+      "errors": [],
+      "ok": true
+    },
+    "defense_no_template": {
+      "status": 200,
+      "wall_s": 176.0,
+      "draft_chars": 15525,
+      "completed": true,
+      "supervisor_status": null,
+      "fact_check": {
+        "replaced": 0,
+        "flagged": 0,
+        "checked": 32
+      },
+      "stream_errors": [],
+      "status_code": 200,
+      "latency_ms": 175899.2,
+      "llm_calls": 7,
+      "prompt_tokens": 497639,
+      "output_tokens": 18896,
+      "thoughts_tokens": 7834,
+      "models": [
+        "gemini-3.7-flash"
+      ],
+      "agent_order": [
+        "CaseInterpreter",
+        "LegalSearcher",
+        "DefenseCreator",
+        "MergerAgent"
+      ],
+      "errors": [],
+      "ok": true
+    },
+    "defense_full_via_supervisor": {
+      "status": 200,
+      "wall_s": 166.4,
+      "draft_chars": 15213,
+      "completed": true,
+      "supervisor_status": "ready",
+      "fact_check": {
+        "replaced": 0,
+        "flagged": 0,
+        "checked": 31
+      },
+      "stream_errors": [],
+      "status_code": 200,
+      "latency_ms": 166325.0,
+      "llm_calls": 9,
+      "prompt_tokens": 603097,
+      "output_tokens": 21367,
+      "thoughts_tokens": 8183,
+      "models": [
+        "gemini-3.7-flash"
+      ],
+      "agent_order": [
+        "SupervisorAgent",
+        "DefenseStructureInterpreter",
+        "CaseInterpreter",
+        "LegalSearcher",
+        "DefenseCreator",
+        "MergerAgent"
+      ],
+      "errors": [],
+      "ok": true
+    }
+  },
+  "failures": []
+}

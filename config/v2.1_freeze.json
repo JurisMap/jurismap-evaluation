@@ -1,0 +1,155 @@
+{
+  "version": "v2.1",
+  "tag": "v2.1-eval-frozen",
+  "created_utc": "2026-09-27T18:23:52+00:00",
+  "git": {
+    "eval": {
+      "sha": "ccf3ba418fc2867efd067f3d5a799cfefe33b94e",
+      "branch": "feature/phase-1-v2",
+      "dirty": true
+    },
+    "backend": {
+      "sha": "f4322532968231e9f5a638048d278260d25b4ed7",
+      "branch": "release/v2-iswa",
+      "dirty": false
+    },
+    "frontend_v2": {
+      "sha": "e9a2483df1aff6e97c2e11571cecfcffc8e92596",
+      "branch": "main",
+      "dirty": false
+    },
+    "frontend_v1": {
+      "sha": "8183c0da1c08d7793fddaaafb894ab61114c61b2",
+      "branch": "legacy/streamlit-v1",
+      "dirty": true
+    },
+    "scrapers": {
+      "sha": "8864889d3e4437c36a47adf18495892f5038e6b3",
+      "branch": "release/v2-iswa",
+      "dirty": false
+    }
+  },
+  "tagged_repos": [
+    "backend",
+    "scrapers"
+  ],
+  "untagged_repos_note": "frontend_v2 unchanged (v2 is evaluated through the backend HTTP API); eval is the harness; frontend_v1 is version 1.",
+  "models": {
+    "backend_runtime_env": {
+      "GOOGLE_GENAI_USE_VERTEXAI": "TRUE",
+      "GENAI_LOCATION": "global",
+      "GOOGLE_CLOUD_LOCATION": "global",
+      "CHATBOT_MODEL": "gemini-3.7-flash",
+      "CHATBOT_REASONING_MODEL": "gemini-3.7-flash",
+      "COMPRESSION_MODEL": "gemini-3.7-flash",
+      "OCR_MODEL": "gemini-3.7-flash",
+      "EMBEDDING_MODEL": "gemini-embedding-001",
+      "COMPRESSION_THINKING_LEVEL": "low",
+      "COMPRESSION_MAX_OUTPUT_TOKENS": "8192"
+    },
+    "corpus_compression": {
+      "model": "gemini-3.7-flash",
+      "thinking_level": "low",
+      "max_output_tokens": 8192,
+      "location": "global",
+      "finish_reasons": {
+        "FinishReason.STOP": 2386,
+        "FinishReason.MAX_TOKENS": 4
+      },
+      "model_versions": [
+        "gemini-3.7-flash"
+      ]
+    },
+    "corpus_embedding": {
+      "model": "gemini-embedding-001",
+      "shape": [
+        2390,
+        3072
+      ]
+    },
+    "embedding_task_type_corpus": "SEMANTIC_SIMILARITY",
+    "embedding_task_type_chat_query": "SEMANTIC_SIMILARITY",
+    "legal_search_tool": "Google Search grounding (built-in tool); the Tavily tool is not attached",
+    "adk": "google-adk 1.3.0 (pinned) + GoogleSearchGroundingTool shim for Gemini 3"
+  },
+  "prompts_sha256": {
+    "backend": {
+      "case_interpreter_consolidated.yaml": "8752a37537afedf4ac658070b7fbee2c55bc921f2c1947cabcc43a2932f12034",
+      "chat_case_summary.yaml": "1bfa221d9c2b538c6b11ccd1aaa0268d8466c21a4bdb7a4a29d7cb570ae4a503",
+      "compress_legal_text_prompt.yaml": "614b874f09a7eb11fdd7ec5189b776fba2042b56003e8450b19a96bff741ca76",
+      "defense_creator_consolidated.yaml": "f58ca8b7ce6bbde55bf441efbe04930071e8c18768601a9b8e32b4afcdf6ff64",
+      "defense_structure_consolidated.yaml": "1df0447e0cd34ae75afb68f332147b6a19caccbba7f2ff51d90db976c1f55e49",
+      "legal_searcher_consolidated.yaml": "df12205a88c28a65c057e1f3581e94e12c341a6045183635bb56c23a90654884",
+      "merger_consolidated.yaml": "157edb74ce7b715e4599b4e74c70374d5473406e415c9d29a42d65bea078a3af",
+      "single_prompt_defense.yaml": "a4fa602d564df4c9c9f0377891ef5fa6786d2a3df878768255f817c186435d26",
+      "supervisor_consolidated.yaml": "89a95dee305cc1cd36fd99e00268a3978aa34c7332995a3aacf1c59c528a2b39",
+      "system_prompt.yaml": "508856549e5aa991a8b7cd913b133249127fdc7d7b302bd9584ac4d12b8fdb4f"
+    },
+    "scrapers": {
+      "compress_legal_text_prompt.yaml": "614b874f09a7eb11fdd7ec5189b776fba2042b56003e8450b19a96bff741ca76",
+      "extraction_prompt.yaml": "51a63af1f164719e5f76f22aa9eb9d46593a38664bb9c4414a4c0da6d16ede7a"
+    }
+  },
+  "data": {
+    "snapshot": {
+      "path": "data/v2/corpus_snapshot_20260926.parquet",
+      "sha256": "17db54906595ab451f0a4390145f0d56a05702be0136432ca0770acad9b26f6b"
+    },
+    "frozen_corpus": {
+      "path": "data/v2/corpus_v2_frozen_20260926.parquet",
+      "sha256": "eb40b772d2d8f916523474561998cdc44311193b756a4fd4d40734b3815918ec"
+    },
+    "reextracted_corpus": {
+      "path": "data/v2/corpus_v2_1_frozen_20260927.parquet",
+      "sha256": "8dc25e9c74349a6ecf30bcc7482d12e17ac18f71c2e1d15630dd124018635be3"
+    },
+    "rebuilt_corpus": {
+      "path": "data/v2/corpus_v2_rebuilt_20260927.parquet",
+      "sha256": "457c735878dba8c12c845ccee7210c065efe08f7ab902c75fd01defc7ec957c1"
+    },
+    "shared_ids": {
+      "path": "data/v2/shared_ids.txt",
+      "sha256": "3b38928b84c216504338a082f8cf90e2af0ed3c981dc3dbca8b94c4c7db2584b"
+    },
+    "backend_files": {
+      "data_cleaned_v2.joblib": "4bd7e0bc7478cf8d97c983ef01f3d5e8ab2526181a6cce6767b5dbfa938dadc1",
+      "umap_mapper_v2.joblib": "1db533ae00fde9c42f0f6620e6a874b6b9100e6566705245b39af6c695287945"
+    },
+    "decisions": 2390,
+    "bigquery_table": "your-gcp-project.crsnsp_eval.scraper_output_v2_1"
+  },
+  "umap": {
+    "params": {
+      "n_neighbors": 30,
+      "min_dist": 0.01,
+      "n_components": 2,
+      "metric": "cosine",
+      "random_state": 42
+    },
+    "procrustes_disparity_refit": 1.213362383333221e-30
+  },
+  "server_env": {
+    "EVAL_MODE": "1",
+    "DATA_VERSION": "v2",
+    "DATA_DIR": "data/v2/rebuild_20260927",
+    "BIGQUERY_TABLE": "your-gcp-project.crsnsp_eval.scraper_output_v2_1",
+    "SESSION_TYPE": "filesystem",
+    "CLOUD_RUN": "False",
+    "GEMINI_PRIMARY_CREDENTIALS": "../primary-gemini-key.json"
+  },
+  "smoke_test": {
+    "file": "results/v2_smoke_test_3.json",
+    "run_dir": "smoke_20260927T180848Z",
+    "failures": []
+  },
+  "notes": [
+    "Supersedes v2-eval-frozen (config/v2_freeze.json), which no evaluation used.",
+    "Corpus: the v2 frozen corpus (2,391 decisions) with reports and votes re-extracted by Gemini 3.7 Flash from the stored source files (no input cut; text restored verbatim from the document between the model's boundaries). One decision (e96eb00f44c5248a) has no report in its document and is dropped, as in the freeze rule: 2,390 decisions. The v1/v2 comparison set (data/v2/shared_ids.txt, 1,503) is unchanged.",
+    "Re-extraction code: scrapers a798d39 (first 1,272 decisions with the same extraction logic before the credentials change; JSON repair 9ce8779 applied to the 3 retried decisions). The tagged commit 0d7b92c adds only a request timeout.",
+    "Rebuild: compressions 1-861 before, 862-2,390 after the request-timeout commit; same prompt and settings.",
+    "Credentials: re-extraction calls 1,277 the fallback project (before the key change), 1,117 primary (primary-project), 6 fallback; rebuild 2,390 primary. Embeddings are identical across projects.",
+    "Compression by gemini-3.7-flash is not deterministic at temperature 0: the frozen texts and vectors are the artefact of record.",
+    "Smoke test: the single_prompt defense was blocked once (RECITATION) and succeeded on the automatic retry (backend 3dec7ee).",
+    "The tags point to backend f432253 and scrapers 8864889: they add only requirements.txt pins equal to the versions the evaluation ran with (smoke test on backend 3dec7ee, the same code). Needed for a reproducible Docker build."
+  ]
+}

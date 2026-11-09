@@ -1,0 +1,493 @@
+{
+  "run_id": "20261009T164346Z-fd6757c3",
+  "script": "54_a2_candidate_selection",
+  "argv": [
+    "scripts/54_a2_candidate_selection.py"
+  ],
+  "models": {
+    "M4f": {
+      "label": "gemini-embedding-001, full report + compression summed (Phase 4.1's selection)",
+      "kind": "fused",
+      "parts": {
+        "M5": 0.5,
+        "M4": 0.5
+      },
+      "model": "gemini-embedding-001",
+      "dimensions": 3072,
+      "task_type": "SEMANTIC_SIMILARITY",
+      "benchmark": false
+    }
+  },
+  "params": {
+    "candidates": {
+      "version": 1,
+      "set": "v2_full",
+      "method": "M4f",
+      "current": {
+        "n_neighbors": 30,
+        "min_dist": 0.01
+      },
+      "candidates": {
+        "umap": {
+          "metric": "cosine",
+          "n_neighbors": [
+            5,
+            10,
+            15,
+            20,
+            30,
+            50
+          ],
+          "min_dist": [
+            0.0,
+            0.01,
+            0.05,
+            0.1,
+            0.25
+          ]
+        }
+      },
+      "refine_n_epochs": [
+        1000,
+        2000
+      ],
+      "references": {
+        "tsne": {
+          "perplexity": 30,
+          "metric": "cosine",
+          "neighbors": "exact"
+        },
+        "pacmap": {}
+      },
+      "holdout": {
+        "folds": 5
+      },
+      "selection": {
+        "metrics": [
+          "trustworthiness@10",
+          "continuity@10",
+          "knn_jaccard@10",
+          "distance_spearman",
+          "holdout_trustworthiness@10",
+          "holdout_continuity@10",
+          "holdout_knn_jaccard@10"
+        ]
+      }
+    },
+    "metrics": {
+      "neighbourhood_k": [
+        5,
+        10,
+        20,
+        50
+      ],
+      "jaccard_k": 10,
+      "distance_pairs": 100000,
+      "label_neighbours": 10,
+      "labels": {
+        "R-cat": "category",
+        "R-cat-mistral": "category_mistral",
+        "R-base": "base_key",
+        "R-prov": "text_primary"
+      },
+      "headline": [
+        "trustworthiness@10",
+        "continuity@10",
+        "knn_jaccard@10",
+        "distance_spearman"
+      ]
+    },
+    "refine": null
+  },
+  "seeds": {
+    "a2_projections": [
+      42,
+      20260926,
+      20260927,
+      20260928,
+      20260929
+    ],
+    "umap_v2": 42,
+    "a2_distance_pairs": 20260926,
+    "a2_holdout_folds": 20260926
+  },
+  "inputs": [
+    {
+      "path": "data/v2/a2_candidates/a2_candidates_2.npz",
+      "sha256": "bdd4ef8b5355c87ff903d0b39bbfac9c2a4a8a025f36826041809984bb525b4e"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "results/a2_candidates_2.csv",
+      "sha256": "42e95698f6269a77c3cd3628575c394a7bd53f0a80f16a77e731e699c7ad00f6",
+      "bytes": 12678
+    },
+    {
+      "path": "results/a2_candidates_selection_2.json",
+      "sha256": "cbcb9a3b6b5c063c4363d71137907cc54d7ff3dc71df793885f7417afb61d193",
+      "bytes": 5745
+    },
+    {
+      "path": "results/figures/a2_candidates_2.pdf",
+      "sha256": "14e8ddb547975bf98acf3b909fbfb7135e4d8481c1f169be0142397c0b51c6ee",
+      "bytes": 36847
+    }
+  ],
+  "summary": {
+    "rule": "highest mean z-score over the selection metrics, standardised over the grid; labels take no part",
+    "selection_metrics": [
+      "trustworthiness@10",
+      "continuity@10",
+      "knn_jaccard@10",
+      "distance_spearman",
+      "holdout_trustworthiness@10",
+      "holdout_continuity@10",
+      "holdout_knn_jaccard@10"
+    ],
+    "candidates": 30,
+    "selected": {
+      "projection": "umap_n10_d0",
+      "n_neighbors": 10,
+      "min_dist": 0.0,
+      "score": 0.8599612874268886,
+      "rank": 1,
+      "trustworthiness@10": 0.9532359386825325,
+      "continuity@10": 0.9473125952083283,
+      "knn_jaccard@10": 0.2754992782318326,
+      "distance_spearman": 0.4497449410614346,
+      "holdout_trustworthiness@10": 0.9406971295637842,
+      "holdout_continuity@10": 0.939505978467594,
+      "holdout_knn_jaccard@10": 0.2503634497309769
+    },
+    "current": {
+      "projection": "umap_n30_d0.01",
+      "n_neighbors": 30,
+      "min_dist": 0.01,
+      "score": -0.42479845720494147,
+      "rank": 24,
+      "trustworthiness@10": 0.9474059898978953,
+      "continuity@10": 0.9499289046537875,
+      "knn_jaccard@10": 0.23255551753654008,
+      "distance_spearman": 0.4137400967183645,
+      "holdout_trustworthiness@10": 0.9236872123086421,
+      "holdout_continuity@10": 0.940695630123318,
+      "holdout_knn_jaccard@10": 0.1757262874278432
+    },
+    "selected_minus_current": {
+      "trustworthiness@10": {
+        "difference": 0.005829948784637273,
+        "sd_selected": 0.001220687181259081,
+        "sd_current": 0.0012860981323342586
+      },
+      "continuity@10": {
+        "difference": -0.0026163094454592084,
+        "sd_selected": 0.0010980517685431224,
+        "sd_current": 0.0006799806888134133
+      },
+      "knn_jaccard@10": {
+        "difference": 0.04294376069529254,
+        "sd_selected": 0.0020438784155476686,
+        "sd_current": 0.0009831266885277825
+      },
+      "distance_spearman": {
+        "difference": 0.03600484434307011,
+        "sd_selected": 0.005682476162263726,
+        "sd_current": 0.007668660087095283
+      },
+      "holdout_trustworthiness@10": {
+        "difference": 0.017009917255142004,
+        "sd_selected": 0.005010417466220834,
+        "sd_current": 0.006532853568909718
+      },
+      "holdout_continuity@10": {
+        "difference": -0.0011896516557240444,
+        "sd_selected": 0.004757695810998291,
+        "sd_current": 0.003866635255523622
+      },
+      "holdout_knn_jaccard@10": {
+        "difference": 0.07463716230313372,
+        "sd_selected": 0.006704738043777117,
+        "sd_current": 0.006110603900133619
+      }
+    },
+    "top_5": [
+      {
+        "projection": "umap_n10_d0",
+        "n_neighbors": 10,
+        "min_dist": 0.0,
+        "score": 0.8599612874268886,
+        "rank": 1,
+        "trustworthiness@10": 0.9532359386825325,
+        "continuity@10": 0.9473125952083283,
+        "knn_jaccard@10": 0.2754992782318326,
+        "distance_spearman": 0.4497449410614346,
+        "holdout_trustworthiness@10": 0.9406971295637842,
+        "holdout_continuity@10": 0.939505978467594,
+        "holdout_knn_jaccard@10": 0.2503634497309769
+      },
+      {
+        "projection": "umap_n10_d0.05",
+        "n_neighbors": 10,
+        "min_dist": 0.05,
+        "score": 0.8403708537560612,
+        "rank": 2,
+        "trustworthiness@10": 0.9521593147555398,
+        "continuity@10": 0.9485395930083497,
+        "knn_jaccard@10": 0.27746660842759135,
+        "distance_spearman": 0.4464221415966095,
+        "holdout_trustworthiness@10": 0.9393111173587798,
+        "holdout_continuity@10": 0.9407219144326657,
+        "holdout_knn_jaccard@10": 0.2498833129252705
+      },
+      {
+        "projection": "umap_n10_d0.1",
+        "n_neighbors": 10,
+        "min_dist": 0.1,
+        "score": 0.8327141715963443,
+        "rank": 3,
+        "trustworthiness@10": 0.94892752933672,
+        "continuity@10": 0.9497083711082975,
+        "knn_jaccard@10": 0.27256272081783434,
+        "distance_spearman": 0.4518284239992557,
+        "holdout_trustworthiness@10": 0.9369032144254993,
+        "holdout_continuity@10": 0.9420692498938814,
+        "holdout_knn_jaccard@10": 0.24410769602260202
+      },
+      {
+        "projection": "umap_n10_d0.01",
+        "n_neighbors": 10,
+        "min_dist": 0.01,
+        "score": 0.7783188089392391,
+        "rank": 4,
+        "trustworthiness@10": 0.9524448591247134,
+        "continuity@10": 0.9477708920882705,
+        "knn_jaccard@10": 0.2755109548188942,
+        "distance_spearman": 0.44609636463620006,
+        "holdout_trustworthiness@10": 0.9392577328680657,
+        "holdout_continuity@10": 0.939689130710415,
+        "holdout_knn_jaccard@10": 0.24756416240152657
+      },
+      {
+        "projection": "umap_n15_d0.05",
+        "n_neighbors": 15,
+        "min_dist": 0.05,
+        "score": 0.613512785416842,
+        "rank": 5,
+        "trustworthiness@10": 0.9502515200293213,
+        "continuity@10": 0.9496324352803629,
+        "knn_jaccard@10": 0.2621721452433138,
+        "distance_spearman": 0.4434457604463839,
+        "holdout_trustworthiness@10": 0.937714852729588,
+        "holdout_continuity@10": 0.9422971868953314,
+        "holdout_knn_jaccard@10": 0.22244627347383927
+      }
+    ],
+    "all_seeded_fits_repeat": true,
+    "fits_that_do_not_repeat": [],
+    "scale": {
+      "trustworthiness@10": {
+        "mean": 0.9446190409314681,
+        "sd": 0.0075090371053767434
+      },
+      "continuity@10": {
+        "mean": 0.9476801739072721,
+        "sd": 0.0069372346795670845
+      },
+      "knn_jaccard@10": {
+        "mean": 0.24886175331903793,
+        "sd": 0.024276937897655834
+      },
+      "distance_spearman": {
+        "mean": 0.4338919858640774,
+        "sd": 0.010066225487696874
+      },
+      "holdout_trustworthiness@10": {
+        "mean": 0.9285237398544294,
+        "sd": 0.010955880772574303
+      },
+      "holdout_continuity@10": {
+        "mean": 0.9394762726409078,
+        "sd": 0.0055978685237955
+      },
+      "holdout_knn_jaccard@10": {
+        "mean": 0.20590713963128046,
+        "sd": 0.039111981578159406
+      }
+    }
+  },
+  "started_utc": "2026-10-09T16:43:46.308+00:00",
+  "git": {
+    "eval": {
+      "path": ".",
+      "sha": "5c080bc19ad0f4cc5fa74a6fa0e57f8c2f90cc53",
+      "branch": "feature/phase-5.1-map-improvement",
+      "tag": null,
+      "dirty": true
+    },
+    "backend": {
+      "path": "../app/backend",
+      "sha": "7cc61c2bba4a513fad3ac721828d4e728a8155c8",
+      "branch": "main",
+      "tag": null,
+      "dirty": false
+    },
+    "frontend_v2": {
+      "path": "../app/frontend/jurismap-react-app",
+      "sha": "e9a2483df1aff6e97c2e11571cecfcffc8e92596",
+      "branch": "main",
+      "tag": null,
+      "dirty": false
+    },
+    "frontend_v1": {
+      "path": "../frontend_old",
+      "sha": "8183c0da1c08d7793fddaaafb894ab61114c61b2",
+      "branch": "legacy/streamlit-v1",
+      "tag": null,
+      "dirty": true
+    },
+    "scrapers": {
+      "path": "../scrapers",
+      "sha": "69385a32283c7c70757ab8029c20a4994f1836d6",
+      "branch": "feature/fused_vectors_and_map",
+      "tag": "v2.2-eval-frozen",
+      "dirty": true
+    }
+  },
+  "config_hash": {
+    "combined": "349c45567e6e696154c07877e100fe5b266cd156e25e5b1f323d81ae759d65bc",
+    "files": {
+      "a1_candidates.yaml": "25feb8716fd99e8dbc3675e98dcc203bc6829b2f214dc9878c23b45cfd5dc779",
+      "a1_labels.yaml": "a5353d400fd3fc11373d08e9b9f286c515da0cecb5c5defca175af301cf9babd",
+      "a1_methods.yaml": "84407ea6f7dc6a8b63a618ccf99fbcc286c1d5f8999e47be47c54ab4c3ade4e2",
+      "a1_taxonomy.yaml": "bb7b0b24a51462e7ab95be6fffc793dddbb0fdc8c2258e44efa0b017e2d960e6",
+      "a2_candidates.yaml": "adef29c08b96f5d377a24ad71381a5fd238672b9427cfd21200aade4b501a2bb",
+      "a2_map.yaml": "672c8ce3474fe456aadb4cbe8c7a353199a48fcd35804161dedffc7eb5537ff9",
+      "b3_codebook.yaml": "b8a1f818413d9955a04f4becf2f53982549729afab61a305dd0a1d6658afd34a",
+      "models.yaml": "305fd59f788ee0768b91f436cf7cfeec519f83418cf6707893003353df39503f",
+      "paths.yaml": "61c3de817460329805badbdaac43b7f295fca5c7a966f1c32821a20e8048c94f",
+      "prices.yaml": "b11a8aab55cf4595efa54f4ea6781eb85d43306d3943921cd7d91b41334a1837",
+      "seeds.yaml": "2ff85f9574ce585b9d825e5d4d3b9ebbdb00761ead36361440835c3143cd9421",
+      "v2.1_freeze.json": "e457af1b02bf6c631ea514ebd6fc25cd99a059704fa2d18f3888eb92119846de",
+      "v2.2_freeze.json": "37b912a3d2631129bb5fbdd6f05991ef59d426a7bf4c33e9e9ed9517322f28b5",
+      "v2_freeze.json": "c71f13f49d320ecec4c6003ff073c83ae60c99019ab0ea1d456116d4344fb3e3"
+    }
+  },
+  "python": {
+    "version": "3.12.3 (v3.12.3:f6650f9ad7, Apr  9 2024, 08:18:47) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "executable": ".venv/bin/python3",
+    "platform": "macOS-26.5.2-arm64-arm-64bit"
+  },
+  "ended_utc": "2026-10-09T16:45:50.806+00:00",
+  "status": "ok",
+  "packages": [
+    "-e file://.",
+    "annotated-doc==0.0.5",
+    "annotated-types==0.8.0",
+    "anyio==4.15.1",
+    "certifi==2026.7.22",
+    "cffi==2.1.1",
+    "cfgv==3.5.0",
+    "charset-normalizer==3.5.1",
+    "click==8.5.0",
+    "cloudpickle==3.1.2",
+    "contourpy==1.4.0",
+    "cryptography==50.0.1",
+    "cycler==0.12.1",
+    "db-dtypes==1.7.1",
+    "defusedxml==0.7.1",
+    "distlib==0.4.3",
+    "distro==1.9.0",
+    "et-xmlfile==2.0.0",
+    "faiss-cpu==1.15.1",
+    "filelock==4.0.3",
+    "fonttools==4.66.1",
+    "fsspec==2026.9.0",
+    "google-api-core==2.39.0",
+    "google-auth==2.58.1",
+    "google-cloud-bigquery==3.45.2",
+    "google-cloud-core==2.7.0",
+    "google-crc32c==1.9.0",
+    "google-genai==1.55.0",
+    "google-resumable-media==2.10.2",
+    "googleapis-common-protos==1.75.4",
+    "grpcio-status==1.84.0",
+    "grpcio==1.84.0",
+    "h11==0.16.0",
+    "hf-xet==1.7.0",
+    "httpcore==1.0.9",
+    "httpx==0.28.1",
+    "huggingface-hub==1.33.0",
+    "identify==2.6.19",
+    "idna==3.20",
+    "iniconfig==2.3.0",
+    "jinja2==3.1.6",
+    "joblib==1.6.0",
+    "kiwisolver==1.5.1",
+    "krippendorff==0.9.0",
+    "llvmlite==0.50.0",
+    "markdown-it-py==4.2.0",
+    "markupsafe==3.0.4",
+    "matplotlib==3.11.2",
+    "mdurl==0.1.2",
+    "mpmath==1.3.0",
+    "narwhals==2.26.0",
+    "networkx==3.7",
+    "nltk==3.10.3",
+    "nodeenv==1.11.0",
+    "numba==0.68.0",
+    "numpy==2.5.3",
+    "openpyxl==3.1.5",
+    "opentelemetry-api==1.45.0",
+    "opentsne==1.0.4",
+    "packaging==26.3",
+    "pacmap==0.9.1",
+    "pandas==3.0.6",
+    "pillow==12.3.0",
+    "platformdirs==4.11.15",
+    "pluggy==1.6.0",
+    "pre-commit==4.6.2",
+    "proto-plus==1.28.4",
+    "protobuf==7.36.2",
+    "pyarrow==25.0.1",
+    "pyasn1-modules==0.4.2",
+    "pyasn1==0.6.4",
+    "pycparser==3.0",
+    "pydantic-core==2.46.5",
+    "pydantic==2.13.5",
+    "pygments==2.21.0",
+    "pynndescent==0.6.0",
+    "pyparsing==3.3.3",
+    "pytest==9.1.1",
+    "python-dateutil==2.9.0.post0",
+    "python-discovery==1.6.1",
+    "python-dotenv==1.2.3",
+    "pyyaml==6.0.3",
+    "rank-bm25==0.2.2",
+    "regex==2026.9.29",
+    "requests==2.34.2",
+    "rich==15.0.0",
+    "safetensors==0.8.0",
+    "scikit-learn==1.9.1",
+    "scipy==1.18.1",
+    "sentence-transformers==6.1.0",
+    "setuptools==84.0.0",
+    "shellingham==1.5.4",
+    "six==1.17.0",
+    "sniffio==1.3.1",
+    "sympy==1.14.0",
+    "tenacity==9.1.4",
+    "threadpoolctl==3.7.0",
+    "tokenizers==0.23.2",
+    "torch==2.14.1",
+    "tqdm==4.70.1",
+    "transformers==5.19.0",
+    "typer==0.27.3",
+    "typing-extensions==4.16.0",
+    "typing-inspection==0.4.4",
+    "umap-learn==0.5.12",
+    "urllib3==2.8.0",
+    "virtualenv==21.12.1",
+    "websockets==15.0.1"
+  ]
+}

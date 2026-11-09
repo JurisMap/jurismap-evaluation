@@ -1,0 +1,121 @@
+# A1 retrieval benchmark: methods and protocol (implementation plan, Phase 4b-4c).
+# Every method ranks the same decisions; only the text it reads and the model differ.
+version: 1
+
+texts:
+  report: acordao_relatorio                                  # full re-extracted rapporteur report
+  compressed_v2: acordao_relatorio_compressed_v2             # Gemini 3.7 Flash compression (version 2)
+  compressed_production: acordao_relatorio_compressed        # production's Gemini 2.5 Flash-Lite compression
+
+methods:
+  M1:
+    label: TF-IDF
+    kind: tfidf                    # sklearn TfidfVectorizer defaults; Portuguese stop words, RSLP stems
+    text: report
+  M2:
+    label: BM25
+    kind: bm25                     # Okapi as defined in rank_bm25 (its IDF, epsilon 0.25)
+    k1: 1.5
+    b: 0.75
+    text: report
+  M3:
+    label: text-multilingual-embedding-002, full report (version 1)
+    kind: vertex                   # one call per text, the model's default truncation, as version 1 did
+    model: text-multilingual-embedding-002
+    dimensions: 768
+    task_type: SEMANTIC_SIMILARITY
+    text: report
+  M4:
+    label: gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)
+    kind: stored                   # the frozen version 2 vectors (v2.3: the two embeddings summed; Phase 4.1)
+    column: embedding_acordao_relatorio_compressed_v2
+    model: gemini-embedding-001
+    dimensions: 3072
+    task_type: SEMANTIC_SIMILARITY
+    text: compressed_v2
+  M4c:
+    label: gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)
+    kind: stored                   # the compressed report's vector, a part of M4; identical to M4 of the v2.2 freeze
+    column: embedding_acordao_relatorio_compressed_only_v2
+    model: gemini-embedding-001
+    dimensions: 3072
+    task_type: SEMANTIC_SIMILARITY
+    text: compressed_v2
+  M4b:
+    label: gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)
+    kind: stored                   # production's vectors, kept in the frozen file
+    column: embedding_acordao_relatorio_compressed
+    model: gemini-embedding-001
+    dimensions: 3072
+    task_type: SEMANTIC_SIMILARITY
+    text: compressed_production
+  M5:
+    label: gemini-embedding-001, full report
+    kind: vertex
+    model: gemini-embedding-001
+    dimensions: 3072
+    task_type: SEMANTIC_SIMILARITY
+    text: report
+  M5c:
+    label: gemini-embedding-001, full report in chunks (Phase 4.1)
+    kind: vertex_chunked           # scripts/55: chunks the model reads whole, pooled by length
+    model: gemini-embedding-001
+    dimensions: 3072
+    task_type: SEMANTIC_SIMILARITY
+    text: report
+    benchmark: false               # a part of the Phase 4.1 candidates, not a row of the Phase 4 benchmark
+  M4f:
+    label: gemini-embedding-001, full report + compression summed (Phase 4.1's selection, computed here)
+    kind: fused                    # unit-length weighted sum of the parts' unit-length vectors
+    parts: {M5: 0.5, M4c: 0.5}     # M4c was M4 when Phase 4.1 ran
+    model: gemini-embedding-001
+    dimensions: 3072
+    task_type: SEMANTIC_SIMILARITY
+    benchmark: false               # equals M4 since the v2.3 freeze
+  M6:
+    label: BGE-M3 (dense), full report
+    kind: local
+    model: BAAI/bge-m3
+    max_seq_length: 8192           # the model's limit
+    text: report
+  M7:
+    label: multilingual-E5-large, full report
+    kind: local
+    model: intfloat/multilingual-e5-large
+    prefix: "query: "              # the model card's prefix for symmetric similarity
+    max_seq_length: 512            # the model's limit
+    text: report
+
+baseline: M2                       # every method is tested against it
+embedding_input_limit_tokens: 2048 # both Vertex embedding models read at most this many tokens
+
+scopes:
+  comparison_set: all methods; the 1,503 decisions that versions 1 and 2 share (primary)
+  v2: the 2,390 decisions of version 2 (supplementary)
+
+# `sets` names the label whose size tells a decision with one infraction from one with several
+# (results/a1_retrieval_by_complexity.csv).
+relevance:
+  R-base: {source: base_specific, kind: exact, primary: true, sets: base_specific}
+  R-base-relaxed: {source: base_specific, kind: jaccard, sets: base_specific}
+  R-prov: {source: text_cited, kind: jaccard, or_same: text_primary}
+  R-cat: {source: category, kind: same, sets: categories}                  # primary category, Gemini 3.7 Flash
+  R-cat-mistral: {source: category_mistral, kind: same, sets: categories_mistral}   # the same, assigned blind by Mistral Medium 3
+  # A decision with several infractions carries several categories (the author, 2026-10-09): two decisions
+  # are relevant when they share at least one, primary or secondary.
+  R-cat-multi: {source: categories, kind: overlap, sets: categories}
+  R-cat-multi-mistral: {source: categories_mistral, kind: overlap, sets: categories_mistral}
+
+# R@5 and mAR follow the 2024 paper's Recall@5 and mean Average Recall (the author, 2026-10-07); mAR is
+# computed over the whole ranking of each query.
+metrics: [P@5, P@10, R@5, R@10, MAP, MRR, nDCG@10, mAR]
+neighbours: 10                     # outcome-consistency proxies: top-10 neighbours
+bootstrap_resamples: 10000
+randomisation_permutations: 10000
+
+compression_stability:
+  n: 50
+  seed: 20260926
+
+local_models_cache: data/cache/hf   # Hugging Face files, downloaded once by scripts/44
+nltk_data: data/cache/nltk_data     # stop words and RSLP rules, downloaded once by scripts/44

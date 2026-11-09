@@ -1,0 +1,10 @@
+set_id,development,stratum,stratum_decisions,seed_hash,decisions,same_legal_basis_as_seed,same_category_as_seed,processes,years,outcomes,similarity_min,similarity_max,report_and_vote_chars
+S1,False,CIRC-SUSEP364/2008:art2,108,d313c4563e4d61c0,10,6,9,10,2020-2024,Parcialmente provido: 5; Não provido: 5,0.962555,0.974903,117814
+S2,False,CIRC-SUSEP256/2004:art33,92,c3107f3473d80312,10,2,9,10,2021-2024,Parcialmente provido: 7; Não provido: 2; Provido: 1,0.937692,0.945622,142596
+S3,False,CIRC-SUSEP302/2005:art72,87,f9563c9f5a48f869,10,1,4,10,2017-2023,Provido: 8; Parcialmente provido: 2,0.941463,0.966242,114828
+S4,False,CC:art757|DL73/1966:art113|DL73/1966:art24,86,d8b96f50ae5d7c72,10,8,10,10,2020-2024,Não provido: 7; Não conhecido: 2; Provido: 1,0.956634,0.970656,213122
+S5,False,CIRC-SUSEP517/2015:art110,54,e81146e751d32d01,10,3,10,10,2020-2021,Parcialmente provido: 9; Não provido: 1,0.960825,0.973987,67365
+S6,False,CIRC-SUSEP320/2006:art4,43,736300dbccd1d827,10,7,2,10,2023-2023,Não provido: 9; Parcialmente provido: 1,0.973806,0.989385,413112
+D1,True,CIRC-SUSEP364/2008,36,346b4d0723915f2e,10,2,3,10,2018-2021,Não provido: 6; Provido: 3; Parcialmente provido: 1,0.938917,0.945653,48099
+D2,True,DL73/1966:art28|RES-CMN3308/2005:art1,34,be61107a3026b965,10,10,10,10,2019-2020,Provido: 6; Parcialmente provido: 4,0.96069,0.993221,88406
+D3,True,LC109/2001:art9|RES-CMN3308/2005:art1,22,64941031f86fc915,10,0,7,10,2019-2022,Não conhecido: 7; Não provido: 2; Provido: 1,0.925378,0.941331,67390

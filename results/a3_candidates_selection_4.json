@@ -1,0 +1,44 @@
+{
+  "rule": {
+    "constraints": {
+      "coverage_drop_max": 0.1,
+      "templated_correct_drop_max": 1,
+      "abstention_drop_max": 0
+    },
+    "tie_margin": 0.01,
+    "bootstrap_resamples": 10000
+  },
+  "judges": [
+    "judge_a",
+    "judge_b"
+  ],
+  "development_sets": [
+    "D1",
+    "D2",
+    "D3"
+  ],
+  "eligible": [
+    "baseline",
+    "grounded",
+    "grounded_t0",
+    "verified",
+    "quoted_full"
+  ],
+  "not_eligible": {
+    "quoted": [
+      "coverage 0.485 is more than 0.1 below the baseline's 0.608"
+    ]
+  },
+  "lowest_unsupported_rate": 0.04159462055715659,
+  "tied": [
+    "quoted_full"
+  ],
+  "selected": "quoted_full",
+  "difference_from_baseline": {
+    "questions": 11,
+    "difference": -0.2073089950748481,
+    "ci_low": -0.252977739829572,
+    "ci_high": -0.16663243278651965
+  },
+  "replaces_the_baseline": true
+}

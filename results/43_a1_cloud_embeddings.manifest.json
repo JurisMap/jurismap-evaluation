@@ -1,0 +1,284 @@
+{
+  "run_id": "20261007T140558Z-4caa5505",
+  "script": "43_a1_cloud_embeddings",
+  "argv": [
+    "scripts/43_a1_cloud_embeddings.py",
+    "--workers",
+    "12"
+  ],
+  "models": {
+    "M3": {
+      "model": "text-multilingual-embedding-002",
+      "dimensions": 768,
+      "task_type": "SEMANTIC_SIMILARITY",
+      "text": "report"
+    },
+    "M4": {
+      "model": "gemini-embedding-001",
+      "dimensions": 3072,
+      "task_type": "SEMANTIC_SIMILARITY",
+      "text": "compressed_v2"
+    },
+    "M4b": {
+      "model": "gemini-embedding-001",
+      "dimensions": 3072,
+      "task_type": "SEMANTIC_SIMILARITY",
+      "text": "compressed_production"
+    },
+    "M5": {
+      "model": "gemini-embedding-001",
+      "dimensions": 3072,
+      "task_type": "SEMANTIC_SIMILARITY",
+      "text": "report"
+    }
+  },
+  "params": {
+    "workers": 12,
+    "limit": null
+  },
+  "seeds": {
+    "default": 20260926,
+    "umap_v2": 42,
+    "bootstrap": 20260926
+  },
+  "inputs": [
+    {
+      "path": "data/v2/corpus_v2_rebuilt_20260927.parquet",
+      "sha256": "457c735878dba8c12c845ccee7210c065efe08f7ab902c75fd01defc7ec957c1"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/v2/a1_embeddings/M3_2.npy",
+      "sha256": "054cc8c729d48ebeaae756a00fda3216c147f9551f7b966d078723ba8c142edf",
+      "bytes": 7342208
+    },
+    {
+      "path": "data/v2/a1_embeddings/M5.npy",
+      "sha256": "55aa311012059c8872a37b80130a4a8928ec6674007ba360432b295d3100ad76",
+      "bytes": 29368448
+    },
+    {
+      "path": "data/v2/a1_embeddings/a1_embedding_inputs.parquet",
+      "sha256": "1506849e0878f8e019d094882b053ce0579a9a41f58cf0768e7e09c17e29cc91",
+      "bytes": 113136
+    },
+    {
+      "path": "results/a1_input_length.csv",
+      "sha256": "156f38a6aaea9f512605843e6b2295bbc0abebec4cff6398eabbb478ad5de2fb",
+      "bytes": 992
+    }
+  ],
+  "summary": {
+    "M3": {
+      "decisions": 2390,
+      "calls_not_cached": 0,
+      "credentials": {
+        "primary": 2390
+      },
+      "input_tokens": 5719752,
+      "input_chars": 18762703
+    },
+    "M4": {
+      "decisions": 2390,
+      "calls_not_cached": 6,
+      "credentials": {
+        "primary": 2390
+      },
+      "input_tokens": 1414770,
+      "input_chars": 5668793,
+      "cosine_with_stored_vectors": {
+        "min": 1.0,
+        "median": 1.0,
+        "below_0.999": 0
+      }
+    },
+    "M4b": {
+      "decisions": 2390,
+      "calls_not_cached": 2361,
+      "credentials": {
+        "primary": 2390
+      },
+      "input_tokens": 2516515,
+      "input_chars": 9518008,
+      "cosine_with_stored_vectors": {
+        "min": 1.0,
+        "median": 1.0,
+        "below_0.999": 0
+      }
+    },
+    "M5": {
+      "decisions": 2390,
+      "calls_not_cached": 2348,
+      "credentials": {
+        "primary": 2390
+      },
+      "input_tokens": 5645527,
+      "input_chars": 18762703
+    }
+  },
+  "started_utc": "2026-10-07T14:05:58.902+00:00",
+  "git": {
+    "eval": {
+      "path": ".",
+      "sha": "60808d9b051580d4cba6b4b2ffe968da10b6f6d7",
+      "branch": "feature/phase-4-a1-retrieval",
+      "tag": null,
+      "dirty": false
+    },
+    "backend": {
+      "path": "../app/backend",
+      "sha": "7cc61c2bba4a513fad3ac721828d4e728a8155c8",
+      "branch": "main",
+      "tag": null,
+      "dirty": false
+    },
+    "frontend_v2": {
+      "path": "../app/frontend/jurismap-react-app",
+      "sha": "e9a2483df1aff6e97c2e11571cecfcffc8e92596",
+      "branch": "main",
+      "tag": null,
+      "dirty": false
+    },
+    "frontend_v1": {
+      "path": "../frontend_old",
+      "sha": "8183c0da1c08d7793fddaaafb894ab61114c61b2",
+      "branch": "legacy/streamlit-v1",
+      "tag": null,
+      "dirty": true
+    },
+    "scrapers": {
+      "path": "../scrapers",
+      "sha": "69385a32283c7c70757ab8029c20a4994f1836d6",
+      "branch": "release/v2-iswa",
+      "tag": "v2.2-eval-frozen",
+      "dirty": false
+    }
+  },
+  "config_hash": {
+    "combined": "e69e4bac11d1d03a5ec9c167a3390c541144d5875ec1ed41dbb9a8dd3f1f4c12",
+    "files": {
+      "a1_labels.yaml": "36ec42acf8b1ea9211322e51fe974b04a76df6c6f4265985c988d5c75a67b9b0",
+      "a1_methods.yaml": "faaef9f8c5eac0751bfb964bfa32b05b1bb40bc030991750f7b20025643ab87f",
+      "a1_taxonomy.yaml": "bb7b0b24a51462e7ab95be6fffc793dddbb0fdc8c2258e44efa0b017e2d960e6",
+      "b3_codebook.yaml": "b8a1f818413d9955a04f4becf2f53982549729afab61a305dd0a1d6658afd34a",
+      "models.yaml": "3077df98c7be3e8b44bbcb86ced6faf96a5a4ca32d98ab01887cc4fdcfc0b42b",
+      "paths.yaml": "61c3de817460329805badbdaac43b7f295fca5c7a966f1c32821a20e8048c94f",
+      "prices.yaml": "65100e6ef49f456dc11d89de09d47e8cef69d8ea7418ad5f7466eb436ce77e26",
+      "seeds.yaml": "e37add963e67df07b85615c2fc173a473631b9b35b33b75f4b3a75f4ae64f832",
+      "v2.1_freeze.json": "e457af1b02bf6c631ea514ebd6fc25cd99a059704fa2d18f3888eb92119846de",
+      "v2.2_freeze.json": "37b912a3d2631129bb5fbdd6f05991ef59d426a7bf4c33e9e9ed9517322f28b5",
+      "v2_freeze.json": "c71f13f49d320ecec4c6003ff073c83ae60c99019ab0ea1d456116d4344fb3e3"
+    }
+  },
+  "python": {
+    "version": "3.12.3 (v3.12.3:f6650f9ad7, Apr  9 2024, 08:18:47) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "executable": ".venv/bin/python3",
+    "platform": "macOS-26.5.2-arm64-arm-64bit"
+  },
+  "ended_utc": "2026-10-07T14:09:29.186+00:00",
+  "status": "ok",
+  "packages": [
+    "-e file://.",
+    "annotated-doc==0.0.5",
+    "annotated-types==0.8.0",
+    "anyio==4.15.1",
+    "certifi==2026.7.22",
+    "cffi==2.1.1",
+    "cfgv==3.5.0",
+    "charset-normalizer==3.5.1",
+    "click==8.5.0",
+    "cloudpickle==3.1.2",
+    "contourpy==1.4.0",
+    "cryptography==50.0.1",
+    "cycler==0.12.1",
+    "db-dtypes==1.7.1",
+    "defusedxml==0.7.1",
+    "distlib==0.4.3",
+    "distro==1.9.0",
+    "et-xmlfile==2.0.0",
+    "filelock==4.0.3",
+    "fonttools==4.66.1",
+    "fsspec==2026.9.0",
+    "google-api-core==2.39.0",
+    "google-auth==2.58.1",
+    "google-cloud-bigquery==3.45.2",
+    "google-cloud-core==2.7.0",
+    "google-crc32c==1.9.0",
+    "google-genai==1.55.0",
+    "google-resumable-media==2.10.2",
+    "googleapis-common-protos==1.75.4",
+    "grpcio-status==1.84.0",
+    "grpcio==1.84.0",
+    "h11==0.16.0",
+    "hf-xet==1.7.0",
+    "httpcore==1.0.9",
+    "httpx==0.28.1",
+    "huggingface-hub==1.33.0",
+    "identify==2.6.19",
+    "idna==3.20",
+    "iniconfig==2.3.0",
+    "jinja2==3.1.6",
+    "joblib==1.6.0",
+    "kiwisolver==1.5.1",
+    "krippendorff==0.9.0",
+    "markdown-it-py==4.2.0",
+    "markupsafe==3.0.4",
+    "matplotlib==3.11.2",
+    "mdurl==0.1.2",
+    "mpmath==1.3.0",
+    "narwhals==2.26.0",
+    "networkx==3.7",
+    "nltk==3.10.3",
+    "nodeenv==1.11.0",
+    "numpy==2.5.3",
+    "openpyxl==3.1.5",
+    "opentelemetry-api==1.45.0",
+    "packaging==26.3",
+    "pandas==3.0.6",
+    "pillow==12.3.0",
+    "platformdirs==4.11.15",
+    "pluggy==1.6.0",
+    "pre-commit==4.6.2",
+    "proto-plus==1.28.4",
+    "protobuf==7.36.2",
+    "pyarrow==25.0.1",
+    "pyasn1-modules==0.4.2",
+    "pyasn1==0.6.4",
+    "pycparser==3.0",
+    "pydantic-core==2.46.5",
+    "pydantic==2.13.5",
+    "pygments==2.21.0",
+    "pyparsing==3.3.3",
+    "pytest==9.1.1",
+    "python-dateutil==2.9.0.post0",
+    "python-discovery==1.6.1",
+    "python-dotenv==1.2.3",
+    "pyyaml==6.0.3",
+    "rank-bm25==0.2.2",
+    "regex==2026.9.29",
+    "requests==2.34.2",
+    "rich==15.0.0",
+    "safetensors==0.8.0",
+    "scikit-learn==1.9.1",
+    "scipy==1.18.1",
+    "sentence-transformers==6.1.0",
+    "setuptools==84.0.0",
+    "shellingham==1.5.4",
+    "six==1.17.0",
+    "sniffio==1.3.1",
+    "sympy==1.14.0",
+    "tenacity==9.1.4",
+    "threadpoolctl==3.7.0",
+    "tokenizers==0.23.2",
+    "torch==2.14.1",
+    "tqdm==4.70.1",
+    "transformers==5.19.0",
+    "typer==0.27.3",
+    "typing-extensions==4.16.0",
+    "typing-inspection==0.4.4",
+    "urllib3==2.8.0",
+    "virtualenv==21.12.1",
+    "websockets==15.0.1"
+  ]
+}

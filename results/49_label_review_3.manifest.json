@@ -1,0 +1,3030 @@
+{
+  "run_id": "20261007T222212Z-0af6e4bc",
+  "script": "49_label_review",
+  "argv": [
+    "scripts/49_label_review.py"
+  ],
+  "models": {
+    "reviewer": "xai/grok-4.20-reasoning"
+  },
+  "params": {
+    "review": {
+      "n": 100,
+      "seed": 20261007,
+      "controls": {
+        "legal_basis": 10,
+        "infringed_provision": 10
+      },
+      "audited_labels": "a1_silver_labels_2.parquet"
+    },
+    "review_version": 1,
+    "workers": 3,
+    "taxonomy_version": 1
+  },
+  "seeds": {
+    "default": 20260926,
+    "umap_v2": 42,
+    "bootstrap": 20260926
+  },
+  "inputs": [
+    {
+      "path": "data/labels/a1_silver_labels_4.parquet",
+      "sha256": "057d520a81af407322de1db3e1b6d60eb8e2cbcd2d5e39919453b2f9c1acf75c"
+    },
+    {
+      "path": "results/labels_audit_2.xlsx",
+      "sha256": "f26a1695489158f5b690ff8c8cbecb18525aa381def01b443f330f83d45be3d0"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/labels/a1_label_review_3.parquet",
+      "sha256": "2eeb33b8c262fd4b651de1492f439ff6094fc05058b3b81a6a6f0070dd54a276",
+      "bytes": 22408
+    },
+    {
+      "path": "results/a1_label_review_3.json",
+      "sha256": "d9d0e8d9fc55ec6f67e1f9e7b2fed15619f438973ae159fb83845ab979703042",
+      "bytes": 1444
+    },
+    {
+      "path": "results/a1_label_review_3.xlsx",
+      "sha256": "c2602101e07b8c5b87356bc11015284875459fc976bfa43fa0a369b11ba10b6a",
+      "bytes": 47636
+    }
+  ],
+  "summary": {
+    "decisions": 100,
+    "unusable_answers": {
+      "base": 0,
+      "infringed": 0,
+      "category": 0
+    },
+    "legal_basis": {
+      "n": 98,
+      "correct": 97,
+      "share": 0.9898,
+      "wilson_95": [
+        0.9444,
+        0.9982
+      ]
+    },
+    "penalty_type": {
+      "n": 100,
+      "correct": 100,
+      "share": 1.0,
+      "wilson_95": [
+        0.963,
+        1.0
+      ]
+    },
+    "infringed_provision": {
+      "n": 58,
+      "correct": 58,
+      "share": 1.0,
+      "wilson_95": [
+        0.9379,
+        1.0
+      ],
+      "not_in_text": 0
+    },
+    "controls": {
+      "base": {
+        "planted": 10,
+        "caught": 10
+      },
+      "infringed": {
+        "planted": 10,
+        "caught": 10
+      }
+    },
+    "category": {
+      "reviewer vs gemini": {
+        "n": 100,
+        "agreement": 0.94,
+        "kappa": 0.9336
+      },
+      "reviewer vs mistral": {
+        "n": 100,
+        "agreement": 0.93,
+        "kappa": 0.9226
+      },
+      "gemini vs mistral (corpus)": {
+        "n": 2390,
+        "agreement": 0.9067,
+        "kappa": 0.8959
+      }
+    },
+    "agreement_with_hugo": {
+      "legal_basis": {
+        "n": 56,
+        "same": 55,
+        "hugo_correct_reviewer_wrong": 1,
+        "hugo_wrong_reviewer_correct": 0
+      },
+      "penalty_type": {
+        "n": 60,
+        "same": 60,
+        "hugo_correct_reviewer_wrong": 0,
+        "hugo_wrong_reviewer_correct": 0
+      },
+      "infringed_provision": {
+        "n": 33,
+        "same": 33,
+        "hugo_correct_reviewer_wrong": 0,
+        "hugo_wrong_reviewer_correct": 0
+      }
+    },
+    "calls": 280,
+    "calls_not_cached": 1,
+    "input_tokens": 1301,
+    "output_tokens": 3877,
+    "cost_usd": 0.0259
+  },
+  "started_utc": "2026-10-07T22:22:12.426+00:00",
+  "git": {
+    "eval": {
+      "path": ".",
+      "sha": "24927e84f316d56eac2c1d1bae5102c560e6c6a0",
+      "branch": "feature/phase-4-a1-retrieval",
+      "tag": null,
+      "dirty": true
+    },
+    "backend": {
+      "path": "../app/backend",
+      "sha": "7cc61c2bba4a513fad3ac721828d4e728a8155c8",
+      "branch": "main",
+      "tag": null,
+      "dirty": false
+    },
+    "frontend_v2": {
+      "path": "../app/frontend/jurismap-react-app",
+      "sha": "e9a2483df1aff6e97c2e11571cecfcffc8e92596",
+      "branch": "main",
+      "tag": null,
+      "dirty": false
+    },
+    "frontend_v1": {
+      "path": "../frontend_old",
+      "sha": "8183c0da1c08d7793fddaaafb894ab61114c61b2",
+      "branch": "legacy/streamlit-v1",
+      "tag": null,
+      "dirty": true
+    },
+    "scrapers": {
+      "path": "../scrapers",
+      "sha": "69385a32283c7c70757ab8029c20a4994f1836d6",
+      "branch": "release/v2-iswa",
+      "tag": "v2.2-eval-frozen",
+      "dirty": false
+    }
+  },
+  "config_hash": {
+    "combined": "8c786357817efe0c4c6d564ba3e1a3a9ed89c8569c0463ad6262352d971d4df2",
+    "files": {
+      "a1_labels.yaml": "a5353d400fd3fc11373d08e9b9f286c515da0cecb5c5defca175af301cf9babd",
+      "a1_methods.yaml": "1958ad9aed68306f1c3033de43b1a385c23ffb42912fc88c93cbe28c51406485",
+      "a1_taxonomy.yaml": "bb7b0b24a51462e7ab95be6fffc793dddbb0fdc8c2258e44efa0b017e2d960e6",
+      "b3_codebook.yaml": "b8a1f818413d9955a04f4becf2f53982549729afab61a305dd0a1d6658afd34a",
+      "models.yaml": "305fd59f788ee0768b91f436cf7cfeec519f83418cf6707893003353df39503f",
+      "paths.yaml": "61c3de817460329805badbdaac43b7f295fca5c7a966f1c32821a20e8048c94f",
+      "prices.yaml": "b11a8aab55cf4595efa54f4ea6781eb85d43306d3943921cd7d91b41334a1837",
+      "seeds.yaml": "e37add963e67df07b85615c2fc173a473631b9b35b33b75f4b3a75f4ae64f832",
+      "v2.1_freeze.json": "e457af1b02bf6c631ea514ebd6fc25cd99a059704fa2d18f3888eb92119846de",
+      "v2.2_freeze.json": "37b912a3d2631129bb5fbdd6f05991ef59d426a7bf4c33e9e9ed9517322f28b5",
+      "v2_freeze.json": "c71f13f49d320ecec4c6003ff073c83ae60c99019ab0ea1d456116d4344fb3e3"
+    }
+  },
+  "python": {
+    "version": "3.12.3 (v3.12.3:f6650f9ad7, Apr  9 2024, 08:18:47) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "executable": ".venv/bin/python3",
+    "platform": "macOS-26.5.2-arm64-arm-64bit"
+  },
+  "calls": [
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1169,
+      "output_tokens": 2085,
+      "cost_usd": 0.014848,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1001,
+      "output_tokens": 1339,
+      "cost_usd": 0.010036,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 949,
+      "output_tokens": 956,
+      "cost_usd": 0.007634,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3694,
+      "output_tokens": 2036,
+      "cost_usd": 0.019604,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3525,
+      "output_tokens": 1462,
+      "cost_usd": 0.015822,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3348,
+      "output_tokens": 624,
+      "cost_usd": 0.01044,
+      "latency_s": 11.89,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 950,
+      "output_tokens": 1232,
+      "cost_usd": 0.009292,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3127,
+      "output_tokens": 662,
+      "cost_usd": 0.010226,
+      "latency_s": 12.6,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3279,
+      "output_tokens": 1093,
+      "cost_usd": 0.013116,
+      "latency_s": 12.85,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5165,
+      "output_tokens": 1116,
+      "cost_usd": 0.017026,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 983,
+      "output_tokens": 1131,
+      "cost_usd": 0.008752,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1192,
+      "output_tokens": 2204,
+      "cost_usd": 0.015608,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5001,
+      "output_tokens": 953,
+      "cost_usd": 0.01572,
+      "latency_s": 29.49,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2339,
+      "output_tokens": 1118,
+      "cost_usd": 0.011386,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4990,
+      "output_tokens": 1010,
+      "cost_usd": 0.01604,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1004,
+      "output_tokens": 1009,
+      "cost_usd": 0.008062,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2752,
+      "output_tokens": 908,
+      "cost_usd": 0.010952,
+      "latency_s": 14.46,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4559,
+      "output_tokens": 1763,
+      "cost_usd": 0.019696,
+      "latency_s": 17.97,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3063,
+      "output_tokens": 826,
+      "cost_usd": 0.011082,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 983,
+      "output_tokens": 1090,
+      "cost_usd": 0.008506,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1038,
+      "output_tokens": 1676,
+      "cost_usd": 0.012132,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3173,
+      "output_tokens": 1610,
+      "cost_usd": 0.016006,
+      "latency_s": 17.3,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5039,
+      "output_tokens": 950,
+      "cost_usd": 0.015778,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3029,
+      "output_tokens": 2431,
+      "cost_usd": 0.020644,
+      "latency_s": 16.77,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 960,
+      "output_tokens": 1133,
+      "cost_usd": 0.008718,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1046,
+      "output_tokens": 1302,
+      "cost_usd": 0.009904,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5430,
+      "output_tokens": 924,
+      "cost_usd": 0.016404,
+      "latency_s": 15.32,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5273,
+      "output_tokens": 876,
+      "cost_usd": 0.015802,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5182,
+      "output_tokens": 1124,
+      "cost_usd": 0.017108,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 983,
+      "output_tokens": 1517,
+      "cost_usd": 0.011068,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4883,
+      "output_tokens": 1087,
+      "cost_usd": 0.016288,
+      "latency_s": 15.33,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5027,
+      "output_tokens": 3175,
+      "cost_usd": 0.029104,
+      "latency_s": 37.09,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3916,
+      "output_tokens": 1372,
+      "cost_usd": 0.016064,
+      "latency_s": 15.39,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 975,
+      "output_tokens": 958,
+      "cost_usd": 0.007698,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 958,
+      "output_tokens": 1078,
+      "cost_usd": 0.008384,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5724,
+      "output_tokens": 984,
+      "cost_usd": 0.017352,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 983,
+      "output_tokens": 891,
+      "cost_usd": 0.007312,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2105,
+      "output_tokens": 943,
+      "cost_usd": 0.009868,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5175,
+      "output_tokens": 786,
+      "cost_usd": 0.015066,
+      "latency_s": 13.91,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2812,
+      "output_tokens": 852,
+      "cost_usd": 0.010736,
+      "latency_s": 14.98,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2295,
+      "output_tokens": 709,
+      "cost_usd": 0.008844,
+      "latency_s": 14.87,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 977,
+      "output_tokens": 1139,
+      "cost_usd": 0.008788,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 997,
+      "output_tokens": 2643,
+      "cost_usd": 0.017852,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2093,
+      "output_tokens": 1445,
+      "cost_usd": 0.012856,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 947,
+      "output_tokens": 1217,
+      "cost_usd": 0.009196,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4169,
+      "output_tokens": 1025,
+      "cost_usd": 0.014488,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2753,
+      "output_tokens": 1423,
+      "cost_usd": 0.014044,
+      "latency_s": 15.41,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1530,
+      "output_tokens": 1151,
+      "cost_usd": 0.009966,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3781,
+      "output_tokens": 4505,
+      "cost_usd": 0.034592,
+      "latency_s": 28.14,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 979,
+      "output_tokens": 1180,
+      "cost_usd": 0.009038,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1040,
+      "output_tokens": 843,
+      "cost_usd": 0.007138,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2317,
+      "output_tokens": 849,
+      "cost_usd": 0.009728,
+      "latency_s": 8.47,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5690,
+      "output_tokens": 977,
+      "cost_usd": 0.017242,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2710,
+      "output_tokens": 13158,
+      "cost_usd": 0.084368,
+      "latency_s": 55.33,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5304,
+      "output_tokens": 929,
+      "cost_usd": 0.016182,
+      "latency_s": 15.14,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1277,
+      "output_tokens": 3700,
+      "cost_usd": 0.024754,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1019,
+      "output_tokens": 1796,
+      "cost_usd": 0.012814,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 987,
+      "output_tokens": 1018,
+      "cost_usd": 0.008082,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4461,
+      "output_tokens": 5247,
+      "cost_usd": 0.040404,
+      "latency_s": 25.75,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 6118,
+      "output_tokens": 1745,
+      "cost_usd": 0.022706,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2075,
+      "output_tokens": 949,
+      "cost_usd": 0.009844,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5222,
+      "output_tokens": 859,
+      "cost_usd": 0.015598,
+      "latency_s": 7.34,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1011,
+      "output_tokens": 1766,
+      "cost_usd": 0.012618,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2658,
+      "output_tokens": 1249,
+      "cost_usd": 0.01281,
+      "latency_s": 11.79,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 994,
+      "output_tokens": 1434,
+      "cost_usd": 0.010592,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3897,
+      "output_tokens": 1283,
+      "cost_usd": 0.015492,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 940,
+      "output_tokens": 1198,
+      "cost_usd": 0.009068,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4833,
+      "output_tokens": 976,
+      "cost_usd": 0.015522,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4044,
+      "output_tokens": 1349,
+      "cost_usd": 0.016182,
+      "latency_s": 9.03,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4834,
+      "output_tokens": 2032,
+      "cost_usd": 0.02186,
+      "latency_s": 17.52,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 990,
+      "output_tokens": 1391,
+      "cost_usd": 0.010326,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4671,
+      "output_tokens": 3278,
+      "cost_usd": 0.02901,
+      "latency_s": 38.1,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 975,
+      "output_tokens": 1660,
+      "cost_usd": 0.01191,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3089,
+      "output_tokens": 3664,
+      "cost_usd": 0.028162,
+      "latency_s": 37.98,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1208,
+      "output_tokens": 2031,
+      "cost_usd": 0.014602,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2047,
+      "output_tokens": 1082,
+      "cost_usd": 0.010586,
+      "latency_s": 13.89,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 976,
+      "output_tokens": 1235,
+      "cost_usd": 0.009362,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2576,
+      "output_tokens": 788,
+      "cost_usd": 0.00988,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 941,
+      "output_tokens": 909,
+      "cost_usd": 0.007336,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2785,
+      "output_tokens": 558,
+      "cost_usd": 0.008918,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2963,
+      "output_tokens": 881,
+      "cost_usd": 0.011212,
+      "latency_s": 40.0,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1438,
+      "output_tokens": 930,
+      "cost_usd": 0.008456,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2477,
+      "output_tokens": 1278,
+      "cost_usd": 0.012622,
+      "latency_s": 27.01,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 977,
+      "output_tokens": 1385,
+      "cost_usd": 0.010264,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1004,
+      "output_tokens": 1226,
+      "cost_usd": 0.009364,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2133,
+      "output_tokens": 2514,
+      "cost_usd": 0.01935,
+      "latency_s": 19.48,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2844,
+      "output_tokens": 1348,
+      "cost_usd": 0.013776,
+      "latency_s": 14.51,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5544,
+      "output_tokens": 1808,
+      "cost_usd": 0.021936,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1012,
+      "output_tokens": 1710,
+      "cost_usd": 0.012284,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 975,
+      "output_tokens": 1183,
+      "cost_usd": 0.009048,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5188,
+      "output_tokens": 2007,
+      "cost_usd": 0.022418,
+      "latency_s": 30.64,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2508,
+      "output_tokens": 2573,
+      "cost_usd": 0.020454,
+      "latency_s": 32.45,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3274,
+      "output_tokens": 945,
+      "cost_usd": 0.012218,
+      "latency_s": 14.59,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 974,
+      "output_tokens": 1436,
+      "cost_usd": 0.010564,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1214,
+      "output_tokens": 1380,
+      "cost_usd": 0.010708,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1217,
+      "output_tokens": 1555,
+      "cost_usd": 0.011764,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2816,
+      "output_tokens": 906,
+      "cost_usd": 0.011068,
+      "latency_s": 13.3,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5261,
+      "output_tokens": 794,
+      "cost_usd": 0.015286,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 975,
+      "output_tokens": 1304,
+      "cost_usd": 0.009774,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3162,
+      "output_tokens": 5449,
+      "cost_usd": 0.039018,
+      "latency_s": 26.92,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4918,
+      "output_tokens": 1877,
+      "cost_usd": 0.021098,
+      "latency_s": 17.79,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2765,
+      "output_tokens": 779,
+      "cost_usd": 0.010204,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1010,
+      "output_tokens": 995,
+      "cost_usd": 0.00799,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1006,
+      "output_tokens": 1752,
+      "cost_usd": 0.012524,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3202,
+      "output_tokens": 1174,
+      "cost_usd": 0.013448,
+      "latency_s": 16.4,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4963,
+      "output_tokens": 1172,
+      "cost_usd": 0.016958,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3518,
+      "output_tokens": 1378,
+      "cost_usd": 0.015304,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 982,
+      "output_tokens": 1034,
+      "cost_usd": 0.008168,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5264,
+      "output_tokens": 1540,
+      "cost_usd": 0.019768,
+      "latency_s": 10.9,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3082,
+      "output_tokens": 1419,
+      "cost_usd": 0.014678,
+      "latency_s": 15.56,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2075,
+      "output_tokens": 902,
+      "cost_usd": 0.009562,
+      "latency_s": 14.12,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1089,
+      "output_tokens": 1689,
+      "cost_usd": 0.012312,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 973,
+      "output_tokens": 1868,
+      "cost_usd": 0.013154,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1002,
+      "output_tokens": 1079,
+      "cost_usd": 0.008478,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3581,
+      "output_tokens": 1661,
+      "cost_usd": 0.017128,
+      "latency_s": 15.13,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2910,
+      "output_tokens": 874,
+      "cost_usd": 0.011064,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1864,
+      "output_tokens": 840,
+      "cost_usd": 0.008768,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1029,
+      "output_tokens": 1421,
+      "cost_usd": 0.010584,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3260,
+      "output_tokens": 4434,
+      "cost_usd": 0.033124,
+      "latency_s": 26.64,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2406,
+      "output_tokens": 5641,
+      "cost_usd": 0.038658,
+      "latency_s": 31.28,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1132,
+      "output_tokens": 1106,
+      "cost_usd": 0.0089,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5574,
+      "output_tokens": 948,
+      "cost_usd": 0.016836,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1040,
+      "output_tokens": 1550,
+      "cost_usd": 0.01138,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5150,
+      "output_tokens": 925,
+      "cost_usd": 0.01585,
+      "latency_s": 4.9,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2589,
+      "output_tokens": 775,
+      "cost_usd": 0.009828,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 964,
+      "output_tokens": 949,
+      "cost_usd": 0.007622,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3291,
+      "output_tokens": 2601,
+      "cost_usd": 0.022188,
+      "latency_s": 34.12,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3073,
+      "output_tokens": 957,
+      "cost_usd": 0.011888,
+      "latency_s": 45.27,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 999,
+      "output_tokens": 2414,
+      "cost_usd": 0.016482,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2924,
+      "output_tokens": 1094,
+      "cost_usd": 0.012412,
+      "latency_s": 31.18,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 978,
+      "output_tokens": 1369,
+      "cost_usd": 0.01017,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2626,
+      "output_tokens": 791,
+      "cost_usd": 0.009998,
+      "latency_s": 10.11,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 987,
+      "output_tokens": 1563,
+      "cost_usd": 0.011352,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5040,
+      "output_tokens": 2161,
+      "cost_usd": 0.023046,
+      "latency_s": 17.34,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2048,
+      "output_tokens": 1419,
+      "cost_usd": 0.01261,
+      "latency_s": 15.18,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 960,
+      "output_tokens": 1179,
+      "cost_usd": 0.008994,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 980,
+      "output_tokens": 1271,
+      "cost_usd": 0.009586,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 941,
+      "output_tokens": 952,
+      "cost_usd": 0.007594,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2401,
+      "output_tokens": 1946,
+      "cost_usd": 0.016478,
+      "latency_s": 17.09,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1831,
+      "output_tokens": 1137,
+      "cost_usd": 0.010484,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2420,
+      "output_tokens": 801,
+      "cost_usd": 0.009646,
+      "latency_s": 14.72,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2451,
+      "output_tokens": 742,
+      "cost_usd": 0.009354,
+      "latency_s": 14.22,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 982,
+      "output_tokens": 1593,
+      "cost_usd": 0.011522,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 962,
+      "output_tokens": 1243,
+      "cost_usd": 0.009382,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 982,
+      "output_tokens": 1326,
+      "cost_usd": 0.00992,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2121,
+      "output_tokens": 1055,
+      "cost_usd": 0.010572,
+      "latency_s": 13.31,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2676,
+      "output_tokens": 771,
+      "cost_usd": 0.009978,
+      "latency_s": 13.7,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2494,
+      "output_tokens": 910,
+      "cost_usd": 0.010448,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1044,
+      "output_tokens": 1561,
+      "cost_usd": 0.011454,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3039,
+      "output_tokens": 1822,
+      "cost_usd": 0.01701,
+      "latency_s": 13.2,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5581,
+      "output_tokens": 1740,
+      "cost_usd": 0.021602,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 973,
+      "output_tokens": 1416,
+      "cost_usd": 0.010442,
+      "problem": null
+    },
+    {
+      "task": "infringed_passages",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 832,
+      "output_tokens": 1050,
+      "cost_usd": 0.007964,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2160,
+      "output_tokens": 1023,
+      "cost_usd": 0.010458,
+      "latency_s": 43.61,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5205,
+      "output_tokens": 3249,
+      "cost_usd": 0.029904,
+      "latency_s": 65.58,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1000,
+      "output_tokens": 1344,
+      "cost_usd": 0.010064,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 982,
+      "output_tokens": 952,
+      "cost_usd": 0.007676,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3618,
+      "output_tokens": 2036,
+      "cost_usd": 0.019452,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2371,
+      "output_tokens": 1204,
+      "cost_usd": 0.011966,
+      "latency_s": 30.72,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4022,
+      "output_tokens": 909,
+      "cost_usd": 0.013498,
+      "latency_s": 6.96,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 945,
+      "output_tokens": 621,
+      "cost_usd": 0.005616,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 985,
+      "output_tokens": 2182,
+      "cost_usd": 0.015062,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2539,
+      "output_tokens": 823,
+      "cost_usd": 0.010016,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2763,
+      "output_tokens": 1039,
+      "cost_usd": 0.01176,
+      "latency_s": 11.47,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3019,
+      "output_tokens": 3031,
+      "cost_usd": 0.024224,
+      "latency_s": 22.15,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1007,
+      "output_tokens": 1211,
+      "cost_usd": 0.00928,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1007,
+      "output_tokens": 875,
+      "cost_usd": 0.007264,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2625,
+      "output_tokens": 1034,
+      "cost_usd": 0.011454,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2268,
+      "output_tokens": 656,
+      "cost_usd": 0.008472,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2898,
+      "output_tokens": 1495,
+      "cost_usd": 0.014766,
+      "latency_s": 17.49,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2726,
+      "output_tokens": 888,
+      "cost_usd": 0.01078,
+      "latency_s": 15.7,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1005,
+      "output_tokens": 1171,
+      "cost_usd": 0.009036,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1029,
+      "output_tokens": 1744,
+      "cost_usd": 0.012522,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4502,
+      "output_tokens": 1095,
+      "cost_usd": 0.015574,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4171,
+      "output_tokens": 1030,
+      "cost_usd": 0.014522,
+      "latency_s": 12.94,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4134,
+      "output_tokens": 2128,
+      "cost_usd": 0.021036,
+      "latency_s": 18.2,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 994,
+      "output_tokens": 1731,
+      "cost_usd": 0.012374,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 986,
+      "output_tokens": 832,
+      "cost_usd": 0.006964,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3729,
+      "output_tokens": 631,
+      "cost_usd": 0.011244,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2507,
+      "output_tokens": 941,
+      "cost_usd": 0.01066,
+      "latency_s": 14.22,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 977,
+      "output_tokens": 1121,
+      "cost_usd": 0.00868,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3288,
+      "output_tokens": 768,
+      "cost_usd": 0.011184,
+      "latency_s": 14.75,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2815,
+      "output_tokens": 1046,
+      "cost_usd": 0.011906,
+      "latency_s": 14.55,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1019,
+      "output_tokens": 1949,
+      "cost_usd": 0.013732,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 987,
+      "output_tokens": 1118,
+      "cost_usd": 0.008682,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3044,
+      "output_tokens": 845,
+      "cost_usd": 0.011158,
+      "latency_s": 12.55,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2173,
+      "output_tokens": 1317,
+      "cost_usd": 0.012248,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1011,
+      "output_tokens": 1495,
+      "cost_usd": 0.010992,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2552,
+      "output_tokens": 1624,
+      "cost_usd": 0.014848,
+      "latency_s": 30.77,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2372,
+      "output_tokens": 630,
+      "cost_usd": 0.008524,
+      "latency_s": 12.02,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 958,
+      "output_tokens": 1338,
+      "cost_usd": 0.009944,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1062,
+      "output_tokens": 1130,
+      "cost_usd": 0.008904,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4459,
+      "output_tokens": 1208,
+      "cost_usd": 0.016166,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2686,
+      "output_tokens": 864,
+      "cost_usd": 0.010556,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4123,
+      "output_tokens": 4498,
+      "cost_usd": 0.035234,
+      "latency_s": 25.83,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2916,
+      "output_tokens": 836,
+      "cost_usd": 0.010848,
+      "latency_s": 15.35,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1177,
+      "output_tokens": 992,
+      "cost_usd": 0.008306,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 941,
+      "output_tokens": 985,
+      "cost_usd": 0.007792,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3993,
+      "output_tokens": 782,
+      "cost_usd": 0.012678,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2036,
+      "output_tokens": 797,
+      "cost_usd": 0.008854,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3719,
+      "output_tokens": 3998,
+      "cost_usd": 0.031426,
+      "latency_s": 25.52,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1182,
+      "output_tokens": 1786,
+      "cost_usd": 0.01308,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2569,
+      "output_tokens": 4319,
+      "cost_usd": 0.031052,
+      "latency_s": 25.8,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 6063,
+      "output_tokens": 894,
+      "cost_usd": 0.01749,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1012,
+      "output_tokens": 1500,
+      "cost_usd": 0.011024,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5616,
+      "output_tokens": 4316,
+      "cost_usd": 0.037128,
+      "latency_s": 36.12,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3506,
+      "output_tokens": 954,
+      "cost_usd": 0.012736,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 943,
+      "output_tokens": 721,
+      "cost_usd": 0.006212,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3459,
+      "output_tokens": 780,
+      "cost_usd": 0.011598,
+      "latency_s": 9.82,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3667,
+      "output_tokens": 1643,
+      "cost_usd": 0.017192,
+      "latency_s": 27.52,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1077,
+      "output_tokens": 1073,
+      "cost_usd": 0.008592,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1089,
+      "output_tokens": 2233,
+      "cost_usd": 0.015576,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3689,
+      "output_tokens": 1190,
+      "cost_usd": 0.014518,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3090,
+      "output_tokens": 994,
+      "cost_usd": 0.012144,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3334,
+      "output_tokens": 5032,
+      "cost_usd": 0.03686,
+      "latency_s": 27.14,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3031,
+      "output_tokens": 2517,
+      "cost_usd": 0.021164,
+      "latency_s": 14.24,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 991,
+      "output_tokens": 1339,
+      "cost_usd": 0.010016,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1417,
+      "output_tokens": 1333,
+      "cost_usd": 0.010832,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2296,
+      "output_tokens": 988,
+      "cost_usd": 0.01052,
+      "latency_s": 14.24,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 6278,
+      "output_tokens": 1103,
+      "cost_usd": 0.019174,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 971,
+      "output_tokens": 1214,
+      "cost_usd": 0.009226,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5944,
+      "output_tokens": 1079,
+      "cost_usd": 0.018362,
+      "latency_s": 14.86,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3282,
+      "output_tokens": 896,
+      "cost_usd": 0.01194,
+      "latency_s": 44.33,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1028,
+      "output_tokens": 1513,
+      "cost_usd": 0.011134,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 956,
+      "output_tokens": 1903,
+      "cost_usd": 0.01333,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3357,
+      "output_tokens": 1632,
+      "cost_usd": 0.016506,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2649,
+      "output_tokens": 751,
+      "cost_usd": 0.009804,
+      "latency_s": 11.62,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 959,
+      "output_tokens": 1170,
+      "cost_usd": 0.008938,
+      "problem": null
+    },
+    {
+      "task": "infringed_passages",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 797,
+      "output_tokens": 1708,
+      "cost_usd": 0.011842,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3582,
+      "output_tokens": 731,
+      "cost_usd": 0.01155,
+      "latency_s": 12.44,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2437,
+      "output_tokens": 808,
+      "cost_usd": 0.009722,
+      "latency_s": 14.12,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 979,
+      "output_tokens": 2211,
+      "cost_usd": 0.015224,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 957,
+      "output_tokens": 1449,
+      "cost_usd": 0.010608,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2310,
+      "output_tokens": 1500,
+      "cost_usd": 0.01362,
+      "latency_s": 12.87,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2380,
+      "output_tokens": 758,
+      "cost_usd": 0.009308,
+      "latency_s": 13.63,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1138,
+      "output_tokens": 1135,
+      "cost_usd": 0.009086,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 953,
+      "output_tokens": 759,
+      "cost_usd": 0.00646,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5256,
+      "output_tokens": 1419,
+      "cost_usd": 0.019026,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2564,
+      "output_tokens": 2320,
+      "cost_usd": 0.019048,
+      "latency_s": 19.63,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 983,
+      "output_tokens": 875,
+      "cost_usd": 0.007216,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4963,
+      "output_tokens": 681,
+      "cost_usd": 0.014012,
+      "latency_s": 12.94,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5780,
+      "output_tokens": 883,
+      "cost_usd": 0.016858,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 976,
+      "output_tokens": 1081,
+      "cost_usd": 0.008438,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5353,
+      "output_tokens": 1776,
+      "cost_usd": 0.021362,
+      "latency_s": 47.92,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2252,
+      "output_tokens": 833,
+      "cost_usd": 0.009502,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1017,
+      "output_tokens": 1622,
+      "cost_usd": 0.011766,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2556,
+      "output_tokens": 1097,
+      "cost_usd": 0.011694,
+      "latency_s": 16.07,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3476,
+      "output_tokens": 734,
+      "cost_usd": 0.011356,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 951,
+      "output_tokens": 1024,
+      "cost_usd": 0.008046,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3327,
+      "output_tokens": 859,
+      "cost_usd": 0.011808,
+      "latency_s": 15.37,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3140,
+      "output_tokens": 1085,
+      "cost_usd": 0.01279,
+      "latency_s": 15.45,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 967,
+      "output_tokens": 1037,
+      "cost_usd": 0.008156,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 953,
+      "output_tokens": 665,
+      "cost_usd": 0.005896,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5082,
+      "output_tokens": 1130,
+      "cost_usd": 0.016944,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3421,
+      "output_tokens": 1098,
+      "cost_usd": 0.01343,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4799,
+      "output_tokens": 1835,
+      "cost_usd": 0.020608,
+      "latency_s": 17.04,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2861,
+      "output_tokens": 1091,
+      "cost_usd": 0.012268,
+      "latency_s": 9.91,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1301,
+      "output_tokens": 3877,
+      "cost_usd": 0.025864,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5881,
+      "output_tokens": 1501,
+      "cost_usd": 0.020768,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5241,
+      "output_tokens": 5509,
+      "cost_usd": 0.043536,
+      "latency_s": 43.02,
+      "credentials": "the fallback project",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1090,
+      "output_tokens": 2814,
+      "cost_usd": 0.019064,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 974,
+      "output_tokens": 1696,
+      "cost_usd": 0.012124,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1030,
+      "output_tokens": 1839,
+      "cost_usd": 0.013094,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 982,
+      "output_tokens": 1806,
+      "cost_usd": 0.0128,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1086,
+      "output_tokens": 3195,
+      "cost_usd": 0.021342,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1014,
+      "output_tokens": 2045,
+      "cost_usd": 0.014298,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 999,
+      "output_tokens": 2336,
+      "cost_usd": 0.016014,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1013,
+      "output_tokens": 2392,
+      "cost_usd": 0.016378,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 966,
+      "output_tokens": 1806,
+      "cost_usd": 0.012768,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 978,
+      "output_tokens": 2752,
+      "cost_usd": 0.018468,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4206,
+      "output_tokens": 1116,
+      "cost_usd": 0.015108,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4740,
+      "output_tokens": 1425,
+      "cost_usd": 0.01803,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2466,
+      "output_tokens": 1592,
+      "cost_usd": 0.014484,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 5185,
+      "output_tokens": 1304,
+      "cost_usd": 0.018194,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3609,
+      "output_tokens": 1315,
+      "cost_usd": 0.015108,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 4251,
+      "output_tokens": 993,
+      "cost_usd": 0.01446,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3792,
+      "output_tokens": 1033,
+      "cost_usd": 0.013782,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 2735,
+      "output_tokens": 1769,
+      "cost_usd": 0.016084,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 1800,
+      "output_tokens": 1109,
+      "cost_usd": 0.010254,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": true,
+      "input_tokens": 3917,
+      "output_tokens": 1401,
+      "cost_usd": 0.01624,
+      "problem": null
+    }
+  ],
+  "ended_utc": "2026-10-07T22:22:31.989+00:00",
+  "status": "ok",
+  "packages": [
+    "-e file://.",
+    "annotated-doc==0.0.5",
+    "annotated-types==0.8.0",
+    "anyio==4.15.1",
+    "certifi==2026.7.22",
+    "cffi==2.1.1",
+    "cfgv==3.5.0",
+    "charset-normalizer==3.5.1",
+    "click==8.5.0",
+    "cloudpickle==3.1.2",
+    "contourpy==1.4.0",
+    "cryptography==50.0.1",
+    "cycler==0.12.1",
+    "db-dtypes==1.7.1",
+    "defusedxml==0.7.1",
+    "distlib==0.4.3",
+    "distro==1.9.0",
+    "et-xmlfile==2.0.0",
+    "filelock==4.0.3",
+    "fonttools==4.66.1",
+    "fsspec==2026.9.0",
+    "google-api-core==2.39.0",
+    "google-auth==2.58.1",
+    "google-cloud-bigquery==3.45.2",
+    "google-cloud-core==2.7.0",
+    "google-crc32c==1.9.0",
+    "google-genai==1.55.0",
+    "google-resumable-media==2.10.2",
+    "googleapis-common-protos==1.75.4",
+    "grpcio-status==1.84.0",
+    "grpcio==1.84.0",
+    "h11==0.16.0",
+    "hf-xet==1.7.0",
+    "httpcore==1.0.9",
+    "httpx==0.28.1",
+    "huggingface-hub==1.33.0",
+    "identify==2.6.19",
+    "idna==3.20",
+    "iniconfig==2.3.0",
+    "jinja2==3.1.6",
+    "joblib==1.6.0",
+    "kiwisolver==1.5.1",
+    "krippendorff==0.9.0",
+    "markdown-it-py==4.2.0",
+    "markupsafe==3.0.4",
+    "matplotlib==3.11.2",
+    "mdurl==0.1.2",
+    "mpmath==1.3.0",
+    "narwhals==2.26.0",
+    "networkx==3.7",
+    "nltk==3.10.3",
+    "nodeenv==1.11.0",
+    "numpy==2.5.3",
+    "openpyxl==3.1.5",
+    "opentelemetry-api==1.45.0",
+    "packaging==26.3",
+    "pandas==3.0.6",
+    "pillow==12.3.0",
+    "platformdirs==4.11.15",
+    "pluggy==1.6.0",
+    "pre-commit==4.6.2",
+    "proto-plus==1.28.4",
+    "protobuf==7.36.2",
+    "pyarrow==25.0.1",
+    "pyasn1-modules==0.4.2",
+    "pyasn1==0.6.4",
+    "pycparser==3.0",
+    "pydantic-core==2.46.5",
+    "pydantic==2.13.5",
+    "pygments==2.21.0",
+    "pyparsing==3.3.3",
+    "pytest==9.1.1",
+    "python-dateutil==2.9.0.post0",
+    "python-discovery==1.6.1",
+    "python-dotenv==1.2.3",
+    "pyyaml==6.0.3",
+    "rank-bm25==0.2.2",
+    "regex==2026.9.29",
+    "requests==2.34.2",
+    "rich==15.0.0",
+    "safetensors==0.8.0",
+    "scikit-learn==1.9.1",
+    "scipy==1.18.1",
+    "sentence-transformers==6.1.0",
+    "setuptools==84.0.0",
+    "shellingham==1.5.4",
+    "six==1.17.0",
+    "sniffio==1.3.1",
+    "sympy==1.14.0",
+    "tenacity==9.1.4",
+    "threadpoolctl==3.7.0",
+    "tokenizers==0.23.2",
+    "torch==2.14.1",
+    "tqdm==4.70.1",
+    "transformers==5.19.0",
+    "typer==0.27.3",
+    "typing-extensions==4.16.0",
+    "typing-inspection==0.4.4",
+    "urllib3==2.8.0",
+    "virtualenv==21.12.1",
+    "websockets==15.0.1"
+  ]
+}

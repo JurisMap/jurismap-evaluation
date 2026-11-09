@@ -1,0 +1,52 @@
+# A1, Phase 4.1: the text and vector version 2 retrieves with (the author, 2026-10-09: the improvements
+# extend to retrieval). Phase 4 found that version 2's vectors (the compressed report) rank below
+# the same model on the full report under the legal-basis labels and above it under the category
+# labels, that the full report is truncated for 45% of the decisions, and that the compression
+# changes from run to run.
+# The selection rule below was written before any candidate of this file was scored.
+version: 1
+
+scope: v2                          # selection on the corpus version 2 serves (2,390 decisions); both scopes are reported
+current: compressed
+
+# Every candidate uses version 2's embedding model and settings (config/a1_methods.yaml, M4/M5).
+# A candidate's vector is the unit-length weighted sum of the unit-length vectors of its parts.
+parts:
+  compressed: {method: M4c}        # the Gemini 3.7 Flash compression alone (version 2 until v2.2; it was M4 when Phase 4.1 ran)
+  full: {method: M5}               # the full report in one call; the model reads its first 2,048 tokens
+  full_chunked: {method: M5c}      # the full report in chunks the model reads whole, pooled (scripts/55)
+candidates:
+  compressed: {compressed: 1.0}
+  full: {full: 1.0}
+  full_chunked: {full_chunked: 1.0}
+  fused_25: {full: 0.25, compressed: 0.75}
+  fused_50: {full: 0.5, compressed: 0.5}
+  fused_75: {full: 0.75, compressed: 0.25}
+  fused_chunked_25: {full_chunked: 0.25, compressed: 0.75}
+  fused_chunked_50: {full_chunked: 0.5, compressed: 0.5}
+  fused_chunked_75: {full_chunked: 0.75, compressed: 0.25}
+
+# Chunks: the report is cut at paragraph ends, then sentence ends, into pieces of at most
+# `max_chars` (about 1,500 tokens at 3.3 characters per token, under the model's 2,048). A
+# decision's vector is the mean of its chunk vectors weighted by chunk length.
+chunking:
+  max_chars: 5000
+
+# Not candidates: scored on the same queries for reference.
+references: [M3, M2, M1]           # version 1's method, BM25, TF-IDF
+
+# Queries are split by process group into a development half and a held-out half. Every decision
+# stays a candidate for every ranking. Only development queries take part in the selection.
+split:
+  development_share: 0.5
+
+# Selection. Score = mean over the two label families of the mean nDCG@10 of the family's
+# relevance definitions, on the development queries of `scope`. The candidate with the highest
+# score replaces the current vectors only if the bootstrap 95% interval of its paired score
+# difference to the current one is above zero; otherwise version 2 keeps its vectors.
+selection:
+  metric: nDCG@10
+  families:
+    legal_basis: [R-base]                    # primary relevance of A1
+    category: [R-cat, R-cat-mistral]         # the taxonomy as assigned by Gemini and, blind, by Mistral
+  bootstrap_resamples: 10000

@@ -1,0 +1,68 @@
+# USD per 1M tokens (output includes reasoning/thinking tokens). Every entry: source URL and read date.
+# "check" marks prices taken from a third-party calculator: confirm on
+# https://cloud.google.com/vertex-ai/generative-ai/pricing before Phase 9 (the page did not load).
+# Tried again on 2026-10-10, before Phase 6: Google's pricing page still returns no text to a
+# fetch, and the Cloud Billing catalogue API is not enabled in the project. Other third-party
+# listings give the same figures for Mistral Medium 3 and for Grok 4.20 reasoning on Vertex AI
+# (one lists 1.25 / 2.50 for Grok, attributed to another gateway). The entries stay unconfirmed.
+prices:
+  gemini-3.7-flash:
+    input: 0.75
+    output: 3.75
+    source: https://cloud.google.com/vertex-ai/generative-ai/pricing
+    retrieved: 2026-10-25         # Phase 9: Vertex AI page, read through a search engine's excerpt (a fetch returns no text);
+                                  # first read 2026-09-27 on https://ai.google.dev/gemini-api/docs/pricing, which no longer lists 3.7
+    note: introductory price through 2026-12-31; 1.50 / 7.50 from 2027-01-01 (Standard PayGo)
+  gemini-3.8-flash:
+    input: 0.75
+    output: 3.75
+    source: https://ai.google.dev/gemini-api/docs/pricing
+    retrieved: 2026-09-27
+    note: introductory price through 2026-12-31; 1.50 / 7.50 from 2027-01-01 (confirmed on the Gemini API page 2026-10-25)
+  xai/grok-4.20-reasoning:
+    input: 2.00
+    output: 6.00
+    source: https://www.getmaxim.ai/bifrost/llm-cost-calculator/provider/vertex_ai/model/grok-4.20-reasoning
+    retrieved: 2026-09-27
+    check: true
+  gpt-5.4:
+    input: 2.50
+    output: 15.00                # reasoning tokens are billed as output
+    source: https://www.azurespeed.com/AzureAiModelPricing/Models/openai-gpt-5-4
+    retrieved: 2026-10-11
+    check: true                  # third-party listing; the deployment type of the author's resource is not known here
+  mistral-medium-3:
+    input: 0.40
+    output: 2.00
+    source: https://www.getmaxim.ai/bifrost/llm-cost-calculator/provider/vertex_ai/model/mistral-medium-3
+    retrieved: 2026-09-27
+    check: true
+  # Embedding models: input only. Values of the implementation plan's budget; the Vertex pricing
+  # page did not load on 2026-10-07 either, so they are unconfirmed.
+  gemini-embedding-001:
+    input: 0.15                  # per 1M input tokens
+    output: 0.0
+    source: implementation plan, LLM budget (2026-09-27)
+    retrieved: 2026-10-07
+    check: true
+  text-multilingual-embedding-002:
+    input_per_million_chars: 0.025
+    source: implementation plan, LLM budget (2026-09-27)
+    retrieved: 2026-10-07
+    check: true
+
+# Grounding with Google Search (v2's legal searcher, defense full mode): billed per search query, not per
+# token; the grounded input tokens are not charged. The server does not record how many queries a draft
+# makes, so this price is stated beside the measured costs and is not in them.
+google_search_grounding:
+  usd_per_1000_queries: 14.0
+  free_queries_per_month: 5000      # shared across Gemini 3 models
+  source: https://cloud.google.com/vertex-ai/generative-ai/pricing
+  retrieved: 2026-10-25             # also https://ai.google.dev/gemini-api/docs/pricing (same rate)
+
+# Vertex AI Flex PayGo (Pre-GA): 50% below Standard PayGo for the Gemini models that support it (global
+# endpoint only). Applied to a call only when Vertex AI reports its traffic type as ON_DEMAND_FLEX.
+flex_discount:
+  share: 0.5
+  source: https://docs.cloud.google.com/vertex-ai/generative-ai/docs/flex-paygo
+  retrieved: 2026-10-19

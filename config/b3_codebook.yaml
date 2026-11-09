@@ -1,0 +1,64 @@
+# B3 codebook (plan B3, R1.4): themes for coding the experts' open answers.
+# Labels: the theme × expert matrix of the revision plan (2026-09-25). Definitions: approved by the author on
+# 2026-10-05, before any coding. The revision plan's first-pass assignments are deliberately not included
+# here, so they cannot bias the coding.
+status: approved         # approved 2026-10-05; a change to a definition needs a new version and new sheets
+approved: 2026-10-05
+version: 1
+
+themes:
+  - id: T01
+    label: Precedent identification or filtering valued
+    definition: The expert values finding, selecting or filtering relevant precedents with the tool.
+  - id: T02
+    label: Chatbot synthesis valued
+    definition: The expert values the chatbot's answers or summaries across decisions.
+  - id: T03
+    label: Domain specificity vs generic tools
+    definition: The expert contrasts the tool with general-purpose tools (search engines, generic chatbots) or stresses its focus on this domain.
+  - id: T04
+    label: Time saving
+    definition: The expert mentions saving time or effort in research or drafting.
+  - id: T05
+    label: Interface / UX needs work
+    definition: The expert criticises usability, layout, navigation or visual design, or asks for interface changes.
+  - id: T06
+    label: List or table view of precedents, clickable map
+    definition: The expert asks for a list or table of precedents, or for map points that can be clicked to open a decision.
+  - id: T07
+    label: Legislation or normative-act corpus
+    definition: The expert asks for legislation, regulations or other normative acts to be included or searchable.
+  - id: T08
+    label: Free-text or real-case seeded search
+    definition: The expert asks to search by free text or by uploading a real case to find similar decisions.
+  - id: T09
+    label: Trend or outcome prediction
+    definition: The expert asks for trends over time or for predictions of outcomes.
+  - id: T10
+    label: Regulatory change or knowledge-base staleness
+    definition: The expert raises changes in regulation or the risk that the corpus becomes outdated.
+  - id: T11
+    label: Market barrier (low fines, declining caseload)
+    definition: The expert doubts demand or adoption because of market conditions (for example low fines or fewer cases).
+  - id: T12
+    label: Extend to other regulators (ANS, CVM, BACEN)
+    definition: The expert suggests applying the tool to other regulators or domains.
+
+# How the questionnaire is read by scripts/31_b3_coding_sheet.py
+questionnaire:
+  sheet: 0                         # sheet index or name
+  respondent_ids: [E1, E2, E3, E4, E5]   # in row order, as in the B2 analysis (analysis/b2) and the paper
+  # Headers (or unique substrings) of the seven open questions, in order (columns 24-30 of the export).
+  # Listed explicitly: auto-detection (used when this list is empty) separates them from the Likert
+  # columns ("Concordo totalmente" = 19 characters) by one character only.
+  open_question_columns:
+    - "O que você qualifica como mais relevante nos cenários de uso 1 a 4?"
+    - "Quais potenciais melhorias você identifica nos cenários de uso 1 a 4?"
+    - "Qual(is) outro(s) cenários de uso ou visuais você gostaria de ver implementados no JurisMap?"
+    - "Quais barreiras você identifica para o uso do JurisMap?"
+    - "Que outras ferramentas você conhece e que executam funções similares?"
+    - "Quais as vantagens e desvantagens dessas ferramentas em relação ao JurisMap?"
+    - "Gostaria de deixar comentários finais?"
+  min_median_chars: 20
+  exclude_columns: [nome, name, e-mail, email, carimbo, timestamp, data/hora, cargo, instituição, instituicao]
+  segment: sentence                # sentence | answer: the unit that is coded

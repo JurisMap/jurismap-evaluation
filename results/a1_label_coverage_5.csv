@@ -1,0 +1,19 @@
+scope,label,decisions,with_label,share
+comparison_set,acordao_base filled,1503,1498,0.9967
+comparison_set,legal basis parsed (at least one provision),1503,1492,0.9927
+comparison_set,R-base key (a specific provision in the basis),1503,1384,0.9208
+comparison_set,infringed provision found in report or vote,1503,1011,0.6727
+comparison_set,R-base key or infringed provision,1503,1404,0.9341
+comparison_set,a specific provision cited in report or vote,1503,1349,0.8975
+comparison_set,acordao_penalidade filled,1503,1497,0.996
+comparison_set,penalty type,1503,1497,0.996
+comparison_set,outcome,1503,1503,1.0
+v2,acordao_base filled,2390,2378,0.995
+v2,legal basis parsed (at least one provision),2390,2370,0.9916
+v2,R-base key (a specific provision in the basis),2390,2216,0.9272
+v2,infringed provision found in report or vote,2390,1492,0.6243
+v2,R-base key or infringed provision,2390,2242,0.9381
+v2,a specific provision cited in report or vote,2390,2098,0.8778
+v2,acordao_penalidade filled,2390,2372,0.9925
+v2,penalty type,2390,2372,0.9925
+v2,outcome,2390,2390,1.0

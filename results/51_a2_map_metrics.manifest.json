@@ -1,0 +1,806 @@
+{
+  "run_id": "20261009T150713Z-b4e2b0c5",
+  "script": "51_a2_map_metrics",
+  "argv": [
+    "scripts/51_a2_map_metrics.py"
+  ],
+  "models": {
+    "M4": {
+      "label": "gemini-embedding-001, Gemini 3.7 Flash compression (version 2)",
+      "kind": "stored",
+      "column": "embedding_acordao_relatorio_compressed_v2",
+      "model": "gemini-embedding-001",
+      "dimensions": 3072,
+      "task_type": "SEMANTIC_SIMILARITY",
+      "text": "compressed_v2"
+    },
+    "M3": {
+      "label": "text-multilingual-embedding-002, full report (version 1)",
+      "kind": "vertex",
+      "model": "text-multilingual-embedding-002",
+      "dimensions": 768,
+      "task_type": "SEMANTIC_SIMILARITY",
+      "text": "report"
+    }
+  },
+  "params": {
+    "sets": {
+      "v1_comparison": {
+        "method": "M3",
+        "scope": "comparison_set",
+        "label": "Version 1 vectors, comparison set"
+      },
+      "v2_comparison": {
+        "method": "M4",
+        "scope": "comparison_set",
+        "label": "Version 2 vectors, comparison set"
+      },
+      "v2_full": {
+        "method": "M4",
+        "scope": "v2",
+        "label": "Version 2 vectors, all decisions"
+      }
+    },
+    "projections": {
+      "umap": {
+        "metric": "cosine",
+        "n_neighbors": [
+          5,
+          15,
+          30,
+          50
+        ],
+        "min_dist": [
+          0.0,
+          0.01,
+          0.1,
+          0.5
+        ]
+      },
+      "tsne": {
+        "perplexity": 30,
+        "metric": "cosine",
+        "neighbors": "exact"
+      },
+      "pacmap": {},
+      "pca": {}
+    },
+    "version_settings": {
+      "v1": {
+        "n_neighbors": 15,
+        "min_dist": 0.1
+      },
+      "v2": {
+        "n_neighbors": 30,
+        "min_dist": 0.01
+      }
+    },
+    "frozen": {
+      "column": "embedding_acordao_relatorio_compressed_2d_v2",
+      "sets": [
+        "v2_comparison",
+        "v2_full"
+      ]
+    },
+    "metrics": {
+      "neighbourhood_k": [
+        5,
+        10,
+        20,
+        50
+      ],
+      "jaccard_k": 10,
+      "distance_pairs": 100000,
+      "label_neighbours": 10,
+      "labels": {
+        "R-cat": "category",
+        "R-cat-mistral": "category_mistral",
+        "R-base": "base_key",
+        "R-prov": "text_primary"
+      },
+      "headline": [
+        "trustworthiness@10",
+        "continuity@10",
+        "knn_jaccard@10",
+        "distance_spearman"
+      ]
+    }
+  },
+  "seeds": {
+    "a2_projections": [
+      42,
+      20260926,
+      20260927,
+      20260928,
+      20260929
+    ],
+    "a2_distance_pairs": 20260926
+  },
+  "inputs": [
+    {
+      "path": "data/v2/corpus_v2_rebuilt_20260927.parquet",
+      "sha256": "457c735878dba8c12c845ccee7210c065efe08f7ab902c75fd01defc7ec957c1"
+    },
+    {
+      "path": "data/v2/a2_projections/v1_comparison_2.npz",
+      "sha256": "1172404c17ee321516f4094d2dabf49105def48e2f62dc2b28f02a2868273afb"
+    },
+    {
+      "path": "data/v2/a2_projections/v2_comparison_2.npz",
+      "sha256": "17f409de5ef9e05c8671bfb9141eb32f8b68c3fe4ca7eb92f6f0c4f36a204871"
+    },
+    {
+      "path": "data/v2/a2_projections/v2_full_2.npz",
+      "sha256": "accfeaa609db88fb81b66cc847152a66ce2872a8b9198abaf88b8fbc1940237a"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "results/a2_map_metrics.csv",
+      "sha256": "9c0b43522131fa7f0370829d9ea2660ea9e7c610bbc7bedf858d4b69c297caae",
+      "bytes": 124990
+    },
+    {
+      "path": "results/a2_seed_stability.csv",
+      "sha256": "3a157263cff54f3add8ec8e294b113a2de17b788b2b9910e4430d16355ffadb7",
+      "bytes": 6479
+    },
+    {
+      "path": "results/a2_map_summary.json",
+      "sha256": "be287ceaa605b0dbb28760137405c1bc647c7eaf9dc27f9dbba67da57806f724",
+      "bytes": 12979
+    },
+    {
+      "path": "data/v2/a2_runs/a2_metrics_by_seed.parquet",
+      "sha256": "2320aa57cf53025ca5d47e0804a76c88d81dd9d08af4d2d7617a7863c79e1f5e",
+      "bytes": 51834
+    },
+    {
+      "path": "results/figures/a2_trustworthiness_vs_k.pdf",
+      "sha256": "12db0d2654e0129f6923ec70f0bf50c42e304f209815e823ef1735e6849db0b4",
+      "bytes": 32797
+    },
+    {
+      "path": "results/figures/a2_umap_grid.pdf",
+      "sha256": "697fdfecb711b66932ec92c46421355cceaaa104753908972691883904ea289e",
+      "bytes": 28146
+    }
+  ],
+  "summary": {
+    "labels": {
+      "v1_comparison": {
+        "R-cat": {
+          "decisions": 1503,
+          "classes": 15
+        },
+        "R-cat-mistral": {
+          "decisions": 1503,
+          "classes": 15
+        },
+        "R-base": {
+          "decisions": 836,
+          "classes": 150
+        },
+        "R-prov": {
+          "decisions": 798,
+          "classes": 136
+        }
+      },
+      "v2_comparison": {
+        "R-cat": {
+          "decisions": 1503,
+          "classes": 15
+        },
+        "R-cat-mistral": {
+          "decisions": 1503,
+          "classes": 15
+        },
+        "R-base": {
+          "decisions": 836,
+          "classes": 150
+        },
+        "R-prov": {
+          "decisions": 798,
+          "classes": 136
+        }
+      },
+      "v2_full": {
+        "R-cat": {
+          "decisions": 2390,
+          "classes": 15
+        },
+        "R-cat-mistral": {
+          "decisions": 2390,
+          "classes": 15
+        },
+        "R-base": {
+          "decisions": 1417,
+          "classes": 225
+        },
+        "R-prov": {
+          "decisions": 1226,
+          "classes": 179
+        }
+      }
+    },
+    "umap_grid": {
+      "v1_comparison": {
+        "trustworthiness@10": {
+          "best": {
+            "projection": "umap_n15_d0",
+            "mean": 0.9052275907568615,
+            "sd": 0.0010637183376986637
+          },
+          "worst": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.8425751879993515
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank_of_16": 9,
+            "mean": 0.895577190716606,
+            "sd": 0.0033522149049588757,
+            "min": 0.8914715107599926,
+            "max": 0.89976801578915,
+            "below_best": 0.009650400040255525
+          },
+          "v2": {
+            "projection": "umap_n30_d0.01",
+            "rank_of_16": 6,
+            "mean": 0.9000295163175049,
+            "sd": 0.0020074406647081935,
+            "min": 0.8974564037191723,
+            "max": 0.9019846693168285,
+            "below_best": 0.005198074439356604
+          }
+        },
+        "continuity@10": {
+          "best": {
+            "projection": "umap_n15_d0.5",
+            "mean": 0.9236809026205293,
+            "sd": 0.000804666799016787
+          },
+          "worst": {
+            "projection": "umap_n5_d0.01",
+            "mean": 0.8875591025232449
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank_of_16": 6,
+            "mean": 0.9181186221394745,
+            "sd": 0.00030399068705331845,
+            "min": 0.9177281068115869,
+            "max": 0.9183747015772377,
+            "below_best": 0.005562280481054782
+          },
+          "v2": {
+            "projection": "umap_n30_d0.01",
+            "rank_of_16": 7,
+            "mean": 0.9171588833537406,
+            "sd": 0.0007501203375078804,
+            "min": 0.9165467384558614,
+            "max": 0.9184237687090804,
+            "below_best": 0.006522019266788637
+          }
+        },
+        "knn_jaccard@10": {
+          "best": {
+            "projection": "umap_n5_d0.01",
+            "mean": 0.22952439131814129,
+            "sd": 0.0017673873073791482
+          },
+          "worst": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.12541438803898403
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank_of_16": 6,
+            "mean": 0.2047716151595081,
+            "sd": 0.0029842059700864523,
+            "min": 0.20010875940039285,
+            "max": 0.20776984241386703,
+            "below_best": 0.024752776158633194
+          },
+          "v2": {
+            "projection": "umap_n30_d0.01",
+            "rank_of_16": 8,
+            "mean": 0.19504418332427947,
+            "sd": 0.0016311859687509888,
+            "min": 0.19228111208546625,
+            "max": 0.1965444574282626,
+            "below_best": 0.03448020799386181
+          }
+        },
+        "distance_spearman": {
+          "best": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.3705127350741509,
+            "sd": 0.0005901170359141826
+          },
+          "worst": {
+            "projection": "umap_n15_d0.01",
+            "mean": 0.31356327975373743
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank_of_16": 11,
+            "mean": 0.32293126785095444,
+            "sd": 0.013837219600513949,
+            "min": 0.31180537737778535,
+            "max": 0.3453189195070797,
+            "below_best": 0.04758146722319645
+          },
+          "v2": {
+            "projection": "umap_n30_d0.01",
+            "rank_of_16": 10,
+            "mean": 0.32716126381646204,
+            "sd": 0.0073665803740188005,
+            "min": 0.3160604577445175,
+            "max": 0.33348422832093855,
+            "below_best": 0.043351471257688845
+          }
+        }
+      },
+      "v2_comparison": {
+        "trustworthiness@10": {
+          "best": {
+            "projection": "umap_n15_d0.01",
+            "mean": 0.933068862834555,
+            "sd": 0.0014817688374139692
+          },
+          "worst": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.882509490822277
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank_of_16": 7,
+            "mean": 0.9262982427302259,
+            "sd": 0.0023860731880378755,
+            "min": 0.9228041619841549,
+            "max": 0.92885028821908,
+            "below_best": 0.006770620104329161
+          },
+          "v2": {
+            "projection": "umap_n30_d0.01",
+            "rank_of_16": 8,
+            "mean": 0.9257255483430897,
+            "sd": 0.0010453764221267246,
+            "min": 0.9246529238441884,
+            "max": 0.9269666828807371,
+            "below_best": 0.007343314491465303
+          }
+        },
+        "continuity@10": {
+          "best": {
+            "projection": "umap_n15_d0.5",
+            "mean": 0.9409467004366616,
+            "sd": 0.0003195454207701751
+          },
+          "worst": {
+            "projection": "umap_n5_d0",
+            "mean": 0.917800710064465
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank_of_16": 6,
+            "mean": 0.9338509490822278,
+            "sd": 0.0008611507001994278,
+            "min": 0.9323632622709762,
+            "max": 0.9345245419525096,
+            "below_best": 0.007095751354433855
+          },
+          "v2": {
+            "projection": "umap_n30_d0.01",
+            "rank_of_16": 9,
+            "mean": 0.9330091234897152,
+            "sd": 0.0005747661372777751,
+            "min": 0.9322171343587335,
+            "max": 0.933832368875694,
+            "below_best": 0.007937576946946412
+          }
+        },
+        "knn_jaccard@10": {
+          "best": {
+            "projection": "umap_n5_d0",
+            "mean": 0.25168759526545503,
+            "sd": 0.002087139975845667
+          },
+          "worst": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.1509893246580862
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank_of_16": 6,
+            "mean": 0.23644473654268303,
+            "sd": 0.004689679930357052,
+            "min": 0.23205335147240808,
+            "max": 0.24353970940982675,
+            "below_best": 0.015242858722772007
+          },
+          "v2": {
+            "projection": "umap_n30_d0.01",
+            "rank_of_16": 8,
+            "mean": 0.2192094341158442,
+            "sd": 0.003104342243949384,
+            "min": 0.21584140495543694,
+            "max": 0.22282803217837174,
+            "below_best": 0.03247816114961083
+          }
+        },
+        "distance_spearman": {
+          "best": {
+            "projection": "umap_n30_d0.5",
+            "mean": 0.40352786786891687,
+            "sd": 0.017271191332418025
+          },
+          "worst": {
+            "projection": "umap_n15_d0",
+            "mean": 0.3465565262375805
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank_of_16": 10,
+            "mean": 0.3646218652719134,
+            "sd": 0.010926793589592558,
+            "min": 0.35860947183498504,
+            "max": 0.3840085706655849,
+            "below_best": 0.03890600259700344
+          },
+          "v2": {
+            "projection": "umap_n30_d0.01",
+            "rank_of_16": 14,
+            "mean": 0.35529531110179197,
+            "sd": 0.01643406990877971,
+            "min": 0.3403236534303244,
+            "max": 0.3834369052095998,
+            "below_best": 0.0482325567671249
+          }
+        }
+      },
+      "v2_full": {
+        "trustworthiness@10": {
+          "best": {
+            "projection": "umap_n15_d0",
+            "mean": 0.9398146766859528,
+            "sd": 0.0015562748410553452
+          },
+          "worst": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.8851270763014633
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank_of_16": 6,
+            "mean": 0.9320364049335204,
+            "sd": 0.0022004345639628766,
+            "min": 0.9301615755265809,
+            "max": 0.935763935327499,
+            "below_best": 0.0077782717524323974
+          },
+          "v2": {
+            "projection": "umap_n30_d0.01",
+            "rank_of_16": 8,
+            "mean": 0.9313039503581904,
+            "sd": 0.0015690755226547741,
+            "min": 0.9295009828098583,
+            "max": 0.9330771067416967,
+            "below_best": 0.008510726327762397
+          }
+        },
+        "continuity@10": {
+          "best": {
+            "projection": "umap_n30_d0.5",
+            "mean": 0.9466047959006565,
+            "sd": 0.000459638323371394
+          },
+          "worst": {
+            "projection": "umap_n5_d0.01",
+            "mean": 0.9184417278775271
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank_of_16": 6,
+            "mean": 0.9413124101880952,
+            "sd": 0.0003976003611844879,
+            "min": 0.9408207849967973,
+            "max": 0.9417661855259553,
+            "below_best": 0.005292385712561298
+          },
+          "v2": {
+            "projection": "umap_n30_d0.01",
+            "rank_of_16": 9,
+            "mean": 0.939282156736807,
+            "sd": 0.0006402300963283881,
+            "min": 0.9386170530505872,
+            "max": 0.9400307486006744,
+            "below_best": 0.007322639163849454
+          }
+        },
+        "knn_jaccard@10": {
+          "best": {
+            "projection": "umap_n5_d0",
+            "mean": 0.23965295910986809,
+            "sd": 0.0010409186146502578
+          },
+          "worst": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.13768343651920734
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank_of_16": 6,
+            "mean": 0.22027296506376004,
+            "sd": 0.0029279778908392453,
+            "min": 0.21748226790229716,
+            "max": 0.22480414469902402,
+            "below_best": 0.019379994046108046
+          },
+          "v2": {
+            "projection": "umap_n30_d0.01",
+            "rank_of_16": 8,
+            "mean": 0.2035438469123716,
+            "sd": 0.0014769137291828149,
+            "min": 0.20124137517009003,
+            "max": 0.20513301602689793,
+            "below_best": 0.03610911219749649
+          }
+        },
+        "distance_spearman": {
+          "best": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.4071886177221125,
+            "sd": 0.006487478321801718
+          },
+          "worst": {
+            "projection": "umap_n5_d0.01",
+            "mean": 0.3554493097217026
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank_of_16": 4,
+            "mean": 0.38191162265647205,
+            "sd": 0.004676250911238328,
+            "min": 0.37539182951785527,
+            "max": 0.38644686447583676,
+            "below_best": 0.025276995065640462
+          },
+          "v2": {
+            "projection": "umap_n30_d0.01",
+            "rank_of_16": 13,
+            "mean": 0.36701573807724563,
+            "sd": 0.005022816310106216,
+            "min": 0.3591915332717552,
+            "max": 0.3728118150332972,
+            "below_best": 0.04017287964486688
+          }
+        }
+      }
+    },
+    "served_map_vs_refits_of_v2_setting": {
+      "v2_comparison": {
+        "42": {
+          "procrustes": 0.1240520858693229,
+          "map_knn_jaccard@10": 0.31185254009419916
+        },
+        "20260926": {
+          "procrustes": 0.5697763952817587,
+          "map_knn_jaccard@10": 0.3075524573704684
+        },
+        "20260927": {
+          "procrustes": 0.3252869789092448,
+          "map_knn_jaccard@10": 0.30552880344937094
+        },
+        "20260928": {
+          "procrustes": 0.31722127460701127,
+          "map_knn_jaccard@10": 0.3101045999320657
+        },
+        "20260929": {
+          "procrustes": 0.28370286646169995,
+          "map_knn_jaccard@10": 0.3121947071524696
+        }
+      },
+      "v2_full": {
+        "42": {
+          "procrustes": 0.15943046019030205,
+          "map_knn_jaccard@10": 0.38644808078691517
+        },
+        "20260926": {
+          "procrustes": 0.1689418013007144,
+          "map_knn_jaccard@10": 0.3929836870385078
+        },
+        "20260927": {
+          "procrustes": 0.16112245374059533,
+          "map_knn_jaccard@10": 0.3727730629511139
+        },
+        "20260928": {
+          "procrustes": 0.12916327812933137,
+          "map_knn_jaccard@10": 0.35302257265772685
+        },
+        "20260929": {
+          "procrustes": 0.16226618030904894,
+          "map_knn_jaccard@10": 0.3799817715996453
+        }
+      }
+    },
+    "fits": {
+      "v1_comparison": 91,
+      "v2_comparison": 92,
+      "v2_full": 92
+    }
+  },
+  "started_utc": "2026-10-09T15:07:13.129+00:00",
+  "git": {
+    "eval": {
+      "path": ".",
+      "sha": "6e51596d0a8fbaa3cef578a2d3f69a6941f1af0a",
+      "branch": "feature/phase-5-a2-map-validation",
+      "tag": null,
+      "dirty": true
+    },
+    "backend": {
+      "path": "../app/backend",
+      "sha": "7cc61c2bba4a513fad3ac721828d4e728a8155c8",
+      "branch": "main",
+      "tag": null,
+      "dirty": false
+    },
+    "frontend_v2": {
+      "path": "../app/frontend/jurismap-react-app",
+      "sha": "e9a2483df1aff6e97c2e11571cecfcffc8e92596",
+      "branch": "main",
+      "tag": null,
+      "dirty": false
+    },
+    "frontend_v1": {
+      "path": "../frontend_old",
+      "sha": "8183c0da1c08d7793fddaaafb894ab61114c61b2",
+      "branch": "legacy/streamlit-v1",
+      "tag": null,
+      "dirty": true
+    },
+    "scrapers": {
+      "path": "../scrapers",
+      "sha": "69385a32283c7c70757ab8029c20a4994f1836d6",
+      "branch": "release/v2-iswa",
+      "tag": "v2.2-eval-frozen",
+      "dirty": false
+    }
+  },
+  "config_hash": {
+    "combined": "82a85969bf5fd655bf9e20e72ad443505583e69ea5815de4a5fa24b42c80b8e6",
+    "files": {
+      "a1_labels.yaml": "a5353d400fd3fc11373d08e9b9f286c515da0cecb5c5defca175af301cf9babd",
+      "a1_methods.yaml": "535de91768986fc25d6a98e33008f8fce0805ef4d7a72a2629cc5d97647463dc",
+      "a1_taxonomy.yaml": "bb7b0b24a51462e7ab95be6fffc793dddbb0fdc8c2258e44efa0b017e2d960e6",
+      "a2_map.yaml": "ccc8032474fd60ceb5686b46773434d2ff2cef3f44bd8d676bd1e4aafde702d6",
+      "b3_codebook.yaml": "b8a1f818413d9955a04f4becf2f53982549729afab61a305dd0a1d6658afd34a",
+      "models.yaml": "305fd59f788ee0768b91f436cf7cfeec519f83418cf6707893003353df39503f",
+      "paths.yaml": "61c3de817460329805badbdaac43b7f295fca5c7a966f1c32821a20e8048c94f",
+      "prices.yaml": "b11a8aab55cf4595efa54f4ea6781eb85d43306d3943921cd7d91b41334a1837",
+      "seeds.yaml": "c463e2b429985197f5d6352027afc06a0a6ef02453b4c97287e9d4aa3bbae493",
+      "v2.1_freeze.json": "e457af1b02bf6c631ea514ebd6fc25cd99a059704fa2d18f3888eb92119846de",
+      "v2.2_freeze.json": "37b912a3d2631129bb5fbdd6f05991ef59d426a7bf4c33e9e9ed9517322f28b5",
+      "v2_freeze.json": "c71f13f49d320ecec4c6003ff073c83ae60c99019ab0ea1d456116d4344fb3e3"
+    }
+  },
+  "python": {
+    "version": "3.12.3 (v3.12.3:f6650f9ad7, Apr  9 2024, 08:18:47) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "executable": ".venv/bin/python3",
+    "platform": "macOS-26.5.2-arm64-arm-64bit"
+  },
+  "ended_utc": "2026-10-09T15:09:29.426+00:00",
+  "status": "ok",
+  "packages": [
+    "-e file://.",
+    "annotated-doc==0.0.5",
+    "annotated-types==0.8.0",
+    "anyio==4.15.1",
+    "certifi==2026.7.22",
+    "cffi==2.1.1",
+    "cfgv==3.5.0",
+    "charset-normalizer==3.5.1",
+    "click==8.5.0",
+    "cloudpickle==3.1.2",
+    "contourpy==1.4.0",
+    "cryptography==50.0.1",
+    "cycler==0.12.1",
+    "db-dtypes==1.7.1",
+    "defusedxml==0.7.1",
+    "distlib==0.4.3",
+    "distro==1.9.0",
+    "et-xmlfile==2.0.0",
+    "faiss-cpu==1.15.1",
+    "filelock==4.0.3",
+    "fonttools==4.66.1",
+    "fsspec==2026.9.0",
+    "google-api-core==2.39.0",
+    "google-auth==2.58.1",
+    "google-cloud-bigquery==3.45.2",
+    "google-cloud-core==2.7.0",
+    "google-crc32c==1.9.0",
+    "google-genai==1.55.0",
+    "google-resumable-media==2.10.2",
+    "googleapis-common-protos==1.75.4",
+    "grpcio-status==1.84.0",
+    "grpcio==1.84.0",
+    "h11==0.16.0",
+    "hf-xet==1.7.0",
+    "httpcore==1.0.9",
+    "httpx==0.28.1",
+    "huggingface-hub==1.33.0",
+    "identify==2.6.19",
+    "idna==3.20",
+    "iniconfig==2.3.0",
+    "jinja2==3.1.6",
+    "joblib==1.6.0",
+    "kiwisolver==1.5.1",
+    "krippendorff==0.9.0",
+    "llvmlite==0.50.0",
+    "markdown-it-py==4.2.0",
+    "markupsafe==3.0.4",
+    "matplotlib==3.11.2",
+    "mdurl==0.1.2",
+    "mpmath==1.3.0",
+    "narwhals==2.26.0",
+    "networkx==3.7",
+    "nltk==3.10.3",
+    "nodeenv==1.11.0",
+    "numba==0.68.0",
+    "numpy==2.5.3",
+    "openpyxl==3.1.5",
+    "opentelemetry-api==1.45.0",
+    "opentsne==1.0.4",
+    "packaging==26.3",
+    "pacmap==0.9.1",
+    "pandas==3.0.6",
+    "pillow==12.3.0",
+    "platformdirs==4.11.15",
+    "pluggy==1.6.0",
+    "pre-commit==4.6.2",
+    "proto-plus==1.28.4",
+    "protobuf==7.36.2",
+    "pyarrow==25.0.1",
+    "pyasn1-modules==0.4.2",
+    "pyasn1==0.6.4",
+    "pycparser==3.0",
+    "pydantic-core==2.46.5",
+    "pydantic==2.13.5",
+    "pygments==2.21.0",
+    "pynndescent==0.6.0",
+    "pyparsing==3.3.3",
+    "pytest==9.1.1",
+    "python-dateutil==2.9.0.post0",
+    "python-discovery==1.6.1",
+    "python-dotenv==1.2.3",
+    "pyyaml==6.0.3",
+    "rank-bm25==0.2.2",
+    "regex==2026.9.29",
+    "requests==2.34.2",
+    "rich==15.0.0",
+    "safetensors==0.8.0",
+    "scikit-learn==1.9.1",
+    "scipy==1.18.1",
+    "sentence-transformers==6.1.0",
+    "setuptools==84.0.0",
+    "shellingham==1.5.4",
+    "six==1.17.0",
+    "sniffio==1.3.1",
+    "sympy==1.14.0",
+    "tenacity==9.1.4",
+    "threadpoolctl==3.7.0",
+    "tokenizers==0.23.2",
+    "torch==2.14.1",
+    "tqdm==4.70.1",
+    "transformers==5.19.0",
+    "typer==0.27.3",
+    "typing-extensions==4.16.0",
+    "typing-inspection==0.4.4",
+    "umap-learn==0.5.12",
+    "urllib3==2.8.0",
+    "virtualenv==21.12.1",
+    "websockets==15.0.1"
+  ]
+}

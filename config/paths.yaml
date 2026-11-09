@@ -1,0 +1,40 @@
+# Paths are relative to this repo unless absolute. `~` is expanded.
+repos:
+  eval: .
+  backend: ../app/backend
+  frontend_v2: ../app/frontend/jurismap-react-app
+  frontend_v1: ../frontend_old
+  scrapers: ../scrapers
+
+v1_tag: v1-expert-eval
+
+# Azure OpenAI deployment of judge A (endpoint and key; git-ignored, never printed or committed).
+azure_openai_env: .env
+
+# Primary Gemini credentials (service-account key, outside every repo; never copied or committed).
+# Gemini calls use it first and fall back to the fallback project's own credentials on errors.
+gemini_primary_credentials: ../primary-gemini-key.json
+
+corpus:
+  v2_joblib: ../app/backend/data_cleaned.joblib        # read-only, never overwrite
+  v1_joblib_git: {repo: backend, rev: v1-expert-eval, path: data_cleaned.joblib}
+  bigquery_table: your-gcp-project.crsnsp.scraper_output   # read-only
+
+data:
+  root: data
+  v1: data/v1
+  v2: data/v2
+  labels: data/labels
+  private: data/private
+  cache: data/cache
+  manifest: data/MANIFEST.csv
+
+results: results
+
+paper_folder: "<paper folder>"
+
+# SUSEP gold standard: copied (never moved) into data/private/ by scripts/01_stage_private.py.
+susep_sources:
+  - similarity_experts_evaluation.xlsm
+  - experts_evaluations_mean.xlsx
+  - data.csv

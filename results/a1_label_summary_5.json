@@ -1,0 +1,274 @@
+{
+  "labels_version": 1,
+  "labels_status": "approved",
+  "decisions": {
+    "comparison_set": 1503,
+    "v2": 2390
+  },
+  "relevance_definitions": {
+    "comparison_set": {
+      "R-base strict (identical specific provisions)": {
+        "decisions": 1503,
+        "queries_with_relevant": 824,
+        "share_queries_with_relevant": 0.5482,
+        "relevant_per_query_median": 8.0,
+        "relevant_per_query_mean": 22.25,
+        "relevant_pairs_share": 0.00812
+      },
+      "R-base relaxed (Jaccard >= 0.5 of the specific provisions)": {
+        "decisions": 1503,
+        "queries_with_relevant": 1078,
+        "share_queries_with_relevant": 0.7172,
+        "relevant_per_query_median": 10.0,
+        "relevant_per_query_mean": 27.13,
+        "relevant_pairs_share": 0.01295
+      },
+      "R-base as cited (identical provisions, generic and sanction articles kept)": {
+        "decisions": 1503,
+        "queries_with_relevant": 849,
+        "share_queries_with_relevant": 0.5649,
+        "relevant_per_query_median": 9.0,
+        "relevant_per_query_mean": 23.76,
+        "relevant_pairs_share": 0.00893
+      },
+      "R-prov (same primary infringed provision, or Jaccard >= 0.5 of the cited provisions)": {
+        "decisions": 1503,
+        "queries_with_relevant": 1042,
+        "share_queries_with_relevant": 0.6933,
+        "relevant_per_query_median": 7.0,
+        "relevant_per_query_mean": 18.25,
+        "relevant_pairs_share": 0.00842
+      }
+    },
+    "v2": {
+      "R-base strict (identical specific provisions)": {
+        "decisions": 2390,
+        "queries_with_relevant": 1381,
+        "share_queries_with_relevant": 0.5778,
+        "relevant_per_query_median": 11.0,
+        "relevant_per_query_mean": 33.98,
+        "relevant_pairs_share": 0.00822
+      },
+      "R-base relaxed (Jaccard >= 0.5 of the specific provisions)": {
+        "decisions": 2390,
+        "queries_with_relevant": 1780,
+        "share_queries_with_relevant": 0.7448,
+        "relevant_per_query_median": 15.0,
+        "relevant_per_query_mean": 38.32,
+        "relevant_pairs_share": 0.01194
+      },
+      "R-base as cited (identical provisions, generic and sanction articles kept)": {
+        "decisions": 2390,
+        "queries_with_relevant": 1411,
+        "share_queries_with_relevant": 0.5904,
+        "relevant_per_query_median": 11.0,
+        "relevant_per_query_mean": 33.74,
+        "relevant_pairs_share": 0.00834
+      },
+      "R-prov (same primary infringed provision, or Jaccard >= 0.5 of the cited provisions)": {
+        "decisions": 2390,
+        "queries_with_relevant": 1682,
+        "share_queries_with_relevant": 0.7038,
+        "relevant_per_query_median": 10.0,
+        "relevant_per_query_mean": 26.28,
+        "relevant_pairs_share": 0.00774
+      }
+    }
+  },
+  "agreement_text_vs_base": {
+    "development_sample": {
+      "decisions_with_base_key": 29,
+      "with_infringed_provision_in_text": 24,
+      "share_with_infringed_provision_in_text": 0.8276,
+      "primary_provision_is_in_base": 0.8333,
+      "any_infringed_provision_is_in_base": 1.0
+    },
+    "other_decisions": {
+      "decisions_with_base_key": 2187,
+      "with_infringed_provision_in_text": 1442,
+      "share_with_infringed_provision_in_text": 0.6594,
+      "primary_provision_is_in_base": 0.8828,
+      "any_infringed_provision_is_in_base": 0.9293
+    }
+  },
+  "distributions": {
+    "comparison_set": {
+      "distinct_base_provisions": 833,
+      "top_base_provisions": {
+        "DL73/1966:art88": 665,
+        "DL73/1966:art36": 96,
+        "CC:art757": 89,
+        "CIRC-SUSEP364/2008:art2": 83,
+        "CIRC-SUSEP256/2004:art33": 82,
+        "DL73/1966:art24": 71,
+        "CIRC-SUSEP517/2015:art110": 67,
+        "CIRC-SUSEP302/2005:art72": 61,
+        "CIRC-SUSEP320/2006:art4": 58,
+        "DL73/1966:art113": 54,
+        "DL73/1966:art84": 49,
+        "DL73/1966:art28": 41,
+        "CIRC-SUSEP364/2008:art6": 34,
+        "CIRC-SUSEP360/2008": 34,
+        "LC109/2001:art74": 32,
+        "CIRC-SUSEP517/2015:art125": 30,
+        "RES-CNSP107/2004:art6": 28,
+        "CIRC-SUSEP251/2004:art1": 27,
+        "CIRC-SUSEP74/1999:art2": 25,
+        "CIRC-SUSEP74/1999:art5": 25,
+        "DL73/1966:art9": 25,
+        "RES-CFC750/1993:art6": 24,
+        "RES-CNSP168/2007:art37": 24,
+        "CIRC-SUSEP340/2007:art6": 23,
+        "RES-CMN4444/2015:art1": 21
+      },
+      "distinct_base_keys": 698,
+      "base_keys_held_by_one_decision": 548,
+      "top_base_keys": {
+        "CIRC-SUSEP364/2008:art2": 69,
+        "CIRC-SUSEP256/2004:art33": 61,
+        "CC:art757|DL73/1966:art113|DL73/1966:art24": 54,
+        "CIRC-SUSEP517/2015:art110": 43,
+        "CIRC-SUSEP320/2006:art4": 39,
+        "CIRC-SUSEP302/2005:art72": 36,
+        "RES-CNSP168/2007:art37": 17,
+        "DL73/1966:art28|DL73/1966:art84|RES-CMN4444/2015:art1": 15,
+        "CC:art757|DL73/1966:art24": 15,
+        "CIRC-SUSEP364/2008:art6": 13,
+        "CIRC-SUSEP364/2008": 13,
+        "CIRC-SUSEP360/2008": 10,
+        "CIRC-SUSEP74/1999:art2|CIRC-SUSEP74/1999:art5|CIRC-SUSEP74/1999:art9": 10,
+        "LC109/2001:art6": 9,
+        "CIRC-SUSEP529/2016:art23": 9,
+        "CIRC-SUSEP340/2007:art6": 9,
+        "DL73/1966:art28|DL73/1966:art84|RES-CMN4993/2022:art1": 9,
+        "RES-CNSP321/2015:art111": 8,
+        "RES-CNSP107/2004:art3": 7,
+        "CIRC-SUSEP473/2013:art3": 7,
+        "DL73/1966:art84|RES-CMN3308/2005:art1": 7,
+        "CIRC-SUSEP517/2015:art110|LC126/2007:art21": 7,
+        "CIRC-SUSEP517/2015:art110|LC109/2001:art5": 7,
+        "CIRC-SUSEP477/2013": 7,
+        "CC:art757": 7
+      },
+      "penalty_key": {
+        "multa": 1312,
+        "advertencia": 110,
+        "multa+advertencia": 40,
+        "recomendacao": 14,
+        "(none)": 6,
+        "multa+inabilitacao": 6,
+        "multa+recomendacao": 5,
+        "multa+advertencia+recomendacao": 4,
+        "cancelamento_registro": 2,
+        "suspensao": 2,
+        "multa+suspensao": 1,
+        "advertencia+recomendacao": 1
+      },
+      "outcome": {
+        "parcialmente_provido": 715,
+        "nao_provido": 549,
+        "provido": 186,
+        "nao_conhecido": 50,
+        "extinto": 3
+      },
+      "process_groups": {
+        "groups": 1480,
+        "groups_with_several_decisions": 23,
+        "decisions_in_those_groups": 46,
+        "largest_group": 2
+      }
+    },
+    "v2": {
+      "distinct_base_provisions": 1153,
+      "top_base_provisions": {
+        "DL73/1966:art88": 1063,
+        "CC:art757": 135,
+        "DL73/1966:art36": 133,
+        "CIRC-SUSEP364/2008:art2": 126,
+        "CIRC-SUSEP256/2004:art33": 125,
+        "CIRC-SUSEP302/2005:art72": 122,
+        "DL73/1966:art24": 105,
+        "DL73/1966:art28": 100,
+        "DL73/1966:art84": 89,
+        "DL73/1966:art113": 88,
+        "RES-CMN3308/2005:art1": 83,
+        "CIRC-SUSEP517/2015:art110": 80,
+        "CIRC-SUSEP320/2006:art4": 63,
+        "CIRC-SUSEP360/2008": 53,
+        "CIRC-SUSEP364/2008:art6": 50,
+        "LC109/2001:art74": 43,
+        "RES-CFC750/1993:art6": 43,
+        "CIRC-SUSEP517/2015:art125": 38,
+        "CIRC-SUSEP364/2008": 37,
+        "LC109/2001:art9": 35,
+        "RES-CNSP107/2004:art6": 34,
+        "CIRC-SUSEP251/2004:art1": 34,
+        "CIRC-SUSEP74/1999:art2": 33,
+        "DL73/1966:art9": 33,
+        "DL73/1966:art127": 31
+      },
+      "distinct_base_keys": 1024,
+      "base_keys_held_by_one_decision": 799,
+      "top_base_keys": {
+        "CIRC-SUSEP364/2008:art2": 108,
+        "CIRC-SUSEP256/2004:art33": 92,
+        "CIRC-SUSEP302/2005:art72": 87,
+        "CC:art757|DL73/1966:art113|DL73/1966:art24": 86,
+        "CIRC-SUSEP517/2015:art110": 54,
+        "CIRC-SUSEP320/2006:art4": 43,
+        "CIRC-SUSEP364/2008": 36,
+        "DL73/1966:art28|RES-CMN3308/2005:art1": 34,
+        "LC109/2001:art9|RES-CMN3308/2005:art1": 22,
+        "RES-CNSP168/2007:art37": 21,
+        "CIRC-SUSEP364/2008:art6": 19,
+        "CC:art757|DL73/1966:art24": 16,
+        "DL73/1966:art28|DL73/1966:art84|RES-CMN4444/2015:art1": 16,
+        "CIRC-SUSEP360/2008": 14,
+        "DL73/1966:art84|RES-CMN3308/2005:art1": 13,
+        "CIRC-SUSEP74/1999:art2|CIRC-SUSEP74/1999:art5|CIRC-SUSEP74/1999:art9": 13,
+        "RES-CNSP273/2012:art7": 13,
+        "CIRC-SUSEP430/2012:art48": 12,
+        "LC109/2001:art6": 12,
+        "CPC:art485|CPC:art932|LEI9784/1999:art52|PORT-MF1387/2024:art17|RES-CNSP273/2012:art7": 12,
+        "DL73/1966:art28|DL73/1966:art84|RES-CMN4993/2022:art1": 11,
+        "CC:art757": 10,
+        "RES-CNSP107/2004:art3": 10,
+        "RES-CNSP98/2002:art9": 10,
+        "RES-CNSP103/2004:art1|RES-CNSP103/2004:art4": 10
+      },
+      "penalty_key": {
+        "multa": 1997,
+        "advertencia": 238,
+        "multa+advertencia": 57,
+        "recomendacao": 26,
+        "(none)": 18,
+        "multa+inabilitacao": 14,
+        "cancelamento_registro": 8,
+        "multa+recomendacao": 7,
+        "suspensao": 6,
+        "multa+advertencia+recomendacao": 5,
+        "multa+suspensao": 4,
+        "multa+cancelamento_registro": 2,
+        "recomendacao+suspensao": 2,
+        "advertencia+recomendacao": 2,
+        "destituicao": 1,
+        "multa+recomendacao+suspensao": 1,
+        "multa+suspensao+cancelamento_registro": 1,
+        "advertencia+suspensao": 1
+      },
+      "outcome": {
+        "parcialmente_provido": 979,
+        "nao_provido": 870,
+        "provido": 454,
+        "nao_conhecido": 83,
+        "extinto": 4
+      },
+      "process_groups": {
+        "groups": 2314,
+        "groups_with_several_decisions": 76,
+        "decisions_in_those_groups": 152,
+        "largest_group": 2
+      }
+    }
+  }
+}

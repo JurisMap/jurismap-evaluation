@@ -1,0 +1,317 @@
+# A4 drafting evaluation and ablation (implementation plan, Phase 8). Everything here is fixed before
+# the material it governs is generated. This first part covers task 1 (test notices) and the material
+# of task 5 (the appellant's real arguments and those the board accepted); the drafting conditions,
+# metrics and judging are added before any draft is generated.
+version: 1
+
+corpus: data/v2/corpus_v2_rebuilt_20261009.parquet   # v2.3 data, served by v2.6 (config/v2.6_freeze.json)
+
+# Decisions that may not be test notices: every decision used in Phases 6 and 7. Phase 6's case sets
+# (seeds and members, the development sets D1-D3 included), the decisions its out-of-set questions
+# ask about, and Phase 7's contexts. PHASE_7_SUMMARY.md counts 197 (Phase 6's first case-set file,
+# 77, plus Phase 7's 120); the full list is 225: Phase 6.1 added D2 and D3 (22 decisions), and 6
+# decisions are the subject of out-of-set questions. Phase 7 excluded all of them too (scripts/72).
+excluded_from:
+  case_sets: [data/v2/a3/case_sets.json, data/v2/a5/case_sets.json]   # newest version of each (all versions share their decisions)
+  outside_questions: [data/v2/a3_questions.jsonl, data/v2/a3/questions_draft.jsonl, data/v2/a3_dev/questions.jsonl]
+
+# Outvoted rapporteur (DECISIONS.md, 2026-10-18): in some decisions the dispositive (`acordao_acordao`)
+# lists the rapporteur among the outvoted ("Vencido(s) ... (Relator)"), so the rapporteur's vote
+# argues the losing position on at least one point. Detected by code (jm_eval.drafting.notices):
+# a "vencido(s)/vencida(s)" clause, up to its "que", ";" or the end of its sentence, that names the
+# Relator(a). It finds 255 decisions of the 2,390, the six the author found among them (earlier count: 236).
+outvoted:
+  exclude_from_test_notices: true   # confirmed by the author, 2026-10-18: the accepted argument (task 5) is read from the vote, which for these decisions holds the losing one
+
+# Test notices (task 1): 15 decisions, one per cell of 5 legal-basis keys x 3 outcomes. Each test
+# "notice" is a case document: the infraction notice (facts, dates, charged provisions) followed by
+# SUSEP's first-instance decision as far as the penalty and how it was set (the author, 2026-10-18: the
+# template appeals against that decision; without the penalty a draft cannot argue its dosimetry).
+# It holds nothing of the party's defence, SUSEP's answer to it, or anything after that decision.
+selection:
+  n_strata: 5                       # the 5 most frequent legal-basis keys of the Phase 4a labels (`base_key`)
+  outcomes: [Provido, Parcialmente provido, Não provido]   # "Não conhecido" and "Extinto" are procedural: no merits to argue
+  min_report_chars: 1500            # enough facts to reconstruct a notice
+  min_vote_chars: 1500              # enough reasoning to read the accepted argument from
+  seed: 20261018
+  # One decision per process: a later notice may not share a process with an earlier one.
+  # Drawn decisions found unusable on reading, each replaced by a draw of its own in the same cell
+  # (seeded by the seed and the notice's position), so that every other notice stays as drawn.
+  replaced:
+    440753cefcfb9b09: "Recurso 7355 (N04): the report is about the timeliness of a director's appeal and does not describe the infraction (the author, 2026-10-18)"
+
+# Material written by Mistral Medium 3 (never Gemini: ground rule 7; DECISIONS.md 2026-09-26 replaces
+# an Anthropic model with Mistral for test material). Each prompt stays under 8,000 estimated tokens
+# (config/a3_chatbot.yaml `max_prompt_tokens`, `chars_per_token`).
+material:
+  model: judge_b
+  rpm: 5                            # Mistral's 31,500 tokens a minute
+  rewrite_max_prompt_tokens: 12000  # scripts/81 only: the reviewer's comment and the rejected version are added (N10, 2026-10-19)
+  # What Mistral reads of a decision. A long text keeps its head and tail (cut in the middle, marked [...]).
+  notice_report_chars: {head: 8000, tail: 5000}
+  arguments_report_chars: {head: 7000, tail: 5000}
+  accepted_vote_chars: {head: 5000, tail: 5000}
+  dispositive_chars: 3000           # the dispositive is cut at its end when longer
+  arguments: {min: 2, max: 10}
+  # Argument lists extracted again with the rapporteur's vote as well (the author, 2026-10-18: N09 and N12,
+  # whose appeal points the report leaves out); shorter cuts keep the prompt under 8,000 tokens.
+  arguments_with_vote:
+    notices: [N09, N12]
+    report_chars: {head: 4500, tail: 3500}
+    vote_chars: {head: 4000, tail: 3000}
+  # Every step that reads a decision for what the board decided is given the dispositive and the
+  # outcome label, and is told that the vote may have been outvoted: the dispositive prevails.
+
+# Leakage check of each notice (task 1): the notice must not state the appellant's arguments.
+# Thresholds fixed before any notice is written. A notice is flagged when any of the appellant's
+# arguments (task 5 list) is
+#   - entailed by a sentence of the notice above `nli_threshold` (the Phase 6 NLI model and threshold), or
+#   - contained in the notice above `ngram_threshold`: the share of the argument's word 5-grams
+#     (accents, case and punctuation removed) found in the notice;
+# or when the notice contains a term of `forbidden_terms` (outcome, appeal or vote vocabulary), or a
+# money amount that can give away the appeal's outcome. Version 1 of that rule: an amount of the
+# council's dispositive that the report does not state. Version 2 (after the author's reading of N14, whose
+# SUSEP early figure of R$ 20.000,00 was also the amount the appeal granted): also any amount the
+# dispositive sets rather than keeps, whatever its source (scripts/81 applies it to every notice).
+# A flagged notice is written once more, with the flagged arguments named as content to leave out;
+# a notice still flagged after that goes to the author with the flag. The author reviews 5 notices (plan), drawn
+# at random with the seed, plus every notice still flagged.
+leakage:
+  nli_model: MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7
+  nli_threshold: 0.5
+  ngram: 5
+  ngram_threshold: 0.3
+  forbidden_terms:                  # matched on whole words, without accents, in lower case
+    - 'provid[oa]s?'
+    - 'provimento'
+    - 'improvid[oa]s?'
+    - 'recurso'
+    - 'recorrente'
+    - 'recorrid[oa]'
+    - 'relator[a]?'
+    - 'voto'
+    - 'crsnsp'
+    - 'conselho de recursos'
+    - 'acordao'
+    - 'aleg\w+'
+    - 'sustent\w+'
+    - 'defesa (apresentada|alegou|sustentou)'
+  rewrite_rounds: 1
+  review_sample: 5
+  review_seed: 20261018
+
+# The author's review (scripts/81): one pass once every row of the review sheet has a `hugo_notice_ok` mark.
+# A notice marked as rejected is written again from the author's comment (`hugo_comment`), with the rejected
+# version shown to the model; an argument list marked as rejected (`hugo_arguments_ok`) is extracted
+# again the same way, and the accepted arguments are read again from it. The leakage check (rule
+# version 2) runs on every notice; the rewritten notices and any notice it newly flags go back to the author.
+review:
+  sheet: results/a4_notices_review.xlsx       # newest version
+  accept: ['1', 'yes', 'y', 'sim', 's', 'ok', 'true']
+  reject: ['0', 'no', 'n', 'nao', 'não', 'false']
+  partly: ['partly', 'parcial', 'parcialmente']   # rewritten from the comment, as a rejection is
+  # The comments of the marked sheet (results/a4_notices_review_4.xlsx) start with "[LLM reviewer]": an
+  # LLM reviewer drafted the marks and comments, and the author reviewed them and adopted them as the author's own
+  # (2026-10-18). The tag is removed before a comment is shown to Mistral.
+  comment_tags: ['[LLM reviewer]']
+
+# Exact text edits to accepted notices, from the author's optional comments on the re-check sheet
+# (results/a4_notices_recheck_4.xlsx, all 7 rows accepted, 2026-10-18), worded from SUSEP's own text in
+# the report. Applied by scripts/82, which then freezes the notices: later steps load only the frozen set.
+hand_edits:
+  - notice: N05
+    old: "A exigência feita pela Companhia não está compreendida"
+    new: "A exigência feita pela Companhia (inscrição do veículo na BIN – Base de Índice Nacional, banco de dados do DENATRAN) não está compreendida"
+    reason: "the document no longer said what the insurer demanded (the author)"
+  - notice: N14
+    old: "A penalidade aplicada foi de multa no valor de R$ 50.000,00 (cinquenta mil reais). "
+    new: "A penalidade aplicada foi de multa no valor de R$ 50.000,00 (cinquenta mil reais). A pena base foi fixada em R$ 10.000,00. "
+    reason: "lets the reader redo the sum; SUSEP's figure, not the outcome (the author)"
+  # N10 (the author's review of the four notices not reviewed before, results/a4_notices_review_unreviewed.xlsx,
+  # 2026-10-19): rewritten from the author's comment by scripts/81, then completed by hand from the decision text:
+  # the co-appellant, his joint liability, the appeal's own list of points and the accepted arguments.
+  - notice: N10
+    old: "Autuada: Trust Assistência 24H Ltda."
+    new: "Autuados: Trust Assistência 24H Ltda. e seu administrador Samuel Cecílio Ferreira, este na condição de devedor solidário (§ 2º do art. 4º da Resolução CNSP nº 243/2011)."
+    reason: "the notice omitted the co-appellant, jointly liable for the fine (the author)"
+  - notice: N10
+    old: "fixou uma pena pecuniária de R$ 37.278,00 (trinta e sete mil, duzentos e setenta e oito reais)."
+    new: "fixou uma pena pecuniária de R$ 37.278,00 (trinta e sete mil, duzentos e setenta e oito reais), pela qual responde solidariamente o administrador Samuel Cecílio Ferreira (§ 2º do art. 4º da Resolução CNSP nº 243/2011)."
+    reason: "the joint liability is part of SUSEP's decision (the author)"
+  - notice: N10
+    arguments:
+      - "A recorrente alega ilegitimidade passiva, afirmando que a Trust é uma empresa limitada que presta serviços de assistência 24 horas a veículos automotores e atua como subestipulante de apólices de seguros coletivos, não como seguradora."
+      - "A recorrente argumenta que a Trust possibilita a seus clientes a adesão a um seguro coletivo oferecido pela Generali, e que a Sra. Roberta P. confirmou ter contratado o seguro de seu automóvel junto à Generali, estipulada pela Trust."
+      - "A recorrente alega que a Generali cancelou unilateralmente as apólices de seguro coletivas estipuladas pela GBA e pela Trust, de forma inesperada e com efeito retroativo, o que considera ilegal."
+      - "A recorrente afirma que o cancelamento das apólices pela Generali não seguiu o contrato, que previa uma notificação com antecedência mínima de 90 dias em caso de rescisão."
+      - "A recorrente argumenta que, mesmo após o cancelamento, a Generali continuou contratualmente responsável pelos sinistros e apólices emitidas até 16 de setembro de 2014, devido à cláusula contratual de 90 dias de antecedência."
+      - "A recorrente alega que a Trust não poderia ser responsabilizada, pois efetuou o pagamento ao segurado por ter sido enganada pela Generali, que responde a uma ação judicial para manter a vigência da apólice."
+      - "Os recorrentes alegam a prescrição da pretensão punitiva em cinco anos (art. 1º da Lei nº 9.873/1999), contada da denúncia de 24/02/2015, relativa ao roubo ocorrido em 12/05/2014."
+      - "Os recorrentes alegam que o Sr. Samuel não era o administrador da Trust na época dos fatos, não podendo ser responsabilizado solidariamente."
+      - "Os recorrentes argumentam que a responsabilidade solidária do administrador só foi instituída pela Lei nº 13.195/2015 (art. 113, § 1º, do Decreto-Lei nº 73/1966), não podendo ser aplicada retroativamente."
+      - "Os recorrentes pedem que a sanção não seja agravada em razão do recurso (art. 131, parágrafo único, da Resolução CNSP nº 243/2011)."
+      - "Os recorrentes requerem o recebimento do recurso no efeito suspensivo (art. 129, § 2º, da Resolução CNSP nº 243/2011)."
+    accepted: [1, 2]
+    reason: "the appeal's own points, from the decision report's list, with the accepted ones as the author read the decision (the infraction not proven: Trust only a sub-policyholder under a Generali group policy)"
+freeze:
+  record: results/a4_notices_freeze.json
+
+# Drafting runs (task 3). Each frozen notice is uploaded to the local v2.6 server as a user uploads a
+# case (a .txt file under a neutral name), with the fictitious template uploaded once per session.
+# Precedents: the app's 10 pre-selected decisions for the uploaded notice (v2.4), without the source
+# decision and the decisions of its process (the author, 2026-10-18). They are fixed at the notice's first
+# upload (data/v2/a4/precedents.json) and sent as the exact case set of every draft of that notice;
+# a notice whose source decision is among the 10 gets 9 (the pre-selection returns only 10).
+drafting:
+  tag: v2.6-eval-frozen
+  endpoint: /API_generate_defense
+  modes: [full, single_prompt, no_legal_search, no_precedents, no_template]
+  runs: 3                          # 15 notices x 5 modes x 3 runs = 225 drafts
+  template: Ficticious_Defense_Template.docx     # in config/paths.yaml repos.frontend_v1
+  upload_name: auto_de_infracao.txt
+  human_message: "Por favor, gere uma defesa jurídica para o caso apresentado."
+  skip_supervisor: true            # DECISIONS 2026-09-26 item 6: the supervisor's output does not reach the drafts
+  timeout_s: 1800
+  # Pilot (budget rule 2): one notice per legal-basis key (drawn with the seed), every mode, run 1:
+  # 25 drafts (11%). Its drafts are run 1 of their cells. Stop and report if the projection of the
+  # phase exceeds 150% of the plan's line ($82-87, of which drafting $64 Gemini and $5-10 web search).
+  pilot:
+    seed: 20261018
+    runs: [1]
+  budget:
+    plan_line_usd: 87
+    stop_ratio: 1.5
+
+# Automatic metrics (task 4). Template section coverage: a template section is present when a heading
+# of the draft (markdown heading, bold line, or numbered line in capitals) contains one of its names
+# (accents and case removed) or is close to the section's own name (difflib ratio >= 0.8). The names
+# other than the template's own were written after reading the headings of the 25 pilot drafts (part
+# of the evaluated set) and checked on the smoke-test drafts of the fictitious notice: plain synonyms,
+# fixed before any figure of the main run is computed.
+metrics:
+  template_sections:
+    "I – Preâmbulo": [preambulo, qualificacao]
+    "II – Da Tempestividade": [tempestividade]
+    "III – Dos Fatos": [fatos, fatica, fatico, historico]
+    "IV – Do Mérito": [merito]
+    "V – Da Conduta da Recorrente": [conduta]
+    "VI – Do Direito": [direito, fundamentacao juridica, fundamentos juridicos]
+    "VII – Da Jurisprudência": [jurisprudencia, precedentes]
+    "VIII – Dos Pedidos": [pedidos, requerimentos]
+  heading_ratio: 0.8
+
+# Statute validity (task 4): official texts of the main normative acts the drafts cite, downloaded once
+# and stored with their URL, date and hash (data/v2/a4/statutes/). Federal acts from Planalto (the
+# compiled text, which keeps revoked articles visible); CNSP resolutions and SUSEP circulars from
+# SUSEP's normative database (BNWeb API: every "Versão Original" and "Versão Compilada" attachment).
+# A cited article is "found" when the act's text has it, "in_range" when its number is below the act's
+# last article but the text was not read to have it (manual review), "beyond" when it is above the
+# last article; an act not listed here is "unknown_act" (manual review). The list starts from the acts
+# cited in the first 40 drafts and is completed from all 225 before any figure is computed.
+statutes:
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"
+  susep_api: https://www2.susep.gov.br/safe/scripts/bnweb/bnmapi.exe
+  acts:
+    DL73/1966:     {name: Decreto-Lei nº 73/1966, planalto: https://www.planalto.gov.br/ccivil_03/decreto-lei/del0073.htm}
+    L9784/1999:    {name: Lei nº 9.784/1999, planalto: https://www.planalto.gov.br/ccivil_03/leis/l9784.htm}
+    L9873/1999:    {name: Lei nº 9.873/1999, planalto: https://www.planalto.gov.br/ccivil_03/leis/l9873.htm}
+    CF/1988:       {name: Constituição Federal de 1988, planalto: https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm}
+    L10406/2002:   {name: Código Civil (Lei nº 10.406/2002), planalto: https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm}
+    DL4657/1942:   {name: LINDB (Decreto-Lei nº 4.657/1942), planalto: https://www.planalto.gov.br/ccivil_03/decreto-lei/del4657compilado.htm}
+    L6024/1974:    {name: Lei nº 6.024/1974, planalto: https://www.planalto.gov.br/ccivil_03/leis/l6024.htm}
+    LC126/2007:    {name: Lei Complementar nº 126/2007, planalto: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp126.htm}
+    LC109/2001:    {name: Lei Complementar nº 109/2001, planalto: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp109.htm}
+    L13195/2015:   {name: Lei nº 13.195/2015, planalto: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13195.htm}
+    L13655/2018:   {name: Lei nº 13.655/2018, planalto: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13655.htm}
+    L8078/1990:    {name: Código de Defesa do Consumidor (Lei nº 8.078/1990), planalto: https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm}
+    RES-CNSP243/2011: {name: Resolução CNSP nº 243/2011, susep_title: "RESOLUCAO CNSP n.º 243"}
+    RES-CNSP393/2020: {name: Resolução CNSP nº 393/2020, susep_title: "RESOLUCAO CNSP n.º 393"}
+    RES-CNSP331/2015: {name: Resolução CNSP nº 331/2015, susep_title: "RESOLUCAO CNSP n.º 331"}
+    RES-CNSP60/2001:  {name: Resolução CNSP nº 60/2001, susep_title: "RESOLUCAO CNSP n.º 60"}
+    RES-CNSP388/2020: {name: Resolução CNSP nº 388/2020, susep_title: "RESOLUCAO CNSP n.º 388"}
+    CIRC-SUSEP364/2008: {name: Circular SUSEP nº 364/2008, susep_title: "CIRCULAR SUSEP n.º 364"}
+    CIRC-SUSEP517/2015: {name: Circular SUSEP nº 517/2015, susep_title: "CIRCULAR SUSEP n.º 517"}
+    CIRC-SUSEP256/2004: {name: Circular SUSEP nº 256/2004, susep_title: "CIRCULAR SUSEP n.º 256"}
+    CIRC-SUSEP572/2018: {name: Circular SUSEP nº 572/2018, susep_title: "CIRCULAR SUSEP n.º 572"}
+    CIRC-SUSEP302/2005: {name: Circular SUSEP nº 302/2005, susep_title: "CIRCULAR SUSEP n.º 302"}
+    # Added after all 225 drafts were written (acts cited but not yet in the table; the CRSNSP's internal
+    # rules are not a numbered act and stay in manual review).
+    CIRC-SUSEP234/2003: {name: Circular SUSEP nº 234/2003, susep_title: "CIRCULAR SUSEP n.º 234"}
+    RES-CNSP117/2004:   {name: Resolução CNSP nº 117/2004, susep_title: "RESOLUCAO CNSP n.º 117"}
+    DEC60459/1967:  {name: Decreto nº 60.459/1967, planalto: https://www.planalto.gov.br/ccivil_03/decreto/antigos/d60459.htm}
+    DEC9003/2017:   {name: Decreto nº 9.003/2017, planalto: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/D9003.htm}
+    DEC9903/2019:   {name: Decreto nº 9.903/2019, planalto: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/D9903.htm}
+    DEC10016/2019:  {name: Decreto nº 10.016/2019, planalto: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/D10016.htm}
+    DEC10418/2020:  {name: Decreto nº 10.418/2020, planalto: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/D10418.htm}
+    DEC10428/2020:  {name: Decreto nº 10.428/2020, planalto: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/D10428.htm}
+    DEC10457/2020:  {name: Decreto nº 10.457/2020, planalto: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/D10457.htm}
+
+# Judging (tasks 4 to 6): two calls per draft and judge, blind to the condition (src/jm_eval/drafting/judging.py).
+#   rubric: the plan's five criteria (1-5) from the draft, the case document and the headnotes of the
+#     supplied precedents, plus the facts about the case that the draft adds to the case document
+#     (minus those the fact guard replaced or flagged: the invented facts the guard missed).
+#   arguments: for each real appellant argument, raised / partly / absent (recall; for granted appeals,
+#     whether the accepted argument was raised). Combined with the local NLI model (a sentence of the
+#     draft entails the argument above the threshold): an argument counts as raised when at least two
+#     of GPT-5.4, Mistral and the NLI model say so ("partly" counts as not raised; it is reported apart).
+# A draft is 6,000 to 9,000 tokens, so the prompts exceed the plan's 8,000: the limit is 16,000, as for
+# Phase 7's long inputs (to confirm with the author). Mistral is paced at 3 calls a minute (31,500 tokens a
+# minute). Prompts and answer checks were tried on the smoke-test drafts of the fictitious notice only
+# (ground rule 8), with an argument list written for it as development material.
+judging:
+  judges: [judge_a, judge_b]          # GPT-5.4 (reported) and Mistral Medium 3; alpha between them
+  separate: [judge_gemini]            # same family as the system: rubric only, reported separately
+  max_prompt_tokens: 16000            # confirmed by the author, 2026-10-18 (as in Phase 7)
+  rpm: {judge_a: 30, judge_b: 3, judge_gemini: 12}   # calls take 1-2 min (reasoning)
+  threads: {judge_a: 4, judge_b: 1, judge_gemini: 6}  # judge_a: 10 threads exceeded the Azure deployment's token rate (429, 2026-10-21)
+
+  nli_threshold: 0.5
+  development:
+    smoke_run: data/v2/smoke_20261010T105410Z
+    notice: Ficticious_Infraction_Notice_Drone_Association.docx
+    arguments:                        # written for the fictitious notice to try the prompt; not evaluated material
+      - "A recorrente alega que é associação civil sem fins lucrativos de ajuda mútua entre associados, e não seguradora, de modo que a proteção mutual não constitui contrato de seguro."
+      - "A recorrente invoca a liberdade constitucional de associação (art. 5º, XVII e XVIII, da Constituição Federal)."
+      - "A recorrente alega ausência de dolo ou má-fé e a boa-fé de seus dirigentes."
+      - "A recorrente sustenta que a multa é desproporcional e pede sua redução ou a conversão em advertência."
+      - "A recorrente alega nulidade do auto de infração por cerceamento de defesa."
+
+# Analysis (the author, 2026-10-18). The draft that cites its own source decision (found by the web search) is
+# counted as a failure mode and left out of argument recall and the rubric; a sensitivity check keeps it.
+# A lost draft is the worst outcome in the main Friedman analysis (rubric scores 1, recall 0, the user
+# receives nothing); a sensitivity analysis drops the incomplete blocks (notice x run with a lost draft).
+analysis:
+  leaked: [[N11, no_template, 2]]
+  lost_as_worst: true
+
+# Improvement round (the author, 2026-10-18): the fact controls of backend branch feature/fact_premises_guard
+# (premise_rule, case_facts, premise_check) tried alone and together against v2.6's behaviour on
+# development notices only (ground rule 8), in full mode, one run each; the arm is chosen by the rule
+# below, fixed before any development draft is scored; then a new freeze (v2.7) and Phase 8 again.
+improvement:
+  dev_notices:
+    n: 6                      # six distinct cells of the test notices' legal-basis key x outcome grid, at random (an empty cell is skipped)
+    seed: 20261019
+    # Excluded besides the Phases 6-7 decisions and outvoted rapporteurs: the 15 test notices and their processes.
+  arms:
+    baseline: []
+    premise_rule: [premise_rule]
+    case_facts: [case_facts]
+    premise_check: [premise_check]
+    all: [premise_rule, case_facts, premise_check]
+  mode: full
+  runs: 1
+  # Selection rule (fixed before scoring). Primary: the fewest estimated invented case facts per draft
+  # (GPT-5.4's added facts, classified by scripts/89's prompt, times the audited share per kind:
+  # invented 0.538, in_notice 0.083, assertion 0, procedural 0). An arm is eligible only if, against
+  # the baseline, its mean argument recall (majority of GPT-5.4, Mistral, NLI) drops by at most 0.10,
+  # its GPT-5.4 use of precedents and legal accuracy drop by at most 0.5 each, and its drafts carry at
+  # most 8 [VERIFICAR: ...] markers on average. Among eligible arms within 0.5 invented facts per draft
+  # of the best, the one with fewer controls (then lower cost) is chosen. Also reported, not decisive:
+  # the share of drafts asserting the past-offences claim as a fact.
+  selection:
+    audited_share: {invented: 0.538, in_notice: 0.083, assertion: 0.0, procedural: 0.0}
+    max_recall_drop: 0.10
+    max_rubric_drop: {use_of_precedents: 0.5, legal_accuracy: 0.5}
+    max_verify_markers: 8
+    tie_margin: 0.5

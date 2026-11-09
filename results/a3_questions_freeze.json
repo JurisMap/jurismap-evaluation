@@ -1,0 +1,22 @@
+{
+  "sha256": "ff4dd7b8527925601f3550357d45896030ff4bc7e25945b9f5061026bac76b8a",
+  "questions": 42,
+  "by_type": {
+    "templated": 24,
+    "open": 12,
+    "unanswerable": 6
+  },
+  "draft": "questions_draft_2.jsonl",
+  "checked_by_hugo": [
+    "S1-O2",
+    "S2-O2",
+    "S5-T1",
+    "S5-T2",
+    "S5-T3",
+    "S6-T1",
+    "S6-T2",
+    "S6-U1",
+    "S6-O2"
+  ],
+  "frozen_utc": "2026-10-11T17:51:11+00:00"
+}

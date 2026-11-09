@@ -1,0 +1,62 @@
+# A2 map validation: embedding sets, projections and metrics (implementation plan, Phase 5).
+# Every projection of a set is fitted on the same vectors and scored against the same
+# neighbourhoods of the original space (cosine distance).
+version: 1
+
+# Vectors come from the A1 benchmark (config/a1_methods.yaml): M3 is version 1's method, M4 is
+# version 2's. A projection is fitted on the decisions of its scope only.
+sets:
+  v1_comparison: {method: M3, scope: comparison_set, label: "Version 1 vectors, comparison set"}
+  v2_comparison: {method: M4, scope: comparison_set, label: "Version 2 vectors, comparison set"}
+  v2_full: {method: M4, scope: v2, label: "Version 2 vectors, all decisions"}
+
+# Seeds come from config/seeds.yaml (`a2_projections`, five; the first is production's 42).
+projections:
+  umap:                            # umap-learn, 2 components; everything else at its default
+    metric: cosine
+    n_neighbors: [5, 10, 15, 30, 50]   # 10 added with the v2.3 freeze (Phase 5.1)
+    min_dist: [0.0, 0.01, 0.1, 0.5]
+  tsne:                            # openTSNE defaults (PCA initialisation) with exact neighbours
+    perplexity: 30
+    metric: cosine
+    neighbors: exact
+  pacmap: {}                       # PaCMAP defaults (10 neighbours, PCA to 100 dimensions first, PCA initialisation)
+  pca: {}                          # the first two principal components; no seed (full SVD)
+
+# The settings of the two versions inside the UMAP grid. Until v2.2 version 2 used 30 / 0.01; since
+# v2.3 it uses 10 / 0 fitted for 2,000 epochs (Phase 5.1). The grid fits every setting with the
+# library's default number of epochs; the served map (`frozen`) is the 2,000-epoch fit itself.
+version_settings:
+  v1: {n_neighbors: 15, min_dist: 0.1}
+  v2: {n_neighbors: 10, min_dist: 0.0, n_epochs: 2000}
+
+# Version 2's map as served: the coordinates stored with the frozen corpus (fitted on all 2,390
+# decisions with seed 42, rows in acordao_hash order since v2.3). For the comparison set it is
+# restricted to those decisions.
+frozen:
+  column: embedding_acordao_relatorio_compressed_2d_v2
+  sets: [v2_comparison, v2_full]
+  # The served fit's inputs and output as the rebuild left them (embeddings_v2.npy, hashes_v2.txt
+  # for the row order, coords_v2.npy), and interpreters that have production's libraries: the
+  # scrapers environment fitted the map, the backend environment loads it and has exactly the
+  # pinned versions. scripts/52 refits the map from them to see what reproduces it.
+  rebuild: data/v2/rebuild_20261009     # v2.2: data/v2/rebuild_20260927
+  environments:
+    scrapers environment: ../scrapers/.venv/bin/python
+    backend environment: ../app/backend/.venv/bin/python
+
+# t-SNE, PaCMAP and PCA read unit-length vectors, so their Euclidean distances rank neighbours as
+# the cosine distance does. UMAP reads the stored vectors with the cosine metric, as production does.
+metrics:
+  neighbourhood_k: [5, 10, 20, 50]   # trustworthiness and continuity
+  jaccard_k: 10                      # overlap of the 10 nearest neighbours in the two spaces
+  distance_pairs: 100000             # Spearman correlation of pairwise distances on a sample of pairs
+  label_neighbours: 10               # share of the 10 nearest neighbours with the same label
+  # Labels whose classes are scored on the map and in the original space (silhouette; same-label
+  # neighbours). A decision counts when its class has at least two decisions in the scope.
+  labels:
+    R-cat: category                  # infraction category, Gemini 3.7 Flash
+    R-cat-mistral: category_mistral  # the same taxonomy, assigned blind by Mistral Medium 3
+    R-base: base_key                 # identical set of specific provisions of the legal basis
+    R-prov: text_primary             # the provision the report and vote name as infringed
+  headline: [trustworthiness@10, continuity@10, knn_jaccard@10, distance_spearman]

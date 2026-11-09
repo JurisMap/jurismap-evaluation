@@ -1,0 +1,80 @@
+# A6 latency and cost (implementation plan, Phase 9). Fixed before any measured call.
+version: 1
+
+# The system under test: backend `main` at tag v2.7 (c2980b8), the code deployed to production on
+# 2026-10-25 (v2.7-eval-frozen plus ABLATION_MODE=no_legal_search and the 600 s request timeouts,
+# which a local Flask server does not apply). Data of v2.3 (config/v2_server.env). Every model call
+# of the system runs on Standard PayGo, as in Phases 6 to 8 (judges only on Flex).
+system:
+  tag: v2.7
+  sha: c2980b8c86346d83c10ff28effc028b5be7311b3
+
+# One request at a time (single-user latency). A round sends, in this order: one map view, one case
+# upload, one chat question, then one draft of each defense arm, the arms' order rotating through
+# all six permutations so no arm always runs first or last. Interleaving keeps the conditions of
+# the arms the same (PHASE_8_SUMMARY, difference 8: v2.6 and v2.7 latencies of Phase 8 were taken
+# under different conditions).
+rounds: 30
+warmup_rounds: 3                 # after every server start; one defense per warm-up round (arms in turn)
+seed: 20260926
+
+endpoints:
+  map_view:
+    path: /API_plot_umap_embeddings
+    # The React frontend's request with no filter set (services/api.js getUmapEmbeddings): the first map
+    # every user sees. No model call.
+    body: {advogados: [], recorrentes: [], relatores: [], resultados: [], period_start: null, period_end: null,
+           titulo_keyword: "", ementa_keyword: "", ementa_search_mode: "Correspondência exata"}
+  case_upload:
+    # The user's case uploaded as a .txt file (no OCR), then the pre-selection read back, as the app does:
+    # compression, two embeddings, projection onto the map, the 10 most similar decisions.
+    paths: [/API_upload_case, /API_get_uploaded_case_data]
+    upload_name: auto_de_infracao.txt
+    # Round r uploads test notice (r - 1) mod 15 (data/v2/a4/notices_8.jsonl, frozen), the case of its drafts.
+  chat:
+    path: /API_chatbot
+    # 30 of the 42 frozen Phase 6 questions, drawn with the seed in proportion to their types; each with
+    # its case set as case_hashes and top_k 10 (config/a3_chatbot.yaml system). chat_strategy is not sent:
+    # the production default (quoted_full, v2.6).
+    sample: {templated: 17, unanswerable: 4, open: 9}
+    top_k: 10
+    context_mode: full_text
+    timeout_s: 900
+  defense:
+    path: /API_generate_defense
+    # The test notice of the round with its fixed Phase 8 precedents (data/v2/a4/precedents.json), the
+    # template uploaded once per server start, the supervisor skipped (EVAL_MODE=1; as in Phase 8, its
+    # clarification step needs a person). Rounds 1-15 and 16-30 go through the 15 notices twice.
+    template: Ficticious_Defense_Template.docx           # config/paths.yaml repos.frontend_v1
+    human_message: "Por favor, gere uma defesa jurídica para o caso apresentado."
+    skip_supervisor: true
+    timeout_s: 1800
+    arms:
+      # As deployed: no ablation_mode and no fact_controls sent, so the server's config/runtime.env
+      # applies (ABLATION_MODE=no_legal_search, FACT_CONTROLS=all three). The record's flags are checked.
+      v2.7_deployed: {body: {}, expect: {ablation_mode: no_legal_search, fact_controls: [premise_rule, case_facts, premise_check]}}
+      # The plan's "defense in full mode", v2.7.
+      v2.7_full: {body: {ablation_mode: full}, expect: {ablation_mode: full, fact_controls: [premise_rule, case_facts, premise_check]}}
+      # v2.6 in full mode: v2.7 with every fact control off, whose prompts are v2.6's byte for byte
+      # (PHASE_8_SUMMARY, "The improvement round"); same process and conditions as the v2.7 arms.
+      v2.6_full: {body: {ablation_mode: full, fact_controls: []}, expect: {ablation_mode: full, fact_controls: []}}
+
+analysis:
+  # Latency = the client's wall-clock time from sending the request to the end of the response (for the
+  # defense, the end of the event stream; for the upload, both requests). The server's own latency is
+  # reported beside it. Failed calls are reported, not dropped: they enter the latency percentiles with
+  # their time, and the success rate is given.
+  percentiles: [50, 95]          # numpy linear interpolation; with 30 calls p95 rests on the two slowest
+  bootstrap: {resamples: 10000, ci: 0.95}                # CI of the median
+  paired:                        # Wilcoxon signed-rank over the 30 rounds, Holm across the two contrasts
+    - [v2.7_full, v2.6_full]     # what the fact controls cost in time
+    - [v2.7_deployed, v2.7_full] # what dropping the legal search saves
+
+budget:
+  # The plan's line for Phase 9 is $15 for 30 full defenses, 30 chats and 30 uploads with warm-ups
+  # ($14 Gemini, $1 web search), of which the defenses are about $9. Two arms are added (difference 8 of
+  # PHASE_8_SUMMARY, accepted 2026-10-25, and the deployed configuration), so the line used here is
+  # $15 + 2 x $9 = $33. Budget rule 2: stop and report if the warm-up rounds project more than 150%.
+  plan_line_usd: 15
+  added_arms_usd: 18
+  stop_ratio: 1.5

@@ -1,0 +1,491 @@
+setting,k,context_mode,section,group,metric,rater,n,value,ci_low,ci_high,note
+k5,5,full_text,templated,all,accuracy,code,14,1.0,0.7847,1.0,14 of 14 correct
+k5,5,full_text,templated,all,mean_score,code,14,1.0,,,share of the gold items stated
+k5,5,full_text,templated,all,ambiguous_answers,code,14,0.0,,,gold value stated next to another value; scored 0
+k5,5,full_text,templated,appellant,accuracy,code,1,1.0,,,1 of 1 correct
+k5,5,full_text,templated,count,accuracy,code,3,1.0,,,3 of 3 correct
+k5,5,full_text,templated,lawyer,accuracy,code,3,1.0,,,3 of 3 correct
+k5,5,full_text,templated,legal_basis,accuracy,code,1,1.0,,,1 of 1 correct
+k5,5,full_text,templated,outcome,accuracy,code,2,1.0,,,2 of 2 correct
+k5,5,full_text,templated,penalty,accuracy,code,1,1.0,,,1 of 1 correct
+k5,5,full_text,templated,rapporteur,accuracy,code,1,1.0,,,1 of 1 correct
+k5,5,full_text,templated,session_date,accuracy,code,2,1.0,,,2 of 2 correct
+k5,5,full_text,citations,all,answers_citing_a_process_number,code,25,1.0,,,
+k5,5,full_text,citations,all,process_numbers_cited,code,25,87.0,,,
+k5,5,full_text,citations,all,process_numbers_supplied,code,87,87.0,,,
+k5,5,full_text,citations,all,process_numbers_in_question,code,87,0.0,,,
+k5,5,full_text,citations,all,process_numbers_in_context,code,87,0.0,,,
+k5,5,full_text,citations,all,process_numbers_unknown,code,87,0.0,,,
+k5,5,full_text,citations,all,answers_citing_only_supplied_decisions,code,25,1.0,0.8668,1.0,numbers named in the question count as supplied
+k5,5,full_text,citations,all,answers_with_an_unknown_process_number,code,25,0.0,0.0,0.1332,a number found neither in the set nor in its texts
+k5,5,full_text,miss_control,all,claims_not_found_by_a_judge,judge_a or judge_b,325,83.0,,,
+k5,5,full_text,miss_control,all,miss_rate,judge_a (full text),30,0.6667,0.4878,0.8077,20 of 30 re-judged claims are supported by the full decision; 1 contradicted
+k5,5,full_text,faithfulness,all,faithfulness,judge_a,325,0.7538,0.6713,0.8408,
+k5,5,full_text,faithfulness,all,contradiction_rate,judge_a,325,0.0338,0.0132,0.0571,
+k5,5,full_text,faithfulness,all,not_found_rate,judge_a,325,0.2123,,,
+k5,5,full_text,faithfulness,all,hallucination_rate,judge_a,11,0.9091,0.7273,1.0,answers with a contradicted or not-found claim.
+k5,5,full_text,faithfulness,all,answers_with_a_contradicted_claim,judge_a,11,0.5455,,,
+k5,5,full_text,faithfulness,all,faithfulness_corrected,judge_a,325,0.8913,,,after the retrieval-miss control.
+k5,5,full_text,faithfulness,all,contradiction_rate_corrected,judge_a,325,0.0338,,,after the retrieval-miss control.
+k5,5,full_text,faithfulness,all,hallucination_rate_corrected,judge_a,325,0.8305,,,after the retrieval-miss control.
+k5,5,full_text,faithfulness,S1,faithfulness,judge_a,39,0.5897,,,
+k5,5,full_text,faithfulness,S1,faithfulness_corrected,judge_a,39,0.8462,,,after the retrieval-miss control (overall miss rate).
+k5,5,full_text,faithfulness,S1,contradiction_rate,judge_a,39,0.0256,,,
+k5,5,full_text,faithfulness,S2,faithfulness,judge_a,55,0.8909,,,
+k5,5,full_text,faithfulness,S2,faithfulness_corrected,judge_a,55,0.9455,,,after the retrieval-miss control (overall miss rate).
+k5,5,full_text,faithfulness,S2,contradiction_rate,judge_a,55,0.0364,,,
+k5,5,full_text,faithfulness,S3,faithfulness,judge_a,77,0.7273,,,
+k5,5,full_text,faithfulness,S3,faithfulness_corrected,judge_a,77,0.8571,,,after the retrieval-miss control (overall miss rate).
+k5,5,full_text,faithfulness,S3,contradiction_rate,judge_a,77,0.039,,,
+k5,5,full_text,faithfulness,S4,faithfulness,judge_a,55,0.8727,,,
+k5,5,full_text,faithfulness,S4,faithfulness_corrected,judge_a,55,0.9455,,,after the retrieval-miss control (overall miss rate).
+k5,5,full_text,faithfulness,S4,contradiction_rate,judge_a,55,0.0,,,
+k5,5,full_text,faithfulness,S5,faithfulness,judge_a,22,0.5455,,,
+k5,5,full_text,faithfulness,S5,faithfulness_corrected,judge_a,22,0.7879,,,after the retrieval-miss control (overall miss rate).
+k5,5,full_text,faithfulness,S5,contradiction_rate,judge_a,22,0.1364,,,
+k5,5,full_text,faithfulness,S6,faithfulness,judge_a,77,0.7403,,,
+k5,5,full_text,faithfulness,S6,faithfulness_corrected,judge_a,77,0.9004,,,after the retrieval-miss control (overall miss rate).
+k5,5,full_text,faithfulness,S6,contradiction_rate,judge_a,77,0.026,,,
+k5,5,full_text,faithfulness,all,faithfulness,judge_b,325,0.8646,0.7889,0.9333,
+k5,5,full_text,faithfulness,all,contradiction_rate,judge_b,325,0.0062,0.0,0.0168,
+k5,5,full_text,faithfulness,all,not_found_rate,judge_b,325,0.1292,,,
+k5,5,full_text,faithfulness,all,hallucination_rate,judge_b,11,0.8182,0.5455,1.0,answers with a contradicted or not-found claim.
+k5,5,full_text,faithfulness,all,answers_with_a_contradicted_claim,judge_b,11,0.1818,,,
+k5,5,full_text,faithfulness,all,faithfulness_corrected,judge_b,325,0.9508,,,after the retrieval-miss control.
+k5,5,full_text,faithfulness,all,contradiction_rate_corrected,judge_b,325,0.0092,,,after the retrieval-miss control.
+k5,5,full_text,faithfulness,all,hallucination_rate_corrected,judge_b,325,0.5578,,,after the retrieval-miss control.
+k5,5,full_text,faithfulness,S1,faithfulness,judge_b,39,0.8205,,,
+k5,5,full_text,faithfulness,S1,faithfulness_corrected,judge_b,39,0.9402,,,after the retrieval-miss control (overall miss rate).
+k5,5,full_text,faithfulness,S1,contradiction_rate,judge_b,39,0.0256,,,
+k5,5,full_text,faithfulness,S2,faithfulness,judge_b,55,0.9636,,,
+k5,5,full_text,faithfulness,S2,faithfulness_corrected,judge_b,55,1.0,,,after the retrieval-miss control (overall miss rate).
+k5,5,full_text,faithfulness,S2,contradiction_rate,judge_b,55,0.0,,,
+k5,5,full_text,faithfulness,S3,faithfulness,judge_b,77,0.9221,,,
+k5,5,full_text,faithfulness,S3,faithfulness_corrected,judge_b,77,0.961,,,after the retrieval-miss control (overall miss rate).
+k5,5,full_text,faithfulness,S3,contradiction_rate,judge_b,77,0.0,,,
+k5,5,full_text,faithfulness,S4,faithfulness,judge_b,55,0.8909,,,
+k5,5,full_text,faithfulness,S4,faithfulness_corrected,judge_b,55,0.9515,,,after the retrieval-miss control (overall miss rate).
+k5,5,full_text,faithfulness,S4,contradiction_rate,judge_b,55,0.0,,,
+k5,5,full_text,faithfulness,S5,faithfulness,judge_b,22,0.5909,,,
+k5,5,full_text,faithfulness,S5,faithfulness_corrected,judge_b,22,0.8636,,,after the retrieval-miss control (overall miss rate).
+k5,5,full_text,faithfulness,S5,contradiction_rate,judge_b,22,0.0455,,,
+k5,5,full_text,faithfulness,S6,faithfulness,judge_b,77,0.8182,,,
+k5,5,full_text,faithfulness,S6,faithfulness_corrected,judge_b,77,0.9351,,,after the retrieval-miss control (overall miss rate).
+k5,5,full_text,faithfulness,S6,contradiction_rate,judge_b,77,0.0,,,
+k5,5,full_text,faithfulness,all,faithfulness_corrected_ci,judge_a,325,0.8913,0.8476,0.9344,after the retrieval-miss control; interval over resampled questions
+k5,5,full_text,faithfulness,all,unsupported_claims_per_answer,judge_a,11,3.2121,1.7576,4.8788,"claims not supported after the retrieval-miss control, per open answer"
+k5,5,full_text,faithfulness,all,faithfulness_corrected_ci,judge_b,325,0.9508,0.9219,0.9789,after the retrieval-miss control; interval over resampled questions
+k5,5,full_text,faithfulness,all,unsupported_claims_per_answer,judge_b,11,1.4545,0.6061,2.4545,"claims not supported after the retrieval-miss control, per open answer"
+k5,5,full_text,system,all,latency_s_median,,25,16.6349,,,
+k5,5,full_text,system,all,latency_s_p95,,25,41.2678,,,
+k5,5,full_text,system,all,prompt_tokens_median,,25,27466.0,,,
+k5,5,full_text,system,all,output_tokens_median,,25,2071.0,,,thinking included
+k5,5,full_text,system,all,cost_usd_per_answer,,25,0.0335,,,
+k5,5,full_text,system,open,latency_s_median,,11,29.9042,,,
+k5,5,full_text,system,open,latency_s_p95,,11,41.9759,,,
+k5,5,full_text,system,open,prompt_tokens_median,,11,27455.0,,,
+k5,5,full_text,system,open,output_tokens_median,,11,4373.0,,,thinking included
+k5,5,full_text,system,open,cost_usd_per_answer,,11,0.0405,,,
+k5,5,full_text,system,templated,latency_s_median,,14,8.8532,,,
+k5,5,full_text,system,templated,latency_s_p95,,14,21.3479,,,
+k5,5,full_text,system,templated,prompt_tokens_median,,14,27469.5,,,
+k5,5,full_text,system,templated,output_tokens_median,,14,859.0,,,thinking included
+k5,5,full_text,system,templated,cost_usd_per_answer,,14,0.028,,,
+k5,5,full_text,system,all,model_calls_served_by_the_primary_key,,50,1.0,,,
+k5,5,full_text,system,all,answers_needing_a_retry,,25,0.0,,,
+k5,5,full_text,system,all,answers_not_finished,,25,0.0,,,finish reason other than STOP (e.g. the output limit)
+k5,5,full_text,system,all,quote_check_removed_sentences,,25,6.0,,,in 3 answers
+k5,5,full_text,system,open,answer_chars_median,,11,4515.0,,,
+k5,5,full_text,faithfulness,all,claims_per_answer,,11,29.5455,,,
+k10,10,full_text,templated,all,accuracy,code,24,1.0,0.862,1.0,24 of 24 correct
+k10,10,full_text,templated,all,mean_score,code,24,1.0,,,share of the gold items stated
+k10,10,full_text,templated,all,ambiguous_answers,code,24,0.0,,,gold value stated next to another value; scored 0
+k10,10,full_text,templated,appellant,accuracy,code,3,1.0,,,3 of 3 correct
+k10,10,full_text,templated,count,accuracy,code,3,1.0,,,3 of 3 correct
+k10,10,full_text,templated,lawyer,accuracy,code,3,1.0,,,3 of 3 correct
+k10,10,full_text,templated,legal_basis,accuracy,code,3,1.0,,,3 of 3 correct
+k10,10,full_text,templated,outcome,accuracy,code,3,1.0,,,3 of 3 correct
+k10,10,full_text,templated,penalty,accuracy,code,3,1.0,,,3 of 3 correct
+k10,10,full_text,templated,rapporteur,accuracy,code,3,1.0,,,3 of 3 correct
+k10,10,full_text,templated,session_date,accuracy,code,3,1.0,,,3 of 3 correct
+k10,10,full_text,citations,all,answers_citing_a_process_number,code,36,1.0,,,
+k10,10,full_text,citations,all,process_numbers_cited,code,36,214.0,,,
+k10,10,full_text,citations,all,process_numbers_supplied,code,214,214.0,,,
+k10,10,full_text,citations,all,process_numbers_in_question,code,214,0.0,,,
+k10,10,full_text,citations,all,process_numbers_in_context,code,214,0.0,,,
+k10,10,full_text,citations,all,process_numbers_unknown,code,214,0.0,,,
+k10,10,full_text,citations,all,answers_citing_only_supplied_decisions,code,36,1.0,0.9036,1.0,numbers named in the question count as supplied
+k10,10,full_text,citations,all,answers_with_an_unknown_process_number,code,36,0.0,0.0,0.0964,a number found neither in the set nor in its texts
+k10,10,full_text,miss_control,all,claims_not_found_by_a_judge,judge_a or judge_b,473,92.0,,,
+k10,10,full_text,miss_control,all,miss_rate,judge_a (full text),30,0.4667,0.3023,0.6386,14 of 30 re-judged claims are supported by the full decision; 4 contradicted
+k10,10,full_text,faithfulness,all,faithfulness,judge_a,473,0.8097,0.7566,0.8648,
+k10,10,full_text,faithfulness,all,contradiction_rate,judge_a,473,0.0233,0.0,0.0443,
+k10,10,full_text,faithfulness,all,not_found_rate,judge_a,473,0.167,,,
+k10,10,full_text,faithfulness,all,hallucination_rate,judge_a,12,1.0,1.0,1.0,answers with a contradicted or not-found claim.
+k10,10,full_text,faithfulness,all,answers_with_a_contradicted_claim,judge_a,12,0.25,,,
+k10,10,full_text,faithfulness,all,faithfulness_corrected,judge_a,473,0.8884,,,after the retrieval-miss control.
+k10,10,full_text,faithfulness,all,contradiction_rate_corrected,judge_a,473,0.0296,,,after the retrieval-miss control.
+k10,10,full_text,faithfulness,all,hallucination_rate_corrected,judge_a,473,0.956,,,after the retrieval-miss control.
+k10,10,full_text,faithfulness,S1,faithfulness,judge_a,67,0.7612,,,
+k10,10,full_text,faithfulness,S1,faithfulness_corrected,judge_a,67,0.8677,,,after the retrieval-miss control (overall miss rate).
+k10,10,full_text,faithfulness,S1,contradiction_rate,judge_a,67,0.0299,,,
+k10,10,full_text,faithfulness,S2,faithfulness,judge_a,57,0.8421,,,
+k10,10,full_text,faithfulness,S2,faithfulness_corrected,judge_a,57,0.9439,,,after the retrieval-miss control (overall miss rate).
+k10,10,full_text,faithfulness,S2,contradiction_rate,judge_a,57,0.0,,,
+k10,10,full_text,faithfulness,S3,faithfulness,judge_a,71,0.8732,,,
+k10,10,full_text,faithfulness,S3,faithfulness_corrected,judge_a,71,0.9258,,,after the retrieval-miss control (overall miss rate).
+k10,10,full_text,faithfulness,S3,contradiction_rate,judge_a,71,0.0,,,
+k10,10,full_text,faithfulness,S4,faithfulness,judge_a,77,0.8701,,,
+k10,10,full_text,faithfulness,S4,faithfulness_corrected,judge_a,77,0.9195,,,after the retrieval-miss control (overall miss rate).
+k10,10,full_text,faithfulness,S4,contradiction_rate,judge_a,77,0.0,,,
+k10,10,full_text,faithfulness,S5,faithfulness,judge_a,84,0.8929,,,
+k10,10,full_text,faithfulness,S5,faithfulness_corrected,judge_a,84,0.9563,,,after the retrieval-miss control (overall miss rate).
+k10,10,full_text,faithfulness,S5,contradiction_rate,judge_a,84,0.0,,,
+k10,10,full_text,faithfulness,S6,faithfulness,judge_a,117,0.6838,,,
+k10,10,full_text,faithfulness,S6,faithfulness_corrected,judge_a,117,0.7812,,,after the retrieval-miss control (overall miss rate).
+k10,10,full_text,faithfulness,S6,contradiction_rate,judge_a,117,0.0769,,,
+k10,10,full_text,faithfulness,all,faithfulness,judge_b,473,0.8985,0.8634,0.9339,
+k10,10,full_text,faithfulness,all,contradiction_rate,judge_b,473,0.0063,0.0,0.0131,
+k10,10,full_text,faithfulness,all,not_found_rate,judge_b,473,0.0951,,,
+k10,10,full_text,faithfulness,all,hallucination_rate,judge_b,12,0.9167,0.75,1.0,answers with a contradicted or not-found claim.
+k10,10,full_text,faithfulness,all,answers_with_a_contradicted_claim,judge_b,12,0.25,,,
+k10,10,full_text,faithfulness,all,faithfulness_corrected,judge_b,473,0.9398,,,after the retrieval-miss control.
+k10,10,full_text,faithfulness,all,contradiction_rate_corrected,judge_b,473,0.0127,,,after the retrieval-miss control.
+k10,10,full_text,faithfulness,all,hallucination_rate_corrected,judge_b,473,0.7563,,,after the retrieval-miss control.
+k10,10,full_text,faithfulness,S1,faithfulness,judge_b,67,0.8657,,,
+k10,10,full_text,faithfulness,S1,faithfulness_corrected,judge_b,67,0.9443,,,after the retrieval-miss control (overall miss rate).
+k10,10,full_text,faithfulness,S1,contradiction_rate,judge_b,67,0.0,,,
+k10,10,full_text,faithfulness,S2,faithfulness,judge_b,57,0.9298,,,
+k10,10,full_text,faithfulness,S2,faithfulness_corrected,judge_b,57,0.9544,,,after the retrieval-miss control (overall miss rate).
+k10,10,full_text,faithfulness,S2,contradiction_rate,judge_b,57,0.0175,,,
+k10,10,full_text,faithfulness,S3,faithfulness,judge_b,71,0.9859,,,
+k10,10,full_text,faithfulness,S3,faithfulness_corrected,judge_b,71,0.9925,,,after the retrieval-miss control (overall miss rate).
+k10,10,full_text,faithfulness,S3,contradiction_rate,judge_b,71,0.0,,,
+k10,10,full_text,faithfulness,S4,faithfulness,judge_b,77,0.8701,,,
+k10,10,full_text,faithfulness,S4,faithfulness_corrected,judge_b,77,0.9134,,,after the retrieval-miss control (overall miss rate).
+k10,10,full_text,faithfulness,S4,contradiction_rate,judge_b,77,0.0,,,
+k10,10,full_text,faithfulness,S5,faithfulness,judge_b,84,0.9286,,,
+k10,10,full_text,faithfulness,S5,faithfulness_corrected,judge_b,84,0.969,,,after the retrieval-miss control (overall miss rate).
+k10,10,full_text,faithfulness,S5,contradiction_rate,judge_b,84,0.0119,,,
+k10,10,full_text,faithfulness,S6,faithfulness,judge_b,117,0.8462,,,
+k10,10,full_text,faithfulness,S6,faithfulness_corrected,judge_b,117,0.8946,,,after the retrieval-miss control (overall miss rate).
+k10,10,full_text,faithfulness,S6,contradiction_rate,judge_b,117,0.0085,,,
+k10,10,full_text,faithfulness,all,faithfulness_corrected_ci,judge_a,473,0.8884,0.8455,0.9316,after the retrieval-miss control; interval over resampled questions
+k10,10,full_text,faithfulness,all,unsupported_claims_per_answer,judge_a,12,4.4,2.4331,6.9501,"claims not supported after the retrieval-miss control, per open answer"
+k10,10,full_text,faithfulness,all,faithfulness_corrected_ci,judge_b,473,0.9398,0.918,0.965,after the retrieval-miss control; interval over resampled questions
+k10,10,full_text,faithfulness,all,unsupported_claims_per_answer,judge_b,12,2.3722,1.2611,3.5778,"claims not supported after the retrieval-miss control, per open answer"
+k10,10,full_text,system,all,latency_s_median,,36,11.2417,,,
+k10,10,full_text,system,all,latency_s_p95,,36,45.9109,,,
+k10,10,full_text,system,all,prompt_tokens_median,,36,48968.0,,,
+k10,10,full_text,system,all,output_tokens_median,,36,1450.0,,,thinking included
+k10,10,full_text,system,all,cost_usd_per_answer,,36,0.056,,,
+k10,10,full_text,system,open,latency_s_median,,12,33.1953,,,
+k10,10,full_text,system,open,latency_s_p95,,12,48.1297,,,
+k10,10,full_text,system,open,prompt_tokens_median,,12,48966.5,,,
+k10,10,full_text,system,open,output_tokens_median,,12,5061.5,,,thinking included
+k10,10,full_text,system,open,cost_usd_per_answer,,12,0.0666,,,
+k10,10,full_text,system,templated,latency_s_median,,24,8.9588,,,
+k10,10,full_text,system,templated,latency_s_p95,,24,22.5852,,,
+k10,10,full_text,system,templated,prompt_tokens_median,,24,48974.5,,,
+k10,10,full_text,system,templated,output_tokens_median,,24,1074.5,,,thinking included
+k10,10,full_text,system,templated,cost_usd_per_answer,,24,0.0508,,,
+k10,10,full_text,system,all,model_calls_served_by_the_primary_key,,72,1.0,,,
+k10,10,full_text,system,all,answers_needing_a_retry,,36,0.0,,,
+k10,10,full_text,system,all,answers_not_finished,,36,0.0,,,finish reason other than STOP (e.g. the output limit)
+k10,10,full_text,system,all,quote_check_removed_sentences,,36,11.0,,,in 4 answers
+k10,10,full_text,system,open,answer_chars_median,,12,6051.0,,,
+k10,10,full_text,faithfulness,all,claims_per_answer,,12,39.4167,,,
+k20,20,full_text,templated,all,accuracy,code,24,1.0,0.862,1.0,24 of 24 correct
+k20,20,full_text,templated,all,mean_score,code,24,1.0,,,share of the gold items stated
+k20,20,full_text,templated,all,ambiguous_answers,code,24,0.0,,,gold value stated next to another value; scored 0
+k20,20,full_text,templated,appellant,accuracy,code,3,1.0,,,3 of 3 correct
+k20,20,full_text,templated,count,accuracy,code,3,1.0,,,3 of 3 correct
+k20,20,full_text,templated,lawyer,accuracy,code,3,1.0,,,3 of 3 correct
+k20,20,full_text,templated,legal_basis,accuracy,code,3,1.0,,,3 of 3 correct
+k20,20,full_text,templated,outcome,accuracy,code,3,1.0,,,3 of 3 correct
+k20,20,full_text,templated,penalty,accuracy,code,3,1.0,,,3 of 3 correct
+k20,20,full_text,templated,rapporteur,accuracy,code,3,1.0,,,3 of 3 correct
+k20,20,full_text,templated,session_date,accuracy,code,3,1.0,,,3 of 3 correct
+k20,20,full_text,citations,all,answers_citing_a_process_number,code,36,1.0,,,
+k20,20,full_text,citations,all,process_numbers_cited,code,36,337.0,,,
+k20,20,full_text,citations,all,process_numbers_supplied,code,337,337.0,,,
+k20,20,full_text,citations,all,process_numbers_in_question,code,337,0.0,,,
+k20,20,full_text,citations,all,process_numbers_in_context,code,337,0.0,,,
+k20,20,full_text,citations,all,process_numbers_unknown,code,337,0.0,,,
+k20,20,full_text,citations,all,answers_citing_only_supplied_decisions,code,36,1.0,0.9036,1.0,numbers named in the question count as supplied
+k20,20,full_text,citations,all,answers_with_an_unknown_process_number,code,36,0.0,0.0,0.0964,a number found neither in the set nor in its texts
+k20,20,full_text,miss_control,all,claims_not_found_by_a_judge,judge_a or judge_b,809,160.0,,,
+k20,20,full_text,miss_control,all,miss_rate,judge_a (full text),32,0.5625,0.3933,0.7183,18 of 32 re-judged claims are supported by the full decision; 1 contradicted
+k20,20,full_text,faithfulness,all,faithfulness,judge_a,809,0.8084,0.7778,0.8329,
+k20,20,full_text,faithfulness,all,contradiction_rate,judge_a,809,0.0507,0.0349,0.0715,
+k20,20,full_text,faithfulness,all,not_found_rate,judge_a,809,0.1409,,,
+k20,20,full_text,faithfulness,all,hallucination_rate,judge_a,12,1.0,1.0,1.0,answers with a contradicted or not-found claim.
+k20,20,full_text,faithfulness,all,answers_with_a_contradicted_claim,judge_a,12,1.0,,,
+k20,20,full_text,faithfulness,all,faithfulness_corrected,judge_a,809,0.8876,,,after the retrieval-miss control.
+k20,20,full_text,faithfulness,all,contradiction_rate_corrected,judge_a,809,0.0519,,,after the retrieval-miss control.
+k20,20,full_text,faithfulness,all,hallucination_rate_corrected,judge_a,809,1.0,,,after the retrieval-miss control.
+k20,20,full_text,faithfulness,S1,faithfulness,judge_a,104,0.7596,,,
+k20,20,full_text,faithfulness,S1,faithfulness_corrected,judge_a,104,0.8504,,,after the retrieval-miss control (overall miss rate).
+k20,20,full_text,faithfulness,S1,contradiction_rate,judge_a,104,0.0577,,,
+k20,20,full_text,faithfulness,S2,faithfulness,judge_a,121,0.8264,,,
+k20,20,full_text,faithfulness,S2,faithfulness_corrected,judge_a,121,0.8765,,,after the retrieval-miss control (overall miss rate).
+k20,20,full_text,faithfulness,S2,contradiction_rate,judge_a,121,0.0661,,,
+k20,20,full_text,faithfulness,S3,faithfulness,judge_a,225,0.8089,,,
+k20,20,full_text,faithfulness,S3,faithfulness_corrected,judge_a,225,0.9036,,,after the retrieval-miss control (overall miss rate).
+k20,20,full_text,faithfulness,S3,contradiction_rate,judge_a,225,0.0356,,,
+k20,20,full_text,faithfulness,S4,faithfulness,judge_a,88,0.7727,,,
+k20,20,full_text,faithfulness,S4,faithfulness_corrected,judge_a,88,0.8544,,,after the retrieval-miss control (overall miss rate).
+k20,20,full_text,faithfulness,S4,contradiction_rate,judge_a,88,0.0795,,,
+k20,20,full_text,faithfulness,S5,faithfulness,judge_a,145,0.8276,,,
+k20,20,full_text,faithfulness,S5,faithfulness_corrected,judge_a,145,0.9272,,,after the retrieval-miss control (overall miss rate).
+k20,20,full_text,faithfulness,S5,contradiction_rate,judge_a,145,0.0138,,,
+k20,20,full_text,faithfulness,S6,faithfulness,judge_a,126,0.8333,,,
+k20,20,full_text,faithfulness,S6,faithfulness_corrected,judge_a,126,0.878,,,after the retrieval-miss control (overall miss rate).
+k20,20,full_text,faithfulness,S6,contradiction_rate,judge_a,126,0.0794,,,
+k20,20,full_text,faithfulness,all,faithfulness,judge_b,809,0.8665,0.8387,0.8931,
+k20,20,full_text,faithfulness,all,contradiction_rate,judge_b,809,0.0198,0.009,0.0334,
+k20,20,full_text,faithfulness,all,not_found_rate,judge_b,809,0.1137,,,
+k20,20,full_text,faithfulness,all,hallucination_rate,judge_b,12,1.0,1.0,1.0,answers with a contradicted or not-found claim.
+k20,20,full_text,faithfulness,all,answers_with_a_contradicted_claim,judge_b,12,0.5,,,
+k20,20,full_text,faithfulness,all,faithfulness_corrected,judge_b,809,0.9296,,,after the retrieval-miss control.
+k20,20,full_text,faithfulness,all,contradiction_rate_corrected,judge_b,809,0.0198,,,after the retrieval-miss control.
+k20,20,full_text,faithfulness,all,hallucination_rate_corrected,judge_b,809,0.9445,,,after the retrieval-miss control.
+k20,20,full_text,faithfulness,S1,faithfulness,judge_b,104,0.8365,,,
+k20,20,full_text,faithfulness,S1,faithfulness_corrected,judge_b,104,0.9219,,,after the retrieval-miss control (overall miss rate).
+k20,20,full_text,faithfulness,S1,contradiction_rate,judge_b,104,0.0192,,,
+k20,20,full_text,faithfulness,S2,faithfulness,judge_b,121,0.8347,,,
+k20,20,full_text,faithfulness,S2,faithfulness_corrected,judge_b,121,0.9081,,,after the retrieval-miss control (overall miss rate).
+k20,20,full_text,faithfulness,S2,contradiction_rate,judge_b,121,0.0165,,,
+k20,20,full_text,faithfulness,S3,faithfulness,judge_b,225,0.8711,,,
+k20,20,full_text,faithfulness,S3,faithfulness_corrected,judge_b,225,0.9269,,,after the retrieval-miss control (overall miss rate).
+k20,20,full_text,faithfulness,S3,contradiction_rate,judge_b,225,0.0311,,,
+k20,20,full_text,faithfulness,S4,faithfulness,judge_b,88,0.8864,,,
+k20,20,full_text,faithfulness,S4,faithfulness_corrected,judge_b,88,0.9297,,,after the retrieval-miss control (overall miss rate).
+k20,20,full_text,faithfulness,S4,contradiction_rate,judge_b,88,0.0341,,,
+k20,20,full_text,faithfulness,S5,faithfulness,judge_b,145,0.8483,,,
+k20,20,full_text,faithfulness,S5,faithfulness_corrected,judge_b,145,0.9341,,,after the retrieval-miss control (overall miss rate).
+k20,20,full_text,faithfulness,S5,contradiction_rate,judge_b,145,0.0,,,
+k20,20,full_text,faithfulness,S6,faithfulness,judge_b,126,0.9206,,,
+k20,20,full_text,faithfulness,S6,faithfulness_corrected,judge_b,126,0.9563,,,after the retrieval-miss control (overall miss rate).
+k20,20,full_text,faithfulness,S6,contradiction_rate,judge_b,126,0.0159,,,
+k20,20,full_text,faithfulness,all,faithfulness_corrected_ci,judge_a,809,0.8876,0.8593,0.9056,after the retrieval-miss control; interval over resampled questions
+k20,20,full_text,faithfulness,all,unsupported_claims_per_answer,judge_a,12,7.5781,5.776,9.6824,"claims not supported after the retrieval-miss control, per open answer"
+k20,20,full_text,faithfulness,all,faithfulness_corrected_ci,judge_b,809,0.9296,0.9143,0.9426,after the retrieval-miss control; interval over resampled questions
+k20,20,full_text,faithfulness,all,unsupported_claims_per_answer,judge_b,12,4.7448,3.1875,6.6042,"claims not supported after the retrieval-miss control, per open answer"
+k20,20,full_text,system,all,latency_s_median,,36,14.683,,,
+k20,20,full_text,system,all,latency_s_p95,,36,50.9091,,,
+k20,20,full_text,system,all,prompt_tokens_median,,36,92382.5,,,
+k20,20,full_text,system,all,output_tokens_median,,36,1205.0,,,thinking included
+k20,20,full_text,system,all,cost_usd_per_answer,,36,0.0996,,,
+k20,20,full_text,system,open,latency_s_median,,12,43.0136,,,
+k20,20,full_text,system,open,latency_s_p95,,12,85.7801,,,
+k20,20,full_text,system,open,prompt_tokens_median,,12,92379.0,,,
+k20,20,full_text,system,open,output_tokens_median,,12,6780.0,,,thinking included
+k20,20,full_text,system,open,cost_usd_per_answer,,12,0.1138,,,
+k20,20,full_text,system,templated,latency_s_median,,24,10.1554,,,
+k20,20,full_text,system,templated,latency_s_p95,,24,35.0196,,,
+k20,20,full_text,system,templated,prompt_tokens_median,,24,92389.0,,,
+k20,20,full_text,system,templated,output_tokens_median,,24,997.5,,,thinking included
+k20,20,full_text,system,templated,cost_usd_per_answer,,24,0.0925,,,
+k20,20,full_text,system,all,model_calls_served_by_the_primary_key,,72,1.0,,,
+k20,20,full_text,system,all,answers_needing_a_retry,,36,0.0,,,
+k20,20,full_text,system,all,answers_not_finished,,36,0.0,,,finish reason other than STOP (e.g. the output limit)
+k20,20,full_text,system,all,quote_check_removed_sentences,,36,11.0,,,in 7 answers
+k20,20,full_text,system,open,answer_chars_median,,12,8340.0,,,
+k20,20,full_text,faithfulness,all,claims_per_answer,,12,67.4167,,,
+k30,30,full_text,templated,all,accuracy,code,24,1.0,0.862,1.0,24 of 24 correct
+k30,30,full_text,templated,all,mean_score,code,24,1.0,,,share of the gold items stated
+k30,30,full_text,templated,all,ambiguous_answers,code,24,0.0,,,gold value stated next to another value; scored 0
+k30,30,full_text,templated,appellant,accuracy,code,3,1.0,,,3 of 3 correct
+k30,30,full_text,templated,count,accuracy,code,3,1.0,,,3 of 3 correct
+k30,30,full_text,templated,lawyer,accuracy,code,3,1.0,,,3 of 3 correct
+k30,30,full_text,templated,legal_basis,accuracy,code,3,1.0,,,3 of 3 correct
+k30,30,full_text,templated,outcome,accuracy,code,3,1.0,,,3 of 3 correct
+k30,30,full_text,templated,penalty,accuracy,code,3,1.0,,,3 of 3 correct
+k30,30,full_text,templated,rapporteur,accuracy,code,3,1.0,,,3 of 3 correct
+k30,30,full_text,templated,session_date,accuracy,code,3,1.0,,,3 of 3 correct
+k30,30,full_text,citations,all,answers_citing_a_process_number,code,36,1.0,,,
+k30,30,full_text,citations,all,process_numbers_cited,code,36,469.0,,,
+k30,30,full_text,citations,all,process_numbers_supplied,code,469,469.0,,,
+k30,30,full_text,citations,all,process_numbers_in_question,code,469,0.0,,,
+k30,30,full_text,citations,all,process_numbers_in_context,code,469,0.0,,,
+k30,30,full_text,citations,all,process_numbers_unknown,code,469,0.0,,,
+k30,30,full_text,citations,all,answers_citing_only_supplied_decisions,code,36,1.0,0.9036,1.0,numbers named in the question count as supplied
+k30,30,full_text,citations,all,answers_with_an_unknown_process_number,code,36,0.0,0.0,0.0964,a number found neither in the set nor in its texts
+k30,30,full_text,miss_control,all,claims_not_found_by_a_judge,judge_a or judge_b,1123,278.0,,,
+k30,30,full_text,miss_control,all,miss_rate,judge_a (full text),56,0.4821,0.3567,0.6099,27 of 56 re-judged claims are supported by the full decision; 8 contradicted
+k30,30,full_text,faithfulness,all,faithfulness,judge_a,1123,0.7614,0.6915,0.8228,
+k30,30,full_text,faithfulness,all,contradiction_rate,judge_a,1123,0.0427,0.0168,0.0759,
+k30,30,full_text,faithfulness,all,not_found_rate,judge_a,1123,0.1959,,,
+k30,30,full_text,faithfulness,all,hallucination_rate,judge_a,12,1.0,1.0,1.0,answers with a contradicted or not-found claim.
+k30,30,full_text,faithfulness,all,answers_with_a_contradicted_claim,judge_a,12,0.75,,,
+k30,30,full_text,faithfulness,all,faithfulness_corrected,judge_a,1123,0.8552,,,after the retrieval-miss control.
+k30,30,full_text,faithfulness,all,contradiction_rate_corrected,judge_a,1123,0.0463,,,after the retrieval-miss control.
+k30,30,full_text,faithfulness,all,hallucination_rate_corrected,judge_a,1123,0.9999,,,after the retrieval-miss control.
+k30,30,full_text,faithfulness,S1,faithfulness,judge_a,222,0.6712,,,
+k30,30,full_text,faithfulness,S1,faithfulness_corrected,judge_a,222,0.7759,,,after the retrieval-miss control (overall miss rate).
+k30,30,full_text,faithfulness,S1,contradiction_rate,judge_a,222,0.0991,,,
+k30,30,full_text,faithfulness,S2,faithfulness,judge_a,111,0.8288,,,
+k30,30,full_text,faithfulness,S2,faithfulness_corrected,judge_a,111,0.9073,,,after the retrieval-miss control (overall miss rate).
+k30,30,full_text,faithfulness,S2,contradiction_rate,judge_a,111,0.009,,,
+k30,30,full_text,faithfulness,S3,faithfulness,judge_a,304,0.75,,,
+k30,30,full_text,faithfulness,S3,faithfulness_corrected,judge_a,304,0.8505,,,after the retrieval-miss control (overall miss rate).
+k30,30,full_text,faithfulness,S3,contradiction_rate,judge_a,304,0.0362,,,
+k30,30,full_text,faithfulness,S4,faithfulness,judge_a,239,0.841,,,
+k30,30,full_text,faithfulness,S4,faithfulness_corrected,judge_a,239,0.9145,,,after the retrieval-miss control (overall miss rate).
+k30,30,full_text,faithfulness,S4,contradiction_rate,judge_a,239,0.0167,,,
+k30,30,full_text,faithfulness,S5,faithfulness,judge_a,127,0.7953,,,
+k30,30,full_text,faithfulness,S5,faithfulness_corrected,judge_a,127,0.891,,,after the retrieval-miss control (overall miss rate).
+k30,30,full_text,faithfulness,S5,contradiction_rate,judge_a,127,0.0079,,,
+k30,30,full_text,faithfulness,S6,faithfulness,judge_a,120,0.7,,,
+k30,30,full_text,faithfulness,S6,faithfulness_corrected,judge_a,120,0.8094,,,after the retrieval-miss control (overall miss rate).
+k30,30,full_text,faithfulness,S6,contradiction_rate,judge_a,120,0.075,,,
+k30,30,full_text,faithfulness,all,faithfulness,judge_b,1123,0.8459,0.7812,0.8999,
+k30,30,full_text,faithfulness,all,contradiction_rate,judge_b,1123,0.0125,0.0057,0.0207,
+k30,30,full_text,faithfulness,all,not_found_rate,judge_b,1123,0.1416,,,
+k30,30,full_text,faithfulness,all,hallucination_rate,judge_b,12,1.0,1.0,1.0,answers with a contradicted or not-found claim.
+k30,30,full_text,faithfulness,all,answers_with_a_contradicted_claim,judge_b,12,0.5833,,,
+k30,30,full_text,faithfulness,all,faithfulness_corrected,judge_b,1123,0.916,,,after the retrieval-miss control.
+k30,30,full_text,faithfulness,all,contradiction_rate_corrected,judge_b,1123,0.0178,,,after the retrieval-miss control.
+k30,30,full_text,faithfulness,all,hallucination_rate_corrected,judge_b,1123,0.9399,,,after the retrieval-miss control.
+k30,30,full_text,faithfulness,S1,faithfulness,judge_b,222,0.7297,,,
+k30,30,full_text,faithfulness,S1,faithfulness_corrected,judge_b,222,0.854,,,after the retrieval-miss control (overall miss rate).
+k30,30,full_text,faithfulness,S1,contradiction_rate,judge_b,222,0.0045,,,
+k30,30,full_text,faithfulness,S2,faithfulness,judge_b,111,0.8919,,,
+k30,30,full_text,faithfulness,S2,faithfulness_corrected,judge_b,111,0.9487,,,after the retrieval-miss control (overall miss rate).
+k30,30,full_text,faithfulness,S2,contradiction_rate,judge_b,111,0.0,,,
+k30,30,full_text,faithfulness,S3,faithfulness,judge_b,304,0.8355,,,
+k30,30,full_text,faithfulness,S3,faithfulness_corrected,judge_b,304,0.9058,,,after the retrieval-miss control (overall miss rate).
+k30,30,full_text,faithfulness,S3,contradiction_rate,judge_b,304,0.0132,,,
+k30,30,full_text,faithfulness,S4,faithfulness,judge_b,239,0.9205,,,
+k30,30,full_text,faithfulness,S4,faithfulness_corrected,judge_b,239,0.9574,,,after the retrieval-miss control (overall miss rate).
+k30,30,full_text,faithfulness,S4,contradiction_rate,judge_b,239,0.0209,,,
+k30,30,full_text,faithfulness,S5,faithfulness,judge_b,127,0.8976,,,
+k30,30,full_text,faithfulness,S5,faithfulness_corrected,judge_b,127,0.9435,,,after the retrieval-miss control (overall miss rate).
+k30,30,full_text,faithfulness,S5,contradiction_rate,judge_b,127,0.0157,,,
+k30,30,full_text,faithfulness,S6,faithfulness,judge_b,120,0.8417,,,
+k30,30,full_text,faithfulness,S6,faithfulness_corrected,judge_b,120,0.9149,,,after the retrieval-miss control (overall miss rate).
+k30,30,full_text,faithfulness,S6,contradiction_rate,judge_b,120,0.0167,,,
+k30,30,full_text,faithfulness,all,faithfulness_corrected_ci,judge_a,1123,0.8552,0.7998,0.9015,after the retrieval-miss control; interval over resampled questions
+k30,30,full_text,faithfulness,all,unsupported_claims_per_answer,judge_a,12,13.5521,7.3646,21.4703,"claims not supported after the retrieval-miss control, per open answer"
+k30,30,full_text,faithfulness,all,faithfulness_corrected_ci,judge_b,1123,0.916,0.8787,0.949,after the retrieval-miss control; interval over resampled questions
+k30,30,full_text,faithfulness,all,unsupported_claims_per_answer,judge_b,12,7.8601,3.7961,13.0629,"claims not supported after the retrieval-miss control, per open answer"
+k30,30,full_text,system,all,latency_s_median,,36,14.7518,,,
+k30,30,full_text,system,all,latency_s_p95,,36,66.1063,,,
+k30,30,full_text,system,all,prompt_tokens_median,,36,133519.5,,,
+k30,30,full_text,system,all,output_tokens_median,,36,1154.0,,,thinking included
+k30,30,full_text,system,all,cost_usd_per_answer,,36,0.1415,,,
+k30,30,full_text,system,open,latency_s_median,,12,52.8867,,,
+k30,30,full_text,system,open,latency_s_p95,,12,71.6051,,,
+k30,30,full_text,system,open,prompt_tokens_median,,12,133516.0,,,
+k30,30,full_text,system,open,output_tokens_median,,12,7708.0,,,thinking included
+k30,30,full_text,system,open,cost_usd_per_answer,,12,0.1588,,,
+k30,30,full_text,system,templated,latency_s_median,,24,12.2901,,,
+k30,30,full_text,system,templated,latency_s_p95,,24,27.4399,,,
+k30,30,full_text,system,templated,prompt_tokens_median,,24,133526.0,,,
+k30,30,full_text,system,templated,output_tokens_median,,24,851.5,,,thinking included
+k30,30,full_text,system,templated,cost_usd_per_answer,,24,0.1328,,,
+k30,30,full_text,system,all,model_calls_served_by_the_primary_key,,72,1.0,,,
+k30,30,full_text,system,all,answers_needing_a_retry,,36,0.0,,,
+k30,30,full_text,system,all,answers_not_finished,,36,0.0,,,finish reason other than STOP (e.g. the output limit)
+k30,30,full_text,system,all,quote_check_removed_sentences,,36,27.0,,,in 8 answers
+k30,30,full_text,system,open,answer_chars_median,,12,10855.5,,,
+k30,30,full_text,faithfulness,all,claims_per_answer,,12,93.5833,,,
+h30,30,hierarchical_summary,templated,all,accuracy,code,24,1.0,0.862,1.0,24 of 24 correct
+h30,30,hierarchical_summary,templated,all,mean_score,code,24,1.0,,,share of the gold items stated
+h30,30,hierarchical_summary,templated,all,ambiguous_answers,code,24,0.0,,,gold value stated next to another value; scored 0
+h30,30,hierarchical_summary,templated,appellant,accuracy,code,3,1.0,,,3 of 3 correct
+h30,30,hierarchical_summary,templated,count,accuracy,code,3,1.0,,,3 of 3 correct
+h30,30,hierarchical_summary,templated,lawyer,accuracy,code,3,1.0,,,3 of 3 correct
+h30,30,hierarchical_summary,templated,legal_basis,accuracy,code,3,1.0,,,3 of 3 correct
+h30,30,hierarchical_summary,templated,outcome,accuracy,code,3,1.0,,,3 of 3 correct
+h30,30,hierarchical_summary,templated,penalty,accuracy,code,3,1.0,,,3 of 3 correct
+h30,30,hierarchical_summary,templated,rapporteur,accuracy,code,3,1.0,,,3 of 3 correct
+h30,30,hierarchical_summary,templated,session_date,accuracy,code,3,1.0,,,3 of 3 correct
+h30,30,hierarchical_summary,citations,all,answers_citing_a_process_number,code,36,1.0,,,
+h30,30,hierarchical_summary,citations,all,process_numbers_cited,code,36,399.0,,,
+h30,30,hierarchical_summary,citations,all,process_numbers_supplied,code,399,399.0,,,
+h30,30,hierarchical_summary,citations,all,process_numbers_in_question,code,399,0.0,,,
+h30,30,hierarchical_summary,citations,all,process_numbers_in_context,code,399,0.0,,,
+h30,30,hierarchical_summary,citations,all,process_numbers_unknown,code,399,0.0,,,
+h30,30,hierarchical_summary,citations,all,answers_citing_only_supplied_decisions,code,36,1.0,0.9036,1.0,numbers named in the question count as supplied
+h30,30,hierarchical_summary,citations,all,answers_with_an_unknown_process_number,code,36,0.0,0.0,0.0964,a number found neither in the set nor in its texts
+h30,30,hierarchical_summary,miss_control,all,claims_not_found_by_a_judge,judge_a or judge_b,848,229.0,,,
+h30,30,hierarchical_summary,miss_control,all,miss_rate,judge_a (full text),46,0.5,0.3612,0.6388,23 of 46 re-judged claims are supported by the full decision; 5 contradicted
+h30,30,hierarchical_summary,faithfulness,all,faithfulness,judge_a,848,0.7394,0.6241,0.8196,
+h30,30,hierarchical_summary,faithfulness,all,contradiction_rate,judge_a,848,0.0318,0.0154,0.0568,
+h30,30,hierarchical_summary,faithfulness,all,not_found_rate,judge_a,848,0.2288,,,
+h30,30,hierarchical_summary,faithfulness,all,hallucination_rate,judge_a,12,1.0,1.0,1.0,answers with a contradicted or not-found claim.
+h30,30,hierarchical_summary,faithfulness,all,answers_with_a_contradicted_claim,judge_a,12,0.75,,,
+h30,30,hierarchical_summary,faithfulness,all,faithfulness_corrected,judge_a,848,0.8538,,,after the retrieval-miss control.
+h30,30,hierarchical_summary,faithfulness,all,contradiction_rate_corrected,judge_a,848,0.0354,,,after the retrieval-miss control.
+h30,30,hierarchical_summary,faithfulness,all,hallucination_rate_corrected,judge_a,848,0.9948,,,after the retrieval-miss control.
+h30,30,hierarchical_summary,faithfulness,S1,faithfulness,judge_a,147,0.8707,,,
+h30,30,hierarchical_summary,faithfulness,S1,faithfulness_corrected,judge_a,147,0.9252,,,after the retrieval-miss control (overall miss rate).
+h30,30,hierarchical_summary,faithfulness,S1,contradiction_rate,judge_a,147,0.0136,,,
+h30,30,hierarchical_summary,faithfulness,S2,faithfulness,judge_a,180,0.8333,,,
+h30,30,hierarchical_summary,faithfulness,S2,faithfulness_corrected,judge_a,180,0.9111,,,after the retrieval-miss control (overall miss rate).
+h30,30,hierarchical_summary,faithfulness,S2,contradiction_rate,judge_a,180,0.0222,,,
+h30,30,hierarchical_summary,faithfulness,S3,faithfulness,judge_a,176,0.8011,,,
+h30,30,hierarchical_summary,faithfulness,S3,faithfulness_corrected,judge_a,176,0.8892,,,after the retrieval-miss control (overall miss rate).
+h30,30,hierarchical_summary,faithfulness,S3,contradiction_rate,judge_a,176,0.017,,,
+h30,30,hierarchical_summary,faithfulness,S4,faithfulness,judge_a,64,0.6094,,,
+h30,30,hierarchical_summary,faithfulness,S4,faithfulness_corrected,judge_a,64,0.7656,,,after the retrieval-miss control (overall miss rate).
+h30,30,hierarchical_summary,faithfulness,S4,contradiction_rate,judge_a,64,0.0938,,,
+h30,30,hierarchical_summary,faithfulness,S5,faithfulness,judge_a,144,0.7431,,,
+h30,30,hierarchical_summary,faithfulness,S5,faithfulness_corrected,judge_a,144,0.8611,,,after the retrieval-miss control (overall miss rate).
+h30,30,hierarchical_summary,faithfulness,S5,contradiction_rate,judge_a,144,0.0556,,,
+h30,30,hierarchical_summary,faithfulness,S6,faithfulness,judge_a,137,0.4526,,,
+h30,30,hierarchical_summary,faithfulness,S6,faithfulness_corrected,judge_a,137,0.6898,,,after the retrieval-miss control (overall miss rate).
+h30,30,hierarchical_summary,faithfulness,S6,contradiction_rate,judge_a,137,0.0292,,,
+h30,30,hierarchical_summary,faithfulness,all,faithfulness,judge_b,848,0.8325,0.7397,0.8897,
+h30,30,hierarchical_summary,faithfulness,all,contradiction_rate,judge_b,848,0.0118,0.0055,0.0194,
+h30,30,hierarchical_summary,faithfulness,all,not_found_rate,judge_b,848,0.1557,,,
+h30,30,hierarchical_summary,faithfulness,all,hallucination_rate,judge_b,12,1.0,1.0,1.0,answers with a contradicted or not-found claim.
+h30,30,hierarchical_summary,faithfulness,all,answers_with_a_contradicted_claim,judge_b,12,0.5833,,,
+h30,30,hierarchical_summary,faithfulness,all,faithfulness_corrected,judge_b,848,0.9116,,,after the retrieval-miss control.
+h30,30,hierarchical_summary,faithfulness,all,contradiction_rate_corrected,judge_b,848,0.0165,,,after the retrieval-miss control.
+h30,30,hierarchical_summary,faithfulness,all,hallucination_rate_corrected,judge_b,848,0.9974,,,after the retrieval-miss control.
+h30,30,hierarchical_summary,faithfulness,S1,faithfulness,judge_b,147,0.9048,,,
+h30,30,hierarchical_summary,faithfulness,S1,faithfulness_corrected,judge_b,147,0.9456,,,after the retrieval-miss control (overall miss rate).
+h30,30,hierarchical_summary,faithfulness,S1,contradiction_rate,judge_b,147,0.0204,,,
+h30,30,hierarchical_summary,faithfulness,S2,faithfulness,judge_b,180,0.8833,,,
+h30,30,hierarchical_summary,faithfulness,S2,faithfulness_corrected,judge_b,180,0.9472,,,after the retrieval-miss control (overall miss rate).
+h30,30,hierarchical_summary,faithfulness,S2,contradiction_rate,judge_b,180,0.0056,,,
+h30,30,hierarchical_summary,faithfulness,S3,faithfulness,judge_b,176,0.8977,,,
+h30,30,hierarchical_summary,faithfulness,S3,faithfulness_corrected,judge_b,176,0.9403,,,after the retrieval-miss control (overall miss rate).
+h30,30,hierarchical_summary,faithfulness,S3,contradiction_rate,judge_b,176,0.017,,,
+h30,30,hierarchical_summary,faithfulness,S4,faithfulness,judge_b,64,0.8594,,,
+h30,30,hierarchical_summary,faithfulness,S4,faithfulness_corrected,judge_b,64,0.9141,,,after the retrieval-miss control (overall miss rate).
+h30,30,hierarchical_summary,faithfulness,S4,contradiction_rate,judge_b,64,0.0156,,,
+h30,30,hierarchical_summary,faithfulness,S5,faithfulness,judge_b,144,0.8194,,,
+h30,30,hierarchical_summary,faithfulness,S5,faithfulness_corrected,judge_b,144,0.9201,,,after the retrieval-miss control (overall miss rate).
+h30,30,hierarchical_summary,faithfulness,S5,contradiction_rate,judge_b,144,0.0,,,
+h30,30,hierarchical_summary,faithfulness,S6,faithfulness,judge_b,137,0.6058,,,
+h30,30,hierarchical_summary,faithfulness,S6,faithfulness_corrected,judge_b,137,0.781,,,after the retrieval-miss control (overall miss rate).
+h30,30,hierarchical_summary,faithfulness,S6,contradiction_rate,judge_b,137,0.0146,,,
+h30,30,hierarchical_summary,faithfulness,all,faithfulness_corrected_ci,judge_a,848,0.8538,0.7883,0.8991,after the retrieval-miss control; interval over resampled questions
+h30,30,hierarchical_summary,faithfulness,all,unsupported_claims_per_answer,judge_a,12,10.3333,6.875,14.4583,"claims not supported after the retrieval-miss control, per open answer"
+h30,30,hierarchical_summary,faithfulness,all,faithfulness_corrected_ci,judge_b,848,0.9116,0.8607,0.941,after the retrieval-miss control; interval over resampled questions
+h30,30,hierarchical_summary,faithfulness,all,unsupported_claims_per_answer,judge_b,12,6.25,3.8333,9.5833,"claims not supported after the retrieval-miss control, per open answer"
+h30,30,hierarchical_summary,system,all,latency_s_median,,36,32.477,,,
+h30,30,hierarchical_summary,system,all,latency_s_p95,,36,108.2893,,,
+h30,30,hierarchical_summary,system,all,prompt_tokens_median,,36,33304.0,,,
+h30,30,hierarchical_summary,system,all,output_tokens_median,,36,5544.5,,,thinking included
+h30,30,hierarchical_summary,system,all,cost_usd_per_answer,,36,0.1224,,,
+h30,30,hierarchical_summary,system,open,latency_s_median,,12,37.3596,,,
+h30,30,hierarchical_summary,system,open,latency_s_p95,,12,189.2549,,,
+h30,30,hierarchical_summary,system,open,prompt_tokens_median,,12,33234.5,,,
+h30,30,hierarchical_summary,system,open,output_tokens_median,,12,7343.5,,,thinking included
+h30,30,hierarchical_summary,system,open,cost_usd_per_answer,,12,0.0786,,,
+h30,30,hierarchical_summary,system,templated,latency_s_median,,24,14.2628,,,
+h30,30,hierarchical_summary,system,templated,latency_s_p95,,24,76.0561,,,
+h30,30,hierarchical_summary,system,templated,prompt_tokens_median,,24,33372.0,,,
+h30,30,hierarchical_summary,system,templated,output_tokens_median,,24,1326.5,,,thinking included
+h30,30,hierarchical_summary,system,templated,cost_usd_per_answer,,24,0.1443,,,
+h30,30,hierarchical_summary,system,all,model_calls_served_by_the_primary_key,,335,1.0,,,
+h30,30,hierarchical_summary,system,all,answers_needing_a_retry,,36,0.0,,,
+h30,30,hierarchical_summary,system,all,answers_not_finished,,36,0.0,,,finish reason other than STOP (e.g. the output limit)
+h30,30,hierarchical_summary,system,all,quote_check_removed_sentences,,36,5.0,,,in 3 answers
+h30,30,hierarchical_summary,system,open,answer_chars_median,,12,10774.0,,,
+h30,30,hierarchical_summary,faithfulness,all,claims_per_answer,,12,70.6667,,,

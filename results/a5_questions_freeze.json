@@ -1,0 +1,115 @@
+{
+ "settings": {
+  "k5": {
+   "file": "questions.jsonl",
+   "sha256": "a415637943ca39da7380392811f612ed620e1fc1a30d21ac1e549d953c166040",
+   "k": 5,
+   "context_mode": "full_text",
+   "asked": {
+    "templated": 14,
+    "open": 11
+   },
+   "dropped": [
+    {
+     "question_id": "S1-T2",
+     "reason": "the decision asked about is not in the context"
+    },
+    {
+     "question_id": "S1-T3",
+     "reason": "the decision asked about is not in the context"
+    },
+    {
+     "question_id": "S2-T3",
+     "reason": "the decision asked about is not in the context"
+    },
+    {
+     "question_id": "S2-T4",
+     "reason": "the decision asked about is not in the context"
+    },
+    {
+     "question_id": "S3-T1",
+     "reason": "the decision asked about is not in the context"
+    },
+    {
+     "question_id": "S3-T3",
+     "reason": "the decision asked about is not in the context"
+    },
+    {
+     "question_id": "S3-T4",
+     "reason": "the decision asked about is not in the context"
+    },
+    {
+     "question_id": "S4-T2",
+     "reason": "the decision asked about is not in the context"
+    },
+    {
+     "question_id": "S5-T2",
+     "reason": "the decision asked about is not in the context"
+    },
+    {
+     "question_id": "S5-O2",
+     "reason": "the context lacks one of the two groups to compare"
+    },
+    {
+     "question_id": "S6-T1",
+     "reason": "the decision asked about is not in the context"
+    }
+   ]
+  },
+  "k10": {
+   "file": "questions.jsonl",
+   "sha256": "d16918f89ab2848a6b7ab3741187d961b8b76cddf26b3f70a98b7670cb50e1e1",
+   "k": 10,
+   "context_mode": "full_text",
+   "asked": {
+    "templated": 24,
+    "open": 12
+   },
+   "dropped": []
+  },
+  "k20": {
+   "file": "questions.jsonl",
+   "sha256": "d9b68c8c778ce8a456b65896a4308747260536546a2095d140ec49766ee4f367",
+   "k": 20,
+   "context_mode": "full_text",
+   "asked": {
+    "templated": 24,
+    "open": 12
+   },
+   "dropped": []
+  },
+  "k30": {
+   "file": "questions.jsonl",
+   "sha256": "d2337f7fb55eafb5651fda4c70c55f8d6a3392926e056476062d58c1b0ebce5f",
+   "k": 30,
+   "context_mode": "full_text",
+   "asked": {
+    "templated": 24,
+    "open": 12
+   },
+   "dropped": []
+  },
+  "h30": {
+   "file": "questions.jsonl",
+   "sha256": "57630513abe7b218288ac395fb237059ee8c3e387c509674d2e85f7b52f8915d",
+   "k": 30,
+   "context_mode": "hierarchical_summary",
+   "asked": {
+    "templated": 24,
+    "open": 12
+   },
+   "dropped": []
+  }
+ },
+ "phase6_questions_sha256": "ff4dd7b8527925601f3550357d45896030ff4bc7e25945b9f5061026bac76b8a",
+ "references_checked_by_hugo": false,
+ "spot_check": [
+  "k5/S2-O1",
+  "k20/S5-O2",
+  "k30/S1-O2",
+  "k30/S2-O1",
+  "k30/S2-O2",
+  "k30/S3-O2",
+  "k30/S4-O1"
+ ]
+}

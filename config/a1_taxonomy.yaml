@@ -1,0 +1,82 @@
+# A1 retrieval benchmark: closed taxonomy of infraction categories (implementation plan, Phase 4a,
+# item 2). Secondary silver label (R-cat), assigned by an LLM from the ementa and the report.
+#
+# Drafted from the corpus (ementas and legal bases) and approved by the author as drafted on 2026-10-07.
+# scripts/41_infraction_category.py refuses to label the corpus with a draft; `--pilot` labels only
+# the development sample.
+# Changing a category after approval means a new `version` and a new labelling run.
+version: 1
+status: approved
+
+input:
+  fields: [acordao_ementa, acordao_relatorio]
+  max_report_chars: 12000       # longer reports are cut (the charge is described at the start)
+
+rules:
+  - Label the conduct the party is accused of, whatever the outcome of the appeal.
+  - The sector (insurance, open pension plans, capitalisation, reinsurance) and the kind of party (company, director, broker) do not decide the category, except where a definition says so.
+  - With several charges, the primary category is the one that covers most of them; if tied, the first charge described. Up to two other categories go in `secondary`.
+  - C14 only when the text describes no underlying infraction at all.
+  - C99 only for an infraction that fits no other category.
+
+categories:
+  - id: C01
+    label: Unauthorised insurance activity
+    definition: Operating as an insurer, pension entity, capitalisation company or broker, or selling insurance-like protection, without SUSEP's authorisation.
+    cues_pt: ["atuar como seguradora sem autorização", "associação de proteção veicular", "atuação irregular no sistema de seguros", "art. 113 do Decreto-Lei 73/1966"]
+  - id: C02
+    label: Claims, benefits and refunds refused or delayed
+    definition: Refusing, delaying or underpaying an indemnity, benefit, redemption, portability, draw prize or premium refund owed under a contract; breach of the commitments of a contract towards the insured or participant.
+    cues_pt: ["descumprir os compromissos resultantes de contrato comercializado", "atraso no pagamento da indenização", "negativa de pagamento", "resgate", "portabilidade"]
+  - id: C03
+    label: Contracting, charging and policy documents
+    definition: Faults in how a contract was made or administered, other than the payment of claims. Examples are a missing proposal, a policy or certificate issued late or without a proposal, undue charging of premiums or contributions, a cancellation request not carried out, or mandatory documents not kept or not delivered.
+    cues_pt: ["ausência de proposta de seguro", "emitir apólice sem proposta", "cobrança indevida de prêmio", "emissão de apólice fora do prazo", "guarda de documentos"]
+  - id: C04
+    label: Product and marketing rules
+    definition: Selling a product that was not filed with SUSEP or that differs from the filed conditions or technical note; unclear, incomplete or misleading information in the offer or in sales material.
+    cues_pt: ["comercializar produto em desacordo com as condições contratuais ou nota técnica", "produto arquivado", "informações sem clareza", "material de comercialização"]
+  - id: C05
+    label: Periodic information sent late or not sent
+    definition: Periodic regulatory information (FIP, statistical tables, financial statements, audit or actuarial reports, questionnaires) sent to SUSEP after the deadline or not sent.
+    cues_pt: ["envio do FIP fora do prazo", "envio intempestivo", "atraso no envio", "não envio de informações periódicas"]
+  - id: C06
+    label: Periodic information sent with errors
+    definition: Periodic regulatory information sent to SUSEP on time but incorrect, incomplete or inconsistent.
+    cues_pt: ["encaminhar informações do FIP com incorreções", "preenchimento incorreto de quadro do FIP", "dados inconsistentes"]
+  - id: C07
+    label: Requests from SUSEP not answered; supervision hindered
+    definition: Not answering a specific request, letter or order from SUSEP in time or in the required form, or hindering its supervision.
+    cues_pt: ["não atender, no prazo e na forma fixada, às solicitações da Autarquia", "não atender ao ofício", "dificultar a fiscalização"]
+  - id: C08
+    label: Technical provisions, covering assets and solvency
+    definition: Technical provisions not set up or set up inadequately; insufficient assets covering the provisions; investments against the rules of the National Monetary Council; insufficient capital or solvency.
+    cues_pt: ["não constituir ou constituir inadequadamente as provisões técnicas", "insuficiência de cobertura das reservas técnicas", "Resolução CMN 3.308", "capital mínimo"]
+  - id: C09
+    label: Accounting and financial statements
+    definition: Irregular bookkeeping, accounting entries or financial statements whose content breaks the accounting rules, and faults in independent auditing. Lateness alone is C05.
+    cues_pt: ["irregularidade na escrituração contábil", "lançamentos contábeis em desacordo com as normas", "demonstrações financeiras em desacordo", "erro contábil"]
+  - id: C10
+    label: Management of the DPVAT consortium
+    definition: Managing the resources or operations of the mandatory motor insurance (DPVAT) against the law or SUSEP's orders, including the liability of the consortium's administrators. A DPVAT indemnity refused or delayed to a victim is C02.
+    cues_pt: ["gerir os recursos do DPVAT em desacordo com a legislação", "Seguradora Líder", "despesas não respaldadas"]
+  - id: C11
+    label: Brokers and other intermediaries
+    definition: Irregular conduct of an authorised broker, representative or policyholder of a group policy, such as premiums not passed on, acting beyond their powers or breaking the broker's duties. Brokering without registration is C01.
+    cues_pt: ["corretor de seguros", "não repasse de prêmio", "art. 127 do Decreto-Lei 73/1966", "estipulante"]
+  - id: C12
+    label: Reinsurance and retrocession operations
+    definition: Rules on reinsurance and retrocession contracts, such as a contract not formalised in time, mandatory clauses missing, cession limits exceeded or an unauthorised reinsurer.
+    cues_pt: ["contrato de resseguro", "retrocessão", "formalização do contrato no prazo regulamentar", "Resolução CNSP 168/2007"]
+  - id: C13
+    label: Governance, internal controls and corporate acts
+    definition: Faults in internal controls, the ombudsman's office, internal audit, conduct policies or money-laundering controls; corporate acts (election of officers, capital changes, bylaws) not submitted to SUSEP or irregular; breach of the administrators' duties not covered by another category.
+    cues_pt: ["controles internos", "ouvidoria", "eleição de administradores", "aumento de capital não comunicado", "prevenção à lavagem de dinheiro"]
+  - id: C14
+    label: Procedural decision only
+    definition: The text describes no underlying infraction. Examples are a motion for clarification, a rectification, or a decision only on time limits, loss of object or admissibility.
+    cues_pt: ["embargos de declaração", "retificação de acórdão", "perda de objeto", "prescrição"]
+  - id: C99
+    label: Other
+    definition: An infraction that fits none of the categories above.
+    cues_pt: []

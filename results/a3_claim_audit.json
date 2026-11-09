@@ -1,0 +1,70 @@
+{
+  "marked": 50,
+  "hugo_labels": {
+    "supported": 32,
+    "not_found": 16,
+    "contradicted": 2
+  },
+  "by_stratum": {
+    "judge_a+ judge_b+ judge_gemini+": {
+      "contradicted": 0,
+      "not_found": 0,
+      "supported": 5
+    },
+    "judge_a+ judge_b+ judge_gemini-": {
+      "contradicted": 0,
+      "not_found": 1,
+      "supported": 4
+    },
+    "judge_a+ judge_b+ judge_gemini.": {
+      "contradicted": 0,
+      "not_found": 0,
+      "supported": 5
+    },
+    "judge_a+ judge_b- judge_gemini+": {
+      "contradicted": 0,
+      "not_found": 0,
+      "supported": 5
+    },
+    "judge_a+ judge_b- judge_gemini-": {
+      "contradicted": 0,
+      "not_found": 2,
+      "supported": 3
+    },
+    "judge_a+ judge_b- judge_gemini.": {
+      "contradicted": 0,
+      "not_found": 0,
+      "supported": 4
+    },
+    "judge_a- judge_b+ judge_gemini+": {
+      "contradicted": 0,
+      "not_found": 0,
+      "supported": 4
+    },
+    "judge_a- judge_b+ judge_gemini-": {
+      "contradicted": 0,
+      "not_found": 2,
+      "supported": 2
+    },
+    "judge_a- judge_b+ judge_gemini.": {
+      "contradicted": 1,
+      "not_found": 3,
+      "supported": 0
+    },
+    "judge_a- judge_b- judge_gemini-": {
+      "contradicted": 0,
+      "not_found": 4,
+      "supported": 0
+    },
+    "judge_a- judge_b- judge_gemini.": {
+      "contradicted": 1,
+      "not_found": 3,
+      "supported": 0
+    },
+    "judge_a- judge_b. judge_gemini.": {
+      "contradicted": 0,
+      "not_found": 1,
+      "supported": 0
+    }
+  }
+}

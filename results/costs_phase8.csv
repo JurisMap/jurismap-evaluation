@@ -1,0 +1,23 @@
+version,step,model,credentials,requests,cost_usd
+improvement round,development notices,mistral-medium-3,your-mistral-gcp-project,19,0.03
+improvement round,development selection,mistral-medium-3,your-mistral-gcp-project,30,0.07
+improvement round,development selection,gpt-5.4,azure,90,2.84
+improvement round,drafting,gemini-3.7-flash,primary key,30,7.81
+v2.6,drafting,gemini-3.7-flash,primary key,225,43.51
+v2.6,drafting superseded (old N10 notice; environment failures),gemini-3.7-flash,primary key,15,3.88
+v2.6,fact sorting,gpt-5.4,azure,243,5.15
+v2.6,judge prompts (development),gpt-5.4,azure,12,0.46
+v2.6,judge prompts (development),mistral-medium-3,the fallback project,12,0.03
+v2.6,judge prompts (development),gemini-3.8-flash,primary,6,0.21
+v2.6,judging,gpt-5.4,azure,425,16.81
+v2.6,judging,gemini-3.8-flash,primary,230,5.81
+v2.6,judging,mistral-medium-3,your-mistral-gcp-project,471,1.28
+v2.6,notice rewrites,mistral-medium-3,the fallback project,9,0.02
+v2.6,notice rewrites,mistral-medium-3,your-mistral-gcp-project,3,0.01
+v2.6,notices,mistral-medium-3,the fallback project,99,0.16
+v2.7,drafting,gemini-3.7-flash,primary key,225,46.15
+v2.7,drafting superseded (old N10 notice; environment failures),gemini-3.7-flash,primary key,18,0.53
+v2.7,fact sorting,gpt-5.4,azure,212,3.12
+v2.7,judging,mistral-medium-3,your-mistral-gcp-project,427,1.12
+v2.7,judging,gemini-3.8-flash,primary,213,3.3
+v2.7,judging,gpt-5.4,azure,426,15.79

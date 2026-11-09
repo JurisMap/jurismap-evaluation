@@ -1,0 +1,54 @@
+{
+  "phase0_decisions": 1523,
+  "frozen_decisions": 2391,
+  "matched": 1503,
+  "matched_by": {
+    "url": 1491,
+    "process": 12
+  },
+  "unmatched": 20,
+  "unmatched_by_v1_session": {
+    "286": 1,
+    "288": 3,
+    "290": 1,
+    "291": 1,
+    "292": 1,
+    "293": 2,
+    "295": 3,
+    "298": 1,
+    "302": 1,
+    "309": 3,
+    "313": 1,
+    "316": 1,
+    "321": 1
+  },
+  "session_changed": 2,
+  "relatorio_identical": 113,
+  "relatorio_jaccard": {
+    "min": 0.002,
+    "p05": 0.363,
+    "median": 0.977,
+    "below_0.5": 161
+  },
+  "same_outcome": 1115,
+  "outcome_changes": {
+    "Desconhecido -> Não provido": 127,
+    "Desconhecido -> Parcialmente provido": 97,
+    "Desconhecido -> Provido": 42,
+    "Não conhecido -> Não provido": 25,
+    "Parcialmente provido -> Não provido": 18,
+    "Não provido -> Parcialmente provido": 16,
+    "Não conhecido -> Parcialmente provido": 11,
+    "Não provido -> Provido": 11,
+    "Provido -> Parcialmente provido": 10,
+    "Parcialmente provido -> Provido": 8,
+    "Desconhecido -> Não conhecido": 7,
+    "Não conhecido -> Provido": 6,
+    "Provido -> Não provido": 6,
+    "Não conhecido -> Extinto": 1,
+    "Não provido -> Não conhecido": 1,
+    "Parcialmente provido -> Não conhecido": 1,
+    "Provido -> Extinto": 1
+  },
+  "frozen_decisions_in_v1_session_range": 1955
+}

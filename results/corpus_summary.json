@@ -1,0 +1,125 @@
+{
+  "v2_source": {
+    "path": "../app/backend/data_cleaned.joblib",
+    "sha256": "f686b418a36c62ede9f03ad48a66d1686f301557a7c8fa6260024c0de044335a"
+  },
+  "v2_records_in_source": 1529,
+  "v2_unique_decisions": 1523,
+  "v2_exact_duplicate_groups": 6,
+  "v2_duplicate_titles": [
+    "Processo 15414.608124/2017-08",
+    "Processo 15414.608742/2023-98",
+    "Processo 15414.609095/2020-99",
+    "Processo 15414.614020/2020-20",
+    "Processo 15414.624454/2017-32",
+    "Processo 15414.626185/2017-49"
+  ],
+  "outcome_distribution_source_records": {
+    "Parcialmente provido": 619,
+    "Não provido": 408,
+    "Desconhecido": 279,
+    "Provido": 136,
+    "Não conhecido": 86,
+    "Extinto": 1
+  },
+  "outcome_distribution_unique": {
+    "Parcialmente provido": 615,
+    "Não provido": 407,
+    "Desconhecido": 278,
+    "Provido": 136,
+    "Não conhecido": 86,
+    "Extinto": 1
+  },
+  "ementa_unknown_source_records": 341,
+  "ementa_unknown_unique": 340,
+  "embedding": {
+    "field": "embedding_acordao_relatorio_compressed",
+    "dim": 3072,
+    "n": 1523,
+    "nan": 0,
+    "norm_min": 0.9999998372152967,
+    "norm_max": 1.000000200787403
+  },
+  "process_numbers": {
+    "found": 1510,
+    "by_source": {
+      "titulo": 1502,
+      "none": 13,
+      "acordao_relatorio": 7,
+      "acordao_voto_relator": 1
+    },
+    "invalid_format": 0,
+    "titles_with_multiple_processes": 47,
+    "distinct_primary_processes": 1486,
+    "processes_with_multiple_decisions": 24,
+    "decisions_sharing_a_process": 48
+  },
+  "entities_unique_excl_unknown": {
+    "acordao_relator_curated": 25,
+    "acordao_recorrente_curated": 127,
+    "acordao_advogado_curated": 111,
+    "acordao_recorrido_curated": 5
+  },
+  "sessions": {
+    "distinct_sessao_hash": 44,
+    "date_min": "2019-11-12",
+    "date_max": "2025-02-27",
+    "decisions_per_year": {
+      "2019": 8,
+      "2021": 578,
+      "2022": 298,
+      "2023": 460,
+      "2024": 168,
+      "2025": 11
+    }
+  },
+  "v1_enrichment": {
+    "joined": 1523,
+    "relatorio_identical_to_v1": 1523,
+    "acordao_base_nonempty": 1407,
+    "acordao_penalidade_nonempty": 1485,
+    "outcome_label_changed_v1_to_v2": 38,
+    "outcome_crosstab_v1_to_v2": {
+      "Desconhecido -> Extinto": 1,
+      "Desconhecido -> Não conhecido": 1,
+      "Desconhecido -> Não provido": 7,
+      "Desconhecido -> Parcialmente provido": 6,
+      "Desconhecido -> Provido": 4,
+      "Mantido -> Não provido": 17,
+      "Rejeitado -> Não conhecido": 2
+    }
+  },
+  "reconciliation_1531": {
+    "v1_snapshot": {
+      "path": "../app/backend@v1-expert-eval:data_cleaned.joblib",
+      "commit": "3c417fff4d80f7c06bdfc24e07bb47c54ec8c127",
+      "sha256": "33b4f04cc28226b213a6d46b4118336034624c71117571d40b278e0d9b9a0d2c",
+      "records": 1537,
+      "unique_decisions": 1531,
+      "export_timestamp": "2025-03-30 00:39:48.777605+00:00",
+      "sessions": 44,
+      "outcome_distribution_unique": {
+        "Parcialmente provido": 609,
+        "Não provido": 383,
+        "Desconhecido": 305,
+        "Provido": 132,
+        "Não conhecido": 83,
+        "Mantido": 17,
+        "Rejeitado": 2
+      }
+    },
+    "in_v1_not_v2": 8,
+    "in_v2_not_v1": 0,
+    "in_v1_not_v2_empty_relatorio": 8,
+    "in_v1_not_v2_titles": [
+      "Processo 15414.200114/2013-96",
+      "Processo 15414.200301/2012-99",
+      "Processo 15414.601293/2016-28",
+      "Processo 15414.602026/2017-59",
+      "Processo 15414.603988/2017-25",
+      "Processo 15414.614763/2017-02",
+      "Processo 15414.626406/2019-41",
+      "Processo 15414.627881/2019-34"
+    ]
+  }
+}

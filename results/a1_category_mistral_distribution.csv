@@ -1,0 +1,16 @@
+category,label,primary,share_primary,secondary
+C01,Unauthorised insurance activity,110,0.046,7
+C02,"Claims, benefits and refunds refused or delayed",501,0.2096,98
+C03,"Contracting, charging and policy documents",247,0.1033,177
+C04,Product and marketing rules,140,0.0586,76
+C05,Periodic information sent late or not sent,263,0.11,44
+C06,Periodic information sent with errors,129,0.054,82
+C07,Requests from SUSEP not answered; supervision hindered,160,0.0669,68
+C08,"Technical provisions, covering assets and solvency",248,0.1038,58
+C09,Accounting and financial statements,195,0.0816,108
+C10,Management of the DPVAT consortium,68,0.0285,25
+C11,Brokers and other intermediaries,68,0.0285,25
+C12,Reinsurance and retrocession operations,73,0.0305,23
+C13,"Governance, internal controls and corporate acts",133,0.0556,121
+C14,Procedural decision only,53,0.0222,13
+C99,Other,2,0.0008,1

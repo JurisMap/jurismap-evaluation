@@ -1,0 +1,6 @@
+arm,invented_estimate,invented_classified,recall,gpt_legal_accuracy,gpt_fidelity_to_facts,gpt_use_of_precedents,gpt_structure,gpt_persuasiveness,verify_markers,past_offences_asserted,cost_usd,latency_s,controls,eligible,selected
+baseline,4.511,8.2,0.5,2.6,1.6,2.4,5.0,2.4,0.0,0.4,0.216,114.387,0,True,False
+premise_rule,2.326,4.2,0.54,2.4,2.2,2.2,5.0,2.2,1.8,0.4,0.208,106.165,1,True,False
+case_facts,1.714,3.0,0.373,2.2,2.2,2.4,4.8,2.4,1.2,0.6,0.229,138.503,1,False,False
+premise_check,2.756,5.0,0.5,2.4,1.8,2.4,5.0,2.4,2.4,0.4,0.213,120.028,1,True,False
+all,1.465,2.6,0.54,2.6,2.0,2.6,5.0,2.4,3.8,0.4,0.224,127.251,3,True,True

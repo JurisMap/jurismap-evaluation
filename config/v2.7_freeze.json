@@ -1,0 +1,164 @@
+{
+  "version": "v2.7",
+  "tag": "v2.7-eval-frozen",
+  "created_utc": "2026-10-19T18:54:21+00:00",
+  "git": {
+    "eval": {
+      "sha": "ebdbf4aac898cd5ed14c2ca40086b1e2cb5a9bca",
+      "branch": "feature/phase-8-a4-drafting",
+      "dirty": false
+    },
+    "backend": {
+      "sha": "c48f07c9484948d55f18f4446e40619cbe6d939f",
+      "branch": "feature/fact_premises_guard",
+      "dirty": false
+    },
+    "frontend_v2": {
+      "sha": "1af17ba99df5e49acdbfeb8fe43b8b03b903987b",
+      "branch": "main",
+      "dirty": false
+    },
+    "frontend_v1": {
+      "sha": "8183c0da1c08d7793fddaaafb894ab61114c61b2",
+      "branch": "legacy/streamlit-v1",
+      "dirty": true
+    },
+    "scrapers": {
+      "sha": "c5527ef9f1259ca97681aadc01c411bd4fb96299",
+      "branch": "main",
+      "dirty": false
+    }
+  },
+  "tagged_repos": [
+    "backend",
+    "scrapers",
+    "frontend_v2"
+  ],
+  "untagged_repos_note": "frontend_v2 is tagged too: it shows the cases the backend pre-selects; eval is the harness; frontend_v1 is version 1.",
+  "models": {
+    "backend_runtime_env": {
+      "GOOGLE_GENAI_USE_VERTEXAI": "TRUE",
+      "GENAI_LOCATION": "global",
+      "GOOGLE_CLOUD_LOCATION": "global",
+      "CHATBOT_MODEL": "gemini-3.7-flash",
+      "CHATBOT_REASONING_MODEL": "gemini-3.7-flash",
+      "COMPRESSION_MODEL": "gemini-3.7-flash",
+      "OCR_MODEL": "gemini-3.7-flash",
+      "EMBEDDING_MODEL": "gemini-embedding-001",
+      "COMPRESSION_THINKING_LEVEL": "low",
+      "COMPRESSION_MAX_OUTPUT_TOKENS": "8192",
+      "FACT_CONTROLS": "premise_rule,case_facts,premise_check"
+    },
+    "corpus_compression": {
+      "model": "gemini-3.7-flash",
+      "thinking_level": "low",
+      "max_output_tokens": 8192,
+      "location": "global",
+      "finish_reasons": {
+        "FinishReason.STOP": 2386,
+        "FinishReason.MAX_TOKENS": 4
+      },
+      "model_versions": [
+        "gemini-3.7-flash"
+      ]
+    },
+    "corpus_embedding": {
+      "model": "gemini-embedding-001",
+      "vector": "unit-length sum of the unit-length embeddings of the full report and of the compressed report",
+      "shape": [
+        2390,
+        3072
+      ]
+    },
+    "embedding_task_type_corpus": "SEMANTIC_SIMILARITY",
+    "embedding_task_type_chat_query": "SEMANTIC_SIMILARITY",
+    "legal_search_tool": "Google Search grounding (built-in tool); the Tavily tool is not attached",
+    "adk": "google-adk 1.3.0 (pinned) + GoogleSearchGroundingTool shim for Gemini 3"
+  },
+  "prompts_sha256": {
+    "backend": {
+      "case_interpreter_consolidated.yaml": "8752a37537afedf4ac658070b7fbee2c55bc921f2c1947cabcc43a2932f12034",
+      "chat_case_summary.yaml": "1bfa221d9c2b538c6b11ccd1aaa0268d8466c21a4bdb7a4a29d7cb570ae4a503",
+      "chat_grounding.yaml": "3c1052ca49902252baff9dda1751df194addbec09909aa9a9ad6840da7a22d7e",
+      "compress_legal_text_prompt.yaml": "614b874f09a7eb11fdd7ec5189b776fba2042b56003e8450b19a96bff741ca76",
+      "defense_creator_consolidated.yaml": "43b67896e8763c94fc2765ffd087b9bfe19f499874160d23c83a8bd0d46699bd",
+      "defense_structure_consolidated.yaml": "1df0447e0cd34ae75afb68f332147b6a19caccbba7f2ff51d90db976c1f55e49",
+      "fact_controls.yaml": "5cb56a2f4add2f60737da91b3a4f120a435b459fe1f838d2ff8082a3e35023db",
+      "legal_searcher_consolidated.yaml": "df12205a88c28a65c057e1f3581e94e12c341a6045183635bb56c23a90654884",
+      "merger_consolidated.yaml": "0e9cd47c618ca7e4b6e9c2602ee74a4b3c1db6eab50c96a13ef2db404b87ec64",
+      "single_prompt_defense.yaml": "a4fa602d564df4c9c9f0377891ef5fa6786d2a3df878768255f817c186435d26",
+      "supervisor_consolidated.yaml": "89a95dee305cc1cd36fd99e00268a3978aa34c7332995a3aacf1c59c528a2b39",
+      "system_prompt.yaml": "508856549e5aa991a8b7cd913b133249127fdc7d7b302bd9584ac4d12b8fdb4f"
+    },
+    "scrapers": {
+      "compress_legal_text_prompt.yaml": "614b874f09a7eb11fdd7ec5189b776fba2042b56003e8450b19a96bff741ca76",
+      "extraction_prompt.yaml": "51a63af1f164719e5f76f22aa9eb9d46593a38664bb9c4414a4c0da6d16ede7a"
+    }
+  },
+  "data": {
+    "snapshot": {
+      "path": "data/v2/corpus_snapshot_20260926.parquet",
+      "sha256": "17db54906595ab451f0a4390145f0d56a05702be0136432ca0770acad9b26f6b"
+    },
+    "frozen_corpus": {
+      "path": "data/v2/corpus_v2_frozen_20260926.parquet",
+      "sha256": "eb40b772d2d8f916523474561998cdc44311193b756a4fd4d40734b3815918ec"
+    },
+    "reextracted_corpus": {
+      "path": "data/v2/corpus_v2_1_frozen_20260927.parquet",
+      "sha256": "8dc25e9c74349a6ecf30bcc7482d12e17ac18f71c2e1d15630dd124018635be3"
+    },
+    "rebuilt_corpus": {
+      "path": "data/v2/corpus_v2_rebuilt_20261009.parquet",
+      "sha256": "2918f3ebed6c3b969c7274c3a18762c26b3ace17b09d286e2ca12102153128a4"
+    },
+    "shared_ids": {
+      "path": "data/v2/shared_ids.txt",
+      "sha256": "3b38928b84c216504338a082f8cf90e2af0ed3c981dc3dbca8b94c4c7db2584b"
+    },
+    "backend_files": {
+      "data_cleaned_v2.joblib": "82a06687cc8d4c01ef97130f692cde8908f1ea14c65adfe4d822afff5dd3e0bf",
+      "umap_mapper_v2.joblib": "bbb71bb00c3c331af7bf3371c009a898cc61b41777c0db74bcdcc05808402a21"
+    },
+    "decisions": 2390,
+    "bigquery_table": "your-gcp-project.crsnsp_eval.scraper_output_v2_1"
+  },
+  "umap": {
+    "params": {
+      "n_neighbors": 10,
+      "min_dist": 0.0,
+      "n_components": 2,
+      "metric": "cosine",
+      "n_epochs": 2000,
+      "random_state": 42
+    },
+    "row_order": "acordao_hash",
+    "refit_identical": true,
+    "procrustes_disparity_refit": 6.198537286464669e-31,
+    "libraries": {
+      "umap-learn": "0.5.7",
+      "numba": "0.62.1",
+      "llvmlite": "0.45.1",
+      "pynndescent": "0.5.13",
+      "numpy": "2.1.3",
+      "scikit-learn": "1.6.1",
+      "scipy": "1.16.3"
+    }
+  },
+  "server_env": {
+    "EVAL_MODE": "1",
+    "DATA_VERSION": "v2",
+    "DATA_DIR": "data/v2/rebuild_20261009",
+    "BIGQUERY_TABLE": "your-gcp-project.crsnsp_eval.scraper_output_v2_1",
+    "SESSION_TYPE": "filesystem",
+    "CLOUD_RUN": "False",
+    "GEMINI_PRIMARY_CREDENTIALS": "../primary-gemini-key.json",
+    "GEMINI_PRIMARY_RETRY_ATTEMPTS": "6",
+    "GEMINI_PRIMARY_COOLDOWN_S": "60"
+  },
+  "smoke_test": {
+    "file": "results/v2_smoke_test_13.json",
+    "run_dir": "smoke_20261019T183409Z",
+    "failures": []
+  }
+}

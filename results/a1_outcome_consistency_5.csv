@@ -1,0 +1,37 @@
+scope,proxy,method,label,queries,neighbours,share_same,ci_low,ci_high,share_expected_by_chance,lift
+comparison_set,outcome,M1,TF-IDF,1503,10,0.518496,0.502927,0.534198,0.375736,1.37995
+comparison_set,outcome,M2,BM25,1503,10,0.514904,0.500065,0.529809,0.375736,1.37039
+comparison_set,outcome,M3,"text-multilingual-embedding-002, full report (version 1)",1503,10,0.504724,0.490552,0.518762,0.375736,1.34329
+comparison_set,outcome,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",1503,10,0.524418,0.51018,0.538656,0.375736,1.39571
+comparison_set,outcome,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",1503,10,0.505722,0.491216,0.51976,0.375736,1.34595
+comparison_set,outcome,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",1503,10,0.502063,0.48829,0.515835,0.375736,1.33621
+comparison_set,outcome,M5,"gemini-embedding-001, full report",1503,10,0.521623,0.507384,0.535995,0.375736,1.38827
+comparison_set,outcome,M6,"BGE-M3 (dense), full report",1503,10,0.507984,0.493746,0.521825,0.375736,1.35197
+comparison_set,outcome,M7,"multilingual-E5-large, full report",1503,10,0.484764,0.471524,0.498603,0.375736,1.29017
+comparison_set,penalty_type,M1,TF-IDF,1497,10,0.815171,0.800636,0.828967,0.774197,1.05292
+comparison_set,penalty_type,M2,BM25,1497,10,0.803943,0.789623,0.817839,0.774197,1.03842
+comparison_set,penalty_type,M3,"text-multilingual-embedding-002, full report (version 1)",1497,10,0.830717,0.816028,0.84479,0.774197,1.073
+comparison_set,penalty_type,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",1497,10,0.846819,0.832693,0.859987,0.774197,1.0938
+comparison_set,penalty_type,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",1497,10,0.842492,0.828154,0.855922,0.774197,1.08821
+comparison_set,penalty_type,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",1497,10,0.840784,0.826751,0.854206,0.774197,1.08601
+comparison_set,penalty_type,M5,"gemini-embedding-001, full report",1497,10,0.848143,0.834218,0.861288,0.774197,1.09551
+comparison_set,penalty_type,M6,"BGE-M3 (dense), full report",1497,10,0.838068,0.823921,0.851595,0.774197,1.0825
+comparison_set,penalty_type,M7,"multilingual-E5-large, full report",1497,10,0.823401,0.808856,0.837629,0.774197,1.06355
+v2,outcome,M1,TF-IDF,2390,10,0.503431,0.491674,0.515481,0.337307,1.4925
+v2,outcome,M2,BM25,2390,10,0.486151,0.474644,0.497908,0.337307,1.44127
+v2,outcome,M3,"text-multilingual-embedding-002, full report (version 1)",2390,10,0.488285,0.477448,0.499164,0.337307,1.44759
+v2,outcome,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",2390,10,0.510418,0.499205,0.521799,0.337307,1.51321
+v2,outcome,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",2390,10,0.487448,0.476234,0.498619,0.337307,1.44511
+v2,outcome,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",2390,10,0.496109,0.485188,0.506862,0.337307,1.47079
+v2,outcome,M5,"gemini-embedding-001, full report",2390,10,0.506109,0.494979,0.51728,0.337307,1.50044
+v2,outcome,M6,"BGE-M3 (dense), full report",2390,10,0.486444,0.475649,0.497491,0.337307,1.44214
+v2,outcome,M7,"multilingual-E5-large, full report",2390,10,0.46749,0.457364,0.477699,0.337307,1.38594
+v2,penalty_type,M1,TF-IDF,2372,10,0.78468,0.773082,0.796069,0.719518,1.09056
+v2,penalty_type,M2,BM25,2372,10,0.794909,0.783133,0.806584,0.719518,1.10478
+v2,penalty_type,M3,"text-multilingual-embedding-002, full report (version 1)",2372,10,0.811417,0.799763,0.822569,0.719518,1.12772
+v2,penalty_type,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",2372,10,0.836591,0.825599,0.847198,0.719518,1.16271
+v2,penalty_type,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",2372,10,0.82675,0.815768,0.837571,0.719518,1.14903
+v2,penalty_type,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",2372,10,0.821218,0.810347,0.831744,0.719518,1.14135
+v2,penalty_type,M5,"gemini-embedding-001, full report",2372,10,0.830261,0.819384,0.840895,0.719518,1.15391
+v2,penalty_type,M6,"BGE-M3 (dense), full report",2372,10,0.81505,0.803673,0.825886,0.719518,1.13277
+v2,penalty_type,M7,"multilingual-E5-large, full report",2372,10,0.789589,0.777948,0.801065,0.719518,1.09739

@@ -1,0 +1,93 @@
+{
+  "decisions": 100,
+  "unusable_answers": {
+    "base": 0,
+    "infringed": 0,
+    "category": 0
+  },
+  "legal_basis": {
+    "n": 98,
+    "correct": 95,
+    "share": 0.9694,
+    "wilson_95": [
+      0.9138,
+      0.9895
+    ]
+  },
+  "penalty_type": {
+    "n": 100,
+    "correct": 100,
+    "share": 1.0,
+    "wilson_95": [
+      0.963,
+      1.0
+    ]
+  },
+  "infringed_provision": {
+    "n": 58,
+    "correct": 58,
+    "share": 1.0,
+    "wilson_95": [
+      0.9379,
+      1.0
+    ],
+    "not_in_text": 0
+  },
+  "controls": {
+    "base": {
+      "planted": 10,
+      "caught": 10
+    },
+    "infringed": {
+      "planted": 10,
+      "caught": 10
+    }
+  },
+  "category": {
+    "reviewer vs gemini": {
+      "n": 100,
+      "agreement": 0.97,
+      "kappa": 0.9668
+    },
+    "reviewer vs mistral": {
+      "n": 100,
+      "agreement": 0.9,
+      "kappa": 0.8894
+    },
+    "reviewer vs hugo": {
+      "n": 60,
+      "agreement": 0.9167,
+      "kappa": 0.908
+    },
+    "gemini vs hugo": {
+      "n": 60,
+      "agreement": 0.95,
+      "kappa": 0.9448
+    },
+    "gemini vs mistral (corpus)": {
+      "n": 2390,
+      "agreement": 0.9067,
+      "kappa": 0.8959
+    }
+  },
+  "agreement_with_hugo": {
+    "legal_basis": {
+      "n": 55,
+      "same": 53,
+      "hugo_correct_reviewer_wrong": 2,
+      "hugo_wrong_reviewer_correct": 0
+    },
+    "penalty_type": {
+      "n": 60,
+      "same": 60,
+      "hugo_correct_reviewer_wrong": 0,
+      "hugo_wrong_reviewer_correct": 0
+    },
+    "infringed_provision": {
+      "n": 32,
+      "same": 32,
+      "hugo_correct_reviewer_wrong": 0,
+      "hugo_wrong_reviewer_correct": 0
+    }
+  }
+}

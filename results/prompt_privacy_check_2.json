@@ -1,0 +1,10 @@
+{
+  "min_run_words": 10,
+  "max_excerpt_words": 25,
+  "excerpts": 22,
+  "max_excerpt_len": 25,
+  "bad_excerpts": [],
+  "leaks": [],
+  "prompt_files": 34,
+  "passed": true
+}

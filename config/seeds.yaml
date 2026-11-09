@@ -1,0 +1,8 @@
+# Fixed seeds (ground rule 5). Every script reads its seed from here.
+default: 20260926
+umap_v2: 42          # production global UMAP (Phase 1 refit)
+bootstrap: 20260926
+a2_projections: [42, 20260926, 20260927, 20260928, 20260929]   # A2: five fits of every seeded projection
+a2_distance_pairs: 20260926                                    # A2: the sample of decision pairs
+a2_holdout_folds: 20260926                                    # A2 (Phase 5.1): the split into held-out folds
+a1_selection_split: 20260926                                   # A1 (Phase 4.1): development and held-out queries

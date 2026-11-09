@@ -1,0 +1,13 @@
+rater,controls,true_controls,true_accepted,true_called_not_found,true_called_contradicted,false_controls,false_rejected,false_called_contradicted,false_accepted,true_accepted_share,true_accepted_ci,false_rejected_share,false_rejected_ci
+nli,all,55,46,0,9,51,42,42,9,0.8364,0.717 to 0.911,0.8235,0.697 to 0.904
+nli,field,23,22,0,1,20,15,15,5,0.9565,0.790 to 0.992,0.75,0.531 to 0.888
+nli,sentence,32,24,0,8,31,27,27,4,0.75,0.579 to 0.867,0.871,0.711 to 0.949
+judge_a,all,55,55,0,0,51,51,51,0,1.0,0.935 to 1.000,1.0,0.930 to 1.000
+judge_a,field,23,23,0,0,20,20,20,0,1.0,0.857 to 1.000,1.0,0.839 to 1.000
+judge_a,sentence,32,32,0,0,31,31,31,0,1.0,0.893 to 1.000,1.0,0.890 to 1.000
+judge_b,all,55,54,0,1,51,47,46,4,0.9818,0.904 to 0.997,0.9216,0.815 to 0.969
+judge_b,field,23,22,0,1,20,20,20,0,0.9565,0.790 to 0.992,1.0,0.839 to 1.000
+judge_b,sentence,32,32,0,0,31,27,26,4,1.0,0.893 to 1.000,0.871,0.711 to 0.949
+judge_gemini,all,55,55,0,0,51,51,51,0,1.0,0.935 to 1.000,1.0,0.930 to 1.000
+judge_gemini,field,23,23,0,0,20,20,20,0,1.0,0.857 to 1.000,1.0,0.839 to 1.000
+judge_gemini,sentence,32,32,0,0,31,31,31,0,1.0,0.893 to 1.000,1.0,0.890 to 1.000

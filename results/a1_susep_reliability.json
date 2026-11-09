@@ -1,0 +1,32 @@
+{
+  "pairs": 1225,
+  "experts": 3,
+  "icc_2_1": 0.7321,
+  "icc_2_3": 0.8913,
+  "krippendorff_alpha_interval": 0.7309,
+  "krippendorff_alpha_ordinal": 0.5605,
+  "pairwise_spearman": {
+    "Exp 1 vs Exp 2": 0.5669,
+    "Exp 1 vs Exp 3": 0.6333,
+    "Exp 2 vs Exp 3": 0.6276
+  },
+  "pairs_with_mean_above_zero": 167,
+  "share_pairs_with_mean_above_zero": 0.1363,
+  "pairs_above_zero_per_expert": {
+    "Exp 1": 101,
+    "Exp 2": 131,
+    "Exp 3": 51
+  },
+  "stored_mean_column": {
+    "rows": 1225,
+    "cells_with_a_row_average_formula": 1225,
+    "cells_with_a_stored_value": 0
+  },
+  "infractions": 50,
+  "distinct_texts": 47,
+  "matched_subset": {
+    "infractions": 15,
+    "pairs": 105,
+    "pairs_with_mean_above_zero": 23
+  }
+}

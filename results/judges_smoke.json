@@ -1,0 +1,56 @@
+{
+  "judge_a": {
+    "model": "xai/grok-4.20-reasoning",
+    "verdicts": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "correct": true,
+    "faithfulness": 0.5,
+    "input_tokens": 571,
+    "output_tokens": 784,
+    "reasoning_tokens": 728,
+    "cost_usd": 0.005846,
+    "latency_s": 4.21,
+    "cached": false,
+    "credentials": "the fallback project"
+  },
+  "judge_b": {
+    "model": "mistral-medium-3",
+    "verdicts": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "correct": true,
+    "faithfulness": 0.5,
+    "input_tokens": 287,
+    "output_tokens": 74,
+    "reasoning_tokens": null,
+    "cost_usd": 0.000263,
+    "latency_s": 2.5,
+    "cached": true,
+    "credentials": "the fallback project"
+  },
+  "judge_gemini": {
+    "model": "gemini-3.8-flash",
+    "verdicts": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "correct": true,
+    "faithfulness": 0.5,
+    "input_tokens": 273,
+    "output_tokens": 873,
+    "reasoning_tokens": 794,
+    "cost_usd": 0.003478,
+    "latency_s": 7.47,
+    "cached": true,
+    "credentials": "primary"
+  }
+}

@@ -1,0 +1,78 @@
+# A5 context-size test (implementation plan, Phase 7). Fixed before any answer of this phase is
+# generated. Everything not set here is Phase 6's (config/a3_chatbot.yaml): the system under test,
+# the scoring rules, the evidence retrieval, the judges' prompts, the retrieval-miss control and the
+# completeness judging. No prompt, rule or threshold is changed for this phase (ground rule 8).
+version: 1
+
+# The context of a question at size k is its case set's k decisions most similar to the seed (the
+# user's case), as the app's pre-selection would offer them with k in place of 10. The sizes are
+# nested: k = 10 is Phase 6's set, k = 5 its first five, k = 20 and 30 add the seed's next most
+# similar decisions (scripts/72). All k decisions are sent as `case_hashes` with `top_k` = k, so the
+# whole set is the context, as in Phase 6.
+settings:
+  k5:  {top_k: 5,  context_mode: full_text, concurrency: 4}
+  k10: {top_k: 10, context_mode: full_text, reuse_phase6: true}     # Phase 6's first run of each question
+  k20: {top_k: 20, context_mode: full_text, concurrency: 2}
+  k30: {top_k: 30, context_mode: full_text, concurrency: 2}
+  h30: {top_k: 30, context_mode: hierarchical_summary, concurrency: 1, same_questions_as: k30}   # one call at a time: a set's cases are summarised once, by its first question
+
+# Phase 6's answers of the v2.6 run (data/v2/a3/) that the k = 10 setting reuses, run 1 only. They
+# are scored again by the same scripts as every setting (judge labels from the cache; the
+# retrieval-miss control draws its own sample of at least 30 claims).
+phase6:
+  tag: v2.6-eval-frozen
+  answers: answers_2.parquet
+
+# Which questions of the frozen Phase 6 set are asked (plan: the templated and open questions, one
+# run each). A question is asked at a size only where it is still valid there, by Phase 6's own rules:
+# a templated question's decision must be in the context and its title must identify one decision
+# of it; a count is counted again over the context; an outcome comparison needs both groups.
+question_types: [templated, open]
+runs: 1
+
+# The decisions added to a set for k = 20 and 30 follow Phase 6's rule (the seed's most similar
+# decisions by version 2's retrieval vectors, without the seed's process), taken in set order and
+# kept apart from every Phase 6 seed and member (development sets included), from the decisions the
+# unanswerable questions ask about, and from the decisions added to earlier sets.
+extension:
+  size: 30
+  vector_method: M4
+
+# Reference points of the open questions at k = 5, 20 and 30, written exactly as in Phase 6
+# (scripts/61, Mistral Medium 3) from the key points of the context's decisions; the decisions added
+# for k = 20 and 30 get key points first. The author checks this share of the new references.
+references:
+  spot_check_share: 0.2
+  seed: 20260926
+
+# Prompt limits. Every judge prompt stays under Phase 6's 8,000 tokens (config/a3_chatbot.yaml), set
+# for the judges' per-minute quotas, except in the steps whose input grows with the context (to
+# confirm): the reference, written from the key points of 20 or 30 decisions, and the two steps that
+# read a whole answer, which is longer with a larger context (claim decomposition, and completeness
+# with the reference points). These may use up to 16,000 estimated tokens, paced at 2 calls a minute
+# against Mistral's 31,500 tokens a minute. The verification batches are not affected: their input
+# is claims and passages, not the context or the answer.
+prompt_limits:
+  reference: {max_tokens: 16000, rpm: 2}
+  decomposition: {max_tokens: 16000, rpm: 2}
+  completeness: {max_tokens: 16000, rpm: 2}
+
+# Judges. GPT-5.4 (whose labels the paper reports, DECISIONS 2026-10-16) and Mistral Medium 3 label
+# every claim and every answer's coverage, as in Phase 6. Gemini 3.8 Flash, the same-family check
+# reported separately, is not run in this phase (to confirm: it would roughly double the judging cost).
+judges:
+  verifiers: [judge_a, judge_b]
+  separate: []
+  completeness: [judge_a, judge_b]
+
+# What the report shows. Completeness is not reported (the author, 2026-10-18; DECISIONS.md): 4 of the 6
+# new references the author checked at k = 20 and 30 were wrong, and k = 5 rests on one checked reference.
+# The coverage judgements stay in the working files (data/v2/a5/<setting>/completeness*.parquet).
+report:
+  completeness: false
+
+# Budget (plan, budget rule 2): a pilot of the k = 20, 30 and hierarchical runs is extrapolated before
+# the rest is sent; the phase stops and reports if the projection exceeds 150% of the plan's line.
+budget:
+  plan_line_usd: 37
+  stop_share: 1.5

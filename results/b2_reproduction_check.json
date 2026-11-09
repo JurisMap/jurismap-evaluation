@@ -1,0 +1,38 @@
+{
+  "reference": "<paper folder>/ISWA/B2/b2_statistics.xlsx",
+  "rerun": "data/b2_rerun/b2_statistics.xlsx",
+  "rtol": 1e-09,
+  "atol": 1e-12,
+  "sheets": {
+    "Items": {
+      "range": "16x18",
+      "mismatches": 0,
+      "same_shape": true
+    },
+    "Constructs": {
+      "range": "6x13",
+      "mismatches": 0,
+      "same_shape": true
+    },
+    "Sensitivity": {
+      "range": "4x4",
+      "mismatches": 0,
+      "same_shape": true
+    },
+    "Responses_anonymised": {
+      "range": "16x6",
+      "mismatches": 0,
+      "same_shape": true
+    },
+    "Notes": {
+      "range": "8x1",
+      "mismatches": 0,
+      "same_shape": true
+    }
+  },
+  "missing_sheets": [],
+  "extra_sheets": [],
+  "mismatches": [],
+  "cells_compared": 486,
+  "identical": true
+}

@@ -1,0 +1,47 @@
+[project]
+name = "jm-eval"
+version = "0.1.0"
+description = "Evaluation harness for JurisMap (ISWA revision). Talks to JurisMap v2 only via HTTP and exported data files."
+authors = [
+    { name = "the author Mentzingen", email = "hsilva@novaims.unl.pt" }
+]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "joblib>=1.4",
+    "krippendorff>=0.8",
+    "matplotlib>=3.11.2",
+    "nltk>=3.9",
+    "numpy>=2.1",
+    "openpyxl>=3.1.5",
+    "pandas>=2.2",
+    "pyarrow>=17",
+    "pypdf>=6.21.1",
+    "python-dotenv>=1.2.3",
+    "pyyaml>=6",
+    "rank-bm25>=0.2.2",
+    "requests>=2.34.2",
+    "scikit-learn>=1.5",
+    "scipy>=1.18.1",
+]
+
+[project.optional-dependencies]
+# Read-only access to the production BigQuery table (optional corpus enrichment).
+gcp = ["google-cloud-bigquery>=3.25", "db-dtypes>=1.3", "google-genai==1.55.0", "google-auth>=2.38"]
+local = [
+    "sentence-transformers>=3",
+]
+map = [
+    "opentsne>=1.0.4",
+    "pacmap>=0.9.1",
+    "umap-learn>=0.5.12",
+]
+
+[dependency-groups]
+dev = ["pytest>=8", "pre-commit>=4"]
+
+[build-system]
+requires = ["uv_build>=0.8.17,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

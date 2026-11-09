@@ -1,0 +1,163 @@
+# A3 chatbot evaluation (implementation plan, Phase 6). Everything here is fixed before any answer
+# of the evaluated question set is generated. The development set below is the only material on
+# which prompts, scoring rules and thresholds were written and tried (ground rule 8).
+version: 1
+
+corpus: data/v2/corpus_v2_rebuilt_20261009.parquet   # v2.3 data, served by v2.6 (config/v2.6_freeze.json)
+
+system:
+  tag: v2.6-eval-frozen        # v2.4 plus the quoting chat selected in Phase 6.1 (v2.5: the grounded chat at temperature 0)
+  endpoint: /API_chatbot
+  top_k: 10                    # production's value: the whole case set is the context
+  context_mode: full_text
+  concurrency: 4               # at most 4 chatbot calls at a time
+  runs: {templated: 1, unanswerable: 1, open: 3}
+
+# Case sets. From v2.4 the app offers, as context cases, the 10 decisions most similar to the user's
+# case by the retrieval vectors. A set is built the same way: a seed decision plays the user's case
+# and the set is its 10 most similar decisions, without the seed and the other decisions of its
+# process. The seeds are stratified by legal basis: one seed drawn at random in each of the most
+# frequent legal-basis keys of the Phase 4a labels (`base_key`). Sets do not share decisions.
+case_sets:
+  n_sets: 6
+  size: 10
+  vector_method: M4            # config/a1_methods.yaml: version 2's stored retrieval vector
+  seed: 20260926
+  development_sets: 3          # built after the evaluated sets, from the next strata; never reported (D2, D3 added for Phase 6.1)
+
+# Question set: 4 templated + 1 unanswerable + 2 open per set = 42.
+questions:
+  seed: 20260926
+  # Templated questions: the answer is a field of one decision of the set (or a count over the set).
+  templated:
+    outcome:
+      text: "Qual foi o resultado do julgamento do {title}?"
+    rapporteur:
+      text: "Quem foi o Conselheiro Relator do {title}?"
+    appellant:
+      text: "Quem figura como recorrente no {title}?"
+    lawyer:
+      text: "Quem atuou como advogado do recorrente no {title}?"
+    session_date:
+      text: "Em que data foi realizada a sessão de julgamento do {title}?"
+    legal_basis:
+      text: "Qual é a base legal indicada para o julgamento do {title}?"
+    penalty:
+      text: "Qual foi a penalidade aplicada no {title}?"
+    count:
+      variants:
+        outcome: "Quantos dos recursos apresentados tiveram o resultado \"{value}\"?"
+        rapporteur: "Quantos dos recursos apresentados tiveram como Conselheiro Relator {value}?"
+        year: "Quantos dos recursos apresentados foram julgados em sessões do ano de {value}?"
+  # Which four types each set gets: every type is asked in three sets.
+  templated_by_set:
+    - [outcome, rapporteur, legal_basis, count]
+    - [appellant, lawyer, session_date, penalty]
+    - [outcome, lawyer, legal_basis, penalty]
+    - [rapporteur, appellant, session_date, count]
+    - [outcome, appellant, penalty, count]
+    - [rapporteur, lawyer, session_date, legal_basis]
+  count_variant_by_set: [outcome, null, null, rapporteur, year, null]
+  # Unanswerable questions: what is asked is in no field of any decision of the set (checked by code).
+  unanswerable:
+    outside_process:           # a decision of the corpus that is in no set; its number is in no text of the set
+      text: "Qual foi o resultado do julgamento do {title}?"
+    appellant_cnpj:            # no CNPJ and no mention of one in any field of the decision
+      text: "Qual é o número de inscrição no CNPJ do recorrente no {title}?"
+  unanswerable_by_set: [outside_process, appellant_cnpj, outside_process, appellant_cnpj, outside_process, appellant_cnpj]
+  # Open questions: one about arguments or grounds, one comparison.
+  open:
+    arguments: "Quais foram os principais argumentos apresentados pelos recorrentes nos casos apresentados e como o Conselho os avaliou?"
+    grounds: "Quais foram os principais fundamentos adotados pelos relatores para decidir os recursos apresentados?"
+    compare_outcomes: "Compare os casos em que o recurso foi provido, total ou parcialmente, com aqueles em que não foi provido: o que explica a diferença de resultado?"
+    compare_penalties: "Compare as penalidades aplicadas nos casos apresentados: quais são as semelhanças e as diferenças, e o que as explica?"
+  # compare_outcomes needs both groups in the set; where a set lacks one, compare_penalties is asked.
+  open_by_set:
+    - [arguments, compare_outcomes]
+    - [grounds, compare_penalties]
+    - [arguments, compare_penalties]
+    - [grounds, compare_outcomes]
+    - [arguments, compare_outcomes]
+    - [grounds, compare_penalties]
+  spot_check_share: 0.2        # the author checks this share of the questions before any run
+
+# Reference material for the open questions, written by Mistral Medium 3 (never Gemini; ground rule 7).
+material:
+  model: judge_b
+  key_points: {min: 3, max: 6}
+  # What Mistral reads of a decision: the short fields, and the report and the vote cut in the middle
+  # when they are longer than this (head + tail), so one call stays near 5K tokens.
+  report_chars: {head: 5500, tail: 4000}   # (the key points were written with these; largest call 5,970 tokens)
+  vote_chars: {head: 2500, tail: 3500}
+  reference_points: {min: 4, max: 8}
+
+# Deterministic scoring.
+scoring:
+  amount_tolerance: 0.005      # relative tolerance of money amounts
+  # Closed list of abstention patterns (matched on the answer without accents, in lower case).
+  abstention_patterns:
+    - 'nao (ha|existe|existem|consta|constam|foi encontrad\w+|foram encontrad\w+|se encontra|esta disponivel|estao disponiveis)'
+    - 'nao (tenho|possuo|disponho|dispoe|foi possivel|e possivel|localizei|encontrei|identifiquei)'
+    - 'nao (e|foi|sao|foram|esta|estao) (mencionad|informad|indicad|citad|apresentad|fornecid|identificad|listad|incluid)\w+'
+    - 'nao (menciona|mencionam|informa|informam|indica|indicam|traz|trazem|contem|contempla|faz parte|fazem parte|integra|integram)'
+    - 'sem (informac|dados|registro|mencao)'
+    - 'nenhum (dos|caso|recurso|registro|dado)|nenhuma (informac|mencao|referencia)'
+    - 'ausencia de (informac|dados|mencao)'
+
+# Faithfulness of the answers to the open questions.
+faithfulness:
+  decomposition_model: judge_b
+  passage_words: 150
+  passage_overlap_words: 30
+  # Passages per claim, by reciprocal-rank fusion of BGE-M3 (dense) and BM25. A claim that names
+  # decisions of the set (85% of the development claims) gets the best passages of those decisions;
+  # any other claim gets the best passages of the whole set. Chosen on the development set: with the
+  # first scheme (top 3 of the whole set plus one passage of each named decision) the full decision
+  # supported 43% of the claims that the passages left "not found".
+  top_passages: 4              # a claim that names no decision
+  named_passages: {1: 4, 2: 2, 3: 2}   # passages per named decision, by the number of decisions named
+  named_passages_beyond: 1     # per decision when more are named
+  max_passages: 6
+  rrf_k: 60
+  dense_model: BAAI/bge-m3
+  dense_max_seq_length: 512
+  nli_model: MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7
+  nli_threshold: 0.5           # a passage entails (or contradicts) a claim above this probability
+  batch_claims: 5
+  verifiers: [judge_a, judge_b]        # their labels and the NLI model's form the majority
+  separate: [judge_gemini]             # same family as the system: reported separately
+  separate_runs: [1]                   # ... and only on the first run of each open question (the author, 2026-10-11: cost)
+  miss_control:
+    model: judge_a
+    share: 0.2
+    minimum: 30
+    seed: 20260926
+    part_chars: 15000          # a decision longer than this is judged in parts
+
+# Planted controls for the claim judges (scripts/69): claims whose truth is known, built from the
+# decisions of each case set and judged like the claims of the answers.
+controls:
+  seed: 20260926
+  per_set: {field: 8, sentence_true: 6, sentence_false: 6}   # field statements alternate true and false
+
+# Blind audit of the judges' claim labels by the author (scripts/71): claims of the evaluated answers
+# with their evidence and no judge's label, the same number from each pattern of the judges' labels.
+audit:
+  n: 50
+  seed: 20260926
+
+completeness:
+  judges: [judge_a, judge_b]
+  separate: [judge_gemini]
+
+# Every judge prompt must stay under this many input tokens (the API's own count is logged).
+max_prompt_tokens: 8000
+chars_per_token: 2.2           # estimate used before a call is sent. With 2.8, three of 444 Mistral verification
+                               # prompts of the development sets reached 8,100 to 8,800 tokens (2.2 characters per token)
+
+# Requests per minute actually used, where a per-minute token quota is the limit (models.yaml):
+# Mistral 31.5K tokens/min. Judge A's deployment allows 250K tokens/min, far above what is used.
+pacing:
+  judge_b: {default: 8, key_points: 5, verification: 5.5, pairs: 4, miss_control: 4.5}
+  judge_a: {default: 30, concurrency: 6}
+  judge_gemini: {default: 6}

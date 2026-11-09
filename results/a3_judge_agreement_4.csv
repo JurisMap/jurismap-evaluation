@@ -1,0 +1,15 @@
+item,rater_a,rater_b,n,agreement,krippendorff_alpha,statistic,value,note
+claim label (supported / contradicted / not found),nli,judge_a,1463,0.5714,0.0615,,,
+claim label (supported / contradicted / not found),nli,judge_b,1462,0.5985,-0.0063,,,
+claim label (supported / contradicted / not found),nli,judge_gemini,473,0.5666,0.1095,,,same-family judge: reported separately
+claim label (supported / contradicted / not found),judge_a,judge_b,1462,0.8413,0.4167,,,
+claim label (supported / contradicted / not found),judge_a,judge_gemini,473,0.852,0.5884,,,same-family judge: reported separately
+claim label (supported / contradicted / not found),judge_b,judge_gemini,473,0.8055,0.3577,,,same-family judge: reported separately
+"coverage of a reference point (covered / partly / missing), ordinal",judge_a,judge_b,231,0.5974,0.5063,,,
+"coverage of an answer, interval",judge_a,judge_b,36,,0.4676,,,
+"coverage of a reference point (covered / partly / missing), ordinal",judge_a,judge_gemini,231,0.8788,0.8869,,,same-family judge: reported separately
+"coverage of an answer, interval",judge_a,judge_gemini,36,,0.896,,,same-family judge: reported separately
+"coverage of a reference point (covered / partly / missing), ordinal",judge_b,judge_gemini,231,0.6147,0.5324,,,same-family judge: reported separately
+"coverage of an answer, interval",judge_b,judge_gemini,36,,0.531,,,same-family judge: reported separately
+coverage of an answer: Mistral minus GPT-5.4,judge_b,judge_a,36,,,mean difference (paired randomisation p),-0.0506 (p = 0.1250),Mistral wrote the reference points
+claims labelled supported: Mistral minus GPT-5.4,judge_b,judge_a,1462,,,difference of shares,0.0944,Mistral split the answers into claims

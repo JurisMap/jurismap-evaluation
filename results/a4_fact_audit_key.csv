@@ -1,0 +1,51 @@
+audit_id,notice_id,mode,run,item,kind
+F01,N07,single_prompt,3,"""interposta dentro do prazo regulamentar de 30 (trinta) dias""",procedural
+F02,N12,no_template,2,"""não há comercialização de produtos no mercado de consumo""",assertion
+F03,N02,no_template,1,"""inexistindo qualquer embaraço material, prejuízo concreto ou comprometimento das atividades de fiscalização indireta da SUSEP""",assertion
+F04,N11,no_template,1,"""mediante os inclusos instrumentos de mandato (Doc. 01)""",procedural
+F05,N01,no_template,3,"""configurando um lapso de apenas 1 (um) dia""",in_notice
+F06,N01,no_template,2,A transmissão espontânea realizada no dia subsequente,assertion
+F07,N06,single_prompt,1,"""constante aperfeiçoamento sistêmico de fluxos internos""",assertion
+F08,N05,no_template,2,"""a controvérsia cingiu-se a questões cadastrais externas de trânsito""",assertion
+F09,N05,full,3,"""reputando ilegítima a suspensão do prazo liquidatório a partir de 06/04/2015""",in_notice
+F10,N02,no_legal_search,1,"""protocolizada no prazo regulamentar de 30 (trinta) dias contados da formal ciência da decisão""",procedural
+F11,N11,no_precedents,2,"""por seus advogados devidamente constituídos mediante instrumentos de mandato anexos""",procedural
+F12,N10,no_template,3,contrato de seguro regularmente firmado com a Generali,in_notice
+F13,N02,no_template,2,"""um exíguo interregno de apenas 5 (cinco) dias""",in_notice
+F14,N02,no_legal_search,3,sem observar as atenuantes devidas,assertion
+F15,N09,no_precedents,3,a suposta falta de justificativa formal tempestiva para o decurso do prazo,in_notice
+F16,N01,no_precedents,3,"""de forma voluntária e espontânea""",invented
+F17,N08,no_legal_search,3,"""relatório juntado aos autos após a apresentação da defesa administrativa inaugural""",invented
+F18,N11,full,1,"""socorro mútuo e na assistência patrimonial restrita aos seus associados""",invented
+F19,N02,single_prompt,2,nem impedimento às atividades de supervisão indireta da SUSEP,assertion
+F20,N12,no_precedents,3,"""partindo a fiscalização de ilações formais sobre a nomenclatura adotada em instrumento particular""",assertion
+F21,N09,single_prompt,2,"""contados a partir da regular intimação da Recorrente acerca do ato decisório recorrido""",procedural
+F22,N03,full,1,"""Risco à solvência ou dano aos direitos de segurados e beneficiários""",assertion
+F23,N01,no_precedents,2,"""sem que houvesse qualquer necessidade de prévia intimação, notificação fiscalizatória ou autuação""",invented
+F24,N01,no_legal_search,3,"""não gerou impacto material, embaraço fiscalizatório ou prejuízo à supervisão prudencial""",assertion
+F25,N14,full,2,"""divergências de validação e inconsistências de parametrização""",invented
+F26,N13,single_prompt,3,"""A existência de discrepâncias em campos específicos do Quadro 376""",invented
+F27,N12,no_precedents,2,"""na comarca de Matão/SP""",invented
+F28,N01,no_template,2,julgou subsistente a Representação fiscal,in_notice
+F29,N03,single_prompt,1,"""não acarretou qualquer prejuízo à solvência da Companhia, aos direitos dos segurados, a terceiros""",assertion
+F30,N12,no_legal_search,2,"""sediada no Município de Matão/SP""",invented
+F31,N12,no_legal_search,1,recusa ou das tarifas impeditivas praticadas pelo mercado segurador comercial,invented
+F32,N07,single_prompt,3,"""apólice de seguro de vida contratada perante a sociedade seguradora Federal de Seguros S.A.""",in_notice
+F33,N13,no_precedents,2,"""em decorrência de incompatibilidade técnica de processamento e formatação de layout de arquivo eletrônico""",invented
+F34,N12,full,2,"""suposta comercialização de contratos de seguro sem autorização governamental""",in_notice
+F35,N11,no_template,2,"""desconsiderar a real natureza associativa de socorro mútuo""",assertion
+F36,N01,no_precedents,2,"""atraso de apenas 24 horas""",in_notice
+F37,N09,no_precedents,2,procuração anexa,procedural
+F38,N11,full,1,"""conforme atesta o comprovante de intimação e notificação acostado aos autos""",procedural
+F39,N15,full,1,"""envio intempestivo de tabelas/quadros do Formulário de Informações Periódicas (FIP/SUSEP)""",in_notice
+F40,N15,single_prompt,3,"""desconsidera a inexistência de dano à fiscalização e a boa-fé da conduta""",assertion
+F41,N09,no_legal_search,1,"""com base em idênticos relatórios sancionatórios pretéritos""",invented
+F42,N12,no_template,3,As contribuições mensais e taxas de administração,invented
+F43,N06,no_template,3,"""conforme instrumento de mandato acostado aos autos""",procedural
+F44,N12,no_legal_search,1,constituída sob a forma de associação civil sem fins lucrativos,invented
+F45,N05,no_precedents,1,conforme certidão/comprovante de recebimento em anexo,procedural
+F46,N02,no_legal_search,1,"""instrumento de mandato anexo""",procedural
+F47,N01,single_prompt,1,contado a partir da intimação regular da decisão,procedural
+F48,N01,single_prompt,3,com uma defasagem de tão somente 1 (um) dia,in_notice
+F49,N06,full,1,"""sem que tais circunstâncias tivessem sido pormenorizadas, individualizadas e formalmente imputadas à Recorrente""",in_notice
+F50,N04,no_precedents,2,"""com instrumento de mandato anexo""",procedural

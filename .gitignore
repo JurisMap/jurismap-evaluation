@@ -1,0 +1,26 @@
+# The data archive (Zenodo) is extracted here; only its hash list and README are tracked.
+data/*
+!data/README.md
+!data/MANIFEST.csv
+
+# Credentials and local settings: never commit them
+.env
+*.env
+!config/v2_server.env
+.env.*
+cred/
+*.pem
+*.key
+*key*.json
+
+# Model and data binaries
+*.joblib
+*.pkl
+
+# Python and tooling
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+logs/

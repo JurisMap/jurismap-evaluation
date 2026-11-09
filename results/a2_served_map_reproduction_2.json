@@ -1,0 +1,103 @@
+{
+  "decisions": 2390,
+  "umap": {
+    "n_components": 2,
+    "metric": "cosine",
+    "random_state": 42,
+    "n_neighbors": 10,
+    "min_dist": 0.0,
+    "n_epochs": 2000
+  },
+  "refits_against_the_served_map": [
+    {
+      "libraries": "scrapers environment",
+      "versions": {
+        "python": "3.12.10",
+        "umap-learn": "0.5.7",
+        "numba": "0.62.1",
+        "numpy": "2.1.3",
+        "scikit-learn": "1.6.1"
+      },
+      "row_order": "as served",
+      "identical": true,
+      "max_abs_difference": 0.0,
+      "procrustes": 6.198537286464669e-31,
+      "map_knn_jaccard@10": 1.0
+    },
+    {
+      "libraries": "scrapers environment",
+      "versions": {
+        "python": "3.12.10",
+        "umap-learn": "0.5.7",
+        "numba": "0.62.1",
+        "numpy": "2.1.3",
+        "scikit-learn": "1.6.1"
+      },
+      "row_order": "reversed",
+      "identical": false,
+      "max_abs_difference": 9.150649070739746,
+      "procrustes": 0.36636915015521815,
+      "map_knn_jaccard@10": 0.5564202842293312
+    },
+    {
+      "libraries": "backend environment",
+      "versions": {
+        "python": "3.12.3",
+        "umap-learn": "0.5.7",
+        "numba": "0.61.0",
+        "numpy": "2.1.3",
+        "scikit-learn": "1.6.1"
+      },
+      "row_order": "as served",
+      "identical": true,
+      "max_abs_difference": 0.0,
+      "procrustes": 6.198537286464669e-31,
+      "map_knn_jaccard@10": 1.0
+    },
+    {
+      "libraries": "backend environment",
+      "versions": {
+        "python": "3.12.3",
+        "umap-learn": "0.5.7",
+        "numba": "0.61.0",
+        "numpy": "2.1.3",
+        "scikit-learn": "1.6.1"
+      },
+      "row_order": "reversed",
+      "identical": false,
+      "max_abs_difference": 9.150649070739746,
+      "procrustes": 0.36636915015521815,
+      "map_knn_jaccard@10": 0.5564202842293312
+    },
+    {
+      "libraries": "this repo's libraries",
+      "versions": {
+        "python": "3.12.3",
+        "umap-learn": "0.5.12",
+        "numba": "0.68.0",
+        "numpy": "2.5.3",
+        "scikit-learn": "1.9.1"
+      },
+      "row_order": "as served",
+      "identical": false,
+      "max_abs_difference": 11.101006507873535,
+      "procrustes": 0.4005444656153019,
+      "map_knn_jaccard@10": 0.5301257566682389
+    },
+    {
+      "libraries": "this repo's libraries",
+      "versions": {
+        "python": "3.12.3",
+        "umap-learn": "0.5.12",
+        "numba": "0.68.0",
+        "numpy": "2.5.3",
+        "scikit-learn": "1.9.1"
+      },
+      "row_order": "reversed",
+      "identical": false,
+      "max_abs_difference": 12.00220775604248,
+      "procrustes": 0.5070909056566706,
+      "map_knn_jaccard@10": 0.5362024110641285
+    }
+  ]
+}

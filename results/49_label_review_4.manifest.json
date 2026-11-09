@@ -1,0 +1,3078 @@
+{
+  "run_id": "20261012T122407Z-bb7d90ae",
+  "script": "49_label_review",
+  "argv": [
+    "scripts/49_label_review.py",
+    "--reviewer",
+    "judge_a",
+    "--workers",
+    "4"
+  ],
+  "models": {
+    "reviewer": "gpt-5.4"
+  },
+  "params": {
+    "review": {
+      "n": 100,
+      "seed": 20261007,
+      "controls": {
+        "legal_basis": 10,
+        "infringed_provision": 10
+      },
+      "audited_labels": "a1_silver_labels_2.parquet"
+    },
+    "review_version": 1,
+    "workers": 4,
+    "taxonomy_version": 1
+  },
+  "seeds": {
+    "default": 20260926,
+    "umap_v2": 42,
+    "bootstrap": 20260926,
+    "a2_projections": [
+      42,
+      20260926,
+      20260927,
+      20260928,
+      20260929
+    ],
+    "a2_distance_pairs": 20260926,
+    "a2_holdout_folds": 20260926,
+    "a1_selection_split": 20260926
+  },
+  "inputs": [
+    {
+      "path": "data/labels/a1_silver_labels_5.parquet",
+      "sha256": "dc022f5dd1c38c21cd3e1f7e2df37ca031660f753b061123401fa7bc16fa4003"
+    },
+    {
+      "path": "results/labels_audit_2.xlsx",
+      "sha256": "4a6d404c1728b3c41914b52192bfdd272866b126e3b8e8e0da602884a0925a26"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/labels/a1_label_review_4.parquet",
+      "sha256": "7e767675603db3e635619e070ff588e24676bb70b7d462edbf716d0a9f469bde",
+      "bytes": 26400
+    },
+    {
+      "path": "results/a1_label_review_4.json",
+      "sha256": "74c8c77301889e0ac7a131f93a1c478c47ba5c1270e1b97eb8cb544a7eb26cc9",
+      "bytes": 1632
+    },
+    {
+      "path": "results/a1_label_review_4.xlsx",
+      "sha256": "b17af7e73a0f31d9a4cdf637164808962de5dc09cd1405c434b5149aabcb3178",
+      "bytes": 50359
+    }
+  ],
+  "summary": {
+    "decisions": 100,
+    "unusable_answers": {
+      "base": 0,
+      "infringed": 0,
+      "category": 0
+    },
+    "legal_basis": {
+      "n": 98,
+      "correct": 95,
+      "share": 0.9694,
+      "wilson_95": [
+        0.9138,
+        0.9895
+      ]
+    },
+    "penalty_type": {
+      "n": 100,
+      "correct": 100,
+      "share": 1.0,
+      "wilson_95": [
+        0.963,
+        1.0
+      ]
+    },
+    "infringed_provision": {
+      "n": 58,
+      "correct": 58,
+      "share": 1.0,
+      "wilson_95": [
+        0.9379,
+        1.0
+      ],
+      "not_in_text": 0
+    },
+    "controls": {
+      "base": {
+        "planted": 10,
+        "caught": 10
+      },
+      "infringed": {
+        "planted": 10,
+        "caught": 10
+      }
+    },
+    "category": {
+      "reviewer vs gemini": {
+        "n": 100,
+        "agreement": 0.97,
+        "kappa": 0.9668
+      },
+      "reviewer vs mistral": {
+        "n": 100,
+        "agreement": 0.9,
+        "kappa": 0.8894
+      },
+      "reviewer vs hugo": {
+        "n": 60,
+        "agreement": 0.9167,
+        "kappa": 0.908
+      },
+      "gemini vs hugo": {
+        "n": 60,
+        "agreement": 0.95,
+        "kappa": 0.9448
+      },
+      "gemini vs mistral (corpus)": {
+        "n": 2390,
+        "agreement": 0.9067,
+        "kappa": 0.8959
+      }
+    },
+    "agreement_with_hugo": {
+      "legal_basis": {
+        "n": 55,
+        "same": 53,
+        "hugo_correct_reviewer_wrong": 2,
+        "hugo_wrong_reviewer_correct": 0
+      },
+      "penalty_type": {
+        "n": 60,
+        "same": 60,
+        "hugo_correct_reviewer_wrong": 0,
+        "hugo_wrong_reviewer_correct": 0
+      },
+      "infringed_provision": {
+        "n": 32,
+        "same": 32,
+        "hugo_correct_reviewer_wrong": 0,
+        "hugo_wrong_reviewer_correct": 0
+      }
+    },
+    "calls": 281,
+    "calls_not_cached": 281,
+    "input_tokens": 625919,
+    "output_tokens": 87832,
+    "cost_usd": 2.8823
+  },
+  "started_utc": "2026-10-12T12:24:07.805+00:00",
+  "git": {
+    "eval": {
+      "path": ".",
+      "sha": "1ed8c02b42442af88d9b50428ea4d7504a7b682a",
+      "branch": "feature/phase-6-a3-chatbot",
+      "tag": null,
+      "dirty": true
+    },
+    "backend": {
+      "path": "../app/backend",
+      "sha": "cb5911446d5564c9419ec657f344088b55618f27",
+      "branch": "feature/chat_grounding",
+      "tag": "v2.5-eval-frozen",
+      "dirty": false
+    },
+    "frontend_v2": {
+      "path": "../app/frontend/jurismap-react-app",
+      "sha": "1af17ba99df5e49acdbfeb8fe43b8b03b903987b",
+      "branch": "main",
+      "tag": "v2.5-eval-frozen",
+      "dirty": false
+    },
+    "frontend_v1": {
+      "path": "../frontend_old",
+      "sha": "8183c0da1c08d7793fddaaafb894ab61114c61b2",
+      "branch": "legacy/streamlit-v1",
+      "tag": null,
+      "dirty": true
+    },
+    "scrapers": {
+      "path": "../scrapers",
+      "sha": "c5527ef9f1259ca97681aadc01c411bd4fb96299",
+      "branch": "main",
+      "tag": "v2.5-eval-frozen",
+      "dirty": false
+    }
+  },
+  "config_hash": {
+    "combined": "551876b0f731763ac89f35c1698d0aa0db3190bbe04073bb2ccc43c482c11723",
+    "files": {
+      "a1_candidates.yaml": "7ba7e026ae9b05074c0981aef94373530cd191b129fe70a9969e70ad2626f94d",
+      "a1_labels.yaml": "562f4ba802bfd2078bcf4c0ed6868eb4b8c01e0acbfaeb27e27c19a19daf397a",
+      "a1_methods.yaml": "2a23b67d05658e2ace4f734d938e481b30a4486ff3b03daee02f27ddaa8b479c",
+      "a1_taxonomy.yaml": "bb7b0b24a51462e7ab95be6fffc793dddbb0fdc8c2258e44efa0b017e2d960e6",
+      "a2_candidates.yaml": "adef29c08b96f5d377a24ad71381a5fd238672b9427cfd21200aade4b501a2bb",
+      "a2_map.yaml": "39fd2c6bd57bcc5d9537f4a4c78a3700984bd59b607df76a2d4194ba0bbdd73e",
+      "a3_candidates.yaml": "24d1375952e86871e7406f4b0b583426e851404fa815c69a357c5500e526f9da",
+      "a3_chatbot.yaml": "80ccaf6750f1286f9261f28555ead657d5540b622c7f39faeca4ad0345c8da70",
+      "b3_codebook.yaml": "b8a1f818413d9955a04f4becf2f53982549729afab61a305dd0a1d6658afd34a",
+      "models.yaml": "4c474637fdd479c45631db5e00f276b9be97d6fe22c8dd1a00595d3d3a8ce31e",
+      "paths.yaml": "b538340a81dfdfbce2d54be53a5e9c8b6df384d921a15cad42fa8cc6ddc38c4b",
+      "prices.yaml": "306d4b5bd7d67b77356fbd14d38eeb60b3f6a0c0ce4ae1e2d41e853353bd984c",
+      "seeds.yaml": "2ff85f9574ce585b9d825e5d4d3b9ebbdb00761ead36361440835c3143cd9421",
+      "v2.1_freeze.json": "e457af1b02bf6c631ea514ebd6fc25cd99a059704fa2d18f3888eb92119846de",
+      "v2.2_freeze.json": "37b912a3d2631129bb5fbdd6f05991ef59d426a7bf4c33e9e9ed9517322f28b5",
+      "v2.3_freeze.json": "ea357de13985f8119d7739a520cdec75acb1fab3127ba642cee196b67521cdab",
+      "v2.4_freeze.json": "778e449dc7496d51bef972038e396e8d16e21eee162473eb0188bfc97eecf400",
+      "v2.5_freeze.json": "4c5e86979cde029a5050b9f9b4002ded4bdc84bb2aa4fc8f6ff131dbacd9e908",
+      "v2_freeze.json": "c71f13f49d320ecec4c6003ff073c83ae60c99019ab0ea1d456116d4344fb3e3"
+    }
+  },
+  "python": {
+    "version": "3.12.3 (v3.12.3:f6650f9ad7, Apr  9 2024, 08:18:47) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "executable": ".venv/bin/python3",
+    "platform": "macOS-26.5.2-arm64-arm-64bit"
+  },
+  "calls": [
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 639,
+      "output_tokens": 134,
+      "cost_usd": 0.003608,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 863,
+      "output_tokens": 432,
+      "cost_usd": 0.008637,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 641,
+      "output_tokens": 155,
+      "cost_usd": 0.003927,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3051,
+      "output_tokens": 183,
+      "cost_usd": 0.010372,
+      "latency_s": 6.53,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 691,
+      "output_tokens": 427,
+      "cost_usd": 0.008133,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3189,
+      "output_tokens": 247,
+      "cost_usd": 0.011678,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4852,
+      "output_tokens": 187,
+      "cost_usd": 0.014935,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 885,
+      "output_tokens": 259,
+      "cost_usd": 0.006098,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3400,
+      "output_tokens": 326,
+      "cost_usd": 0.01339,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2819,
+      "output_tokens": 178,
+      "cost_usd": 0.009718,
+      "latency_s": 8.32,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4709,
+      "output_tokens": 179,
+      "cost_usd": 0.014457,
+      "latency_s": 9.15,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4670,
+      "output_tokens": 295,
+      "cost_usd": 0.0161,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2992,
+      "output_tokens": 157,
+      "cost_usd": 0.009835,
+      "latency_s": 5.81,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 673,
+      "output_tokens": 221,
+      "cost_usd": 0.004998,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 696,
+      "output_tokens": 155,
+      "cost_usd": 0.004065,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4256,
+      "output_tokens": 261,
+      "cost_usd": 0.014555,
+      "latency_s": 9.01,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 674,
+      "output_tokens": 123,
+      "cost_usd": 0.00353,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2021,
+      "output_tokens": 310,
+      "cost_usd": 0.009702,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2737,
+      "output_tokens": 278,
+      "cost_usd": 0.011012,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4700,
+      "output_tokens": 371,
+      "cost_usd": 0.017315,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2454,
+      "output_tokens": 268,
+      "cost_usd": 0.010155,
+      "latency_s": 7.98,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 730,
+      "output_tokens": 550,
+      "cost_usd": 0.010075,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2873,
+      "output_tokens": 175,
+      "cost_usd": 0.009808,
+      "latency_s": 6.29,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 650,
+      "output_tokens": 108,
+      "cost_usd": 0.003245,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5109,
+      "output_tokens": 194,
+      "cost_usd": 0.015682,
+      "latency_s": 8.39,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2721,
+      "output_tokens": 298,
+      "cost_usd": 0.011272,
+      "latency_s": 9.36,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 738,
+      "output_tokens": 221,
+      "cost_usd": 0.00516,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4965,
+      "output_tokens": 246,
+      "cost_usd": 0.016102,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 675,
+      "output_tokens": 237,
+      "cost_usd": 0.005243,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 665,
+      "output_tokens": 149,
+      "cost_usd": 0.003897,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4833,
+      "output_tokens": 159,
+      "cost_usd": 0.014467,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4585,
+      "output_tokens": 223,
+      "cost_usd": 0.014807,
+      "latency_s": 7.52,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5372,
+      "output_tokens": 175,
+      "cost_usd": 0.016055,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3620,
+      "output_tokens": 533,
+      "cost_usd": 0.017045,
+      "latency_s": 15.58,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 648,
+      "output_tokens": 368,
+      "cost_usd": 0.00714,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4847,
+      "output_tokens": 257,
+      "cost_usd": 0.015973,
+      "latency_s": 4.56,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 672,
+      "output_tokens": 256,
+      "cost_usd": 0.00552,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1794,
+      "output_tokens": 401,
+      "cost_usd": 0.0105,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4708,
+      "output_tokens": 1078,
+      "cost_usd": 0.02794,
+      "latency_s": 22.04,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2506,
+      "output_tokens": 118,
+      "cost_usd": 0.008035,
+      "latency_s": 7.01,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 677,
+      "output_tokens": 659,
+      "cost_usd": 0.011577,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 668,
+      "output_tokens": 177,
+      "cost_usd": 0.004325,
+      "problem": null
+    },
+    {
+      "task": "infringed_passages",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 462,
+      "output_tokens": 312,
+      "cost_usd": 0.005835,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 637,
+      "output_tokens": 149,
+      "cost_usd": 0.003828,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3838,
+      "output_tokens": 264,
+      "cost_usd": 0.013555,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1765,
+      "output_tokens": 256,
+      "cost_usd": 0.008252,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1995,
+      "output_tokens": 107,
+      "cost_usd": 0.006592,
+      "latency_s": 5.89,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1208,
+      "output_tokens": 345,
+      "cost_usd": 0.008195,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2447,
+      "output_tokens": 136,
+      "cost_usd": 0.008157,
+      "latency_s": 5.82,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 669,
+      "output_tokens": 117,
+      "cost_usd": 0.003427,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2015,
+      "output_tokens": 166,
+      "cost_usd": 0.007527,
+      "latency_s": 5.75,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 729,
+      "output_tokens": 107,
+      "cost_usd": 0.003427,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5362,
+      "output_tokens": 266,
+      "cost_usd": 0.017395,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4997,
+      "output_tokens": 197,
+      "cost_usd": 0.015447,
+      "latency_s": 8.16,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 974,
+      "output_tokens": 996,
+      "cost_usd": 0.017375,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 709,
+      "output_tokens": 273,
+      "cost_usd": 0.005868,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3473,
+      "output_tokens": 2005,
+      "cost_usd": 0.038758,
+      "latency_s": 30.89,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 678,
+      "output_tokens": 143,
+      "cost_usd": 0.00384,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5808,
+      "output_tokens": 398,
+      "cost_usd": 0.02049,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1768,
+      "output_tokens": 207,
+      "cost_usd": 0.007525,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4160,
+      "output_tokens": 779,
+      "cost_usd": 0.022085,
+      "latency_s": 12.33,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4908,
+      "output_tokens": 131,
+      "cost_usd": 0.014235,
+      "latency_s": 6.03,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2401,
+      "output_tokens": 1581,
+      "cost_usd": 0.029718,
+      "latency_s": 26.55,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 702,
+      "output_tokens": 259,
+      "cost_usd": 0.00564,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2366,
+      "output_tokens": 285,
+      "cost_usd": 0.01019,
+      "latency_s": 6.95,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 684,
+      "output_tokens": 189,
+      "cost_usd": 0.004545,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 630,
+      "output_tokens": 421,
+      "cost_usd": 0.00789,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3551,
+      "output_tokens": 378,
+      "cost_usd": 0.014548,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 683,
+      "output_tokens": 236,
+      "cost_usd": 0.005247,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4493,
+      "output_tokens": 187,
+      "cost_usd": 0.014037,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4553,
+      "output_tokens": 280,
+      "cost_usd": 0.015582,
+      "latency_s": 7.23,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3715,
+      "output_tokens": 221,
+      "cost_usd": 0.012603,
+      "latency_s": 6.65,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2800,
+      "output_tokens": 396,
+      "cost_usd": 0.01294,
+      "latency_s": 10.85,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 667,
+      "output_tokens": 370,
+      "cost_usd": 0.007217,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 665,
+      "output_tokens": 139,
+      "cost_usd": 0.003747,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1746,
+      "output_tokens": 147,
+      "cost_usd": 0.00657,
+      "latency_s": 3.71,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 632,
+      "output_tokens": 204,
+      "cost_usd": 0.00464,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2467,
+      "output_tokens": 346,
+      "cost_usd": 0.011357,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 899,
+      "output_tokens": 880,
+      "cost_usd": 0.015447,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4360,
+      "output_tokens": 480,
+      "cost_usd": 0.0181,
+      "latency_s": 21.54,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1117,
+      "output_tokens": 238,
+      "cost_usd": 0.006363,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2185,
+      "output_tokens": 154,
+      "cost_usd": 0.007772,
+      "latency_s": 4.38,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2252,
+      "output_tokens": 235,
+      "cost_usd": 0.009155,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 667,
+      "output_tokens": 486,
+      "cost_usd": 0.008958,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 694,
+      "output_tokens": 242,
+      "cost_usd": 0.005365,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1832,
+      "output_tokens": 489,
+      "cost_usd": 0.011915,
+      "latency_s": 10.88,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2654,
+      "output_tokens": 196,
+      "cost_usd": 0.009575,
+      "latency_s": 7.52,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2531,
+      "output_tokens": 179,
+      "cost_usd": 0.009012,
+      "latency_s": 8.84,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 665,
+      "output_tokens": 158,
+      "cost_usd": 0.004032,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 703,
+      "output_tokens": 324,
+      "cost_usd": 0.006618,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 910,
+      "output_tokens": 344,
+      "cost_usd": 0.007435,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2982,
+      "output_tokens": 164,
+      "cost_usd": 0.009915,
+      "latency_s": 4.65,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5211,
+      "output_tokens": 1218,
+      "cost_usd": 0.031297,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4930,
+      "output_tokens": 317,
+      "cost_usd": 0.01708,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 663,
+      "output_tokens": 164,
+      "cost_usd": 0.004117,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2213,
+      "output_tokens": 549,
+      "cost_usd": 0.013767,
+      "latency_s": 12.63,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4608,
+      "output_tokens": 423,
+      "cost_usd": 0.017865,
+      "latency_s": 8.19,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2517,
+      "output_tokens": 311,
+      "cost_usd": 0.010958,
+      "latency_s": 6.87,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 914,
+      "output_tokens": 302,
+      "cost_usd": 0.006815,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 666,
+      "output_tokens": 148,
+      "cost_usd": 0.003885,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4883,
+      "output_tokens": 290,
+      "cost_usd": 0.016557,
+      "latency_s": 15.2,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 701,
+      "output_tokens": 204,
+      "cost_usd": 0.004812,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2444,
+      "output_tokens": 316,
+      "cost_usd": 0.01085,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 697,
+      "output_tokens": 168,
+      "cost_usd": 0.004262,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2866,
+      "output_tokens": 665,
+      "cost_usd": 0.01714,
+      "latency_s": 11.87,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4646,
+      "output_tokens": 335,
+      "cost_usd": 0.01664,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3181,
+      "output_tokens": 366,
+      "cost_usd": 0.013442,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 671,
+      "output_tokens": 194,
+      "cost_usd": 0.004587,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2903,
+      "output_tokens": 149,
+      "cost_usd": 0.009493,
+      "latency_s": 10.75,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1774,
+      "output_tokens": 95,
+      "cost_usd": 0.00586,
+      "latency_s": 5.54,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2782,
+      "output_tokens": 251,
+      "cost_usd": 0.01072,
+      "latency_s": 6.95,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4965,
+      "output_tokens": 358,
+      "cost_usd": 0.017782,
+      "latency_s": 10.87,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 780,
+      "output_tokens": 344,
+      "cost_usd": 0.00711,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 693,
+      "output_tokens": 190,
+      "cost_usd": 0.004582,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 663,
+      "output_tokens": 304,
+      "cost_usd": 0.006217,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 724,
+      "output_tokens": 252,
+      "cost_usd": 0.00559,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3286,
+      "output_tokens": 222,
+      "cost_usd": 0.011545,
+      "latency_s": 7.09,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1545,
+      "output_tokens": 175,
+      "cost_usd": 0.006488,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2586,
+      "output_tokens": 225,
+      "cost_usd": 0.00984,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5248,
+      "output_tokens": 270,
+      "cost_usd": 0.01717,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 824,
+      "output_tokens": 138,
+      "cost_usd": 0.00413,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2106,
+      "output_tokens": 512,
+      "cost_usd": 0.012945,
+      "latency_s": 13.51,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4841,
+      "output_tokens": 183,
+      "cost_usd": 0.014847,
+      "latency_s": 9.18,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2956,
+      "output_tokens": 443,
+      "cost_usd": 0.014035,
+      "latency_s": 13.25,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2280,
+      "output_tokens": 442,
+      "cost_usd": 0.01233,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 733,
+      "output_tokens": 420,
+      "cost_usd": 0.008133,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 655,
+      "output_tokens": 237,
+      "cost_usd": 0.005193,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 690,
+      "output_tokens": 308,
+      "cost_usd": 0.006345,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2772,
+      "output_tokens": 258,
+      "cost_usd": 0.0108,
+      "latency_s": 8.53,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2621,
+      "output_tokens": 184,
+      "cost_usd": 0.009312,
+      "latency_s": 8.64,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2977,
+      "output_tokens": 313,
+      "cost_usd": 0.012138,
+      "latency_s": 11.33,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 671,
+      "output_tokens": 448,
+      "cost_usd": 0.008398,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2318,
+      "output_tokens": 266,
+      "cost_usd": 0.009785,
+      "latency_s": 11.77,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 650,
+      "output_tokens": 157,
+      "cost_usd": 0.00398,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 678,
+      "output_tokens": 289,
+      "cost_usd": 0.00603,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 672,
+      "output_tokens": 221,
+      "cost_usd": 0.004995,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4733,
+      "output_tokens": 326,
+      "cost_usd": 0.016723,
+      "latency_s": 5.33,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1747,
+      "output_tokens": 185,
+      "cost_usd": 0.007142,
+      "latency_s": 8.72,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1518,
+      "output_tokens": 293,
+      "cost_usd": 0.00819,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 632,
+      "output_tokens": 108,
+      "cost_usd": 0.0032,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 673,
+      "output_tokens": 335,
+      "cost_usd": 0.006707,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2154,
+      "output_tokens": 98,
+      "cost_usd": 0.006855,
+      "latency_s": 4.8,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2128,
+      "output_tokens": 200,
+      "cost_usd": 0.00832,
+      "latency_s": 7.82,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 653,
+      "output_tokens": 187,
+      "cost_usd": 0.004437,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2100,
+      "output_tokens": 755,
+      "cost_usd": 0.016575,
+      "latency_s": 24.63,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 673,
+      "output_tokens": 277,
+      "cost_usd": 0.005837,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2380,
+      "output_tokens": 360,
+      "cost_usd": 0.01135,
+      "latency_s": 5.49,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2167,
+      "output_tokens": 211,
+      "cost_usd": 0.008582,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 737,
+      "output_tokens": 184,
+      "cost_usd": 0.004602,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1822,
+      "output_tokens": 562,
+      "cost_usd": 0.012985,
+      "latency_s": 20.58,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2738,
+      "output_tokens": 217,
+      "cost_usd": 0.0101,
+      "latency_s": 6.48,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 997,
+      "output_tokens": 1605,
+      "cost_usd": 0.026568,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 664,
+      "output_tokens": 274,
+      "cost_usd": 0.00577,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5256,
+      "output_tokens": 408,
+      "cost_usd": 0.01926,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 691,
+      "output_tokens": 296,
+      "cost_usd": 0.006167,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5546,
+      "output_tokens": 357,
+      "cost_usd": 0.01922,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1858,
+      "output_tokens": 199,
+      "cost_usd": 0.00763,
+      "latency_s": 6.03,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed_passages",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 512,
+      "output_tokens": 245,
+      "cost_usd": 0.004955,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 672,
+      "output_tokens": 161,
+      "cost_usd": 0.004095,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3288,
+      "output_tokens": 702,
+      "cost_usd": 0.01875,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4921,
+      "output_tokens": 558,
+      "cost_usd": 0.020673,
+      "latency_s": 11.33,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3712,
+      "output_tokens": 105,
+      "cost_usd": 0.010855,
+      "latency_s": 6.2,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 635,
+      "output_tokens": 105,
+      "cost_usd": 0.003163,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2080,
+      "output_tokens": 181,
+      "cost_usd": 0.007915,
+      "latency_s": 8.28,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2211,
+      "output_tokens": 189,
+      "cost_usd": 0.008363,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 675,
+      "output_tokens": 705,
+      "cost_usd": 0.012262,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 700,
+      "output_tokens": 180,
+      "cost_usd": 0.00445,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2467,
+      "output_tokens": 121,
+      "cost_usd": 0.007983,
+      "latency_s": 4.81,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2714,
+      "output_tokens": 328,
+      "cost_usd": 0.011705,
+      "latency_s": 5.72,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 698,
+      "output_tokens": 209,
+      "cost_usd": 0.00488,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2310,
+      "output_tokens": 574,
+      "cost_usd": 0.014385,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 697,
+      "output_tokens": 193,
+      "cost_usd": 0.004638,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1946,
+      "output_tokens": 235,
+      "cost_usd": 0.00839,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2604,
+      "output_tokens": 300,
+      "cost_usd": 0.01101,
+      "latency_s": 7.49,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4188,
+      "output_tokens": 421,
+      "cost_usd": 0.016785,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 723,
+      "output_tokens": 201,
+      "cost_usd": 0.004823,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2418,
+      "output_tokens": 176,
+      "cost_usd": 0.008685,
+      "latency_s": 8.76,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3850,
+      "output_tokens": 259,
+      "cost_usd": 0.01351,
+      "latency_s": 5.26,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 683,
+      "output_tokens": 281,
+      "cost_usd": 0.005922,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3843,
+      "output_tokens": 431,
+      "cost_usd": 0.016072,
+      "latency_s": 8.36,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4902,
+      "output_tokens": 2468,
+      "cost_usd": 0.049275,
+      "latency_s": 47.46,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 675,
+      "output_tokens": 239,
+      "cost_usd": 0.005273,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2210,
+      "output_tokens": 329,
+      "cost_usd": 0.01046,
+      "latency_s": 5.5,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 667,
+      "output_tokens": 297,
+      "cost_usd": 0.006122,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 711,
+      "output_tokens": 292,
+      "cost_usd": 0.006157,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3411,
+      "output_tokens": 174,
+      "cost_usd": 0.011137,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 678,
+      "output_tokens": 291,
+      "cost_usd": 0.00606,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2517,
+      "output_tokens": 162,
+      "cost_usd": 0.008723,
+      "latency_s": 7.16,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2751,
+      "output_tokens": 115,
+      "cost_usd": 0.008602,
+      "latency_s": 7.9,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2986,
+      "output_tokens": 105,
+      "cost_usd": 0.00904,
+      "latency_s": 9.21,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1850,
+      "output_tokens": 298,
+      "cost_usd": 0.009095,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 701,
+      "output_tokens": 204,
+      "cost_usd": 0.004812,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 649,
+      "output_tokens": 167,
+      "cost_usd": 0.004127,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 757,
+      "output_tokens": 321,
+      "cost_usd": 0.006707,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2251,
+      "output_tokens": 121,
+      "cost_usd": 0.007442,
+      "latency_s": 6.52,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2074,
+      "output_tokens": 141,
+      "cost_usd": 0.0073,
+      "latency_s": 7.49,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4125,
+      "output_tokens": 266,
+      "cost_usd": 0.014303,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2375,
+      "output_tokens": 272,
+      "cost_usd": 0.010018,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 864,
+      "output_tokens": 134,
+      "cost_usd": 0.00417,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 632,
+      "output_tokens": 236,
+      "cost_usd": 0.00512,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2625,
+      "output_tokens": 139,
+      "cost_usd": 0.008648,
+      "latency_s": 9.43,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1702,
+      "output_tokens": 222,
+      "cost_usd": 0.007585,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3811,
+      "output_tokens": 554,
+      "cost_usd": 0.017837,
+      "latency_s": 12.81,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3691,
+      "output_tokens": 340,
+      "cost_usd": 0.014327,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 874,
+      "output_tokens": 322,
+      "cost_usd": 0.007015,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2262,
+      "output_tokens": 300,
+      "cost_usd": 0.010155,
+      "latency_s": 5.48,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 704,
+      "output_tokens": 263,
+      "cost_usd": 0.005705,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5732,
+      "output_tokens": 251,
+      "cost_usd": 0.018095,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 633,
+      "output_tokens": 115,
+      "cost_usd": 0.003307,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3437,
+      "output_tokens": 514,
+      "cost_usd": 0.016303,
+      "latency_s": 12.16,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3168,
+      "output_tokens": 355,
+      "cost_usd": 0.013245,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 769,
+      "output_tokens": 217,
+      "cost_usd": 0.005177,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5299,
+      "output_tokens": 755,
+      "cost_usd": 0.024572,
+      "latency_s": 12.59,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3343,
+      "output_tokens": 551,
+      "cost_usd": 0.016622,
+      "latency_s": 12.31,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3356,
+      "output_tokens": 248,
+      "cost_usd": 0.01211,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3155,
+      "output_tokens": 157,
+      "cost_usd": 0.010242,
+      "latency_s": 10.59,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 782,
+      "output_tokens": 342,
+      "cost_usd": 0.007085,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 683,
+      "output_tokens": 263,
+      "cost_usd": 0.005652,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1109,
+      "output_tokens": 256,
+      "cost_usd": 0.006612,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2762,
+      "output_tokens": 239,
+      "cost_usd": 0.01049,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2004,
+      "output_tokens": 221,
+      "cost_usd": 0.008325,
+      "latency_s": 5.54,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3019,
+      "output_tokens": 624,
+      "cost_usd": 0.016907,
+      "latency_s": 12.55,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5969,
+      "output_tokens": 347,
+      "cost_usd": 0.020127,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 660,
+      "output_tokens": 146,
+      "cost_usd": 0.00384,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2728,
+      "output_tokens": 328,
+      "cost_usd": 0.01174,
+      "latency_s": 7.07,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5667,
+      "output_tokens": 225,
+      "cost_usd": 0.017542,
+      "latency_s": 7.3,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 647,
+      "output_tokens": 189,
+      "cost_usd": 0.004452,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 721,
+      "output_tokens": 886,
+      "cost_usd": 0.015093,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 649,
+      "output_tokens": 122,
+      "cost_usd": 0.003452,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2983,
+      "output_tokens": 154,
+      "cost_usd": 0.009768,
+      "latency_s": 10.62,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2348,
+      "output_tokens": 96,
+      "cost_usd": 0.00731,
+      "latency_s": 3.03,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 670,
+      "output_tokens": 266,
+      "cost_usd": 0.005665,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2139,
+      "output_tokens": 308,
+      "cost_usd": 0.009968,
+      "latency_s": 10.34,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 649,
+      "output_tokens": 191,
+      "cost_usd": 0.004488,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3047,
+      "output_tokens": 553,
+      "cost_usd": 0.015912,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 828,
+      "output_tokens": 236,
+      "cost_usd": 0.00561,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2083,
+      "output_tokens": 170,
+      "cost_usd": 0.007758,
+      "latency_s": 5.74,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2022,
+      "output_tokens": 485,
+      "cost_usd": 0.01233,
+      "latency_s": 8.22,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4920,
+      "output_tokens": 327,
+      "cost_usd": 0.017205,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 644,
+      "output_tokens": 138,
+      "cost_usd": 0.00368,
+      "problem": null
+    },
+    {
+      "task": "infringed_passages",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 476,
+      "output_tokens": 349,
+      "cost_usd": 0.006425,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 676,
+      "output_tokens": 133,
+      "cost_usd": 0.003685,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4652,
+      "output_tokens": 142,
+      "cost_usd": 0.01376,
+      "latency_s": 5.14,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3279,
+      "output_tokens": 141,
+      "cost_usd": 0.010313,
+      "latency_s": 9.05,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5466,
+      "output_tokens": 240,
+      "cost_usd": 0.017265,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 666,
+      "output_tokens": 162,
+      "cost_usd": 0.004095,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 707,
+      "output_tokens": 305,
+      "cost_usd": 0.006343,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 5058,
+      "output_tokens": 283,
+      "cost_usd": 0.01689,
+      "latency_s": 7.1,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1933,
+      "output_tokens": 271,
+      "cost_usd": 0.008897,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 643,
+      "output_tokens": 113,
+      "cost_usd": 0.003302,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2259,
+      "output_tokens": 424,
+      "cost_usd": 0.012008,
+      "latency_s": 21.68,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2841,
+      "output_tokens": 178,
+      "cost_usd": 0.009772,
+      "latency_s": 5.53,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 658,
+      "output_tokens": 113,
+      "cost_usd": 0.00334,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3142,
+      "output_tokens": 297,
+      "cost_usd": 0.01231,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2256,
+      "output_tokens": 367,
+      "cost_usd": 0.011145,
+      "latency_s": 11.12,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 643,
+      "output_tokens": 108,
+      "cost_usd": 0.003227,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4755,
+      "output_tokens": 178,
+      "cost_usd": 0.014557,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3012,
+      "output_tokens": 116,
+      "cost_usd": 0.00927,
+      "latency_s": 5.25,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4495,
+      "output_tokens": 176,
+      "cost_usd": 0.013877,
+      "latency_s": 5.73,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3111,
+      "output_tokens": 404,
+      "cost_usd": 0.013837,
+      "problem": null
+    },
+    {
+      "task": "category",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2565,
+      "output_tokens": 179,
+      "cost_usd": 0.009097,
+      "latency_s": 3.4,
+      "credentials": "azure",
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 665,
+      "output_tokens": 219,
+      "cost_usd": 0.004948,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 782,
+      "output_tokens": 446,
+      "cost_usd": 0.008645,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 722,
+      "output_tokens": 318,
+      "cost_usd": 0.006575,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 779,
+      "output_tokens": 680,
+      "cost_usd": 0.012148,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 705,
+      "output_tokens": 309,
+      "cost_usd": 0.006397,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 672,
+      "output_tokens": 429,
+      "cost_usd": 0.008115,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 690,
+      "output_tokens": 241,
+      "cost_usd": 0.00534,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 657,
+      "output_tokens": 276,
+      "cost_usd": 0.005782,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 669,
+      "output_tokens": 276,
+      "cost_usd": 0.005812,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3881,
+      "output_tokens": 286,
+      "cost_usd": 0.013992,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4416,
+      "output_tokens": 320,
+      "cost_usd": 0.01584,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3260,
+      "output_tokens": 221,
+      "cost_usd": 0.011465,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 4853,
+      "output_tokens": 258,
+      "cost_usd": 0.016002,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2394,
+      "output_tokens": 186,
+      "cost_usd": 0.008775,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 2157,
+      "output_tokens": 299,
+      "cost_usd": 0.009878,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3923,
+      "output_tokens": 305,
+      "cost_usd": 0.014382,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3460,
+      "output_tokens": 268,
+      "cost_usd": 0.01267,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 1490,
+      "output_tokens": 240,
+      "cost_usd": 0.007325,
+      "problem": null
+    },
+    {
+      "task": "infringed",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 3573,
+      "output_tokens": 182,
+      "cost_usd": 0.011662,
+      "problem": null
+    },
+    {
+      "task": "base",
+      "attempt": 0,
+      "cached": false,
+      "input_tokens": 704,
+      "output_tokens": 1136,
+      "cost_usd": 0.0188,
+      "problem": null
+    }
+  ],
+  "ended_utc": "2026-10-12T12:33:58.598+00:00",
+  "status": "ok",
+  "packages": [
+    "-e file://.",
+    "annotated-doc==0.0.5",
+    "annotated-types==0.8.0",
+    "anyio==4.15.1",
+    "certifi==2026.7.22",
+    "cffi==2.1.1",
+    "cfgv==3.5.0",
+    "charset-normalizer==3.5.1",
+    "click==8.5.0",
+    "cloudpickle==3.1.2",
+    "contourpy==1.4.0",
+    "cryptography==50.0.1",
+    "cycler==0.12.1",
+    "db-dtypes==1.7.1",
+    "defusedxml==0.7.1",
+    "distlib==0.4.3",
+    "distro==1.9.0",
+    "et-xmlfile==2.0.0",
+    "faiss-cpu==1.15.1",
+    "filelock==4.0.3",
+    "fonttools==4.66.1",
+    "fsspec==2026.9.0",
+    "google-api-core==2.39.0",
+    "google-auth==2.58.1",
+    "google-cloud-bigquery==3.45.2",
+    "google-cloud-core==2.7.0",
+    "google-crc32c==1.9.0",
+    "google-genai==1.55.0",
+    "google-resumable-media==2.10.2",
+    "googleapis-common-protos==1.75.4",
+    "grpcio-status==1.84.0",
+    "grpcio==1.84.0",
+    "h11==0.16.0",
+    "hf-xet==1.7.0",
+    "httpcore==1.0.9",
+    "httpx==0.28.1",
+    "huggingface-hub==1.33.0",
+    "identify==2.6.19",
+    "idna==3.20",
+    "iniconfig==2.3.0",
+    "jinja2==3.1.6",
+    "joblib==1.6.0",
+    "kiwisolver==1.5.1",
+    "krippendorff==0.9.0",
+    "llvmlite==0.50.0",
+    "markdown-it-py==4.2.0",
+    "markupsafe==3.0.4",
+    "matplotlib==3.11.2",
+    "mdurl==0.1.2",
+    "mpmath==1.3.0",
+    "narwhals==2.26.0",
+    "networkx==3.7",
+    "nltk==3.10.3",
+    "nodeenv==1.11.0",
+    "numba==0.68.0",
+    "numpy==2.5.3",
+    "openpyxl==3.1.5",
+    "opentelemetry-api==1.45.0",
+    "opentsne==1.0.4",
+    "packaging==26.3",
+    "pacmap==0.9.1",
+    "pandas==3.0.6",
+    "pillow==12.3.0",
+    "platformdirs==4.11.15",
+    "pluggy==1.6.0",
+    "pre-commit==4.6.2",
+    "proto-plus==1.28.4",
+    "protobuf==7.36.2",
+    "pyarrow==25.0.1",
+    "pyasn1-modules==0.4.2",
+    "pyasn1==0.6.4",
+    "pycparser==3.0",
+    "pydantic-core==2.46.5",
+    "pydantic==2.13.5",
+    "pygments==2.21.0",
+    "pynndescent==0.6.0",
+    "pyparsing==3.3.3",
+    "pytest==9.1.1",
+    "python-dateutil==2.9.0.post0",
+    "python-discovery==1.6.1",
+    "python-dotenv==1.2.3",
+    "pyyaml==6.0.3",
+    "rank-bm25==0.2.2",
+    "regex==2026.9.29",
+    "requests==2.34.2",
+    "rich==15.0.0",
+    "safetensors==0.8.0",
+    "scikit-learn==1.9.1",
+    "scipy==1.18.1",
+    "sentence-transformers==6.1.0",
+    "setuptools==84.0.0",
+    "shellingham==1.5.4",
+    "six==1.17.0",
+    "sniffio==1.3.1",
+    "sympy==1.14.0",
+    "tenacity==9.1.4",
+    "threadpoolctl==3.7.0",
+    "tokenizers==0.23.2",
+    "torch==2.14.1",
+    "tqdm==4.70.1",
+    "transformers==5.19.0",
+    "typer==0.27.3",
+    "typing-extensions==4.16.0",
+    "typing-inspection==0.4.4",
+    "umap-learn==0.5.12",
+    "urllib3==2.8.0",
+    "virtualenv==21.12.1",
+    "websockets==15.0.1"
+  ]
+}

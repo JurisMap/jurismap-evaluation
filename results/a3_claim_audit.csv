@@ -1,0 +1,6 @@
+rater,claims,same_label,same_label_share,same_supported_or_not,same_supported_or_not_share,ci_low,ci_high,weighted_to_all_claims,supported_by_hugo_rejected_by_rater,supported_by_hugo,not_supported_by_hugo_accepted_by_rater,not_supported_by_hugo
+nli,50,23,0.4600,30,0.6000,0.4618,0.7239,0.6305,11,32,9,18
+judge_a,50,37,0.7400,41,0.8200,0.6920,0.9023,0.9692,6,32,3,18
+judge_b,49,29,0.5918,30,0.6122,0.4725,0.7357,0.8740,12,32,7,17
+majority,41,33,0.8049,35,0.8537,0.7156,0.9312,0.9359,1,27,5,14
+judge_gemini,32,22,0.6875,23,0.7188,0.5463,0.8444,0.8774,9,23,0,9

@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper and this archive."
+title: "JurisMap evaluation: code, data and results"
+type: software
+version: 1.0.0
+license: MIT
+# The data and results are CC BY 4.0 (LICENSE-DATA.md).
+repository-code: https://github.com/JurisMap/jurismap-evaluation
+# doi: 10.5281/zenodo.<record>   (the code's own DOI, to fill after the first GitHub release is archived)
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24065101
+    description: "Data archive (Zenodo): the corpus, labels, embeddings, map coordinates, test material, system outputs and judgements"
+authors:
+  - family-names: Mentzingen
+    given-names: The author
+    orcid: "https://orcid.org/0000-0001-8538-1727"
+    affiliation: "NOVA Information Management School (NOVA IMS), Universidade NOVA de Lisboa"
+  - family-names: António
+    given-names: Nuno
+    orcid: "https://orcid.org/0000-0002-4801-2487"
+    affiliation: "NOVA Information Management School (NOVA IMS), Universidade NOVA de Lisboa"
+  - family-names: Bacao
+    given-names: Fernando
+    orcid: "https://orcid.org/0000-0002-0834-0275"
+    affiliation: "NOVA Information Management School (NOVA IMS), Universidade NOVA de Lisboa"
+keywords:
+  - legal informatics
+  - precedent retrieval
+  - visual analytics
+  - large language models
+  - evaluation
+preferred-citation:
+  type: article
+  title: "JurisMap: A Visual Analytics and Generative AI Approach to Automating Administrative Legal Defense Production"
+  authors:
+    - family-names: Mentzingen
+      given-names: The author
+    - family-names: António
+      given-names: Nuno
+    - family-names: Bacao
+      given-names: Fernando
+  # journal, year, volume and DOI to fill on publication

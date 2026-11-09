@@ -1,0 +1,36 @@
+{
+  "decisions": 50,
+  "neighbours": 10,
+  "cosine_frozen_vs_rerun": {
+    "mean": 0.9744,
+    "median": 0.9787,
+    "min": 0.907,
+    "p10": 0.9541,
+    "max": 0.993
+  },
+  "neighbours_kept_of_10": {
+    "mean": 5.54,
+    "median": 6.0,
+    "min": 0.0,
+    "p10": 1.0,
+    "max": 10.0
+  },
+  "share_all_neighbours_kept": 0.04,
+  "share_first_neighbour_kept": 0.36,
+  "share_identical_text": 0.0,
+  "length_ratio_rerun_to_frozen": {
+    "mean": 1.536,
+    "median": 1.1849,
+    "min": 0.3702,
+    "p10": 0.6557,
+    "max": 7.6228
+  },
+  "finish_reasons": {
+    "FinishReason.STOP": 50
+  },
+  "tokens": {
+    "prompt_tokens": 135713,
+    "output_tokens": 37847,
+    "thoughts_tokens": 20611
+  }
+}

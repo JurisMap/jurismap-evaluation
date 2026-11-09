@@ -1,0 +1,41 @@
+set,method,label,text,metric,cases,mean,ci_low,ci_high
+gold standard (50 infractions),M1,TF-IDF,SUSEP infraction text,mAR,50,0.657494,0.608152,0.705447
+gold standard (50 infractions),M1,TF-IDF,SUSEP infraction text,Recall@5,50,0.346054,0.273442,0.423794
+gold standard (50 infractions),M1,TF-IDF,SUSEP infraction text,nDCG@10,47,0.527731,0.440372,0.614323
+gold standard (50 infractions),M1,TF-IDF,SUSEP infraction text,Spearman (pairs),1225,0.112201,,
+gold standard (50 infractions),M2,BM25,SUSEP infraction text,mAR,50,0.638035,0.583212,0.689799
+gold standard (50 infractions),M2,BM25,SUSEP infraction text,Recall@5,50,0.26246,0.183363,0.350269
+gold standard (50 infractions),M2,BM25,SUSEP infraction text,nDCG@10,47,0.33723,0.260493,0.418996
+gold standard (50 infractions),M2,BM25,SUSEP infraction text,Spearman (pairs),1225,0.128319,,
+gold standard (50 infractions),M6,"BGE-M3 (dense), full report",SUSEP infraction text,mAR,50,0.670971,0.616881,0.723774
+gold standard (50 infractions),M6,"BGE-M3 (dense), full report",SUSEP infraction text,Recall@5,50,0.36848,0.28582,0.452401
+gold standard (50 infractions),M6,"BGE-M3 (dense), full report",SUSEP infraction text,nDCG@10,47,0.574061,0.473667,0.669645
+gold standard (50 infractions),M6,"BGE-M3 (dense), full report",SUSEP infraction text,Spearman (pairs),1225,0.162203,,
+gold standard (50 infractions),M7,"multilingual-E5-large, full report",SUSEP infraction text,mAR,50,0.656669,0.607026,0.705986
+gold standard (50 infractions),M7,"multilingual-E5-large, full report",SUSEP infraction text,Recall@5,50,0.353784,0.280942,0.432183
+gold standard (50 infractions),M7,"multilingual-E5-large, full report",SUSEP infraction text,nDCG@10,47,0.540853,0.452619,0.62791
+gold standard (50 infractions),M7,"multilingual-E5-large, full report",SUSEP infraction text,Spearman (pairs),1225,0.114713,,
+matched subset (15 infractions),M1,TF-IDF,SUSEP infraction text,mAR,15,0.719852,0.633774,0.80763
+matched subset (15 infractions),M1,TF-IDF,SUSEP infraction text,Recall@5,15,0.602222,0.431111,0.768889
+matched subset (15 infractions),M1,TF-IDF,SUSEP infraction text,nDCG@10,14,0.694756,0.564187,0.821692
+matched subset (15 infractions),M1,TF-IDF,SUSEP infraction text,Spearman (pairs),105,0.197069,,
+matched subset (15 infractions),M2,BM25,SUSEP infraction text,mAR,15,0.70637,0.627852,0.787119
+matched subset (15 infractions),M2,BM25,SUSEP infraction text,Recall@5,15,0.584444,0.428889,0.744444
+matched subset (15 infractions),M2,BM25,SUSEP infraction text,nDCG@10,14,0.533041,0.424207,0.639456
+matched subset (15 infractions),M2,BM25,SUSEP infraction text,Spearman (pairs),105,0.214964,,
+matched subset (15 infractions),M6,"BGE-M3 (dense), full report",SUSEP infraction text,mAR,15,0.687185,0.591037,0.781852
+matched subset (15 infractions),M6,"BGE-M3 (dense), full report",SUSEP infraction text,Recall@5,15,0.563333,0.403306,0.718889
+matched subset (15 infractions),M6,"BGE-M3 (dense), full report",SUSEP infraction text,nDCG@10,14,0.595903,0.422286,0.763279
+matched subset (15 infractions),M6,"BGE-M3 (dense), full report",SUSEP infraction text,Spearman (pairs),105,0.0911431,,
+matched subset (15 infractions),M7,"multilingual-E5-large, full report",SUSEP infraction text,mAR,15,0.657333,0.566294,0.754815
+matched subset (15 infractions),M7,"multilingual-E5-large, full report",SUSEP infraction text,Recall@5,15,0.477778,0.333333,0.627778
+matched subset (15 infractions),M7,"multilingual-E5-large, full report",SUSEP infraction text,nDCG@10,14,0.545691,0.40593,0.683959
+matched subset (15 infractions),M7,"multilingual-E5-large, full report",SUSEP infraction text,Spearman (pairs),105,0.0573758,,
+matched subset (15 infractions),M3,"text-multilingual-embedding-002, full report (version 1)",public CRSNSP decision of the same process,mAR,15,0.733704,0.681852,0.791481
+matched subset (15 infractions),M3,"text-multilingual-embedding-002, full report (version 1)",public CRSNSP decision of the same process,Recall@5,15,0.645556,0.54,0.755556
+matched subset (15 infractions),M3,"text-multilingual-embedding-002, full report (version 1)",public CRSNSP decision of the same process,nDCG@10,14,0.708715,0.615786,0.804736
+matched subset (15 infractions),M3,"text-multilingual-embedding-002, full report (version 1)",public CRSNSP decision of the same process,Spearman (pairs),105,0.204626,,
+matched subset (15 infractions),M4,"gemini-embedding-001, Gemini 3.7 Flash compression (version 2)",public CRSNSP decision of the same process,mAR,15,0.702444,0.622222,0.782969
+matched subset (15 infractions),M4,"gemini-embedding-001, Gemini 3.7 Flash compression (version 2)",public CRSNSP decision of the same process,Recall@5,15,0.554444,0.394444,0.705556
+matched subset (15 infractions),M4,"gemini-embedding-001, Gemini 3.7 Flash compression (version 2)",public CRSNSP decision of the same process,nDCG@10,14,0.64445,0.50957,0.77886
+matched subset (15 infractions),M4,"gemini-embedding-001, Gemini 3.7 Flash compression (version 2)",public CRSNSP decision of the same process,Spearman (pairs),105,0.137184,,

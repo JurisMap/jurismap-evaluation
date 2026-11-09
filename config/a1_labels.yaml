@@ -1,0 +1,146 @@
+# A1 retrieval benchmark: silver labels (implementation plan, Phase 4a).
+# status: approved. The author confirmed the choices marked "confirm" on 2026-10-07 (DECISIONS.md).
+version: 1
+status: approved
+
+# The labels were built on the v2.2 corpus (corpus_v2_rebuilt_20260927.parquet). The v2.3 rebuild has the
+# same decisions and texts; it adds the fused vectors, their two parts and the new map coordinates.
+corpus: data/v2/corpus_v2_rebuilt_20261009.parquet   # v2.3 frozen corpus, 2,390 decisions
+comparison_set: data/v2/shared_ids.txt               # 1,503 decisions also in v1
+
+# Provisions cited in almost any case, which say nothing about the conduct. They are parsed and
+# stored, but left out of the keys that decide relevance. (confirm)
+#   DL 73/1966 art. 88: insurers must obey the regulator's rules (cited in 44% of the decisions)
+#   DL 73/1966 art. 36: SUSEP's powers
+generic_provisions:
+  - DL73/1966:art88
+  - DL73/1966:art36
+
+# Sanction regulations: their articles set the penalty. Some legal-basis fields include them and
+# most do not, so they are left out of the relevance keys too. (confirm)
+sanction_norms:
+  - RES-CNSP243/2011
+  - RES-CNSP393/2020
+  - RES-CNSP60/2001
+
+relevance:
+  jaccard_threshold: 0.5      # relaxed R-base and R-prov
+
+# Development sample: the only decisions whose report and vote were read while the patterns for
+# the infringed provision (jm_eval/retrieval/labels.py) were tuned. Drawn from the corpus sorted by
+# acordao_hash with numpy.random.default_rng(seed).choice(n_corpus, n, replace=False).
+# The citation parser (jm_eval/retrieval/provisions.py) was written on these decisions too. Its
+# misses on the legal-basis field of the whole corpus were then inspected (that field is the label
+# source, not text that any retrieval method reads), and so was a first audit draw (see `audit`).
+development:
+  seed: 20260926
+  n: 30
+  ids:
+    - 11da3d6afd32c48f
+    - 15287d460c154c5e
+    - 1b8867b3590460c4
+    - 1f1ec199f24fd3c8
+    - 2c257981fceebe8a
+    - 2f18a2fabff5407b
+    - 3e9e234bfe16e75a
+    - 496ff5de0a9ceee4
+    - 523ea3ffceff620c
+    - 60030c53daf7653f
+    - 75c16ea66e469823
+    - 7b8825b4c4693c57
+    - 7d8d4f6773ea657e
+    - 7de1d01c833a3325
+    - 8d6a7754c69c020d
+    - 8e7e61f1fb2b6bdf
+    - 8f07c3a4e72268e3
+    - 973a7b351dda4ae1
+    - b34b7122653d3f7e
+    - c9f6b7981ec7281d
+    - ceb322eec0ba88b0
+    - d32e607ea3d3d0f0
+    - d66791f1cd299234
+    - d6925a3dc6a6212a
+    - df96db063a5f8e41
+    - e22714b0c1606c86
+    - e30fd0747a80c253
+    - ee7a2280e719b3d4
+    - f5a7bdcc942c4d78
+    - f84bc164c67519a0
+
+# Review of the labels by a second model (the author, 2026-10-07; scripts/49_label_review.py): the 60
+# audited decisions plus 40 drawn with this seed outside the development material. Controls are
+# labels with a planted error, drawn outside the sample.
+review:
+  n: 100
+  seed: 20261007
+  controls: {legal_basis: 10, infringed_provision: 10}
+  audited_labels: a1_silver_labels_2.parquet     # the labels the author's marks refer to
+
+audit:
+  n: 60
+  seed: 20261006              # drawn from the decisions outside the development material
+  # A first draw (seed 20260926) was written before any mark was given, and its legal bases were
+  # read while six slips of the citation parser were corrected. Those 60 decisions therefore became
+  # development material: they are excluded from the audit, like the development sample, and the
+  # decisions of the draw above were not inspected.
+  excluded_ids:
+    - 03594d91beae6198
+    - 11b3fd4974f952d3
+    - 14a15bddcb50b410
+    - 1b379cd23b349413
+    - 1ec2bf473845757a
+    - 290240162de9801e
+    - 2a7deb201b63982e
+    - 2ec86c6e18e4f167
+    - 2f4b5f983ad0e384
+    - 308c6b62eb3d5bd1
+    - 3298f19714cea799
+    - 3da883ca6045a2fa
+    - 47fd1a59dd5a9be0
+    - 4bfccbde5ba1cd2e
+    - 51510c86859a18fe
+    - 5a97e419f442e91b
+    - 5e9f7d0a2222190f
+    - 65ac4a5ae69b762d
+    - 6d8370b5c6c42ff6
+    - 73e2f012593105bd
+    - 750d9315ec0c0fd8
+    - 7a0209d785d1bdae
+    - 7a0341a854e13654
+    - 7baea7aa5a63700b
+    - 7c086d837be95804
+    - 823fb7fd9f2ff46a
+    - 8b3a8c964972fd26
+    - 8c43a57ba5c6386d
+    - 8caa4aa9d8f6faec
+    - 956322adf1d475d0
+    - 9587010325fe764c
+    - 9c3b451927ebe166
+    - a0d96f4b20f718f2
+    - a1e0823be13e5dd8
+    - a52c800104f45a4f
+    - b019a9e131eeb9b1
+    - b10b54e389584498
+    - b17a74e10227c9d8
+    - b7445b954fce0c6f
+    - bb71c3727a958c81
+    - c706512e5487f867
+    - cb1aea2eb4ae7597
+    - cb5efc9b362fe7da
+    - cfeaab2d2fb8f96c
+    - d0073c7769532ca0
+    - d313c4563e4d61c0
+    - d412b43b629948c6
+    - d77280879998cdaf
+    - d81bd10df968ca0b
+    - dcc0268d0a100e62
+    - df75f339e01d0a3b
+    - dfd113aaae3afcbb
+    - e0883433a40077a2
+    - e9b66ea27b86b46a
+    - ebad322d7fc1f20d
+    - ebebac8cb88089f9
+    - ed34c604d3ad2b2b
+    - f2ff14b74ea697d8
+    - f5899c393c21a025
+    - fc6b843da9c1e524

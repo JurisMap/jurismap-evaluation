@@ -1,0 +1,839 @@
+{
+  "run_id": "20261009T171114Z-50668e7c",
+  "script": "51_a2_map_metrics",
+  "argv": [
+    "scripts/51_a2_map_metrics.py"
+  ],
+  "models": {
+    "M3": {
+      "label": "text-multilingual-embedding-002, full report (version 1)",
+      "kind": "vertex",
+      "model": "text-multilingual-embedding-002",
+      "dimensions": 768,
+      "task_type": "SEMANTIC_SIMILARITY",
+      "text": "report"
+    },
+    "M4": {
+      "label": "gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",
+      "kind": "stored",
+      "column": "embedding_acordao_relatorio_compressed_v2",
+      "model": "gemini-embedding-001",
+      "dimensions": 3072,
+      "task_type": "SEMANTIC_SIMILARITY",
+      "text": "compressed_v2"
+    }
+  },
+  "params": {
+    "sets": {
+      "v1_comparison": {
+        "method": "M3",
+        "scope": "comparison_set",
+        "label": "Version 1 vectors, comparison set"
+      },
+      "v2_comparison": {
+        "method": "M4",
+        "scope": "comparison_set",
+        "label": "Version 2 vectors, comparison set"
+      },
+      "v2_full": {
+        "method": "M4",
+        "scope": "v2",
+        "label": "Version 2 vectors, all decisions"
+      }
+    },
+    "projections": {
+      "umap": {
+        "metric": "cosine",
+        "n_neighbors": [
+          5,
+          10,
+          15,
+          30,
+          50
+        ],
+        "min_dist": [
+          0.0,
+          0.01,
+          0.1,
+          0.5
+        ]
+      },
+      "tsne": {
+        "perplexity": 30,
+        "metric": "cosine",
+        "neighbors": "exact"
+      },
+      "pacmap": {},
+      "pca": {}
+    },
+    "version_settings": {
+      "v1": {
+        "n_neighbors": 15,
+        "min_dist": 0.1
+      },
+      "v2": {
+        "n_neighbors": 10,
+        "min_dist": 0.0,
+        "n_epochs": 2000
+      }
+    },
+    "frozen": {
+      "column": "embedding_acordao_relatorio_compressed_2d_v2",
+      "sets": [
+        "v2_comparison",
+        "v2_full"
+      ],
+      "rebuild": "data/v2/rebuild_20261009",
+      "environments": {
+        "scrapers environment": "../scrapers/.venv/bin/python",
+        "backend environment": "../app/backend/.venv/bin/python"
+      }
+    },
+    "metrics": {
+      "neighbourhood_k": [
+        5,
+        10,
+        20,
+        50
+      ],
+      "jaccard_k": 10,
+      "distance_pairs": 100000,
+      "label_neighbours": 10,
+      "labels": {
+        "R-cat": "category",
+        "R-cat-mistral": "category_mistral",
+        "R-base": "base_key",
+        "R-prov": "text_primary"
+      },
+      "headline": [
+        "trustworthiness@10",
+        "continuity@10",
+        "knn_jaccard@10",
+        "distance_spearman"
+      ]
+    }
+  },
+  "seeds": {
+    "a2_projections": [
+      42,
+      20260926,
+      20260927,
+      20260928,
+      20260929
+    ],
+    "a2_distance_pairs": 20260926
+  },
+  "inputs": [
+    {
+      "path": "data/v2/corpus_v2_rebuilt_20261009.parquet",
+      "sha256": "2918f3ebed6c3b969c7274c3a18762c26b3ace17b09d286e2ca12102153128a4"
+    },
+    {
+      "path": "data/v2/a2_projections/v1_comparison_3.npz",
+      "sha256": "4ea957fcdcfacfa5a16d9be3d2c5b3574359b387de4a230a31fb8c81bc5ab824"
+    },
+    {
+      "path": "data/v2/a2_projections/v2_comparison_3.npz",
+      "sha256": "3cdbbbbf5901566fa16d8f7bdd4dad8e183d96bdb039e122702d7786430b324e"
+    },
+    {
+      "path": "data/v2/a2_projections/v2_full_3.npz",
+      "sha256": "e5ce4686726a5304978202af50d9e7d922283d695e51f8ea32adb0fef2fc602b"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "results/a2_map_metrics_2.csv",
+      "sha256": "153bcd93bb2af986f98fac81e7f11b95f76a3f1b4a86f026249692c8d070a409",
+      "bytes": 149975
+    },
+    {
+      "path": "results/a2_seed_stability_2.csv",
+      "sha256": "406003efd9ec0d49244c305b308e99f88dedec83116fc8ea06424ef3b0bd4b07",
+      "bytes": 7842
+    },
+    {
+      "path": "results/a2_map_summary_2.json",
+      "sha256": "2c6024d3b965408cb58d7078f7a0a633c813cf857f3ff420792c26ee3871b2ec",
+      "bytes": 13394
+    },
+    {
+      "path": "data/v2/a2_runs/a2_metrics_by_seed_2.parquet",
+      "sha256": "0d34813487a4ab1c3435da28bd8246d8c180c5de30cf6e5acd047e578ae37686",
+      "bytes": 62263
+    },
+    {
+      "path": "results/figures/a2_trustworthiness_vs_k_2.pdf",
+      "sha256": "7d27e42c9d7c9f2c1c97c35bbb19be310a0392ab4d4cfa3da4c8c771e362f60b",
+      "bytes": 32823
+    },
+    {
+      "path": "results/figures/a2_umap_grid_2.pdf",
+      "sha256": "74bb9c1740d20a7559f62f6ad6957105aae99bae1d53fd4c71dcaebeffe99c13",
+      "bytes": 29445
+    }
+  ],
+  "summary": {
+    "labels": {
+      "v1_comparison": {
+        "R-cat": {
+          "decisions": 1503,
+          "classes": 15
+        },
+        "R-cat-mistral": {
+          "decisions": 1503,
+          "classes": 15
+        },
+        "R-base": {
+          "decisions": 836,
+          "classes": 150
+        },
+        "R-prov": {
+          "decisions": 798,
+          "classes": 136
+        }
+      },
+      "v2_comparison": {
+        "R-cat": {
+          "decisions": 1503,
+          "classes": 15
+        },
+        "R-cat-mistral": {
+          "decisions": 1503,
+          "classes": 15
+        },
+        "R-base": {
+          "decisions": 836,
+          "classes": 150
+        },
+        "R-prov": {
+          "decisions": 798,
+          "classes": 136
+        }
+      },
+      "v2_full": {
+        "R-cat": {
+          "decisions": 2390,
+          "classes": 15
+        },
+        "R-cat-mistral": {
+          "decisions": 2390,
+          "classes": 15
+        },
+        "R-base": {
+          "decisions": 1417,
+          "classes": 225
+        },
+        "R-prov": {
+          "decisions": 1226,
+          "classes": 179
+        }
+      }
+    },
+    "umap_grid": {
+      "v1_comparison": {
+        "trustworthiness@10": {
+          "best": {
+            "projection": "umap_n10_d0",
+            "mean": 0.9067909313026608,
+            "sd": 0.002859549033707502
+          },
+          "worst": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.8425751879993515
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank": 12,
+            "settings": 20,
+            "mean": 0.895577190716606,
+            "sd": 0.0033522149049588757,
+            "min": 0.8914715107599926,
+            "max": 0.89976801578915,
+            "below_best": 0.011213740586054732
+          },
+          "v2": {
+            "projection": "umap_n10_d0",
+            "rank": 1,
+            "settings": 20,
+            "mean": 0.9067909313026608,
+            "sd": 0.002859549033707502,
+            "min": 0.902823015034357,
+            "max": 0.9096572121862717,
+            "below_best": 0.0
+          }
+        },
+        "continuity@10": {
+          "best": {
+            "projection": "umap_n15_d0.5",
+            "mean": 0.9236809026205293,
+            "sd": 0.000804666799016787
+          },
+          "worst": {
+            "projection": "umap_n5_d0.01",
+            "mean": 0.8875591025232449
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank": 7,
+            "settings": 20,
+            "mean": 0.9181186221394745,
+            "sd": 0.00030399068705331845,
+            "min": 0.9177281068115869,
+            "max": 0.9183747015772377,
+            "below_best": 0.005562280481054782
+          },
+          "v2": {
+            "projection": "umap_n10_d0",
+            "rank": 15,
+            "settings": 20,
+            "mean": 0.9113526537960495,
+            "sd": 0.0017372082630667948,
+            "min": 0.9085304572926975,
+            "max": 0.9133003908150086,
+            "below_best": 0.012328248824479804
+          }
+        },
+        "knn_jaccard@10": {
+          "best": {
+            "projection": "umap_n5_d0.01",
+            "mean": 0.22952439131814129,
+            "sd": 0.0017673873073791482
+          },
+          "worst": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.12541438803898403
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank": 9,
+            "settings": 20,
+            "mean": 0.2047716151595081,
+            "sd": 0.0029842059700864523,
+            "min": 0.20010875940039285,
+            "max": 0.20776984241386703,
+            "below_best": 0.024752776158633194
+          },
+          "v2": {
+            "projection": "umap_n10_d0",
+            "rank": 4,
+            "settings": 20,
+            "mean": 0.2275063670854133,
+            "sd": 0.001615510773403452,
+            "min": 0.22577788421024547,
+            "max": 0.2297389827299049,
+            "below_best": 0.002018024232727983
+          }
+        },
+        "distance_spearman": {
+          "best": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.3705127350741509,
+            "sd": 0.0005901170359141826
+          },
+          "worst": {
+            "projection": "umap_n15_d0.01",
+            "mean": 0.31356327975373743
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank": 15,
+            "settings": 20,
+            "mean": 0.32293126785095444,
+            "sd": 0.013837219600513949,
+            "min": 0.31180537737778535,
+            "max": 0.3453189195070797,
+            "below_best": 0.04758146722319645
+          },
+          "v2": {
+            "projection": "umap_n10_d0",
+            "rank": 7,
+            "settings": 20,
+            "mean": 0.33919383699216427,
+            "sd": 0.005001794974469781,
+            "min": 0.331602097926144,
+            "max": 0.3454504964551029,
+            "below_best": 0.031318898081986624
+          }
+        }
+      },
+      "v2_comparison": {
+        "trustworthiness@10": {
+          "best": {
+            "projection": "umap_n10_d0.01",
+            "mean": 0.9486138758896772,
+            "sd": 0.0009474290897274071
+          },
+          "worst": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.9041875822584522
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank": 11,
+            "settings": 20,
+            "mean": 0.9404257389981941,
+            "sd": 0.0029894250182874752,
+            "min": 0.9376456051482469,
+            "max": 0.9454692855185987,
+            "below_best": 0.008188136891483011
+          },
+          "v2": {
+            "projection": "umap_n10_d0",
+            "rank": 2,
+            "settings": 20,
+            "mean": 0.9478441704825643,
+            "sd": 0.0015133903061292837,
+            "min": 0.9455609341541008,
+            "max": 0.9494139787651588,
+            "below_best": 0.0007697054071128528
+          }
+        },
+        "continuity@10": {
+          "best": {
+            "projection": "umap_n15_d0.5",
+            "mean": 0.9513715202647924,
+            "sd": 0.00041591955266202134
+          },
+          "worst": {
+            "projection": "umap_n5_d0",
+            "mean": 0.9275091408219975
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank": 7,
+            "settings": 20,
+            "mean": 0.9461883761887989,
+            "sd": 0.00100694026442889,
+            "min": 0.9448179048066332,
+            "max": 0.9472537278384408,
+            "below_best": 0.005183144075993518
+          },
+          "v2": {
+            "projection": "umap_n10_d0",
+            "rank": 16,
+            "settings": 20,
+            "mean": 0.9416607188983377,
+            "sd": 0.0010413487192503037,
+            "min": 0.9404121504889381,
+            "max": 0.9429093409819017,
+            "below_best": 0.009710801366454747
+          }
+        },
+        "knn_jaccard@10": {
+          "best": {
+            "projection": "umap_n10_d0",
+            "mean": 0.28329782517135366,
+            "sd": 0.0025103972516247524
+          },
+          "worst": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.17681657203202347
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank": 9,
+            "settings": 20,
+            "mean": 0.2694200265589994,
+            "sd": 0.0017484366686018227,
+            "min": 0.26801607787159903,
+            "max": 0.27247081488752944,
+            "below_best": 0.013877798612354275
+          },
+          "v2": {
+            "projection": "umap_n10_d0",
+            "rank": 1,
+            "settings": 20,
+            "mean": 0.28329782517135366,
+            "sd": 0.0025103972516247524,
+            "min": 0.28077266060587347,
+            "max": 0.28725726491649756,
+            "below_best": 0.0
+          }
+        },
+        "distance_spearman": {
+          "best": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.45175840448263027,
+            "sd": 0.007623876330220434
+          },
+          "worst": {
+            "projection": "umap_n30_d0",
+            "mean": 0.40756793407623604
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank": 16,
+            "settings": 20,
+            "mean": 0.412799473615152,
+            "sd": 0.010418811778286576,
+            "min": 0.39712389612262045,
+            "max": 0.4224368681708558,
+            "below_best": 0.03895893086747826
+          },
+          "v2": {
+            "projection": "umap_n10_d0",
+            "rank": 8,
+            "settings": 20,
+            "mean": 0.4225722091829957,
+            "sd": 0.011217437119631047,
+            "min": 0.41085721429149374,
+            "max": 0.43605010634202906,
+            "below_best": 0.029186195299634565
+          }
+        }
+      },
+      "v2_full": {
+        "trustworthiness@10": {
+          "best": {
+            "projection": "umap_n15_d0",
+            "mean": 0.9533387817386793,
+            "sd": 0.0010228556877671456
+          },
+          "worst": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.9061057064645188
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank": 8,
+            "settings": 20,
+            "mean": 0.9476762745030666,
+            "sd": 0.0006766593823376106,
+            "min": 0.9467077235374811,
+            "max": 0.9483119546859017,
+            "below_best": 0.005662507235612679
+          },
+          "v2": {
+            "projection": "umap_n10_d0",
+            "rank": 2,
+            "settings": 20,
+            "mean": 0.9532359386825325,
+            "sd": 0.001220687181259066,
+            "min": 0.9518178237920161,
+            "max": 0.9542082499640973,
+            "below_best": 0.00010284305614671752
+          }
+        },
+        "continuity@10": {
+          "best": {
+            "projection": "umap_n30_d0.5",
+            "mean": 0.9572118895764007,
+            "sd": 0.00020187816993419135
+          },
+          "worst": {
+            "projection": "umap_n5_d0",
+            "mean": 0.9281302013813082
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank": 7,
+            "settings": 20,
+            "mean": 0.951380199839473,
+            "sd": 0.0012362883099813725,
+            "min": 0.9498439045965194,
+            "max": 0.9530465343507684,
+            "below_best": 0.005831689736927714
+          },
+          "v2": {
+            "projection": "umap_n10_d0",
+            "rank": 16,
+            "settings": 20,
+            "mean": 0.9473125952083283,
+            "sd": 0.001098051768543113,
+            "min": 0.9462419306949448,
+            "max": 0.948967208247321,
+            "below_best": 0.009899294368072353
+          }
+        },
+        "knn_jaccard@10": {
+          "best": {
+            "projection": "umap_n5_d0.01",
+            "mean": 0.2808323275462542,
+            "sd": 0.0030400142046621372
+          },
+          "worst": {
+            "projection": "umap_n50_d0.5",
+            "mean": 0.16987426692739077
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank": 9,
+            "settings": 20,
+            "mean": 0.2600404181488939,
+            "sd": 0.0020311659603113185,
+            "min": 0.257231588069574,
+            "max": 0.2623111580901391,
+            "below_best": 0.02079190939736031
+          },
+          "v2": {
+            "projection": "umap_n10_d0",
+            "rank": 5,
+            "settings": 20,
+            "mean": 0.27549927823183257,
+            "sd": 0.0020438784155476773,
+            "min": 0.2725067802674445,
+            "max": 0.27804799051414847,
+            "below_best": 0.005333049314421634
+          }
+        },
+        "distance_spearman": {
+          "best": {
+            "projection": "umap_n10_d0.1",
+            "mean": 0.4518284239992557,
+            "sd": 0.00566772343273142
+          },
+          "worst": {
+            "projection": "umap_n30_d0.01",
+            "mean": 0.4137400967183645
+          },
+          "v1": {
+            "projection": "umap_n15_d0.1",
+            "rank": 5,
+            "settings": 20,
+            "mean": 0.4452541711194703,
+            "sd": 0.007031914787582052,
+            "min": 0.43410685726487475,
+            "max": 0.4528458730959086,
+            "below_best": 0.006574252879785414
+          },
+          "v2": {
+            "projection": "umap_n10_d0",
+            "rank": 2,
+            "settings": 20,
+            "mean": 0.4497449410614346,
+            "sd": 0.0056824761622637126,
+            "min": 0.4438982545009579,
+            "max": 0.4562567306461577,
+            "below_best": 0.002083482937821124
+          }
+        }
+      }
+    },
+    "served_map_vs_refits_of_v2_setting": {
+      "v2_comparison": {
+        "42": {
+          "procrustes": 0.5882030283429209,
+          "map_knn_jaccard@10": 0.42720288409251045
+        },
+        "20260926": {
+          "procrustes": 0.21862128981933762,
+          "map_knn_jaccard@10": 0.42361506659999454
+        },
+        "20260927": {
+          "procrustes": 0.5461299650473002,
+          "map_knn_jaccard@10": 0.40812489717929606
+        },
+        "20260928": {
+          "procrustes": 0.628817788468303,
+          "map_knn_jaccard@10": 0.40178285897991994
+        },
+        "20260929": {
+          "procrustes": 0.2322450665379638,
+          "map_knn_jaccard@10": 0.4233173155112558
+        }
+      },
+      "v2_full": {
+        "42": {
+          "procrustes": 0.5254614086770476,
+          "map_knn_jaccard@10": 0.5031240178687618
+        },
+        "20260926": {
+          "procrustes": 0.5980301382882668,
+          "map_knn_jaccard@10": 0.4826287878187564
+        },
+        "20260927": {
+          "procrustes": 0.4038417277756836,
+          "map_knn_jaccard@10": 0.5013052694319453
+        },
+        "20260928": {
+          "procrustes": 0.45614999830890157,
+          "map_knn_jaccard@10": 0.4997985566615176
+        },
+        "20260929": {
+          "procrustes": 0.39168384107182197,
+          "map_knn_jaccard@10": 0.4886342804341561
+        }
+      }
+    },
+    "fits": {
+      "v1_comparison": 111,
+      "v2_comparison": 112,
+      "v2_full": 112
+    }
+  },
+  "started_utc": "2026-10-09T17:11:14.999+00:00",
+  "git": {
+    "eval": {
+      "path": ".",
+      "sha": "c7099a60680c994e546719d60848d2faee7571dc",
+      "branch": "feature/phase-5.1-map-improvement",
+      "tag": null,
+      "dirty": true
+    },
+    "backend": {
+      "path": "../app/backend",
+      "sha": "ae197d889d8f3ef2fb4910f67a5cff39875e565f",
+      "branch": "feature/fused_vectors_and_map",
+      "tag": null,
+      "dirty": false
+    },
+    "frontend_v2": {
+      "path": "../app/frontend/jurismap-react-app",
+      "sha": "e9a2483df1aff6e97c2e11571cecfcffc8e92596",
+      "branch": "main",
+      "tag": null,
+      "dirty": false
+    },
+    "frontend_v1": {
+      "path": "../frontend_old",
+      "sha": "8183c0da1c08d7793fddaaafb894ab61114c61b2",
+      "branch": "legacy/streamlit-v1",
+      "tag": null,
+      "dirty": true
+    },
+    "scrapers": {
+      "path": "../scrapers",
+      "sha": "9de26af4570d5ae078eabd2951a4152a76a7ec67",
+      "branch": "feature/fused_vectors_and_map",
+      "tag": null,
+      "dirty": false
+    }
+  },
+  "config_hash": {
+    "combined": "faed4c52207cd7575c02e650abcf609a98ad5aa8720de25c325221d5efe98eec",
+    "files": {
+      "a1_candidates.yaml": "7ba7e026ae9b05074c0981aef94373530cd191b129fe70a9969e70ad2626f94d",
+      "a1_labels.yaml": "562f4ba802bfd2078bcf4c0ed6868eb4b8c01e0acbfaeb27e27c19a19daf397a",
+      "a1_methods.yaml": "2a23b67d05658e2ace4f734d938e481b30a4486ff3b03daee02f27ddaa8b479c",
+      "a1_taxonomy.yaml": "bb7b0b24a51462e7ab95be6fffc793dddbb0fdc8c2258e44efa0b017e2d960e6",
+      "a2_candidates.yaml": "adef29c08b96f5d377a24ad71381a5fd238672b9427cfd21200aade4b501a2bb",
+      "a2_map.yaml": "39fd2c6bd57bcc5d9537f4a4c78a3700984bd59b607df76a2d4194ba0bbdd73e",
+      "b3_codebook.yaml": "b8a1f818413d9955a04f4becf2f53982549729afab61a305dd0a1d6658afd34a",
+      "models.yaml": "305fd59f788ee0768b91f436cf7cfeec519f83418cf6707893003353df39503f",
+      "paths.yaml": "61c3de817460329805badbdaac43b7f295fca5c7a966f1c32821a20e8048c94f",
+      "prices.yaml": "b11a8aab55cf4595efa54f4ea6781eb85d43306d3943921cd7d91b41334a1837",
+      "seeds.yaml": "2ff85f9574ce585b9d825e5d4d3b9ebbdb00761ead36361440835c3143cd9421",
+      "v2.1_freeze.json": "e457af1b02bf6c631ea514ebd6fc25cd99a059704fa2d18f3888eb92119846de",
+      "v2.2_freeze.json": "37b912a3d2631129bb5fbdd6f05991ef59d426a7bf4c33e9e9ed9517322f28b5",
+      "v2_freeze.json": "c71f13f49d320ecec4c6003ff073c83ae60c99019ab0ea1d456116d4344fb3e3"
+    }
+  },
+  "python": {
+    "version": "3.12.3 (v3.12.3:f6650f9ad7, Apr  9 2024, 08:18:47) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "executable": ".venv/bin/python3",
+    "platform": "macOS-26.5.2-arm64-arm-64bit"
+  },
+  "ended_utc": "2026-10-09T17:13:50.534+00:00",
+  "status": "ok",
+  "packages": [
+    "-e file://.",
+    "annotated-doc==0.0.5",
+    "annotated-types==0.8.0",
+    "anyio==4.15.1",
+    "certifi==2026.7.22",
+    "cffi==2.1.1",
+    "cfgv==3.5.0",
+    "charset-normalizer==3.5.1",
+    "click==8.5.0",
+    "cloudpickle==3.1.2",
+    "contourpy==1.4.0",
+    "cryptography==50.0.1",
+    "cycler==0.12.1",
+    "db-dtypes==1.7.1",
+    "defusedxml==0.7.1",
+    "distlib==0.4.3",
+    "distro==1.9.0",
+    "et-xmlfile==2.0.0",
+    "faiss-cpu==1.15.1",
+    "filelock==4.0.3",
+    "fonttools==4.66.1",
+    "fsspec==2026.9.0",
+    "google-api-core==2.39.0",
+    "google-auth==2.58.1",
+    "google-cloud-bigquery==3.45.2",
+    "google-cloud-core==2.7.0",
+    "google-crc32c==1.9.0",
+    "google-genai==1.55.0",
+    "google-resumable-media==2.10.2",
+    "googleapis-common-protos==1.75.4",
+    "grpcio-status==1.84.0",
+    "grpcio==1.84.0",
+    "h11==0.16.0",
+    "hf-xet==1.7.0",
+    "httpcore==1.0.9",
+    "httpx==0.28.1",
+    "huggingface-hub==1.33.0",
+    "identify==2.6.19",
+    "idna==3.20",
+    "iniconfig==2.3.0",
+    "jinja2==3.1.6",
+    "joblib==1.6.0",
+    "kiwisolver==1.5.1",
+    "krippendorff==0.9.0",
+    "llvmlite==0.50.0",
+    "markdown-it-py==4.2.0",
+    "markupsafe==3.0.4",
+    "matplotlib==3.11.2",
+    "mdurl==0.1.2",
+    "mpmath==1.3.0",
+    "narwhals==2.26.0",
+    "networkx==3.7",
+    "nltk==3.10.3",
+    "nodeenv==1.11.0",
+    "numba==0.68.0",
+    "numpy==2.5.3",
+    "openpyxl==3.1.5",
+    "opentelemetry-api==1.45.0",
+    "opentsne==1.0.4",
+    "packaging==26.3",
+    "pacmap==0.9.1",
+    "pandas==3.0.6",
+    "pillow==12.3.0",
+    "platformdirs==4.11.15",
+    "pluggy==1.6.0",
+    "pre-commit==4.6.2",
+    "proto-plus==1.28.4",
+    "protobuf==7.36.2",
+    "pyarrow==25.0.1",
+    "pyasn1-modules==0.4.2",
+    "pyasn1==0.6.4",
+    "pycparser==3.0",
+    "pydantic-core==2.46.5",
+    "pydantic==2.13.5",
+    "pygments==2.21.0",
+    "pynndescent==0.6.0",
+    "pyparsing==3.3.3",
+    "pytest==9.1.1",
+    "python-dateutil==2.9.0.post0",
+    "python-discovery==1.6.1",
+    "python-dotenv==1.2.3",
+    "pyyaml==6.0.3",
+    "rank-bm25==0.2.2",
+    "regex==2026.9.29",
+    "requests==2.34.2",
+    "rich==15.0.0",
+    "safetensors==0.8.0",
+    "scikit-learn==1.9.1",
+    "scipy==1.18.1",
+    "sentence-transformers==6.1.0",
+    "setuptools==84.0.0",
+    "shellingham==1.5.4",
+    "six==1.17.0",
+    "sniffio==1.3.1",
+    "sympy==1.14.0",
+    "tenacity==9.1.4",
+    "threadpoolctl==3.7.0",
+    "tokenizers==0.23.2",
+    "torch==2.14.1",
+    "tqdm==4.70.1",
+    "transformers==5.19.0",
+    "typer==0.27.3",
+    "typing-extensions==4.16.0",
+    "typing-inspection==0.4.4",
+    "umap-learn==0.5.12",
+    "urllib3==2.8.0",
+    "virtualenv==21.12.1",
+    "websockets==15.0.1"
+  ]
+}

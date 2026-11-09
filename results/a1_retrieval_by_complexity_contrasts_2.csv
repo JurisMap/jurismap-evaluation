@@ -1,0 +1,769 @@
+scope,relevance,infractions,contrast,label,metric,queries,mean_a,mean_b,diff,ci_low,ci_high,p,p_holm
+comparison_set,R-base,one,M4 - M3,version 2 - version 1,P@5,532,0.356767,0.321805,0.0349624,0.0180451,0.0522556,0.00029997,0.00089991
+comparison_set,R-base,one,M4 - M3,version 2 - version 1,P@10,532,0.308083,0.274812,0.0332707,0.0212406,0.0454887,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M3,version 2 - version 1,R@5,532,0.141938,0.118069,0.0238692,0.0079996,0.03964,0.00359964,0.0107989
+comparison_set,R-base,one,M4 - M3,version 2 - version 1,R@10,532,0.217082,0.166198,0.0508845,0.0345189,0.0678651,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M3,version 2 - version 1,MAP,532,0.307878,0.247502,0.0603756,0.0492307,0.0719176,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M3,version 2 - version 1,MRR,532,0.5652,0.516316,0.0488847,0.0221956,0.0757219,0.00049995,0.00149985
+comparison_set,R-base,one,M4 - M3,version 2 - version 1,nDCG@10,532,0.389197,0.339635,0.0495625,0.0338915,0.0652581,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M3,version 2 - version 1,mAR,532,0.892886,0.847629,0.0452569,0.0387794,0.0516424,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M5,version 2 - full report alone,P@5,532,0.356767,0.331955,0.024812,0.0112782,0.0390977,0.0009999,0.0019998
+comparison_set,R-base,one,M4 - M5,version 2 - full report alone,P@10,532,0.308083,0.291165,0.0169173,0.00733083,0.0265038,0.00069993,0.00139986
+comparison_set,R-base,one,M4 - M5,version 2 - full report alone,R@5,532,0.141938,0.125345,0.0165929,0.00459915,0.0283626,0.0059994,0.0119988
+comparison_set,R-base,one,M4 - M5,version 2 - full report alone,R@10,532,0.217082,0.181035,0.0360479,0.0241354,0.0486422,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M5,version 2 - full report alone,MAP,532,0.307878,0.277199,0.0306787,0.0231525,0.0384824,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M5,version 2 - full report alone,MRR,532,0.5652,0.521095,0.0441059,0.0223708,0.0658417,0.00029997,0.00119988
+comparison_set,R-base,one,M4 - M5,version 2 - full report alone,nDCG@10,532,0.389197,0.356282,0.0329148,0.0217952,0.0441965,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M5,version 2 - full report alone,mAR,532,0.892886,0.875963,0.0169231,0.0123674,0.0219799,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M4c,version 2 - compression alone,P@5,532,0.356767,0.318421,0.0383459,0.0255639,0.0507519,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M4c,version 2 - compression alone,P@10,532,0.308083,0.279699,0.0283835,0.0197368,0.0368421,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M4c,version 2 - compression alone,R@5,532,0.141938,0.120486,0.0214527,0.00922337,0.0338434,0.00019998,0.00079992
+comparison_set,R-base,one,M4 - M4c,version 2 - compression alone,R@10,532,0.217082,0.179607,0.0374753,0.0227417,0.0527322,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M4c,version 2 - compression alone,MAP,532,0.307878,0.265895,0.0419829,0.0336907,0.050506,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M4c,version 2 - compression alone,MRR,532,0.5652,0.530095,0.0351054,0.0138926,0.056393,0.00159984,0.00319968
+comparison_set,R-base,one,M4 - M4c,version 2 - compression alone,nDCG@10,532,0.389197,0.347026,0.0421715,0.0301452,0.0543001,9.999e-05,0.00039996
+comparison_set,R-base,one,M4 - M4c,version 2 - compression alone,mAR,532,0.892886,0.868174,0.0247121,0.0201281,0.0294756,9.999e-05,0.00039996
+comparison_set,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,532,0.318421,0.301128,0.0172932,0.00037594,0.0345959,0.0534947,0.0534947
+comparison_set,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,532,0.279699,0.274248,0.00545113,-0.00676692,0.0178571,0.40176,0.40176
+comparison_set,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,532,0.120486,0.110656,0.00982991,-0.00484773,0.0242601,0.176982,0.176982
+comparison_set,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,532,0.179607,0.16791,0.0116976,-0.00655674,0.029904,0.207679,0.207679
+comparison_set,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,532,0.265895,0.253782,0.0121123,0.00107385,0.0237942,0.0337966,0.0337966
+comparison_set,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,532,0.530095,0.510268,0.0198274,-0.00892513,0.0492362,0.186181,0.186181
+comparison_set,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,532,0.347026,0.335216,0.0118091,-0.00485233,0.029132,0.172683,0.172683
+comparison_set,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,532,0.868174,0.862984,0.00519044,-0.00255986,0.0127943,0.182882,0.182882
+comparison_set,R-base,several,M4 - M3,version 2 - version 1,P@5,292,0.292466,0.258904,0.0335616,0.0150685,0.0527397,0.00089991,0.00269973
+comparison_set,R-base,several,M4 - M3,version 2 - version 1,P@10,292,0.248973,0.220548,0.0284247,0.0157534,0.0424658,9.999e-05,0.00039996
+comparison_set,R-base,several,M4 - M3,version 2 - version 1,R@5,292,0.2828,0.271069,0.0117314,-0.0131556,0.0358788,0.352665,0.705329
+comparison_set,R-base,several,M4 - M3,version 2 - version 1,R@10,292,0.37029,0.348526,0.0217639,-0.00300131,0.0466329,0.0860914,0.172183
+comparison_set,R-base,several,M4 - M3,version 2 - version 1,MAP,292,0.387801,0.347268,0.0405335,0.0198972,0.0602346,0.00029997,0.00089991
+comparison_set,R-base,several,M4 - M3,version 2 - version 1,MRR,292,0.516764,0.493648,0.0231163,-0.0132236,0.0589362,0.210179,0.440656
+comparison_set,R-base,several,M4 - M3,version 2 - version 1,nDCG@10,292,0.428582,0.397695,0.0308875,0.00817458,0.0533324,0.00809919,0.0242976
+comparison_set,R-base,several,M4 - M3,version 2 - version 1,mAR,292,0.954971,0.922884,0.0320876,0.0233288,0.0416639,9.999e-05,0.00039996
+comparison_set,R-base,several,M4 - M5,version 2 - full report alone,P@5,292,0.292466,0.287671,0.00479452,-0.010274,0.0205479,0.612739,0.774923
+comparison_set,R-base,several,M4 - M5,version 2 - full report alone,P@10,292,0.248973,0.242808,0.00616438,-0.00376712,0.0164384,0.266973,0.533947
+comparison_set,R-base,several,M4 - M5,version 2 - full report alone,R@5,292,0.2828,0.293265,-0.0104644,-0.033404,0.011161,0.357064,0.705329
+comparison_set,R-base,several,M4 - M5,version 2 - full report alone,R@10,292,0.37029,0.369476,0.000814586,-0.024851,0.0264416,0.947305,0.947305
+comparison_set,R-base,several,M4 - M5,version 2 - full report alone,MAP,292,0.387801,0.378751,0.00905006,-0.00917804,0.0263898,0.317268,0.416158
+comparison_set,R-base,several,M4 - M5,version 2 - full report alone,MRR,292,0.516764,0.532934,-0.01617,-0.0454731,0.0131546,0.289971,0.440656
+comparison_set,R-base,several,M4 - M5,version 2 - full report alone,nDCG@10,292,0.428582,0.430809,-0.00222685,-0.0221677,0.0168757,0.830017,0.830017
+comparison_set,R-base,several,M4 - M5,version 2 - full report alone,mAR,292,0.954971,0.936733,0.018238,0.0112618,0.0261622,9.999e-05,0.00039996
+comparison_set,R-base,several,M4 - M4c,version 2 - compression alone,P@5,292,0.292466,0.258904,0.0335616,0.0184932,0.0486301,9.999e-05,0.00039996
+comparison_set,R-base,several,M4 - M4c,version 2 - compression alone,P@10,292,0.248973,0.224658,0.0243151,0.0150685,0.0335616,9.999e-05,0.00039996
+comparison_set,R-base,several,M4 - M4c,version 2 - compression alone,R@5,292,0.2828,0.208659,0.0741407,0.0501909,0.0990032,9.999e-05,0.00039996
+comparison_set,R-base,several,M4 - M4c,version 2 - compression alone,R@10,292,0.37029,0.301551,0.0687388,0.0451758,0.0938825,9.999e-05,0.00039996
+comparison_set,R-base,several,M4 - M4c,version 2 - compression alone,MAP,292,0.387801,0.313198,0.0746036,0.0584389,0.0924967,9.999e-05,0.00039996
+comparison_set,R-base,several,M4 - M4c,version 2 - compression alone,MRR,292,0.516764,0.461015,0.0557494,0.0261005,0.0856295,0.00019998,0.00079992
+comparison_set,R-base,several,M4 - M4c,version 2 - compression alone,nDCG@10,292,0.428582,0.361399,0.0671835,0.0493876,0.0857108,9.999e-05,0.00039996
+comparison_set,R-base,several,M4 - M4c,version 2 - compression alone,mAR,292,0.954971,0.938997,0.0159743,0.00906067,0.0237221,9.999e-05,0.00039996
+comparison_set,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,292,0.258904,0.267808,-0.00890411,-0.0267123,0.010274,0.387461,0.774923
+comparison_set,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,292,0.224658,0.222603,0.00205479,-0.00890411,0.0130137,0.758124,0.758124
+comparison_set,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,292,0.208659,0.261066,-0.0524068,-0.0814612,-0.0239809,0.00019998,0.00059994
+comparison_set,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,292,0.301551,0.33209,-0.0305384,-0.0599096,-0.000880171,0.039996,0.119988
+comparison_set,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,292,0.313198,0.32789,-0.0146922,-0.0378884,0.00782236,0.208079,0.416158
+comparison_set,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,292,0.461015,0.488792,-0.027777,-0.0651449,0.0100683,0.146885,0.440656
+comparison_set,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,292,0.361399,0.3905,-0.0291011,-0.0538522,-0.00469262,0.019998,0.039996
+comparison_set,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,292,0.938997,0.910322,0.0286752,0.0162648,0.0413657,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M3,version 2 - version 1,P@5,573,0.392321,0.349389,0.0429319,0.0265271,0.0596859,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M3,version 2 - version 1,P@10,573,0.344328,0.300349,0.0439791,0.0331588,0.0549738,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M3,version 2 - version 1,R@5,573,0.145,0.113702,0.0312973,0.016161,0.0464296,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M3,version 2 - version 1,R@10,573,0.210514,0.166145,0.0443689,0.0281066,0.0608275,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M3,version 2 - version 1,MAP,573,0.332374,0.264124,0.0682496,0.0573888,0.0794116,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M3,version 2 - version 1,MRR,573,0.593083,0.539262,0.0538211,0.0274664,0.0805781,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M3,version 2 - version 1,nDCG@10,573,0.423428,0.363269,0.0601585,0.0452429,0.075362,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M3,version 2 - version 1,mAR,573,0.882455,0.839908,0.0425468,0.0364312,0.0487564,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M5,version 2 - full report alone,P@5,573,0.392321,0.365445,0.0268761,0.0132635,0.0404887,0.00019998,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M5,version 2 - full report alone,P@10,573,0.344328,0.323211,0.0211169,0.0118674,0.0300218,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M5,version 2 - full report alone,R@5,573,0.145,0.128501,0.0164983,0.00401383,0.0290068,0.0105989,0.0211979
+comparison_set,R-base-relaxed,one,M4 - M5,version 2 - full report alone,R@10,573,0.210514,0.184348,0.0261665,0.0138626,0.0389171,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M5,version 2 - full report alone,MAP,573,0.332374,0.299832,0.0325415,0.0243126,0.0407653,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M5,version 2 - full report alone,MRR,573,0.593083,0.553462,0.039621,0.0181404,0.0617238,0.00039996,0.00079992
+comparison_set,R-base-relaxed,one,M4 - M5,version 2 - full report alone,nDCG@10,573,0.423428,0.389898,0.0335301,0.0218696,0.0452836,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M5,version 2 - full report alone,mAR,573,0.882455,0.867578,0.0148773,0.0109262,0.0191173,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,P@5,573,0.392321,0.354625,0.0376963,0.0251309,0.0502618,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,P@10,573,0.344328,0.316754,0.0275742,0.0190227,0.0363002,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,R@5,573,0.145,0.115861,0.0291387,0.01802,0.0410203,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,R@10,573,0.210514,0.171725,0.0387892,0.0265137,0.0523712,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,MAP,573,0.332374,0.285859,0.0465149,0.0386411,0.055176,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,MRR,573,0.593083,0.556389,0.0366934,0.0166258,0.0570972,0.00019998,0.00059994
+comparison_set,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,nDCG@10,573,0.423428,0.380432,0.0429955,0.0317686,0.0550461,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,mAR,573,0.882455,0.856046,0.0264087,0.0214921,0.0316769,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,573,0.354625,0.332286,0.0223386,0.0052356,0.0390925,0.0111989,0.0111989
+comparison_set,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,573,0.316754,0.308901,0.0078534,-0.004363,0.0197208,0.210179,0.210179
+comparison_set,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,573,0.115861,0.111675,0.00418593,-0.00995197,0.0179175,0.566643,0.566643
+comparison_set,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,573,0.171725,0.176498,-0.0047732,-0.0211208,0.0112554,0.564444,0.564444
+comparison_set,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,573,0.285859,0.275236,0.010623,0.000184138,0.0213455,0.0537946,0.0537946
+comparison_set,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,573,0.556389,0.536566,0.0198235,-0.00662469,0.0471938,0.152485,0.152485
+comparison_set,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,573,0.380432,0.370081,0.0103512,-0.00519941,0.0263371,0.19838,0.19838
+comparison_set,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,573,0.856046,0.851514,0.00453207,-0.00355359,0.0124662,0.269273,0.269273
+comparison_set,R-base-relaxed,several,M4 - M3,version 2 - version 1,P@5,505,0.36396,0.329109,0.0348515,0.020198,0.049901,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4 - M3,version 2 - version 1,P@10,505,0.32099,0.296238,0.0247525,0.0130644,0.0366337,0.00029997,0.00089991
+comparison_set,R-base-relaxed,several,M4 - M3,version 2 - version 1,R@5,505,0.209163,0.178413,0.0307498,0.0119597,0.0504032,0.00159984,0.00479952
+comparison_set,R-base-relaxed,several,M4 - M3,version 2 - version 1,R@10,505,0.276898,0.246472,0.0304266,0.0107165,0.0510657,0.00269973,0.00809919
+comparison_set,R-base-relaxed,several,M4 - M3,version 2 - version 1,MAP,505,0.380178,0.325376,0.054802,0.0394874,0.0707265,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4 - M3,version 2 - version 1,MRR,505,0.548133,0.514735,0.0333979,0.00777655,0.0593428,0.0127987,0.0383962
+comparison_set,R-base-relaxed,several,M4 - M3,version 2 - version 1,nDCG@10,505,0.444004,0.405536,0.0384676,0.0206959,0.0567045,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4 - M3,version 2 - version 1,mAR,505,0.906826,0.865803,0.0410235,0.0326524,0.0494683,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4 - M5,version 2 - full report alone,P@5,505,0.36396,0.351287,0.0126733,0.00118812,0.0241584,0.0388961,0.0777922
+comparison_set,R-base-relaxed,several,M4 - M5,version 2 - full report alone,P@10,505,0.32099,0.313465,0.00752475,-0.00019802,0.0152475,0.0563944,0.112789
+comparison_set,R-base-relaxed,several,M4 - M5,version 2 - full report alone,R@5,505,0.209163,0.193118,0.0160451,-0.00237445,0.035116,0.10069,0.132987
+comparison_set,R-base-relaxed,several,M4 - M5,version 2 - full report alone,R@10,505,0.276898,0.278527,-0.00162814,-0.0172647,0.0135185,0.838616,0.838616
+comparison_set,R-base-relaxed,several,M4 - M5,version 2 - full report alone,MAP,505,0.380178,0.353166,0.0270123,0.0153661,0.0386482,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4 - M5,version 2 - full report alone,MRR,505,0.548133,0.537153,0.0109798,-0.0084758,0.0307773,0.278972,0.557944
+comparison_set,R-base-relaxed,several,M4 - M5,version 2 - full report alone,nDCG@10,505,0.444004,0.434521,0.00948276,-0.00335082,0.0223422,0.146485,0.292971
+comparison_set,R-base-relaxed,several,M4 - M5,version 2 - full report alone,mAR,505,0.906826,0.887155,0.0196708,0.0146404,0.0251634,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,P@5,505,0.36396,0.319208,0.0447525,0.0332673,0.0566337,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,P@10,505,0.32099,0.289505,0.0314851,0.0235644,0.0394109,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,R@5,505,0.209163,0.161974,0.0471889,0.0311931,0.0637891,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,R@10,505,0.276898,0.228244,0.0486546,0.0322749,0.0655926,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,MAP,505,0.380178,0.312241,0.0679369,0.0564775,0.079555,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,MRR,505,0.548133,0.499257,0.0488762,0.0283591,0.0695655,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,nDCG@10,505,0.444004,0.386536,0.0574681,0.0444518,0.0706138,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,mAR,505,0.906826,0.879069,0.0277572,0.02236,0.0336901,9.999e-05,0.00039996
+comparison_set,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,505,0.319208,0.327921,-0.00871287,-0.0233663,0.00594059,0.272273,0.272273
+comparison_set,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,505,0.289505,0.285149,0.00435644,-0.00594059,0.0148515,0.436056,0.436056
+comparison_set,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,505,0.161974,0.178521,-0.0165474,-0.0342326,0.00138804,0.0664934,0.132987
+comparison_set,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,505,0.228244,0.237457,-0.00921339,-0.0285901,0.010033,0.351165,0.70233
+comparison_set,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,505,0.312241,0.310686,0.00155563,-0.0140383,0.0171379,0.847815,0.847815
+comparison_set,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,505,0.499257,0.503571,-0.00431394,-0.0323497,0.0236508,0.763324,0.763324
+comparison_set,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,505,0.386536,0.394018,-0.00748236,-0.0251037,0.0103725,0.419158,0.419158
+comparison_set,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,505,0.879069,0.865104,0.0139648,0.00428815,0.0234386,0.00419958,0.00419958
+comparison_set,R-cat,one,M4 - M3,version 2 - version 1,P@5,1128,0.779965,0.671986,0.107979,0.0932624,0.122695,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M3,version 2 - version 1,P@10,1128,0.735727,0.634663,0.101064,0.0887389,0.113121,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M3,version 2 - version 1,R@5,1128,0.0376612,0.0313925,0.00626875,0.0049573,0.0077117,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M3,version 2 - version 1,R@10,1128,0.068685,0.0567208,0.0119641,0.00959012,0.0145746,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M3,version 2 - version 1,MAP,1128,0.475191,0.366269,0.108922,0.102158,0.115757,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M3,version 2 - version 1,MRR,1128,0.893164,0.825123,0.0680418,0.051364,0.0847346,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M3,version 2 - version 1,nDCG@10,1128,0.758478,0.657027,0.101451,0.0894232,0.113404,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M3,version 2 - version 1,mAR,1128,0.772004,0.715549,0.0564541,0.0528316,0.0600655,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M5,version 2 - full report alone,P@5,1128,0.779965,0.715426,0.064539,0.0537234,0.0755319,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M5,version 2 - full report alone,P@10,1128,0.735727,0.671543,0.0641844,0.0552305,0.0730496,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M5,version 2 - full report alone,R@5,1128,0.0376612,0.0345396,0.00312166,0.00235596,0.00390341,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M5,version 2 - full report alone,R@10,1128,0.068685,0.0631018,0.0055832,0.00429458,0.00683841,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M5,version 2 - full report alone,MAP,1128,0.475191,0.424717,0.0504745,0.0465444,0.0545923,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M5,version 2 - full report alone,MRR,1128,0.893164,0.844845,0.0483192,0.0353235,0.0615564,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M5,version 2 - full report alone,nDCG@10,1128,0.758478,0.694293,0.0641849,0.0556757,0.0728375,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M5,version 2 - full report alone,mAR,1128,0.772004,0.752108,0.0198959,0.0180079,0.0217508,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M4c,version 2 - compression alone,P@5,1128,0.779965,0.738475,0.0414894,0.0319105,0.0512411,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M4c,version 2 - compression alone,P@10,1128,0.735727,0.688298,0.0474291,0.039539,0.0552305,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M4c,version 2 - compression alone,R@5,1128,0.0376612,0.0349324,0.00272879,0.00190162,0.00355851,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M4c,version 2 - compression alone,R@10,1128,0.068685,0.0624622,0.00622277,0.00484653,0.00764806,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M4c,version 2 - compression alone,MAP,1128,0.475191,0.430178,0.0450134,0.0411352,0.0488983,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M4c,version 2 - compression alone,MRR,1128,0.893164,0.866696,0.0264686,0.0149606,0.0381377,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M4c,version 2 - compression alone,nDCG@10,1128,0.758478,0.713524,0.0449543,0.0377318,0.0521871,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4 - M4c,version 2 - compression alone,mAR,1128,0.772004,0.747553,0.0244508,0.0225745,0.0262908,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,1128,0.738475,0.70195,0.0365248,0.0230496,0.0501773,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,1128,0.688298,0.652571,0.035727,0.025,0.0466312,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,1128,0.0349324,0.0332515,0.0016809,0.000565898,0.00283813,0.00319968,0.00319968
+comparison_set,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,1128,0.0624622,0.0591286,0.00333357,0.00153938,0.00517189,0.00019998,0.00039996
+comparison_set,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,1128,0.430178,0.401933,0.0282452,0.0227929,0.0339652,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,1128,0.866696,0.846963,0.0197325,0.00371177,0.0359104,0.0166983,0.0166983
+comparison_set,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,1128,0.713524,0.679261,0.034263,0.0234178,0.045187,9.999e-05,0.00039996
+comparison_set,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,1128,0.747553,0.738565,0.00898726,0.00583974,0.0121646,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4 - M3,version 2 - version 1,P@5,375,0.538667,0.4736,0.0650667,0.0389333,0.0917333,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4 - M3,version 2 - version 1,P@10,375,0.496267,0.435733,0.0605333,0.0389333,0.0824,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4 - M3,version 2 - version 1,R@5,375,0.0211648,0.0176298,0.00353503,0.00193391,0.00529288,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4 - M3,version 2 - version 1,R@10,375,0.0374242,0.0321922,0.00523202,0.00273094,0.00784013,0.00019998,0.00059994
+comparison_set,R-cat,several,M4 - M3,version 2 - version 1,MAP,375,0.308562,0.244033,0.0645289,0.0559016,0.0730438,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4 - M3,version 2 - version 1,MRR,375,0.709843,0.651671,0.0581719,0.0231134,0.0935141,0.00139986,0.00419958
+comparison_set,R-cat,several,M4 - M3,version 2 - version 1,nDCG@10,375,0.516687,0.454802,0.0618855,0.0401083,0.083535,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4 - M3,version 2 - version 1,mAR,375,0.700429,0.650571,0.0498576,0.043687,0.0558546,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4 - M5,version 2 - full report alone,P@5,375,0.538667,0.506133,0.0325333,0.0133333,0.0528,0.00109989,0.00329967
+comparison_set,R-cat,several,M4 - M5,version 2 - full report alone,P@10,375,0.496267,0.464,0.0322667,0.0176,0.0474667,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4 - M5,version 2 - full report alone,R@5,375,0.0211648,0.0192075,0.00195733,0.000938912,0.00299629,0.00039996,0.00119988
+comparison_set,R-cat,several,M4 - M5,version 2 - full report alone,R@10,375,0.0374242,0.0335657,0.0038585,0.00217058,0.00563276,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4 - M5,version 2 - full report alone,MAP,375,0.308562,0.283424,0.0251381,0.0198959,0.030419,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4 - M5,version 2 - full report alone,MRR,375,0.709843,0.664666,0.045177,0.0181647,0.0730475,0.0009999,0.0039996
+comparison_set,R-cat,several,M4 - M5,version 2 - full report alone,nDCG@10,375,0.516687,0.48333,0.0333569,0.01901,0.0481574,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4 - M5,version 2 - full report alone,mAR,375,0.700429,0.680959,0.0194695,0.0156685,0.0232662,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4 - M4c,version 2 - compression alone,P@5,375,0.538667,0.511467,0.0272,0.00746667,0.048,0.00849915,0.0169983
+comparison_set,R-cat,several,M4 - M4c,version 2 - compression alone,P@10,375,0.496267,0.474133,0.0221333,0.00666667,0.0370667,0.00559944,0.0111989
+comparison_set,R-cat,several,M4 - M4c,version 2 - compression alone,R@5,375,0.0211648,0.0187601,0.00240475,0.000882456,0.00418004,0.0009999,0.0019998
+comparison_set,R-cat,several,M4 - M4c,version 2 - compression alone,R@10,375,0.0374242,0.0348792,0.00254503,0.000652981,0.00461588,0.00909909,0.0181982
+comparison_set,R-cat,several,M4 - M4c,version 2 - compression alone,MAP,375,0.308562,0.282148,0.0264136,0.0213653,0.0318848,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4 - M4c,version 2 - compression alone,MRR,375,0.709843,0.687942,0.0219003,-0.00831577,0.0525761,0.160284,0.320568
+comparison_set,R-cat,several,M4 - M4c,version 2 - compression alone,nDCG@10,375,0.516687,0.492259,0.0244281,0.00899125,0.0398485,0.00189981,0.00379962
+comparison_set,R-cat,several,M4 - M4c,version 2 - compression alone,mAR,375,0.700429,0.679572,0.0208567,0.0177435,0.0239889,9.999e-05,0.00039996
+comparison_set,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,375,0.511467,0.498667,0.0128,-0.0149333,0.04,0.389061,0.389061
+comparison_set,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,375,0.474133,0.448,0.0261333,0.00506667,0.0472,0.0158984,0.0158984
+comparison_set,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,375,0.0187601,0.0186502,0.000109872,-0.00159439,0.00171635,0.905209,0.905209
+comparison_set,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,375,0.0348792,0.0322393,0.00263985,-0.000491892,0.00583795,0.0979902,0.0979902
+comparison_set,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,375,0.282148,0.27391,0.00823847,-0.000206151,0.0162504,0.049995,0.049995
+comparison_set,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,375,0.687942,0.669673,0.0182689,-0.0210666,0.0570211,0.359264,0.359264
+comparison_set,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,375,0.492259,0.469767,0.0224917,0.0009116,0.0442409,0.040096,0.040096
+comparison_set,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,375,0.679572,0.672761,0.00681074,0.00094021,0.0126485,0.0241976,0.0241976
+comparison_set,R-cat-mistral,one,M4 - M3,version 2 - version 1,P@5,895,0.797765,0.699665,0.0981006,0.0822346,0.113966,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M3,version 2 - version 1,P@10,895,0.755642,0.659665,0.0959777,0.0825698,0.109385,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M3,version 2 - version 1,R@5,895,0.0389216,0.0338132,0.00510844,0.00394738,0.0063359,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M3,version 2 - version 1,R@10,895,0.0711501,0.060808,0.0103421,0.00816796,0.0125853,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M3,version 2 - version 1,MAP,895,0.493769,0.383667,0.110103,0.102569,0.117818,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M3,version 2 - version 1,MRR,895,0.90577,0.842701,0.0630687,0.0451896,0.0814158,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M3,version 2 - version 1,nDCG@10,895,0.779035,0.682474,0.0965608,0.0833085,0.109994,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M3,version 2 - version 1,mAR,895,0.782344,0.726677,0.0556669,0.0514575,0.0597768,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M5,version 2 - full report alone,P@5,895,0.797765,0.738324,0.0594413,0.0480447,0.0715084,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M5,version 2 - full report alone,P@10,895,0.755642,0.692291,0.063352,0.0532961,0.073743,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M5,version 2 - full report alone,R@5,895,0.0389216,0.0352329,0.0036887,0.00201699,0.00636961,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M5,version 2 - full report alone,R@10,895,0.0711501,0.0648694,0.00628073,0.00412598,0.00920819,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M5,version 2 - full report alone,MAP,895,0.493769,0.439209,0.0545599,0.0495131,0.0597284,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M5,version 2 - full report alone,MRR,895,0.90577,0.856191,0.0495786,0.035043,0.0646124,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M5,version 2 - full report alone,nDCG@10,895,0.779035,0.714377,0.0646576,0.0546335,0.0752606,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M5,version 2 - full report alone,mAR,895,0.782344,0.760879,0.0214648,0.0193739,0.0235525,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,P@5,895,0.797765,0.761564,0.0362011,0.0261453,0.0464804,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,P@10,895,0.755642,0.713966,0.041676,0.0330726,0.0506145,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,R@5,895,0.0389216,0.0362708,0.00265081,0.00189479,0.00345512,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,R@10,895,0.0711501,0.0649407,0.00620935,0.00472939,0.0077961,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,MAP,895,0.493769,0.447498,0.0462707,0.0417225,0.0509052,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,MRR,895,0.90577,0.876178,0.0295921,0.0163958,0.0425683,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,nDCG@10,895,0.779035,0.737666,0.0413694,0.0332902,0.0495253,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,mAR,895,0.782344,0.758571,0.0237732,0.021721,0.0258288,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,895,0.761564,0.715307,0.046257,0.0315084,0.0610056,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,895,0.713966,0.666816,0.0471508,0.0349721,0.0594441,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,895,0.0362708,0.0337688,0.00250205,0.000529839,0.00532388,0.00639936,0.00639936
+comparison_set,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,895,0.0649407,0.0612587,0.00368201,0.000919346,0.00689348,0.00529947,0.00529947
+comparison_set,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,895,0.447498,0.41645,0.0310485,0.0244001,0.0376932,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,895,0.876178,0.847429,0.0287487,0.0106996,0.0468773,0.00269973,0.00269973
+comparison_set,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,895,0.737666,0.692499,0.0451662,0.0330351,0.0573705,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,895,0.758571,0.750838,0.00773238,0.00406372,0.0113278,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M3,version 2 - version 1,P@5,608,0.585197,0.488816,0.0963816,0.0763158,0.116776,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M3,version 2 - version 1,P@10,608,0.549013,0.461184,0.0878289,0.0715461,0.104112,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M3,version 2 - version 1,R@5,608,0.0231446,0.018326,0.00481854,0.00366638,0.00599477,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M3,version 2 - version 1,R@10,608,0.0419313,0.0338416,0.00808966,0.00613633,0.0100837,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M3,version 2 - version 1,MAP,608,0.330545,0.257189,0.0733564,0.0663249,0.0803738,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M3,version 2 - version 1,MRR,608,0.743563,0.668702,0.0748609,0.0482382,0.101344,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M3,version 2 - version 1,nDCG@10,608,0.567137,0.477232,0.0899044,0.0738516,0.105824,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M3,version 2 - version 1,mAR,608,0.714248,0.660494,0.0537541,0.0491941,0.0582589,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M5,version 2 - full report alone,P@5,608,0.585197,0.525658,0.0595395,0.04375,0.0756579,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M5,version 2 - full report alone,P@10,608,0.549013,0.494243,0.0547697,0.0421053,0.0672697,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M5,version 2 - full report alone,R@5,608,0.0231446,0.0203101,0.00283443,0.00192577,0.00375324,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M5,version 2 - full report alone,R@10,608,0.0419313,0.0367864,0.00514486,0.0036592,0.00662,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M5,version 2 - full report alone,MAP,608,0.330545,0.301712,0.0288333,0.0246436,0.032973,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M5,version 2 - full report alone,MRR,608,0.743563,0.683993,0.05957,0.0394399,0.0806227,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M5,version 2 - full report alone,nDCG@10,608,0.567137,0.509509,0.0576276,0.0458097,0.069774,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M5,version 2 - full report alone,mAR,608,0.714248,0.697979,0.0162684,0.0133219,0.0191901,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,P@5,608,0.585197,0.564803,0.0203947,0.00394737,0.0368421,0.0164984,0.0293971
+comparison_set,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,P@10,608,0.549013,0.518421,0.0305921,0.0184211,0.0430921,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,R@5,608,0.0231446,0.0212664,0.00187817,0.00077064,0.00308236,0.0009999,0.0019998
+comparison_set,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,R@10,608,0.0419313,0.0381334,0.00379793,0.00216742,0.00556557,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,MAP,608,0.330545,0.302873,0.027672,0.0235804,0.032009,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,MRR,608,0.743563,0.746153,-0.00259,-0.0227898,0.0183126,0.79692,0.79692
+comparison_set,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,nDCG@10,608,0.567137,0.542714,0.0244229,0.0126206,0.0363391,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,mAR,608,0.714248,0.687437,0.0268103,0.0243136,0.0294316,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,608,0.564803,0.537829,0.0269737,0.00526316,0.0486924,0.0146985,0.0293971
+comparison_set,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,608,0.518421,0.494243,0.0241776,0.00707237,0.0409581,0.00439956,0.00439956
+comparison_set,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,608,0.0212664,0.020303,0.000963414,-0.000373592,0.00228713,0.152885,0.152885
+comparison_set,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,608,0.0381334,0.0362807,0.0018527,-0.00033051,0.00391063,0.0880912,0.0880912
+comparison_set,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,608,0.302873,0.28937,0.0135028,0.00706885,0.0199371,9.999e-05,0.00039996
+comparison_set,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,608,0.746153,0.696136,0.050017,0.0225029,0.0766708,0.00039996,0.00079992
+comparison_set,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,608,0.542714,0.512875,0.0298393,0.0123895,0.0473532,0.00159984,0.00159984
+comparison_set,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,608,0.687437,0.686381,0.00105657,-0.00355606,0.00555422,0.655434,0.655434
+comparison_set,R-cat-multi,one,M4 - M3,version 2 - version 1,P@5,1128,0.822163,0.722518,0.0996454,0.0851064,0.114007,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M3,version 2 - version 1,P@10,1128,0.779965,0.68883,0.0911348,0.0786325,0.103546,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M3,version 2 - version 1,R@5,1128,0.0317642,0.0270579,0.00470632,0.00354953,0.00600672,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M3,version 2 - version 1,R@10,1128,0.0589748,0.0495152,0.00945964,0.00727671,0.0119027,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M3,version 2 - version 1,MAP,1128,0.491187,0.402932,0.0882552,0.0811739,0.0953695,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M3,version 2 - version 1,MRR,1128,0.920293,0.860242,0.0600506,0.0445841,0.0755675,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M3,version 2 - version 1,nDCG@10,1128,0.801707,0.709389,0.0923173,0.0802494,0.104603,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M3,version 2 - version 1,mAR,1128,0.74596,0.706069,0.0398906,0.0361285,0.0436833,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M5,version 2 - full report alone,P@5,1128,0.822163,0.755674,0.0664894,0.0554965,0.0776596,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M5,version 2 - full report alone,P@10,1128,0.779965,0.713741,0.0662234,0.0571809,0.075,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M5,version 2 - full report alone,R@5,1128,0.0317642,0.0294507,0.00231357,0.00171393,0.00290791,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M5,version 2 - full report alone,R@10,1128,0.0589748,0.0546552,0.0043196,0.0032887,0.00533003,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M5,version 2 - full report alone,MAP,1128,0.491187,0.444651,0.0465362,0.0426855,0.050486,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M5,version 2 - full report alone,MRR,1128,0.920293,0.867649,0.052644,0.0405715,0.0650741,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M5,version 2 - full report alone,nDCG@10,1128,0.801707,0.734395,0.0673117,0.058628,0.0760613,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M5,version 2 - full report alone,mAR,1128,0.74596,0.726924,0.0190354,0.0172221,0.0208448,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M4c,version 2 - compression alone,P@5,1128,0.822163,0.781206,0.0409574,0.0317376,0.0503546,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M4c,version 2 - compression alone,P@10,1128,0.779965,0.734574,0.0453901,0.0375,0.0531028,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M4c,version 2 - compression alone,R@5,1128,0.0317642,0.0296934,0.00207084,0.00146473,0.00268804,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M4c,version 2 - compression alone,R@10,1128,0.0589748,0.054026,0.00494887,0.00386012,0.0060585,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M4c,version 2 - compression alone,MAP,1128,0.491187,0.449192,0.0419948,0.0385752,0.045428,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M4c,version 2 - compression alone,MRR,1128,0.920293,0.896225,0.0240682,0.0131477,0.0351578,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M4c,version 2 - compression alone,nDCG@10,1128,0.801707,0.758414,0.0432928,0.0362156,0.0503714,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4 - M4c,version 2 - compression alone,mAR,1128,0.74596,0.721177,0.0247828,0.0230352,0.0265068,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,1128,0.781206,0.747163,0.0340426,0.0205674,0.047695,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,1128,0.734574,0.697784,0.0367908,0.0257979,0.0477837,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,1128,0.0296934,0.0285118,0.00118163,0.000274511,0.00213213,0.0119988,0.0119988
+comparison_set,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,1128,0.054026,0.0512394,0.00278652,0.00130257,0.00429907,0.00019998,0.00039996
+comparison_set,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,1128,0.449192,0.422912,0.0262804,0.0210153,0.0317834,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,1128,0.896225,0.87451,0.0217149,0.00654397,0.0365059,0.00329967,0.00329967
+comparison_set,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,1128,0.758414,0.723005,0.0354088,0.0245042,0.0463531,9.999e-05,0.00039996
+comparison_set,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,1128,0.721177,0.713932,0.00724464,0.00424267,0.0103299,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M3,version 2 - version 1,P@5,375,0.8784,0.792533,0.0858667,0.0624,0.109333,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M3,version 2 - version 1,P@10,375,0.842667,0.7712,0.0714667,0.0512,0.0914667,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M3,version 2 - version 1,R@5,375,0.0125151,0.0111822,0.0013329,0.000886677,0.00177134,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M3,version 2 - version 1,R@10,375,0.023713,0.0216708,0.00204216,0.00129451,0.00276929,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M3,version 2 - version 1,MAP,375,0.538158,0.477062,0.0610961,0.0530112,0.0692454,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M3,version 2 - version 1,MRR,375,0.949881,0.902928,0.0469534,0.023898,0.0700774,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M3,version 2 - version 1,nDCG@10,375,0.859227,0.785416,0.0738112,0.05444,0.0932367,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M3,version 2 - version 1,mAR,375,0.664522,0.634287,0.0302343,0.0257875,0.0347371,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M5,version 2 - full report alone,P@5,375,0.8784,0.816533,0.0618667,0.0448,0.0794667,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M5,version 2 - full report alone,P@10,375,0.842667,0.781067,0.0616,0.0466667,0.0768,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M5,version 2 - full report alone,R@5,375,0.0125151,0.011535,0.000980131,0.000677841,0.00129648,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M5,version 2 - full report alone,R@10,375,0.023713,0.0217006,0.00201242,0.0014343,0.00260101,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M5,version 2 - full report alone,MAP,375,0.538158,0.503983,0.0341747,0.0295283,0.0389499,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M5,version 2 - full report alone,MRR,375,0.949881,0.908761,0.0411203,0.0235474,0.0593844,0.00019998,0.00059994
+comparison_set,R-cat-multi,several,M4 - M5,version 2 - full report alone,nDCG@10,375,0.859227,0.797552,0.0616753,0.0479428,0.0758857,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M5,version 2 - full report alone,mAR,375,0.664522,0.648577,0.0159448,0.0134098,0.0184255,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M4c,version 2 - compression alone,P@5,375,0.8784,0.856,0.0224,0.00693333,0.0378667,0.00689931,0.00689931
+comparison_set,R-cat-multi,several,M4 - M4c,version 2 - compression alone,P@10,375,0.842667,0.82,0.0226667,0.0088,0.0365333,0.0019998,0.0019998
+comparison_set,R-cat-multi,several,M4 - M4c,version 2 - compression alone,R@5,375,0.0125151,0.0120741,0.000440934,0.000121637,0.00079505,0.00919908,0.00919908
+comparison_set,R-cat-multi,several,M4 - M4c,version 2 - compression alone,R@10,375,0.023713,0.0229968,0.000716199,0.000152925,0.00129735,0.0150985,0.0150985
+comparison_set,R-cat-multi,several,M4 - M4c,version 2 - compression alone,MAP,375,0.538158,0.503888,0.0342701,0.0300547,0.0384022,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4 - M4c,version 2 - compression alone,MRR,375,0.949881,0.944627,0.00525413,-0.0121637,0.0221858,0.550745,0.550745
+comparison_set,R-cat-multi,several,M4 - M4c,version 2 - compression alone,nDCG@10,375,0.859227,0.838777,0.0204503,0.00753427,0.0333735,0.00209979,0.00209979
+comparison_set,R-cat-multi,several,M4 - M4c,version 2 - compression alone,mAR,375,0.664522,0.644845,0.019677,0.0174015,0.0219804,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,375,0.856,0.807467,0.0485333,0.0250667,0.072,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,375,0.82,0.768,0.052,0.0312,0.0725333,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,375,0.0120741,0.0113141,0.000760053,0.000302089,0.00121397,0.00089991,0.00179982
+comparison_set,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,375,0.0229968,0.021347,0.00164983,0.000816709,0.00248437,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,375,0.503888,0.496103,0.00778422,0.000318196,0.0153134,0.0437956,0.0437956
+comparison_set,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,375,0.944627,0.902022,0.0426057,0.0196442,0.0659381,0.00019998,0.00059994
+comparison_set,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,375,0.838777,0.785493,0.0532837,0.0333667,0.0733778,9.999e-05,0.00039996
+comparison_set,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,375,0.644845,0.643119,0.00172579,-0.00205308,0.00554104,0.381762,0.381762
+comparison_set,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,P@5,895,0.840894,0.761564,0.0793296,0.0639106,0.0949721,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,P@10,895,0.801229,0.720559,0.0806704,0.0670391,0.0939665,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,R@5,895,0.0299871,0.0267307,0.00325645,0.00231841,0.00422836,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,R@10,895,0.0555023,0.0489006,0.00660168,0.00486595,0.00838092,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,MAP,895,0.506713,0.421211,0.0855014,0.0779894,0.0930739,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,MRR,895,0.925259,0.879785,0.0454741,0.0296611,0.0617062,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,nDCG@10,895,0.821584,0.742233,0.0793513,0.0664182,0.0923812,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,mAR,895,0.740466,0.706143,0.0343234,0.0300267,0.0386148,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,P@5,895,0.840894,0.784804,0.0560894,0.0451397,0.0677095,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,P@10,895,0.801229,0.739218,0.0620112,0.052067,0.072067,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,R@5,895,0.0299871,0.0278222,0.00216496,0.0012385,0.00356013,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,R@10,895,0.0555023,0.0516682,0.00383406,0.00253398,0.00541891,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,MAP,895,0.506713,0.457469,0.0492437,0.0445842,0.0537963,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,MRR,895,0.925259,0.888301,0.0369582,0.0243732,0.0499106,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,nDCG@10,895,0.821584,0.760853,0.0607315,0.0513444,0.0705839,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,mAR,895,0.740466,0.721287,0.0191793,0.0169554,0.0213318,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,P@5,895,0.840894,0.80514,0.0357542,0.0259218,0.0458101,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,P@10,895,0.801229,0.763575,0.0376536,0.0292737,0.0459218,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,R@5,895,0.0299871,0.028059,0.00192814,0.00139878,0.00249822,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,R@10,895,0.0555023,0.0513422,0.00416009,0.00316322,0.00520305,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,MAP,895,0.506713,0.465647,0.0410656,0.0374114,0.0447229,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,MRR,895,0.925259,0.901712,0.0235469,0.0117297,0.035489,0.00029997,0.00059994
+comparison_set,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,nDCG@10,895,0.821584,0.78393,0.0376542,0.0298487,0.045479,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,mAR,895,0.740466,0.717484,0.022982,0.0210932,0.0249105,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,895,0.80514,0.760223,0.0449162,0.0306145,0.0592179,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,895,0.763575,0.716872,0.0467039,0.0344134,0.0593296,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,895,0.028059,0.0265846,0.00147444,0.000313493,0.00297321,0.010499,0.010499
+comparison_set,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,895,0.0513422,0.04909,0.00225217,0.000440965,0.00420451,0.0124988,0.0124988
+comparison_set,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,895,0.465647,0.437565,0.0280821,0.0219573,0.0341663,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,895,0.901712,0.878231,0.0234816,0.00724229,0.0396644,0.00559944,0.00559944
+comparison_set,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,895,0.78393,0.740043,0.0438864,0.0321422,0.0560563,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,895,0.717484,0.713095,0.00438965,0.000718877,0.00793817,0.0175982,0.0175982
+comparison_set,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,P@5,608,0.877632,0.800658,0.0769737,0.0588816,0.0957237,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,P@10,608,0.847697,0.775987,0.0717105,0.05625,0.0876645,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,R@5,608,0.0115741,0.0105107,0.00106344,0.000777217,0.00136478,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,R@10,608,0.0222429,0.0202502,0.00199273,0.00150939,0.00249596,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,MAP,608,0.540421,0.478792,0.0616294,0.0553775,0.0678435,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,MRR,608,0.944563,0.918241,0.0263224,0.00830815,0.0440051,0.00379962,0.0113989
+comparison_set,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,nDCG@10,608,0.860928,0.793131,0.0677972,0.0527568,0.083294,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,mAR,608,0.655458,0.625629,0.0298294,0.0264121,0.033279,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,P@5,608,0.877632,0.825329,0.0523026,0.0381579,0.0667763,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,P@10,608,0.847697,0.793586,0.0541118,0.0430921,0.0654605,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,R@5,608,0.0115741,0.0108466,0.000727499,0.000505562,0.000957286,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,R@10,608,0.0222429,0.0207344,0.00150852,0.00114218,0.00187861,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,MAP,608,0.540421,0.51066,0.0297611,0.0263951,0.0331739,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,MRR,608,0.944563,0.914524,0.0300387,0.0160498,0.0443844,0.00019998,0.00079992
+comparison_set,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,nDCG@10,608,0.860928,0.808717,0.0522113,0.0417116,0.062948,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,mAR,608,0.655458,0.641406,0.0140516,0.0121333,0.0159591,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,P@5,608,0.877632,0.853618,0.0240132,0.0111842,0.0368421,0.00029997,0.00059994
+comparison_set,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,P@10,608,0.847697,0.813487,0.0342105,0.0245066,0.0440789,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,R@5,608,0.0115741,0.0112147,0.000359458,0.000151984,0.000570992,0.00069993,0.00139986
+comparison_set,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,R@10,608,0.0222429,0.0211836,0.0010593,0.000740421,0.00138051,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,MAP,608,0.540421,0.508823,0.0315987,0.0286768,0.0345786,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,MRR,608,0.944563,0.942603,0.00195968,-0.0115567,0.0150466,0.773123,0.773123
+comparison_set,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,nDCG@10,608,0.860928,0.832556,0.0283725,0.0191099,0.0377786,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,mAR,608,0.655458,0.636917,0.0185407,0.0169007,0.0201956,9.999e-05,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,608,0.853618,0.823684,0.0299342,0.0128289,0.0480263,0.00139986,0.00139986
+comparison_set,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,608,0.813487,0.782895,0.0305921,0.0154605,0.0458882,0.00039996,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,608,0.0112147,0.0108124,0.000402272,0.000123152,0.000690275,0.00549945,0.00549945
+comparison_set,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,608,0.0211836,0.0203881,0.000795559,0.000317656,0.00127629,0.00119988,0.00119988
+comparison_set,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,608,0.508823,0.500127,0.0086954,0.00332686,0.01409,0.0019998,0.0019998
+comparison_set,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,608,0.942603,0.918452,0.0241509,0.00641981,0.041937,0.00779922,0.0155984
+comparison_set,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,608,0.832556,0.801377,0.0311785,0.0164307,0.0461637,0.00029997,0.00039996
+comparison_set,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,608,0.636917,0.635307,0.00161034,-0.00135184,0.00452912,0.280772,0.280772
+v2,R-base,one,M4 - M3,version 2 - version 1,P@5,888,0.395721,0.342342,0.0533784,0.038964,0.0680236,9.999e-05,0.00039996
+v2,R-base,one,M4 - M3,version 2 - version 1,P@10,888,0.346959,0.300563,0.0463964,0.0364865,0.0565315,9.999e-05,0.00039996
+v2,R-base,one,M4 - M3,version 2 - version 1,R@5,888,0.142981,0.111255,0.031726,0.0209651,0.0425775,9.999e-05,0.00039996
+v2,R-base,one,M4 - M3,version 2 - version 1,R@10,888,0.206938,0.162045,0.0448931,0.0331281,0.0570129,9.999e-05,0.00039996
+v2,R-base,one,M4 - M3,version 2 - version 1,MAP,888,0.313877,0.243546,0.0703316,0.0616352,0.0790131,9.999e-05,0.00039996
+v2,R-base,one,M4 - M3,version 2 - version 1,MRR,888,0.591569,0.516583,0.0749863,0.0550066,0.0955036,9.999e-05,0.00039996
+v2,R-base,one,M4 - M3,version 2 - version 1,nDCG@10,888,0.423647,0.359677,0.06397,0.0515776,0.0765362,9.999e-05,0.00039996
+v2,R-base,one,M4 - M3,version 2 - version 1,mAR,888,0.890171,0.845277,0.0448939,0.0394052,0.0503079,9.999e-05,0.00039996
+v2,R-base,one,M4 - M5,version 2 - full report alone,P@5,888,0.395721,0.357883,0.0378378,0.0270214,0.0486486,9.999e-05,0.00039996
+v2,R-base,one,M4 - M5,version 2 - full report alone,P@10,888,0.346959,0.319482,0.0274775,0.0195946,0.0353604,9.999e-05,0.00039996
+v2,R-base,one,M4 - M5,version 2 - full report alone,R@5,888,0.142981,0.116337,0.0266444,0.01771,0.0358988,9.999e-05,0.00039996
+v2,R-base,one,M4 - M5,version 2 - full report alone,R@10,888,0.206938,0.176422,0.0305164,0.0221029,0.0395828,9.999e-05,0.00039996
+v2,R-base,one,M4 - M5,version 2 - full report alone,MAP,888,0.313877,0.278892,0.0349851,0.0287169,0.041353,9.999e-05,0.00039996
+v2,R-base,one,M4 - M5,version 2 - full report alone,MRR,888,0.591569,0.546762,0.0448071,0.0278519,0.0618381,9.999e-05,0.00039996
+v2,R-base,one,M4 - M5,version 2 - full report alone,nDCG@10,888,0.423647,0.383634,0.040013,0.030731,0.0491705,9.999e-05,0.00039996
+v2,R-base,one,M4 - M5,version 2 - full report alone,mAR,888,0.890171,0.878327,0.0118438,0.00884447,0.0148095,9.999e-05,0.00039996
+v2,R-base,one,M4 - M4c,version 2 - compression alone,P@5,888,0.395721,0.368919,0.0268018,0.0164414,0.0369369,9.999e-05,0.00039996
+v2,R-base,one,M4 - M4c,version 2 - compression alone,P@10,888,0.346959,0.322748,0.0242117,0.0172297,0.0311937,9.999e-05,0.00039996
+v2,R-base,one,M4 - M4c,version 2 - compression alone,R@5,888,0.142981,0.113805,0.0291761,0.0190055,0.0396944,9.999e-05,0.00039996
+v2,R-base,one,M4 - M4c,version 2 - compression alone,R@10,888,0.206938,0.176895,0.0300428,0.0191719,0.0413993,9.999e-05,0.00039996
+v2,R-base,one,M4 - M4c,version 2 - compression alone,MAP,888,0.313877,0.271567,0.0423103,0.0352197,0.0493078,9.999e-05,0.00039996
+v2,R-base,one,M4 - M4c,version 2 - compression alone,MRR,888,0.591569,0.549719,0.0418499,0.0253022,0.0586614,9.999e-05,0.00039996
+v2,R-base,one,M4 - M4c,version 2 - compression alone,nDCG@10,888,0.423647,0.384208,0.0394394,0.029714,0.0490663,9.999e-05,0.00039996
+v2,R-base,one,M4 - M4c,version 2 - compression alone,mAR,888,0.890171,0.868445,0.0217257,0.0184405,0.0250774,9.999e-05,0.00039996
+v2,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,888,0.368919,0.343243,0.0256757,0.0117117,0.0396396,0.00079992,0.00079992
+v2,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,888,0.322748,0.304842,0.0179054,0.00822072,0.0279279,0.00079992,0.00079992
+v2,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,888,0.113805,0.114585,-0.000779807,-0.011932,0.0100994,0.891311,0.891311
+v2,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,888,0.176895,0.16788,0.00901541,-0.00346897,0.0209676,0.149085,0.149085
+v2,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,888,0.271567,0.264888,0.0066786,-0.00244353,0.0155784,0.149785,0.149785
+v2,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,888,0.549719,0.534403,0.0153158,-0.00649939,0.0374535,0.180182,0.180182
+v2,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,888,0.384208,0.368008,0.0161995,0.00322342,0.0289462,0.0114989,0.0114989
+v2,R-base,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,888,0.868445,0.867441,0.00100375,-0.00399273,0.00603532,0.70223,0.70223
+v2,R-base,several,M4 - M3,version 2 - version 1,P@5,493,0.348479,0.320892,0.0275862,0.0129817,0.0421907,0.00039996,0.00119988
+v2,R-base,several,M4 - M3,version 2 - version 1,P@10,493,0.296957,0.272617,0.0243408,0.0137931,0.035497,9.999e-05,0.00039996
+v2,R-base,several,M4 - M3,version 2 - version 1,R@5,493,0.223597,0.220673,0.00292444,-0.0145663,0.0201692,0.747625,0.747625
+v2,R-base,several,M4 - M3,version 2 - version 1,R@10,493,0.305961,0.305182,0.000779386,-0.0185999,0.0197709,0.935706,1
+v2,R-base,several,M4 - M3,version 2 - version 1,MAP,493,0.3757,0.339641,0.0360592,0.0191159,0.052659,0.00019998,0.00059994
+v2,R-base,several,M4 - M3,version 2 - version 1,MRR,493,0.557272,0.552283,0.0049896,-0.0241786,0.0342225,0.740826,0.806319
+v2,R-base,several,M4 - M3,version 2 - version 1,nDCG@10,493,0.436719,0.419368,0.0173507,-0.00108217,0.035469,0.0593941,0.118788
+v2,R-base,several,M4 - M3,version 2 - version 1,mAR,493,0.945236,0.907057,0.0381791,0.029788,0.0470481,9.999e-05,0.00039996
+v2,R-base,several,M4 - M5,version 2 - full report alone,P@5,493,0.348479,0.347667,0.000811359,-0.0109533,0.0125761,0.951905,0.951905
+v2,R-base,several,M4 - M5,version 2 - full report alone,P@10,493,0.296957,0.295538,0.00141988,-0.00709939,0.010142,0.779722,0.779722
+v2,R-base,several,M4 - M5,version 2 - full report alone,R@5,493,0.223597,0.238111,-0.014514,-0.0303535,0.000326556,0.0638936,0.127787
+v2,R-base,several,M4 - M5,version 2 - full report alone,R@10,493,0.305961,0.311356,-0.00539507,-0.0222294,0.0108196,0.528647,1
+v2,R-base,several,M4 - M5,version 2 - full report alone,MAP,493,0.3757,0.364238,0.0114618,-0.00113279,0.0241017,0.0819918,0.0819918
+v2,R-base,several,M4 - M5,version 2 - full report alone,MRR,493,0.557272,0.567195,-0.00992255,-0.0331461,0.0129448,0.40316,0.806319
+v2,R-base,several,M4 - M5,version 2 - full report alone,nDCG@10,493,0.436719,0.442447,-0.00572834,-0.0193587,0.00803999,0.419158,0.419158
+v2,R-base,several,M4 - M5,version 2 - full report alone,mAR,493,0.945236,0.928489,0.0167466,0.0113955,0.022455,9.999e-05,0.00039996
+v2,R-base,several,M4 - M4c,version 2 - compression alone,P@5,493,0.348479,0.307911,0.040568,0.0283976,0.0527383,9.999e-05,0.00039996
+v2,R-base,several,M4 - M4c,version 2 - compression alone,P@10,493,0.296957,0.268966,0.0279919,0.0196755,0.0361055,9.999e-05,0.00039996
+v2,R-base,several,M4 - M4c,version 2 - compression alone,R@5,493,0.223597,0.16971,0.0538876,0.0387788,0.0699144,9.999e-05,0.00039996
+v2,R-base,several,M4 - M4c,version 2 - compression alone,R@10,493,0.305961,0.243252,0.0627092,0.0450504,0.0809611,9.999e-05,0.00039996
+v2,R-base,several,M4 - M4c,version 2 - compression alone,MAP,493,0.3757,0.306671,0.0690295,0.0575585,0.0815804,9.999e-05,0.00039996
+v2,R-base,several,M4 - M4c,version 2 - compression alone,MRR,493,0.557272,0.501149,0.0561233,0.0333485,0.0796972,9.999e-05,0.00039996
+v2,R-base,several,M4 - M4c,version 2 - compression alone,nDCG@10,493,0.436719,0.373643,0.0630758,0.0494806,0.0769468,9.999e-05,0.00039996
+v2,R-base,several,M4 - M4c,version 2 - compression alone,mAR,493,0.945236,0.928363,0.0168727,0.0115123,0.0226563,9.999e-05,0.00039996
+v2,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,493,0.307911,0.334686,-0.0267748,-0.0425963,-0.0109533,0.00149985,0.0029997
+v2,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,493,0.268966,0.285396,-0.01643,-0.0269777,-0.00588235,0.00239976,0.00479952
+v2,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,493,0.16971,0.214746,-0.0450367,-0.0643463,-0.0263756,9.999e-05,0.00039996
+v2,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,493,0.243252,0.285477,-0.0422245,-0.0619968,-0.0231257,9.999e-05,0.00039996
+v2,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,493,0.306671,0.32287,-0.0161988,-0.0317071,-0.00105248,0.040196,0.080392
+v2,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,493,0.501149,0.532877,-0.0317281,-0.0586933,-0.00431182,0.0233977,0.070193
+v2,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,493,0.373643,0.414895,-0.0412519,-0.0589122,-0.0233844,9.999e-05,0.00039996
+v2,R-base,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,493,0.928363,0.905653,0.0227101,0.0137035,0.0317255,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M3,version 2 - version 1,P@5,944,0.427331,0.367373,0.0599576,0.0457627,0.0739407,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M3,version 2 - version 1,P@10,944,0.376059,0.323835,0.0522246,0.0426907,0.0618671,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M3,version 2 - version 1,R@5,944,0.134129,0.0983932,0.0357355,0.0256653,0.0461693,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M3,version 2 - version 1,R@10,944,0.193985,0.148703,0.0452822,0.0336278,0.0577424,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M3,version 2 - version 1,MAP,944,0.32793,0.252554,0.0753758,0.0671338,0.0838058,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M3,version 2 - version 1,MRR,944,0.613899,0.536285,0.0776135,0.0579259,0.0977788,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M3,version 2 - version 1,nDCG@10,944,0.44545,0.374168,0.0712817,0.0592509,0.0833838,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M3,version 2 - version 1,mAR,944,0.880002,0.836706,0.0432966,0.0382937,0.0483636,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M5,version 2 - full report alone,P@5,944,0.427331,0.389619,0.0377119,0.0271186,0.0487288,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M5,version 2 - full report alone,P@10,944,0.376059,0.347458,0.0286017,0.0208686,0.0364407,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M5,version 2 - full report alone,R@5,944,0.134129,0.113037,0.0210919,0.0124358,0.0299697,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M5,version 2 - full report alone,R@10,944,0.193985,0.168884,0.0251012,0.0165853,0.0338375,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M5,version 2 - full report alone,MAP,944,0.32793,0.291347,0.0365823,0.0304686,0.042854,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M5,version 2 - full report alone,MRR,944,0.613899,0.573823,0.0400755,0.0234842,0.0565949,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M5,version 2 - full report alone,nDCG@10,944,0.44545,0.405595,0.0398544,0.0310638,0.0489968,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M5,version 2 - full report alone,mAR,944,0.880002,0.866491,0.0135114,0.0107404,0.0164799,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,P@5,944,0.427331,0.398729,0.0286017,0.018215,0.0387712,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,P@10,944,0.376059,0.352542,0.0235169,0.0164195,0.0302966,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,R@5,944,0.134129,0.106298,0.0278302,0.0200716,0.0360598,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,R@10,944,0.193985,0.164546,0.0294397,0.0210387,0.038544,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,MAP,944,0.32793,0.284171,0.0437589,0.0376851,0.0499694,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,MRR,944,0.613899,0.573127,0.0407717,0.0242707,0.0574095,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,nDCG@10,944,0.44545,0.40733,0.0381197,0.0292946,0.0470515,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4 - M4c,version 2 - compression alone,mAR,944,0.880002,0.856973,0.0230287,0.0196324,0.0266445,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,944,0.398729,0.370127,0.0286017,0.0150424,0.0423729,9.999e-05,0.00039996
+v2,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,944,0.352542,0.332309,0.0202331,0.0105932,0.0300847,0.00039996,0.00039996
+v2,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,944,0.106298,0.105486,0.000812465,-0.00815714,0.00945107,0.859614,0.859614
+v2,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,944,0.164546,0.161682,0.00286369,-0.00811603,0.0131939,0.60124,0.60124
+v2,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,944,0.284171,0.274437,0.00973351,0.00181385,0.0176728,0.0147985,0.0147985
+v2,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,944,0.573127,0.558433,0.0146943,-0.00648416,0.0352368,0.172883,0.172883
+v2,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,944,0.40733,0.38917,0.01816,0.00606773,0.0301373,0.00339966,0.00339966
+v2,R-base-relaxed,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,944,0.856973,0.851338,0.00563533,0.000227086,0.0111475,0.0427957,0.0427957
+v2,R-base-relaxed,several,M4 - M3,version 2 - version 1,P@5,836,0.36866,0.344498,0.0241627,0.012201,0.0358852,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M3,version 2 - version 1,P@10,836,0.327153,0.30012,0.0270335,0.0175837,0.0364833,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M3,version 2 - version 1,R@5,836,0.169724,0.151048,0.0186762,0.00499493,0.0325876,0.0112989,0.0338966
+v2,R-base-relaxed,several,M4 - M3,version 2 - version 1,R@10,836,0.233994,0.216537,0.0174575,0.00306713,0.0316624,0.019698,0.0590941
+v2,R-base-relaxed,several,M4 - M3,version 2 - version 1,MAP,836,0.349189,0.296572,0.0526163,0.0407855,0.0646666,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M3,version 2 - version 1,MRR,836,0.558848,0.529005,0.0298437,0.0082365,0.0519353,0.00929907,0.0278972
+v2,R-base-relaxed,several,M4 - M3,version 2 - version 1,nDCG@10,836,0.428375,0.392817,0.0355578,0.0212927,0.0498397,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M3,version 2 - version 1,mAR,836,0.902455,0.862332,0.0401239,0.0336081,0.0466362,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M5,version 2 - full report alone,P@5,836,0.36866,0.361005,0.0076555,-0.00215311,0.0174641,0.141486,0.141486
+v2,R-base-relaxed,several,M4 - M5,version 2 - full report alone,P@10,836,0.327153,0.316627,0.0105263,0.00334928,0.017823,0.00379962,0.00759924
+v2,R-base-relaxed,several,M4 - M5,version 2 - full report alone,R@5,836,0.169724,0.159177,0.0105473,-0.00109141,0.0219878,0.0750925,0.150185
+v2,R-base-relaxed,several,M4 - M5,version 2 - full report alone,R@10,836,0.233994,0.224659,0.00933489,-0.00199876,0.0207304,0.10149,0.20298
+v2,R-base-relaxed,several,M4 - M5,version 2 - full report alone,MAP,836,0.349189,0.319962,0.0292263,0.0208693,0.0374913,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M5,version 2 - full report alone,MRR,836,0.558848,0.545707,0.0131414,-0.00302711,0.0294236,0.110589,0.137586
+v2,R-base-relaxed,several,M4 - M5,version 2 - full report alone,nDCG@10,836,0.428375,0.413696,0.0146784,0.00478514,0.0245858,0.00379962,0.00759924
+v2,R-base-relaxed,several,M4 - M5,version 2 - full report alone,mAR,836,0.902455,0.885174,0.0172819,0.0137998,0.0209496,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,P@5,836,0.36866,0.3311,0.0375598,0.0279844,0.0473684,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,P@10,836,0.327153,0.295574,0.0315789,0.0251196,0.0382775,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,R@5,836,0.169724,0.135556,0.0341687,0.0232158,0.0455317,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,R@10,836,0.233994,0.192519,0.0414747,0.0302119,0.0528724,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,MAP,836,0.349189,0.290538,0.0586504,0.0500258,0.0673489,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,MRR,836,0.558848,0.506933,0.0519151,0.0357462,0.0684327,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,nDCG@10,836,0.428375,0.377291,0.051084,0.0411838,0.0610586,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4 - M4c,version 2 - compression alone,mAR,836,0.902455,0.877687,0.0247684,0.0211512,0.0286115,9.999e-05,0.00039996
+v2,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,836,0.3311,0.345933,-0.0148325,-0.0279904,-0.00191388,0.0246975,0.0493951
+v2,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,836,0.295574,0.298684,-0.00311005,-0.0123206,0.0062201,0.515248,0.515248
+v2,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,836,0.135556,0.145905,-0.0103488,-0.0225474,0.00166981,0.0940906,0.150185
+v2,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,836,0.192519,0.197771,-0.00525141,-0.0179804,0.0077034,0.419258,0.419258
+v2,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,836,0.290538,0.288782,0.00175621,-0.00931871,0.012913,0.757524,0.757524
+v2,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,836,0.506933,0.526397,-0.0194641,-0.0410714,0.00177675,0.0687931,0.137586
+v2,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,836,0.377291,0.388324,-0.0110332,-0.0243769,0.0021127,0.0974903,0.0974903
+v2,R-base-relaxed,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,836,0.877687,0.867046,0.0106413,0.00413569,0.0172382,0.00119988,0.00119988
+v2,R-cat,one,M4 - M3,version 2 - version 1,P@5,1861,0.80172,0.691564,0.110156,0.0988716,0.12144,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M3,version 2 - version 1,P@10,1861,0.761848,0.656636,0.105212,0.0959699,0.114777,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M3,version 2 - version 1,R@5,1861,0.0239095,0.0203528,0.00355661,0.00299542,0.00416291,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M3,version 2 - version 1,R@10,1861,0.0445117,0.037967,0.00654471,0.00560928,0.00753137,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M3,version 2 - version 1,MAP,1861,0.458423,0.354762,0.103662,0.0987707,0.108517,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M3,version 2 - version 1,MRR,1861,0.903741,0.830126,0.0736153,0.06058,0.0865564,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M3,version 2 - version 1,nDCG@10,1861,0.782157,0.676141,0.106015,0.0967369,0.115491,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M3,version 2 - version 1,mAR,1861,0.76736,0.714479,0.0528817,0.0501282,0.0556325,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M5,version 2 - full report alone,P@5,1861,0.80172,0.73036,0.0713595,0.0628694,0.080172,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M5,version 2 - full report alone,P@10,1861,0.761848,0.69237,0.0694788,0.0626008,0.0765717,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M5,version 2 - full report alone,R@5,1861,0.0239095,0.0217942,0.00211527,0.00176736,0.00248834,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M5,version 2 - full report alone,R@10,1861,0.0445117,0.0405292,0.00398246,0.00343548,0.0045532,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M5,version 2 - full report alone,MAP,1861,0.458423,0.407205,0.0512179,0.0483058,0.0541507,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M5,version 2 - full report alone,MRR,1861,0.903741,0.857121,0.0466203,0.0365215,0.0568756,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M5,version 2 - full report alone,nDCG@10,1861,0.782157,0.712577,0.0695801,0.0629607,0.0763894,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M5,version 2 - full report alone,mAR,1861,0.76736,0.746576,0.0207841,0.0193916,0.022209,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M4c,version 2 - compression alone,P@5,1861,0.80172,0.766362,0.0353573,0.0282644,0.0423428,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M4c,version 2 - compression alone,P@10,1861,0.761848,0.728103,0.0337453,0.0282106,0.0394412,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M4c,version 2 - compression alone,R@5,1861,0.0239095,0.0226156,0.00129384,0.000890606,0.00169681,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M4c,version 2 - compression alone,R@10,1861,0.0445117,0.0423661,0.00214563,0.00160259,0.00268744,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M4c,version 2 - compression alone,MAP,1861,0.458423,0.416996,0.0414278,0.0383803,0.0446362,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M4c,version 2 - compression alone,MRR,1861,0.903741,0.877428,0.0263133,0.0170926,0.0355924,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M4c,version 2 - compression alone,nDCG@10,1861,0.782157,0.748181,0.0339753,0.0287413,0.039339,9.999e-05,0.00039996
+v2,R-cat,one,M4 - M4c,version 2 - compression alone,mAR,1861,0.76736,0.747878,0.0194828,0.0181822,0.020796,9.999e-05,0.00039996
+v2,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,1861,0.766362,0.726061,0.0403009,0.0301988,0.0505105,9.999e-05,0.00039996
+v2,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,1861,0.728103,0.682966,0.045137,0.0367544,0.0535733,9.999e-05,0.00039996
+v2,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,1861,0.0226156,0.0214745,0.00114109,0.000624972,0.00165607,9.999e-05,0.00039996
+v2,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,1861,0.0423661,0.0394989,0.00286717,0.00208594,0.00367689,9.999e-05,0.00039996
+v2,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,1861,0.416996,0.388078,0.0289172,0.0244259,0.033323,9.999e-05,0.00039996
+v2,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,1861,0.877428,0.861062,0.0163657,0.00391026,0.029027,0.0117988,0.0117988
+v2,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,1861,0.748181,0.705623,0.0425588,0.0343647,0.0508033,9.999e-05,0.00039996
+v2,R-cat,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,1861,0.747878,0.73292,0.0149579,0.0126132,0.0173322,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M3,version 2 - version 1,P@5,529,0.525898,0.459735,0.0661626,0.0446125,0.0880907,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M3,version 2 - version 1,P@10,529,0.491682,0.425898,0.0657845,0.0480151,0.0835539,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M3,version 2 - version 1,R@5,529,0.0143474,0.0121262,0.00222128,0.00137785,0.00320026,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M3,version 2 - version 1,R@10,529,0.0262325,0.0219513,0.00428117,0.00282967,0.00606393,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M3,version 2 - version 1,MAP,529,0.276501,0.219936,0.0565653,0.049461,0.0635832,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M3,version 2 - version 1,MRR,529,0.693892,0.632622,0.0612692,0.0308226,0.0931518,0.00019998,0.00079992
+v2,R-cat,several,M4 - M3,version 2 - version 1,nDCG@10,529,0.507626,0.442498,0.0651276,0.0468391,0.0835454,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M3,version 2 - version 1,mAR,529,0.68886,0.644931,0.0439296,0.0384898,0.0492272,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M5,version 2 - full report alone,P@5,529,0.525898,0.481285,0.0446125,0.0279679,0.0620038,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M5,version 2 - full report alone,P@10,529,0.491682,0.446125,0.0455577,0.0332703,0.058034,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M5,version 2 - full report alone,R@5,529,0.0143474,0.0127998,0.00154766,0.000989696,0.00212214,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M5,version 2 - full report alone,R@10,529,0.0262325,0.0229251,0.0033074,0.00239631,0.00434978,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M5,version 2 - full report alone,MAP,529,0.276501,0.251103,0.0253982,0.0212412,0.0294897,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M5,version 2 - full report alone,MRR,529,0.693892,0.660199,0.0336927,0.00963749,0.0594004,0.00779922,0.0233977
+v2,R-cat,several,M4 - M5,version 2 - full report alone,nDCG@10,529,0.507626,0.465391,0.0422353,0.0298609,0.0550016,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M5,version 2 - full report alone,mAR,529,0.68886,0.671312,0.0175484,0.0143722,0.0206235,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M4c,version 2 - compression alone,P@5,529,0.525898,0.500189,0.0257089,0.0094518,0.041966,0.0029997,0.0059994
+v2,R-cat,several,M4 - M4c,version 2 - compression alone,P@10,529,0.491682,0.469943,0.0217391,0.00888469,0.0347826,0.00159984,0.00159984
+v2,R-cat,several,M4 - M4c,version 2 - compression alone,R@5,529,0.0143474,0.0130364,0.00131109,0.000565238,0.0022075,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M4c,version 2 - compression alone,R@10,529,0.0262325,0.0241532,0.00207923,0.00103765,0.00324751,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M4c,version 2 - compression alone,MAP,529,0.276501,0.255002,0.0214985,0.0175556,0.0256739,9.999e-05,0.00039996
+v2,R-cat,several,M4 - M4c,version 2 - compression alone,MRR,529,0.693892,0.661615,0.0322769,0.00741306,0.0571298,0.0108989,0.0233977
+v2,R-cat,several,M4 - M4c,version 2 - compression alone,nDCG@10,529,0.507626,0.483449,0.0241768,0.0114501,0.0371093,0.00039996,0.00079992
+v2,R-cat,several,M4 - M4c,version 2 - compression alone,mAR,529,0.68886,0.672367,0.0164929,0.0141154,0.0188684,9.999e-05,0.00039996
+v2,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,529,0.500189,0.470699,0.0294896,0.00718336,0.0521739,0.0115988,0.0115988
+v2,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,529,0.469943,0.432514,0.0374291,0.0200378,0.0553875,9.999e-05,0.00039996
+v2,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,529,0.0130364,0.0121573,0.000879085,0.000158683,0.00159977,0.0161984,0.0161984
+v2,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,529,0.0241532,0.0218691,0.00228411,0.00105595,0.00358657,9.999e-05,0.00039996
+v2,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,529,0.255002,0.243627,0.0113755,0.00490597,0.0177163,0.0009999,0.0009999
+v2,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,529,0.661615,0.659205,0.00241005,-0.0305963,0.036493,0.888811,0.888811
+v2,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,529,0.483449,0.452507,0.0309422,0.0128767,0.0497341,0.00149985,0.00149985
+v2,R-cat,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,529,0.672367,0.664127,0.00824029,0.00310267,0.013175,0.00169983,0.00169983
+v2,R-cat-mistral,one,M4 - M3,version 2 - version 1,P@5,1527,0.813229,0.710151,0.103078,0.0908972,0.115521,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M3,version 2 - version 1,P@10,1527,0.774853,0.676686,0.0981663,0.0880812,0.108513,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M3,version 2 - version 1,R@5,1527,0.0243498,0.0211787,0.00317111,0.00265854,0.00371436,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M3,version 2 - version 1,R@10,1527,0.0453644,0.0392489,0.00611544,0.00520551,0.0070736,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M3,version 2 - version 1,MAP,1527,0.473708,0.367926,0.105782,0.100314,0.111233,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M3,version 2 - version 1,MRR,1527,0.906556,0.837195,0.0693613,0.0558589,0.0832293,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M3,version 2 - version 1,nDCG@10,1527,0.794589,0.695197,0.0993927,0.0893003,0.109744,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M3,version 2 - version 1,mAR,1527,0.773615,0.721784,0.0518311,0.0487616,0.0550002,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M5,version 2 - full report alone,P@5,1527,0.813229,0.744859,0.0683694,0.059332,0.0774067,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M5,version 2 - full report alone,P@10,1527,0.774853,0.708644,0.0662083,0.0584152,0.0738703,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M5,version 2 - full report alone,R@5,1527,0.0243498,0.0217091,0.00264065,0.00174029,0.00419399,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M5,version 2 - full report alone,R@10,1527,0.0453644,0.0410611,0.00430321,0.00321544,0.00596318,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M5,version 2 - full report alone,MAP,1527,0.473708,0.418571,0.0551375,0.0516267,0.0587461,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M5,version 2 - full report alone,MRR,1527,0.906556,0.860491,0.0460646,0.0350784,0.05688,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M5,version 2 - full report alone,nDCG@10,1527,0.794589,0.727332,0.0672576,0.0598672,0.0746881,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M5,version 2 - full report alone,mAR,1527,0.773615,0.750898,0.0227177,0.0211246,0.0243035,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,P@5,1527,0.813229,0.777079,0.0361493,0.0286837,0.0437459,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,P@10,1527,0.774853,0.744204,0.0306483,0.024558,0.0370661,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,R@5,1527,0.0243498,0.0228856,0.00146422,0.00114901,0.00181707,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,R@10,1527,0.0453644,0.0429062,0.00245811,0.00191496,0.00305782,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,MAP,1527,0.473708,0.43266,0.0410487,0.0375689,0.044689,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,MRR,1527,0.906556,0.88042,0.026136,0.0160103,0.036441,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,nDCG@10,1527,0.794589,0.761973,0.0326167,0.0267714,0.0386042,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4 - M4c,version 2 - compression alone,mAR,1527,0.773615,0.755251,0.018364,0.0168991,0.0198397,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,1527,0.777079,0.734905,0.0421742,0.0314342,0.0526523,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,1527,0.744204,0.693255,0.0509496,0.0416503,0.0598559,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,1527,0.0228856,0.0212682,0.00161739,0.000645913,0.00320118,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,1527,0.0429062,0.0398128,0.00309346,0.0018704,0.00477787,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,1527,0.43266,0.399645,0.033015,0.0278856,0.0380061,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,1527,0.88042,0.860351,0.0200686,0.00587045,0.0339485,0.00519948,0.00519948
+v2,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,1527,0.761973,0.715057,0.0469154,0.0377112,0.0558636,9.999e-05,0.00039996
+v2,R-cat-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,1527,0.755251,0.739391,0.0158603,0.01308,0.0185855,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M3,version 2 - version 1,P@5,863,0.601159,0.497798,0.10336,0.0852839,0.120742,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M3,version 2 - version 1,P@10,863,0.563963,0.472074,0.0918888,0.0775203,0.106141,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M3,version 2 - version 1,R@5,863,0.015792,0.0128659,0.00292602,0.00234347,0.00350291,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M3,version 2 - version 1,R@10,863,0.0293323,0.024106,0.00522629,0.00428417,0.00617977,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M3,version 2 - version 1,MAP,863,0.310362,0.239858,0.0705039,0.0646374,0.0764315,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M3,version 2 - version 1,MRR,863,0.749446,0.665565,0.0838809,0.06094,0.106554,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M3,version 2 - version 1,nDCG@10,863,0.581982,0.485539,0.0964436,0.0818438,0.110638,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M3,version 2 - version 1,mAR,863,0.711175,0.659829,0.0513468,0.0474361,0.0553298,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M5,version 2 - full report alone,P@5,863,0.601159,0.538586,0.0625724,0.0486674,0.0764774,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M5,version 2 - full report alone,P@10,863,0.563963,0.507764,0.0561993,0.0454229,0.0667439,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M5,version 2 - full report alone,R@5,863,0.015792,0.0139136,0.00187838,0.00139963,0.00235704,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M5,version 2 - full report alone,R@10,863,0.0293323,0.0258209,0.00351139,0.00278469,0.00424061,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M5,version 2 - full report alone,MAP,863,0.310362,0.282055,0.0283072,0.0249453,0.0316364,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M5,version 2 - full report alone,MRR,863,0.749446,0.691966,0.0574798,0.0391456,0.0763292,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M5,version 2 - full report alone,nDCG@10,863,0.581982,0.522009,0.0599731,0.0495463,0.0705833,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M5,version 2 - full report alone,mAR,863,0.711175,0.695091,0.016084,0.0136541,0.0184309,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,P@5,863,0.601159,0.568482,0.0326767,0.0192352,0.0461182,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,P@10,863,0.563963,0.528042,0.0359212,0.0257242,0.0463499,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,R@5,863,0.015792,0.0145927,0.0011993,0.000725754,0.00168566,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,R@10,863,0.0293323,0.0266271,0.00270524,0.00193764,0.00350478,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,MAP,863,0.310362,0.282927,0.0274347,0.0239046,0.0310897,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,MRR,863,0.749446,0.734972,0.0144746,-0.00230487,0.0318706,0.10339,0.206779
+v2,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,nDCG@10,863,0.581982,0.549304,0.0326788,0.0230918,0.042487,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4 - M4c,version 2 - compression alone,mAR,863,0.711175,0.68908,0.0220954,0.0201271,0.02412,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,863,0.568482,0.543917,0.0245655,0.00718424,0.0421784,0.00749925,0.00749925
+v2,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,863,0.528042,0.507764,0.0202781,0.00614137,0.0347625,0.0049995,0.0049995
+v2,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,863,0.0145927,0.0139237,0.000668957,6.73218e-05,0.00128692,0.0306969,0.0306969
+v2,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,863,0.0266271,0.0255526,0.00107446,0.000119262,0.0020179,0.0265973,0.0265973
+v2,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,863,0.282927,0.271701,0.0112268,0.00587306,0.0165331,9.999e-05,0.00039996
+v2,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,863,0.734972,0.71592,0.0190515,-0.00452279,0.0426752,0.119988,0.206779
+v2,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,863,0.549304,0.526153,0.0231508,0.00852249,0.0379395,0.00209979,0.00209979
+v2,R-cat-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,863,0.68908,0.685132,0.00394784,3.38684e-05,0.00770124,0.0433957,0.0433957
+v2,R-cat-multi,one,M4 - M3,version 2 - version 1,P@5,1861,0.836862,0.738098,0.0987641,0.0876948,0.109941,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M3,version 2 - version 1,P@10,1861,0.798173,0.704352,0.0938205,0.0845231,0.103385,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M3,version 2 - version 1,R@5,1861,0.0205882,0.0180789,0.0025093,0.00207128,0.00296827,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M3,version 2 - version 1,R@10,1861,0.0388119,0.0338824,0.00492956,0.00413137,0.00579779,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M3,version 2 - version 1,MAP,1861,0.470906,0.386898,0.0840085,0.0790308,0.0888986,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M3,version 2 - version 1,MRR,1861,0.926133,0.860512,0.0656211,0.0534092,0.077757,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M3,version 2 - version 1,nDCG@10,1861,0.817808,0.722421,0.0953864,0.0861941,0.104889,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M3,version 2 - version 1,mAR,1861,0.745182,0.707358,0.0378237,0.0349994,0.0405942,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M5,version 2 - full report alone,P@5,1861,0.836862,0.768726,0.0681354,0.0594304,0.0768404,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M5,version 2 - full report alone,P@10,1861,0.798173,0.730145,0.0680279,0.0611499,0.0750672,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M5,version 2 - full report alone,R@5,1861,0.0205882,0.0191097,0.00147851,0.00121224,0.00175291,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M5,version 2 - full report alone,R@10,1861,0.0388119,0.0359161,0.00289583,0.0024586,0.00334747,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M5,version 2 - full report alone,MAP,1861,0.470906,0.425266,0.0456397,0.042792,0.0484657,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M5,version 2 - full report alone,MRR,1861,0.926133,0.878781,0.0473526,0.0379543,0.056693,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M5,version 2 - full report alone,nDCG@10,1861,0.817808,0.749432,0.0683757,0.0617051,0.0751888,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M5,version 2 - full report alone,mAR,1861,0.745182,0.72562,0.0195616,0.0182492,0.0208763,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M4c,version 2 - compression alone,P@5,1861,0.836862,0.800967,0.0358947,0.0290167,0.0428802,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M4c,version 2 - compression alone,P@10,1861,0.798173,0.762816,0.0353573,0.0299301,0.0408383,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M4c,version 2 - compression alone,R@5,1861,0.0205882,0.0194532,0.00113501,0.000864327,0.00141308,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M4c,version 2 - compression alone,R@10,1861,0.0388119,0.0367841,0.00202782,0.00160234,0.00247785,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M4c,version 2 - compression alone,MAP,1861,0.470906,0.429242,0.0416639,0.0387488,0.0447332,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M4c,version 2 - compression alone,MRR,1861,0.926133,0.899399,0.0267341,0.0181656,0.0351865,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M4c,version 2 - compression alone,nDCG@10,1861,0.817808,0.78223,0.0355781,0.0303858,0.0407848,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4 - M4c,version 2 - compression alone,mAR,1861,0.745182,0.724408,0.0207743,0.0195267,0.0220627,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,1861,0.800967,0.76518,0.0357872,0.0260075,0.0455696,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,1861,0.762816,0.720742,0.0420742,0.0337453,0.0505642,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,1861,0.0194532,0.0188194,0.000633829,0.000251752,0.00100325,0.0009999,0.0009999
+v2,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,1861,0.0367841,0.0347754,0.00200874,0.00133388,0.00269423,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,1861,0.429242,0.403898,0.025344,0.0210181,0.0296061,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,1861,0.899399,0.884448,0.0149516,0.00323067,0.0267531,0.0148985,0.0148985
+v2,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,1861,0.78223,0.742528,0.0397017,0.0315467,0.0480819,9.999e-05,0.00039996
+v2,R-cat-multi,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,1861,0.724408,0.711494,0.0129132,0.0106314,0.0151641,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M3,version 2 - version 1,P@5,529,0.866163,0.786389,0.0797732,0.0601134,0.0994329,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M3,version 2 - version 1,P@10,529,0.832892,0.75879,0.0741021,0.0574669,0.0909263,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M3,version 2 - version 1,R@5,529,0.00809663,0.00726238,0.000834252,0.0006079,0.00106139,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M3,version 2 - version 1,R@10,529,0.0154436,0.0139978,0.00144579,0.00105772,0.00184367,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M3,version 2 - version 1,MAP,529,0.492365,0.435618,0.0567474,0.050279,0.0631173,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M3,version 2 - version 1,MRR,529,0.939408,0.888581,0.0508272,0.0296575,0.0727647,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M3,version 2 - version 1,nDCG@10,529,0.848541,0.773055,0.0754859,0.0585804,0.0923301,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M3,version 2 - version 1,mAR,529,0.65457,0.6268,0.0277696,0.0239404,0.0315467,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M5,version 2 - full report alone,P@5,529,0.866163,0.794329,0.0718336,0.0563327,0.0877127,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M5,version 2 - full report alone,P@10,529,0.832892,0.76673,0.0661626,0.0536862,0.0786389,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M5,version 2 - full report alone,R@5,529,0.00809663,0.00734382,0.000752808,0.000573944,0.000940102,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M5,version 2 - full report alone,R@10,529,0.0154436,0.0140204,0.00142323,0.00112357,0.00172415,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M5,version 2 - full report alone,MAP,529,0.492365,0.460369,0.0319961,0.0280458,0.0359035,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M5,version 2 - full report alone,MRR,529,0.939408,0.905502,0.0339063,0.0171274,0.050771,0.00019998,0.00059994
+v2,R-cat-multi,several,M4 - M5,version 2 - full report alone,nDCG@10,529,0.848541,0.783377,0.0651639,0.0531344,0.077121,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M5,version 2 - full report alone,mAR,529,0.65457,0.640056,0.0145134,0.0123744,0.0166156,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M4c,version 2 - compression alone,P@5,529,0.866163,0.834783,0.03138,0.0173913,0.0453686,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M4c,version 2 - compression alone,P@10,529,0.832892,0.808885,0.0240076,0.0119093,0.0362949,0.00039996,0.00039996
+v2,R-cat-multi,several,M4 - M4c,version 2 - compression alone,R@5,529,0.00809663,0.00775238,0.00034425,0.000178423,0.000506114,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M4c,version 2 - compression alone,R@10,529,0.0154436,0.0149504,0.000493209,0.000209872,0.000778722,0.00079992,0.00079992
+v2,R-cat-multi,several,M4 - M4c,version 2 - compression alone,MAP,529,0.492365,0.461525,0.0308404,0.0275856,0.0341484,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4 - M4c,version 2 - compression alone,MRR,529,0.939408,0.928277,0.0111307,-0.00407668,0.0266259,0.158084,0.158084
+v2,R-cat-multi,several,M4 - M4c,version 2 - compression alone,nDCG@10,529,0.848541,0.824748,0.023793,0.012175,0.0355015,0.00019998,0.00039996
+v2,R-cat-multi,several,M4 - M4c,version 2 - compression alone,mAR,529,0.65457,0.63766,0.016909,0.0151716,0.0186559,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,529,0.834783,0.788658,0.0461248,0.0257089,0.0669187,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,529,0.808885,0.754631,0.0542533,0.036673,0.0714603,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,529,0.00775238,0.00727588,0.000476497,0.000234568,0.000723248,0.00019998,0.00039996
+v2,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,529,0.0149504,0.0137886,0.00116179,0.000750941,0.00157933,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,529,0.461525,0.45286,0.00866481,0.00225889,0.0148173,0.00849915,0.00849915
+v2,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,529,0.928277,0.907294,0.0209829,-4.49177e-05,0.0419096,0.0468953,0.0937906
+v2,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,529,0.824748,0.773351,0.0513965,0.0341499,0.0684203,9.999e-05,0.00039996
+v2,R-cat-multi,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,529,0.63766,0.632992,0.00466866,0.00121613,0.00806226,0.00849915,0.00849915
+v2,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,P@5,1527,0.845842,0.75979,0.0860511,0.0743942,0.0978389,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,P@10,1527,0.810282,0.725082,0.0851997,0.0750491,0.0955468,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,R@5,1527,0.0192765,0.0172498,0.00202672,0.00163465,0.00244195,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,R@10,1527,0.0363883,0.0323293,0.004059,0.00334419,0.00482797,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,MAP,1527,0.480793,0.399265,0.0815282,0.0762117,0.0867462,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,MRR,1527,0.924595,0.871523,0.0530717,0.0407076,0.0655336,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,nDCG@10,1527,0.828033,0.743425,0.0846077,0.074694,0.0945951,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M3,version 2 - version 1,mAR,1527,0.737278,0.706293,0.0309853,0.0279344,0.0340568,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,P@5,1527,0.845842,0.783628,0.0622135,0.0534381,0.0707269,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,P@10,1527,0.810282,0.74702,0.0632613,0.0555337,0.0707924,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,R@5,1527,0.0192765,0.0177109,0.00156562,0.0010625,0.00237529,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,R@10,1527,0.0363883,0.0336353,0.00275297,0.00210136,0.0036255,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,MAP,1527,0.480793,0.431941,0.0488516,0.0456141,0.0520927,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,MRR,1527,0.924595,0.885905,0.0386901,0.0286933,0.0486477,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,nDCG@10,1527,0.828033,0.765262,0.0627708,0.0556176,0.0698875,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M5,version 2 - full report alone,mAR,1527,0.737278,0.716911,0.0203669,0.0187597,0.0219647,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,P@5,1527,0.845842,0.812705,0.0331369,0.0261952,0.0406025,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,P@10,1527,0.810282,0.77983,0.0304519,0.024558,0.0366077,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,R@5,1527,0.0192765,0.0182238,0.00105273,0.000814088,0.00131956,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,R@10,1527,0.0363883,0.034463,0.00192528,0.00150461,0.00240133,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,MAP,1527,0.480793,0.442632,0.0381606,0.0351004,0.0413088,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,MRR,1527,0.924595,0.903081,0.0215136,0.0124847,0.0308019,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,nDCG@10,1527,0.828033,0.797093,0.0309402,0.0253781,0.036762,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4 - M4c,version 2 - compression alone,mAR,1527,0.737278,0.718509,0.0187691,0.0173953,0.020214,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,1527,0.812705,0.769876,0.0428291,0.0319581,0.0531762,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,1527,0.77983,0.73091,0.0489194,0.0395547,0.0579568,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,1527,0.0182238,0.0172022,0.00102161,0.000449981,0.00185671,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,1527,0.034463,0.032475,0.00198799,0.0012076,0.00292614,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,1527,0.442632,0.412716,0.029917,0.02507,0.0346056,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,1527,0.903081,0.883497,0.0195846,0.00645103,0.0322122,0.00359964,0.00359964
+v2,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,1527,0.797093,0.751311,0.0457821,0.0365275,0.0545657,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,one,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,1527,0.718509,0.705823,0.0126857,0.00992781,0.0153352,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,P@5,863,0.873696,0.799537,0.0741599,0.0590962,0.0894554,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,P@10,863,0.847161,0.775087,0.0720742,0.0592121,0.0852839,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,R@5,863,0.00780181,0.00710222,0.000699592,0.000541341,0.000860104,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,R@10,863,0.0150387,0.0137232,0.00131552,0.00104995,0.0015862,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,MAP,863,0.499387,0.440172,0.0592149,0.0542793,0.0642923,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,MRR,863,0.940544,0.907218,0.0333261,0.0177522,0.0493647,0.00019998,0.00059994
+v2,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,nDCG@10,863,0.859731,0.789985,0.0697461,0.0570571,0.082776,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M3,version 2 - version 1,mAR,863,0.652963,0.625059,0.027905,0.0250129,0.0308484,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,P@5,863,0.873696,0.817381,0.0563152,0.0442642,0.0683662,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,P@10,863,0.847161,0.788297,0.0588644,0.0488992,0.0690614,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,R@5,863,0.00780181,0.00726275,0.000539062,0.000413831,0.000665895,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,R@10,863,0.0150387,0.0139457,0.00109299,0.000892227,0.00130034,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,MAP,863,0.499387,0.468754,0.030633,0.0279493,0.0332654,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,MRR,863,0.940544,0.908192,0.032352,0.0201078,0.045159,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,nDCG@10,863,0.859731,0.802101,0.0576304,0.0483164,0.0673505,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M5,version 2 - full report alone,mAR,863,0.652963,0.637758,0.0152059,0.0136484,0.0167348,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,P@5,863,0.873696,0.842178,0.031518,0.0215469,0.0417149,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,P@10,863,0.847161,0.807648,0.0395133,0.0314021,0.0476246,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,R@5,863,0.00780181,0.00747656,0.000325256,0.000219726,0.000433289,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,R@10,863,0.0150387,0.0142729,0.000765791,0.000600888,0.000935,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,MAP,863,0.499387,0.470361,0.0290254,0.0266857,0.031432,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,MRR,863,0.940544,0.931486,0.00905786,-0.00184453,0.0200849,0.109889,0.124788
+v2,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,nDCG@10,863,0.859731,0.825125,0.0346066,0.0271124,0.0422259,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4 - M4c,version 2 - compression alone,mAR,863,0.652963,0.637197,0.0157666,0.0144795,0.0170679,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@5,863,0.842178,0.817381,0.0247972,0.00996524,0.0393975,0.00159984,0.00159984
+v2,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,P@10,863,0.807648,0.783314,0.0243337,0.0113557,0.0375435,0.00069993,0.00069993
+v2,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@5,863,0.00747656,0.00726627,0.000210286,6.04507e-05,0.000357955,0.0069993,0.0069993
+v2,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,R@10,863,0.0142729,0.0138575,0.000415406,0.000149459,0.000680978,0.00269973,0.00269973
+v2,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MAP,863,0.470361,0.459615,0.0107469,0.00626365,0.0151605,9.999e-05,0.00039996
+v2,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,MRR,863,0.931486,0.916782,0.0147039,-0.000495809,0.0297355,0.0623938,0.124788
+v2,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,nDCG@10,863,0.825125,0.799913,0.0252123,0.0125818,0.0379039,0.00029997,0.00039996
+v2,R-cat-multi-mistral,several,M4c - M4b,Gemini 3.7 Flash - Gemini 2.5 Flash-Lite compression,mAR,863,0.637197,0.631124,0.00607319,0.00366921,0.00847655,9.999e-05,0.00039996

@@ -1,0 +1,13 @@
+phase,step,script,run_id,model,calls,input_tokens,output_tokens,input_chars,cost_usd,basis
+4,infraction category,41_infraction_category,20261007T135221Z-90cf9465,gemini-3.7-flash,2366.0,8975751.0,199645.0,,7.4805,"logged per call; distinct prompts, pilot and interrupted runs included"
+4,infraction category,41_infraction_category,20261007T171241Z-96b77d45,mistral-medium-3,2366.0,8764083.0,117691.0,,3.741,"logged per call; distinct prompts, pilot and interrupted runs included"
+4,embeddings M3,43_a1_cloud_embeddings,,text-multilingual-embedding-002,2390.0,5719752.0,0.0,18762703.0,0.4691,full input length (upper bound); price unconfirmed
+4,embeddings M4,43_a1_cloud_embeddings,,gemini-embedding-001,2390.0,1414770.0,0.0,5668793.0,0.2122,full input length (upper bound); price unconfirmed
+4,embeddings M4b,43_a1_cloud_embeddings,,gemini-embedding-001,2390.0,2516515.0,0.0,9518008.0,0.3775,full input length (upper bound); price unconfirmed
+4,embeddings M5,43_a1_cloud_embeddings,,gemini-embedding-001,2390.0,5645527.0,0.0,18762703.0,0.8468,full input length (upper bound); price unconfirmed
+4,compression rerun (50 reports),45_compression_stability,20261007T140211Z-a788ae94,gemini-3.7-flash,50.0,135713.0,58458.0,,0.321,tokens of the rerun; its 50 embeddings add under 0.01
+4,label review by a second model,49_label_review,20261007T161827Z-a26ab8f3,xai/grok-4.20-reasoning,278.0,710740.0,424933.0,,3.9711,logged per call; price unconfirmed
+4,label review by a second model,49_label_review,20261007T165103Z-e22ed898,xai/grok-4.20-reasoning,2.0,1629.0,2758.0,,0.0198,logged per call; price unconfirmed
+4,label review by a second model,49_label_review,20261007T222212Z-0af6e4bc,xai/grok-4.20-reasoning,1.0,1301.0,3877.0,,0.0259,logged per call; price unconfirmed
+4,label review by a second model,49_label_review,20261012T122407Z-bb7d90ae,gpt-5.4,281.0,625919.0,87832.0,,2.8823,logged per call; price unconfirmed
+4,TOTAL,,,,,,,,20.3472,plan line for Phase 4: 10 USD (8 Gemini + 2 embeddings); the second labelling and the label review were added on the author's instruction (2026-10-07)

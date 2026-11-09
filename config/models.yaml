@@ -1,0 +1,103 @@
+# Model IDs by role. Nothing here is final until the Phase 1 freeze.
+system_under_test:            # JurisMap v2 (Gemini family); frozen in config/v2_freeze.json
+  generation: gemini-3.7-flash      # verified 2026-09-26 ("gemini-3-7-flash" returns 404); all roles incl. merger
+  location: global                  # 404 in us-central1
+  credentials: primary service account the primary service account (key outside the repos,
+               config/paths.yaml), fallback to the fallback project's own credentials on any error;
+               every call records which served it (same model; embeddings identical across projects)
+  compression: {model: gemini-3.7-flash, temperature: 0.0, thinking_level: low, max_output_tokens: 8192}
+  embedding: gemini-embedding-001
+  embedding_dim: 3072
+  embedding_task_type: SEMANTIC_SIMILARITY
+
+v1_reference:
+  generation: gemini-2.0-flash      # shut down 1 Jun 2026: not runnable
+  reasoning: gemini-2.5-flash-preview-04-17
+  embedding: text-multilingual-embedding-002
+
+# LLM judges (DECISIONS.md, 2026-09-26): no OpenAI/Anthropic access at the time. Judges ran on Vertex AI:
+# non-Gemini families served by Google, or Gemini at a higher thinking level (reported separately:
+# same family as the system under test). judge_a/judge_b chosen 2026-09-26 (DECISIONS.md); both
+# passed a faithfulness smoke test. judge_gemini chosen 2026-09-27.
+judges:
+  # Judge A is GPT-5.4 on Azure OpenAI since 2026-10-11 (the author; DECISIONS.md): Grok 4.20 reasoning, judge A
+  # until then, stopped answering on Vertex AI that evening in both projects. The deployment is the author's;
+  # its endpoint and key are in the git-ignored .env (config/paths.yaml `azure_openai_env`).
+  judge_a:
+    provider: azure_openai
+    model: gpt-5.4                 # deployment name (AZURE_OPENAI_MODEL); the API reports gpt-5.4-2026-03-05
+    family: gpt
+    api: azure_openai
+    reasoning_effort: medium       # judge A is the reasoning judge; Mistral, judge B, does not reason
+    quota: {rpm: 30, tpm: 100000}  # the deployment allows 1,000 requests and 100K tokens per minute (headers, 2026-10-23; 250K when set up, 1K on 2026-10-21)
+    max_attempts: 12               # 429 (token rate) on 2026-10-21 with 10 parallel threads: waits up to a minute each, 12 tries
+  judge_grok:                    # judge A until 2026-10-11 (Phase 4 label review, Phase 3b, first development runs)
+    provider: vertex_maas
+    model: xai/grok-4.20-reasoning
+    family: grok
+    api: openai_chat              # global OpenAI-compatible endpoint: endpoints/openapi/chat/completions
+    region: global
+    # Billing (the author, 2026-10-11): the primary key's project whenever it answers. While it does not
+    # (that evening its Grok calls hung, and the rest were refused as too many concurrent requests),
+    # calls go to the fallback project; the key's project is asked again every 3 minutes and calls return to
+    # it as soon as it answers. Its quota is not known (the figures below are the fallback project's).
+    credentials: primary_with_fallback
+    primary_recheck_s: 180
+    primary_timeout_s: 240          # a call that hangs in the key's project is cut off and sent to the fallback project
+    primary_probe_timeout_s: 60
+    timeout_s: 300
+    max_attempts: 12
+    quota: {rpm: 12, input_tpm: 64000, output_tpm: 9600}
+  judge_b:
+    provider: vertex_maas
+    model: mistral-medium-3
+    family: mistral
+    api: raw_predict              # publishers/mistralai/models/mistral-medium-3:rawPredict
+    region: europe-west4          # 404 in us-central1 as of 2026-09-26
+    # Billed to your-mistral-gcp-project from 2026-10-18 (the author); before that to the fallback project, because the
+    # primary key's project has no access to this model (404 in europe-west4, europe-west1,
+    # us-central1 and us-east5 on 2026-10-10). No fallback to another project.
+    credentials: project_only
+    project: your-mistral-gcp-project  # the project ID (the author, 2026-10-18); calls use the author's own login (no key)
+    strip_json_fence: true        # wraps JSON output in ```json fences
+    quota: {rpm: 9, tpm: 31500}
+  judge_gemini:                 # same family as the system under test: reported separately
+    flex: true                    # Vertex AI Flex PayGo from 2026-10-19 (the author: the judges on Flex; Gemini only, global endpoint)
+    provider: vertex
+    model: gemini-3.8-flash       # chosen 2026-09-27 (DECISIONS.md); one version after the system's 3.7
+    family: gemini
+    api: genai
+    region: global
+    thinking_level: high
+    credentials: primary_with_fallback   # primary key first, the fallback project on errors
+    report_separately: true
+    quota: {rpm: 30}
+
+# Labelling models (not judges). The infraction category is a secondary silver label of the A1
+# benchmark (plan, Phase 4a): Gemini 3.7 Flash at temperature 0 with a JSON schema. It is the
+# system's own model family, which the paper states where it reports R-cat.
+labelers:
+  infraction_category:
+    provider: vertex
+    model: gemini-3.7-flash
+    family: gemini
+    api: genai
+    region: global
+    temperature: 0.0
+    thinking_level: low
+    max_output_tokens: 2048
+    credentials: primary_with_fallback   # primary key first, the fallback project on errors
+    quota: {rpm: 30}
+  # Blind second labelling by a model of another family (the author, 2026-10-07): it tests whether the
+  # R-cat results depend on Gemini having assigned the categories. Same prompt and taxonomy.
+  infraction_category_mistral:
+    provider: vertex_maas
+    model: mistral-medium-3
+    family: mistral
+    api: raw_predict
+    region: europe-west4
+    quota: {rpm: 6.5}            # about 4,600 tokens per call against 31,500 tokens/min
+
+local:
+  nli: MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7
+  dense_retrievers: [BAAI/bge-m3, intfloat/multilingual-e5-large]

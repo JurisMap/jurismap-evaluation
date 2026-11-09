@@ -1,0 +1,6 @@
+mode,invented,assertion,procedural,in_notice,estimated_invented,low,high,past_offences_claim_share
+full,2.805,2.317,1.049,0.293,0.432,0.121,1.185,0.683
+single_prompt,2.769,2.333,1.051,0.615,0.426,0.12,1.17,0.718
+no_legal_search,2.889,2.467,1.356,0.444,0.444,0.125,1.22,0.622
+no_precedents,2.422,2.711,1.111,0.733,0.373,0.105,1.023,0.044
+no_template,2.558,1.535,0.558,0.651,0.394,0.111,1.08,0.744

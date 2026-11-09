@@ -1,0 +1,3 @@
+arm,against,rounds,median_difference_s,mean_difference_s,share_of_rounds_slower,median_ratio,wilcoxon_p,wilcoxon_p_holm
+v2.7_full,v2.6_full,30,17.3,28.8,0.8,1.161,0.01453801617026329,0.01453801617026329
+v2.7_deployed,v2.7_full,30,-28.2,-49.0,0.167,0.774,9.220093488693237e-06,1.8440186977386475e-05

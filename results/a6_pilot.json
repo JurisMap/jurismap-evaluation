@@ -1,0 +1,40 @@
+{
+ "warmup_cost_per_call_usd": {
+  "case_upload": 0.0052,
+  "chat": 0.0261,
+  "map_view": 0.0,
+  "v2.6_full": 0.4718,
+  "v2.7_deployed": 0.1517,
+  "v2.7_full": 0.1858
+ },
+ "warmup_wall_s": {
+  "case_upload": [
+   19.52,
+   3.63,
+   9.12
+  ],
+  "chat": [
+   19.52,
+   7.34,
+   5.28
+  ],
+  "map_view": [
+   0.44,
+   0.62,
+   0.51
+  ],
+  "v2.6_full": [
+   216.19
+  ],
+  "v2.7_deployed": [
+   173.51
+  ],
+  "v2.7_full": [
+   134.2
+  ]
+ },
+ "projected_phase_usd": 26.12,
+ "stop_threshold_usd": 49.5,
+ "within_threshold": true,
+ "projected_hours": 4.5
+}

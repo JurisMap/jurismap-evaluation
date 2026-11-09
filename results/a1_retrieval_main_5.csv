@@ -1,0 +1,1009 @@
+scope,relevance,method,label,metric,queries,mean,ci_low,ci_high,diff_vs_baseline,p_vs_baseline,p_holm_vs_baseline
+comparison_set,R-base,M1,TF-IDF,P@5,824,0.276699,0.258252,0.295631,0.0152913,0.00989901,0.029697
+comparison_set,R-base,M1,TF-IDF,P@10,824,0.227427,0.21165,0.243571,0.0165049,0.00039996,0.00119988
+comparison_set,R-base,M1,TF-IDF,R@5,824,0.174452,0.155049,0.194328,0.0254585,0.00049995,0.0029997
+comparison_set,R-base,M1,TF-IDF,R@10,824,0.227637,0.206233,0.249583,0.0405241,9.999e-05,0.00079992
+comparison_set,R-base,M1,TF-IDF,MAP,824,0.264649,0.246426,0.283298,0.0545002,9.999e-05,0.00079992
+comparison_set,R-base,M1,TF-IDF,MRR,824,0.497745,0.469348,0.526436,0.0312885,0.00369963,0.0184982
+comparison_set,R-base,M1,TF-IDF,nDCG@10,824,0.338987,0.317966,0.360259,0.0299443,9.999e-05,0.00079992
+comparison_set,R-base,M1,TF-IDF,mAR,824,0.855951,0.846171,0.865686,0.104715,9.999e-05,0.00079992
+comparison_set,R-base,M2,BM25,P@5,824,0.261408,0.241505,0.281311,,,
+comparison_set,R-base,M2,BM25,P@10,824,0.210922,0.194539,0.227791,,,
+comparison_set,R-base,M2,BM25,R@5,824,0.148993,0.130759,0.167552,,,
+comparison_set,R-base,M2,BM25,R@10,824,0.187113,0.16784,0.207003,,,
+comparison_set,R-base,M2,BM25,MAP,824,0.210149,0.192367,0.228665,,,
+comparison_set,R-base,M2,BM25,MRR,824,0.466456,0.437195,0.496095,,,
+comparison_set,R-base,M2,BM25,nDCG@10,824,0.309043,0.287663,0.330789,,,
+comparison_set,R-base,M2,BM25,mAR,824,0.751236,0.738051,0.764132,,,
+comparison_set,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,824,0.299515,0.280097,0.318932,0.0381068,9.999e-05,0.00079992
+comparison_set,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,824,0.255583,0.238589,0.27318,0.0446602,9.999e-05,0.00079992
+comparison_set,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,824,0.172287,0.153181,0.192159,0.0232943,0.00509949,0.0244976
+comparison_set,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,824,0.230809,0.210462,0.251869,0.0436968,9.999e-05,0.00079992
+comparison_set,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,824,0.282856,0.265191,0.301101,0.0727071,9.999e-05,0.00079992
+comparison_set,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,824,0.508283,0.480752,0.53653,0.0418269,0.00189981,0.0113989
+comparison_set,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,824,0.360209,0.339642,0.381227,0.0511666,9.999e-05,0.00079992
+comparison_set,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,824,0.874297,0.865422,0.882716,0.123061,9.999e-05,0.00079992
+comparison_set,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,824,0.333981,0.313835,0.354369,0.0725728,9.999e-05,0.00079992
+comparison_set,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,824,0.287136,0.269175,0.304854,0.0762136,9.999e-05,0.00079992
+comparison_set,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,824,0.191855,0.172484,0.211931,0.0428622,9.999e-05,0.00079992
+comparison_set,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,824,0.271375,0.249864,0.293733,0.0842619,9.999e-05,0.00079992
+comparison_set,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,824,0.3362,0.317873,0.35501,0.126051,9.999e-05,0.00079992
+comparison_set,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,824,0.548036,0.520395,0.575984,0.0815801,9.999e-05,0.00079992
+comparison_set,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,824,0.403154,0.382278,0.424485,0.0941112,9.999e-05,0.00079992
+comparison_set,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,824,0.914887,0.908118,0.921511,0.163651,9.999e-05,0.00079992
+comparison_set,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,824,0.29733,0.27767,0.317482,0.0359223,9.999e-05,0.00079992
+comparison_set,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,824,0.260194,0.243079,0.27767,0.0492718,9.999e-05,0.00079992
+comparison_set,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,824,0.151732,0.134908,0.169195,0.00273852,0.748125,0.748125
+comparison_set,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,824,0.22282,0.203495,0.242437,0.0357077,0.00039996,0.00119988
+comparison_set,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,824,0.282658,0.265732,0.300131,0.0725086,9.999e-05,0.00079992
+comparison_set,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,824,0.505615,0.477386,0.534259,0.0391591,0.00479952,0.0191981
+comparison_set,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,824,0.352119,0.331933,0.372227,0.0430762,9.999e-05,0.00079992
+comparison_set,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,824,0.893272,0.885443,0.900828,0.142035,9.999e-05,0.00079992
+comparison_set,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,824,0.28932,0.270388,0.308495,0.0279126,0.00069993,0.00279972
+comparison_set,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,824,0.255947,0.239199,0.27318,0.0450243,9.999e-05,0.00079992
+comparison_set,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,824,0.163956,0.145744,0.182902,0.0149634,0.069993,0.209979
+comparison_set,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,824,0.22609,0.20624,0.247031,0.0389773,9.999e-05,0.00079992
+comparison_set,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,824,0.280044,0.262969,0.297631,0.069895,9.999e-05,0.00079992
+comparison_set,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,824,0.502657,0.473952,0.531605,0.0362013,0.00509949,0.0191981
+comparison_set,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,824,0.354807,0.334514,0.37556,0.0457644,9.999e-05,0.00079992
+comparison_set,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,824,0.879759,0.87168,0.887838,0.128523,9.999e-05,0.00079992
+comparison_set,R-base,M5,"gemini-embedding-001, full report",P@5,824,0.316262,0.296359,0.336408,0.0548544,9.999e-05,0.00079992
+comparison_set,R-base,M5,"gemini-embedding-001, full report",P@10,824,0.274029,0.256796,0.291869,0.0631068,9.999e-05,0.00079992
+comparison_set,R-base,M5,"gemini-embedding-001, full report",R@5,824,0.184851,0.16505,0.204855,0.0358576,0.00019998,0.00139986
+comparison_set,R-base,M5,"gemini-embedding-001, full report",R@10,824,0.247812,0.226494,0.269363,0.0606996,9.999e-05,0.00079992
+comparison_set,R-base,M5,"gemini-embedding-001, full report",MAP,824,0.313186,0.295112,0.332067,0.103037,9.999e-05,0.00079992
+comparison_set,R-base,M5,"gemini-embedding-001, full report",MRR,824,0.52529,0.497836,0.553263,0.0588341,9.999e-05,0.00079992
+comparison_set,R-base,M5,"gemini-embedding-001, full report",nDCG@10,824,0.382692,0.36157,0.404202,0.0736495,9.999e-05,0.00079992
+comparison_set,R-base,M5,"gemini-embedding-001, full report",mAR,824,0.897498,0.889131,0.905695,0.146262,9.999e-05,0.00079992
+comparison_set,R-base,M6,"BGE-M3 (dense), full report",P@5,824,0.251214,0.233252,0.269417,-0.0101942,0.159484,0.318968
+comparison_set,R-base,M6,"BGE-M3 (dense), full report",P@10,824,0.214442,0.19915,0.229979,0.00351942,0.49535,0.990701
+comparison_set,R-base,M6,"BGE-M3 (dense), full report",R@5,824,0.129612,0.11364,0.146006,-0.0193814,0.00489951,0.0244976
+comparison_set,R-base,M6,"BGE-M3 (dense), full report",R@10,824,0.181483,0.163006,0.20046,-0.00563011,0.469153,0.938306
+comparison_set,R-base,M6,"BGE-M3 (dense), full report",MAP,824,0.215222,0.199789,0.231246,0.00507301,0.425157,0.850315
+comparison_set,R-base,M6,"BGE-M3 (dense), full report",MRR,824,0.45012,0.422341,0.478624,-0.016336,0.171083,0.342166
+comparison_set,R-base,M6,"BGE-M3 (dense), full report",nDCG@10,824,0.29592,0.276788,0.315576,-0.0131228,0.0911909,0.182382
+comparison_set,R-base,M6,"BGE-M3 (dense), full report",mAR,824,0.829723,0.819011,0.839907,0.0784869,9.999e-05,0.00079992
+comparison_set,R-base,M7,"multilingual-E5-large, full report",P@5,824,0.258495,0.240049,0.277427,-0.00291262,0.732427,0.732427
+comparison_set,R-base,M7,"multilingual-E5-large, full report",P@10,824,0.212379,0.197573,0.227913,0.00145631,0.816118,0.990701
+comparison_set,R-base,M7,"multilingual-E5-large, full report",R@5,824,0.136994,0.120146,0.15443,-0.0119986,0.150585,0.30117
+comparison_set,R-base,M7,"multilingual-E5-large, full report",R@10,824,0.189608,0.170753,0.208746,0.00249509,0.780322,0.938306
+comparison_set,R-base,M7,"multilingual-E5-large, full report",MAP,824,0.209999,0.194673,0.225058,-0.000149917,0.985501,0.985501
+comparison_set,R-base,M7,"multilingual-E5-large, full report",MRR,824,0.463829,0.43556,0.491604,-0.00262692,0.840816,0.840816
+comparison_set,R-base,M7,"multilingual-E5-large, full report",nDCG@10,824,0.301375,0.282072,0.320354,-0.00766802,0.405459,0.405459
+comparison_set,R-base,M7,"multilingual-E5-large, full report",mAR,824,0.817846,0.806573,0.829078,0.0666095,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M1,TF-IDF,P@5,1078,0.317069,0.298145,0.336735,0.0165121,0.00259974,0.00779922
+comparison_set,R-base-relaxed,M1,TF-IDF,P@10,1078,0.271707,0.253987,0.289705,0.0217069,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M1,TF-IDF,R@5,1078,0.151136,0.136254,0.167288,0.0208181,0.00039996,0.0019998
+comparison_set,R-base-relaxed,M1,TF-IDF,R@10,1078,0.210899,0.193396,0.228905,0.0397447,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M1,TF-IDF,MAP,1078,0.270575,0.254447,0.287208,0.057263,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M1,TF-IDF,MRR,1078,0.521091,0.495894,0.546843,0.0229356,0.0149985,0.0459954
+comparison_set,R-base-relaxed,M1,TF-IDF,nDCG@10,1078,0.364872,0.344908,0.385107,0.0292094,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M1,TF-IDF,mAR,1078,0.84266,0.83399,0.850936,0.096202,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M2,BM25,P@5,1078,0.300557,0.280705,0.32115,,,
+comparison_set,R-base-relaxed,M2,BM25,P@10,1078,0.25,0.231911,0.268831,,,
+comparison_set,R-base-relaxed,M2,BM25,R@5,1078,0.130318,0.116092,0.145235,,,
+comparison_set,R-base-relaxed,M2,BM25,R@10,1078,0.171154,0.155716,0.18741,,,
+comparison_set,R-base-relaxed,M2,BM25,MAP,1078,0.213312,0.19732,0.228949,,,
+comparison_set,R-base-relaxed,M2,BM25,MRR,1078,0.498155,0.471767,0.524117,,,
+comparison_set,R-base-relaxed,M2,BM25,nDCG@10,1078,0.335663,0.314965,0.356388,,,
+comparison_set,R-base-relaxed,M2,BM25,mAR,1078,0.746458,0.735776,0.756788,,,
+comparison_set,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,1078,0.339889,0.319852,0.360297,0.0393321,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,1078,0.298423,0.279777,0.31744,0.048423,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,1078,0.144017,0.129514,0.15879,0.0136992,0.0368963,0.110689
+comparison_set,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,1078,0.203775,0.187574,0.220551,0.0326209,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,1078,0.292818,0.276239,0.309712,0.0795062,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,1078,0.527772,0.502386,0.553032,0.0296165,0.00879912,0.0439956
+comparison_set,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,1078,0.38307,0.3628,0.403733,0.0474068,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,1078,0.852039,0.84373,0.860193,0.105581,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,1078,0.379035,0.358442,0.4,0.0784787,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,1078,0.333395,0.314378,0.352602,0.0833952,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,1078,0.175058,0.158771,0.19202,0.04474,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,1078,0.241613,0.224018,0.259478,0.0704584,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,1078,0.354768,0.336727,0.373,0.141456,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,1078,0.572026,0.547316,0.597261,0.0738701,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,1078,0.433067,0.412108,0.453696,0.097404,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,1078,0.893872,0.88696,0.900625,0.147414,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,1078,0.338033,0.317996,0.358813,0.0374768,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,1078,0.303989,0.285714,0.322822,0.0539889,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,1078,0.137463,0.123244,0.152272,0.00714551,0.308069,0.308069
+comparison_set,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,1078,0.198202,0.182939,0.213968,0.0270477,0.00109989,0.00329967
+comparison_set,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,1078,0.298218,0.281827,0.315089,0.0849059,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,1078,0.529625,0.504204,0.555368,0.0314695,0.00629937,0.0377962
+comparison_set,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,1078,0.383292,0.363377,0.403676,0.0476286,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,1078,0.866832,0.859142,0.874387,0.120373,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,1078,0.330241,0.310204,0.350278,0.0296846,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,1078,0.297774,0.279497,0.316422,0.0477737,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,1078,0.14299,0.128463,0.158262,0.0126723,0.0689931,0.137986
+comparison_set,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,1078,0.205055,0.18911,0.221924,0.0339009,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,1078,0.291843,0.275628,0.308476,0.0785306,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,1078,0.521109,0.496136,0.547108,0.0229534,0.0411959,0.0459954
+comparison_set,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,1078,0.381295,0.360998,0.401499,0.0456317,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,1078,0.857881,0.849962,0.865719,0.111422,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M5,"gemini-embedding-001, full report",P@5,1078,0.358813,0.338404,0.379777,0.058256,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M5,"gemini-embedding-001, full report",P@10,1078,0.318646,0.299629,0.337943,0.0686456,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M5,"gemini-embedding-001, full report",R@5,1078,0.158772,0.143219,0.174855,0.028454,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M5,"gemini-embedding-001, full report",R@10,1078,0.228467,0.211136,0.24617,0.0573126,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M5,"gemini-embedding-001, full report",MAP,1078,0.324817,0.307388,0.342673,0.111505,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M5,"gemini-embedding-001, full report",MRR,1078,0.545822,0.520886,0.571358,0.0476664,0.00019998,0.00139986
+comparison_set,R-base-relaxed,M5,"gemini-embedding-001, full report",nDCG@10,1078,0.410802,0.39018,0.431676,0.0751391,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M5,"gemini-embedding-001, full report",mAR,1078,0.876749,0.869122,0.884393,0.130291,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M6,"BGE-M3 (dense), full report",P@5,1078,0.290538,0.270872,0.310575,-0.0100186,0.111789,0.111789
+comparison_set,R-base-relaxed,M6,"BGE-M3 (dense), full report",P@10,1078,0.25436,0.236735,0.272635,0.00435993,0.369963,0.612739
+comparison_set,R-base-relaxed,M6,"BGE-M3 (dense), full report",R@5,1078,0.109199,0.0971722,0.122126,-0.0211186,0.00059994,0.00239976
+comparison_set,R-base-relaxed,M6,"BGE-M3 (dense), full report",R@10,1078,0.156129,0.141655,0.170937,-0.0150255,0.0323968,0.0323968
+comparison_set,R-base-relaxed,M6,"BGE-M3 (dense), full report",MAP,1078,0.223882,0.209281,0.238522,0.0105701,0.0575942,0.115188
+comparison_set,R-base-relaxed,M6,"BGE-M3 (dense), full report",MRR,1078,0.473711,0.448011,0.499066,-0.0244444,0.0181982,0.0459954
+comparison_set,R-base-relaxed,M6,"BGE-M3 (dense), full report",nDCG@10,1078,0.322063,0.302473,0.341808,-0.0136001,0.0476952,0.0476952
+comparison_set,R-base-relaxed,M6,"BGE-M3 (dense), full report",mAR,1078,0.805679,0.796378,0.814571,0.0592207,9.999e-05,0.00079992
+comparison_set,R-base-relaxed,M7,"multilingual-E5-large, full report",P@5,1078,0.2859,0.266605,0.30538,-0.0146568,0.0363964,0.0727927
+comparison_set,R-base-relaxed,M7,"multilingual-E5-large, full report",P@10,1078,0.244156,0.227922,0.26067,-0.00584416,0.306369,0.612739
+comparison_set,R-base-relaxed,M7,"multilingual-E5-large, full report",R@5,1078,0.105642,0.0937653,0.118344,-0.0246751,0.00019998,0.00119988
+comparison_set,R-base-relaxed,M7,"multilingual-E5-large, full report",R@10,1078,0.153705,0.139873,0.167978,-0.017449,0.0158984,0.0317968
+comparison_set,R-base-relaxed,M7,"multilingual-E5-large, full report",MAP,1078,0.206892,0.193804,0.220476,-0.00641959,0.313969,0.313969
+comparison_set,R-base-relaxed,M7,"multilingual-E5-large, full report",MRR,1078,0.469564,0.444058,0.495406,-0.0285914,0.0114989,0.0459954
+comparison_set,R-base-relaxed,M7,"multilingual-E5-large, full report",nDCG@10,1078,0.312541,0.29363,0.331322,-0.0231222,0.00179982,0.00359964
+comparison_set,R-base-relaxed,M7,"multilingual-E5-large, full report",mAR,1078,0.792863,0.783474,0.802234,0.0464052,9.999e-05,0.00079992
+comparison_set,R-prov,M1,TF-IDF,P@5,1042,0.294434,0.276008,0.313244,0.0182342,0.00029997,0.00179982
+comparison_set,R-prov,M1,TF-IDF,P@10,1042,0.238292,0.222073,0.254415,0.0172745,9.999e-05,0.00079992
+comparison_set,R-prov,M1,TF-IDF,R@5,1042,0.190954,0.173375,0.209116,0.0296207,9.999e-05,0.00079992
+comparison_set,R-prov,M1,TF-IDF,R@10,1042,0.253205,0.233638,0.273221,0.0416176,9.999e-05,0.00079992
+comparison_set,R-prov,M1,TF-IDF,MAP,1042,0.276362,0.259087,0.293563,0.0492091,9.999e-05,0.00079992
+comparison_set,R-prov,M1,TF-IDF,MRR,1042,0.520363,0.493892,0.546139,0.0296057,0.00209979,0.010499
+comparison_set,R-prov,M1,TF-IDF,nDCG@10,1042,0.361071,0.341149,0.381202,0.0343726,9.999e-05,0.00079992
+comparison_set,R-prov,M1,TF-IDF,mAR,1042,0.854379,0.844937,0.863549,0.077395,9.999e-05,0.00079992
+comparison_set,R-prov,M2,BM25,P@5,1042,0.2762,0.257582,0.294818,,,
+comparison_set,R-prov,M2,BM25,P@10,1042,0.221017,0.20547,0.236948,,,
+comparison_set,R-prov,M2,BM25,R@5,1042,0.161333,0.14547,0.177872,,,
+comparison_set,R-prov,M2,BM25,R@10,1042,0.211587,0.194244,0.229577,,,
+comparison_set,R-prov,M2,BM25,MAP,1042,0.227153,0.210517,0.244291,,,
+comparison_set,R-prov,M2,BM25,MRR,1042,0.490758,0.464385,0.51704,,,
+comparison_set,R-prov,M2,BM25,nDCG@10,1042,0.326699,0.307264,0.346252,,,
+comparison_set,R-prov,M2,BM25,mAR,1042,0.776984,0.765639,0.788073,,,
+comparison_set,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,1042,0.283685,0.264875,0.302303,0.0074856,0.268373,0.507949
+comparison_set,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,1042,0.233589,0.217754,0.249808,0.012572,0.00919908,0.00919908
+comparison_set,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,1042,0.168373,0.1517,0.18572,0.00703985,0.328867,0.986601
+comparison_set,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,1042,0.220525,0.203165,0.238965,0.00893792,0.259774,0.673433
+comparison_set,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,1042,0.264754,0.248045,0.282012,0.037601,9.999e-05,0.00079992
+comparison_set,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,1042,0.493968,0.467764,0.520085,0.00321014,0.780722,1
+comparison_set,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,1042,0.339336,0.319769,0.35916,0.0126376,0.10079,0.19518
+comparison_set,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,1042,0.848598,0.838768,0.857911,0.0716142,9.999e-05,0.00079992
+comparison_set,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,1042,0.324184,0.30499,0.343378,0.0479846,9.999e-05,0.00079992
+comparison_set,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,1042,0.271401,0.254607,0.28839,0.0503839,9.999e-05,0.00079992
+comparison_set,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,1042,0.191985,0.175052,0.209816,0.0306521,9.999e-05,0.00079992
+comparison_set,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,1042,0.255789,0.237612,0.274608,0.0442013,9.999e-05,0.00079992
+comparison_set,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,1042,0.3161,0.298867,0.334125,0.0889472,9.999e-05,0.00079992
+comparison_set,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,1042,0.544937,0.518576,0.571283,0.0541792,9.999e-05,0.00079992
+comparison_set,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,1042,0.388433,0.36854,0.409081,0.0617345,9.999e-05,0.00079992
+comparison_set,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,1042,0.885182,0.876559,0.893432,0.108199,9.999e-05,0.00079992
+comparison_set,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,1042,0.29309,0.273896,0.312092,0.0168906,0.0166983,0.050095
+comparison_set,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,1042,0.251919,0.235413,0.268234,0.0309021,9.999e-05,0.00079992
+comparison_set,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,1042,0.15743,0.142009,0.173479,-0.00390293,0.584542,1
+comparison_set,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,1042,0.22133,0.20465,0.239006,0.00974229,0.224478,0.673433
+comparison_set,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,1042,0.27118,0.255054,0.288084,0.0440267,9.999e-05,0.00079992
+comparison_set,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,1042,0.504489,0.478003,0.531067,0.0137312,0.243276,0.729827
+comparison_set,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,1042,0.349942,0.330262,0.369951,0.0232432,0.00259974,0.00779922
+comparison_set,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,1042,0.857026,0.847234,0.866335,0.0800428,9.999e-05,0.00079992
+comparison_set,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,1042,0.283877,0.265451,0.302687,0.00767754,0.253975,0.507949
+comparison_set,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,1042,0.240307,0.224184,0.256814,0.0192898,0.00019998,0.00079992
+comparison_set,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,1042,0.161923,0.145599,0.178766,0.000589092,0.933507,1
+comparison_set,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,1042,0.220434,0.202554,0.238551,0.00884721,0.273173,0.673433
+comparison_set,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,1042,0.261971,0.245732,0.278655,0.0348183,9.999e-05,0.00079992
+comparison_set,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,1042,0.489029,0.46279,0.51567,-0.00172899,0.871913,1
+comparison_set,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,1042,0.339182,0.319517,0.359269,0.0124834,0.0975902,0.19518
+comparison_set,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,1042,0.850607,0.841223,0.859606,0.0736228,9.999e-05,0.00079992
+comparison_set,R-prov,M5,"gemini-embedding-001, full report",P@5,1042,0.300384,0.281766,0.319386,0.0241843,0.00039996,0.0019998
+comparison_set,R-prov,M5,"gemini-embedding-001, full report",P@10,1042,0.258061,0.241267,0.274664,0.0370441,9.999e-05,0.00079992
+comparison_set,R-prov,M5,"gemini-embedding-001, full report",R@5,1042,0.178543,0.161551,0.196247,0.0172092,0.0115988,0.0463954
+comparison_set,R-prov,M5,"gemini-embedding-001, full report",R@10,1042,0.240502,0.222437,0.259323,0.0289149,0.00029997,0.00179982
+comparison_set,R-prov,M5,"gemini-embedding-001, full report",MAP,1042,0.293778,0.276415,0.311492,0.0666251,9.999e-05,0.00079992
+comparison_set,R-prov,M5,"gemini-embedding-001, full report",MRR,1042,0.522826,0.497027,0.549054,0.0320686,0.00359964,0.0143986
+comparison_set,R-prov,M5,"gemini-embedding-001, full report",nDCG@10,1042,0.368165,0.347869,0.388727,0.0414662,9.999e-05,0.00079992
+comparison_set,R-prov,M5,"gemini-embedding-001, full report",mAR,1042,0.872117,0.863083,0.880546,0.0951337,9.999e-05,0.00079992
+comparison_set,R-prov,M6,"BGE-M3 (dense), full report",P@5,1042,0.251631,0.233397,0.269679,-0.0245681,9.999e-05,0.00079992
+comparison_set,R-prov,M6,"BGE-M3 (dense), full report",P@10,1042,0.207582,0.19184,0.223225,-0.0134357,0.00129987,0.00259974
+comparison_set,R-prov,M6,"BGE-M3 (dense), full report",R@5,1042,0.140388,0.125427,0.156127,-0.0209458,0.00079992,0.00479952
+comparison_set,R-prov,M6,"BGE-M3 (dense), full report",R@10,1042,0.188243,0.171399,0.205734,-0.0233447,0.00069993,0.00279972
+comparison_set,R-prov,M6,"BGE-M3 (dense), full report",MAP,1042,0.216851,0.201408,0.233103,-0.0103015,0.0429957,0.0429957
+comparison_set,R-prov,M6,"BGE-M3 (dense), full report",MRR,1042,0.443957,0.418094,0.469802,-0.0468005,9.999e-05,0.00079992
+comparison_set,R-prov,M6,"BGE-M3 (dense), full report",nDCG@10,1042,0.294969,0.276413,0.31423,-0.0317291,9.999e-05,0.00079992
+comparison_set,R-prov,M6,"BGE-M3 (dense), full report",mAR,1042,0.802359,0.791173,0.813082,0.0253758,9.999e-05,0.00079992
+comparison_set,R-prov,M7,"multilingual-E5-large, full report",P@5,1042,0.252207,0.234352,0.270441,-0.0239923,0.00059994,0.00239976
+comparison_set,R-prov,M7,"multilingual-E5-large, full report",P@10,1042,0.202591,0.187812,0.217853,-0.0184261,9.999e-05,0.00079992
+comparison_set,R-prov,M7,"multilingual-E5-large, full report",R@5,1042,0.137361,0.122235,0.153079,-0.0239725,0.00109989,0.00549945
+comparison_set,R-prov,M7,"multilingual-E5-large, full report",R@10,1042,0.183635,0.166926,0.200523,-0.0279519,0.00039996,0.0019998
+comparison_set,R-prov,M7,"multilingual-E5-large, full report",MAP,1042,0.209833,0.194535,0.225319,-0.0173203,0.00809919,0.0161984
+comparison_set,R-prov,M7,"multilingual-E5-large, full report",MRR,1042,0.450942,0.424869,0.477706,-0.039816,0.00039996,0.00239976
+comparison_set,R-prov,M7,"multilingual-E5-large, full report",nDCG@10,1042,0.292549,0.273827,0.31164,-0.0341498,9.999e-05,0.00079992
+comparison_set,R-prov,M7,"multilingual-E5-large, full report",mAR,1042,0.793925,0.782245,0.804745,0.0169416,0.00679932,0.00679932
+comparison_set,R-cat,M1,TF-IDF,P@5,1503,0.59481,0.577112,0.612908,0.0199601,0.00159984,0.00159984
+comparison_set,R-cat,M1,TF-IDF,P@10,1503,0.534864,0.518297,0.551896,0.0282768,9.999e-05,0.00079992
+comparison_set,R-cat,M1,TF-IDF,R@5,1503,0.0263297,0.0246712,0.0280604,0.0015705,0.00189981,0.00379962
+comparison_set,R-cat,M1,TF-IDF,R@10,1503,0.0471196,0.0440222,0.0503978,0.00481598,9.999e-05,0.00079992
+comparison_set,R-cat,M1,TF-IDF,MAP,1503,0.312332,0.30289,0.322068,0.0679252,9.999e-05,0.00079992
+comparison_set,R-cat,M1,TF-IDF,MRR,1503,0.765404,0.747604,0.783112,0.00147384,0.850315,0.850315
+comparison_set,R-cat,M1,TF-IDF,nDCG@10,1503,0.564799,0.54821,0.581557,0.0229897,9.999e-05,0.00079992
+comparison_set,R-cat,M1,TF-IDF,mAR,1503,0.686962,0.681724,0.692376,0.0629551,9.999e-05,0.00079992
+comparison_set,R-cat,M2,BM25,P@5,1503,0.57485,0.557552,0.592415,,,
+comparison_set,R-cat,M2,BM25,P@10,1503,0.506587,0.491151,0.522289,,,
+comparison_set,R-cat,M2,BM25,R@5,1503,0.0247592,0.0233679,0.0262376,,,
+comparison_set,R-cat,M2,BM25,R@10,1503,0.0423037,0.0399317,0.0448436,,,
+comparison_set,R-cat,M2,BM25,MAP,1503,0.244407,0.237287,0.251914,,,
+comparison_set,R-cat,M2,BM25,MRR,1503,0.76393,0.746243,0.781962,,,
+comparison_set,R-cat,M2,BM25,nDCG@10,1503,0.54181,0.526177,0.557591,,,
+comparison_set,R-cat,M2,BM25,mAR,1503,0.624007,0.618723,0.629282,,,
+comparison_set,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,1503,0.622488,0.605319,0.640186,0.0476381,9.999e-05,0.00079992
+comparison_set,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,1503,0.58503,0.569195,0.601,0.0784431,9.999e-05,0.00079992
+comparison_set,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,1503,0.0279587,0.0263268,0.0297491,0.00319948,9.999e-05,0.00079992
+comparison_set,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,1503,0.0506009,0.0478894,0.0535275,0.00829725,9.999e-05,0.00079992
+comparison_set,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,1503,0.335771,0.326013,0.345712,0.0913639,9.999e-05,0.00079992
+comparison_set,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,1503,0.781846,0.764718,0.799099,0.0179157,0.0460954,0.0921908
+comparison_set,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,1503,0.606571,0.590606,0.622923,0.0647617,9.999e-05,0.00079992
+comparison_set,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,1503,0.699337,0.693664,0.704955,0.0753305,9.999e-05,0.00079992
+comparison_set,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,1503,0.71976,0.703526,0.736261,0.14491,9.999e-05,0.00079992
+comparison_set,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,1503,0.675981,0.660413,0.691949,0.169395,9.999e-05,0.00079992
+comparison_set,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,1503,0.0335454,0.0315447,0.035739,0.00878617,9.999e-05,0.00079992
+comparison_set,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,1503,0.0608854,0.0574128,0.0646571,0.0185817,9.999e-05,0.00079992
+comparison_set,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,1503,0.433617,0.421722,0.445631,0.18921,9.999e-05,0.00079992
+comparison_set,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,1503,0.847425,0.832301,0.862352,0.0834949,9.999e-05,0.00079992
+comparison_set,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,1503,0.698151,0.682989,0.713717,0.156341,9.999e-05,0.00079992
+comparison_set,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,1503,0.754146,0.748114,0.760047,0.130139,9.999e-05,0.00079992
+comparison_set,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,1503,0.681836,0.664937,0.699135,0.106986,9.999e-05,0.00079992
+comparison_set,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,1503,0.634864,0.618896,0.651366,0.128277,9.999e-05,0.00079992
+comparison_set,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,1503,0.0308974,0.0290637,0.0329249,0.00613822,9.999e-05,0.00079992
+comparison_set,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,1503,0.0555802,0.0524423,0.0590239,0.0132765,9.999e-05,0.00079992
+comparison_set,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,1503,0.393244,0.38185,0.404915,0.148837,9.999e-05,0.00079992
+comparison_set,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,1503,0.822097,0.805924,0.838397,0.0581661,9.999e-05,0.00079992
+comparison_set,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,1503,0.658318,0.642518,0.674608,0.116508,9.999e-05,0.00079992
+comparison_set,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,1503,0.730592,0.72475,0.73645,0.106585,9.999e-05,0.00079992
+comparison_set,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,1503,0.651231,0.633799,0.668929,0.0763806,9.999e-05,0.00079992
+comparison_set,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,1503,0.60153,0.585427,0.61823,0.0949434,9.999e-05,0.00079992
+comparison_set,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,1503,0.0296085,0.0277043,0.0317103,0.0048493,9.999e-05,0.00079992
+comparison_set,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,1503,0.0524197,0.0494189,0.0556832,0.0101161,9.999e-05,0.00079992
+comparison_set,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,1503,0.369991,0.359274,0.380938,0.125584,9.999e-05,0.00079992
+comparison_set,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,1503,0.802729,0.785997,0.819808,0.0387988,9.999e-05,0.00079992
+comparison_set,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,1503,0.626992,0.610733,0.643442,0.0851822,9.999e-05,0.00079992
+comparison_set,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,1503,0.722147,0.716239,0.727934,0.0981404,9.999e-05,0.00079992
+comparison_set,R-cat,M5,"gemini-embedding-001, full report",P@5,1503,0.663207,0.645908,0.680639,0.0883566,9.999e-05,0.00079992
+comparison_set,R-cat,M5,"gemini-embedding-001, full report",P@10,1503,0.61976,0.60346,0.636527,0.113174,9.999e-05,0.00079992
+comparison_set,R-cat,M5,"gemini-embedding-001, full report",R@5,1503,0.0307142,0.028737,0.0328698,0.00595501,9.999e-05,0.00079992
+comparison_set,R-cat,M5,"gemini-embedding-001, full report",R@10,1503,0.0557325,0.0523905,0.0593998,0.0134288,9.999e-05,0.00079992
+comparison_set,R-cat,M5,"gemini-embedding-001, full report",MAP,1503,0.389464,0.378154,0.40095,0.145057,9.999e-05,0.00079992
+comparison_set,R-cat,M5,"gemini-embedding-001, full report",MRR,1503,0.79989,0.783187,0.816688,0.0359597,0.00019998,0.00079992
+comparison_set,R-cat,M5,"gemini-embedding-001, full report",nDCG@10,1503,0.641658,0.625402,0.658298,0.0998479,9.999e-05,0.00079992
+comparison_set,R-cat,M5,"gemini-embedding-001, full report",mAR,1503,0.734356,0.728336,0.74024,0.110349,9.999e-05,0.00079992
+comparison_set,R-cat,M6,"BGE-M3 (dense), full report",P@5,1503,0.542116,0.524152,0.560346,-0.0327345,9.999e-05,0.00079992
+comparison_set,R-cat,M6,"BGE-M3 (dense), full report",P@10,1503,0.500133,0.483965,0.516434,-0.00645376,0.321668,0.321668
+comparison_set,R-cat,M6,"BGE-M3 (dense), full report",R@5,1503,0.0246104,0.0228637,0.0264618,-0.000148811,0.833917,0.833917
+comparison_set,R-cat,M6,"BGE-M3 (dense), full report",R@10,1503,0.0436226,0.0407362,0.0466778,0.00131895,0.209679,0.209679
+comparison_set,R-cat,M6,"BGE-M3 (dense), full report",MAP,1503,0.281113,0.272017,0.290395,0.0367063,9.999e-05,0.00079992
+comparison_set,R-cat,M6,"BGE-M3 (dense), full report",MRR,1503,0.722673,0.704315,0.741134,-0.0412573,9.999e-05,0.00079992
+comparison_set,R-cat,M6,"BGE-M3 (dense), full report",nDCG@10,1503,0.523648,0.507182,0.540157,-0.018162,0.00409959,0.00409959
+comparison_set,R-cat,M6,"BGE-M3 (dense), full report",mAR,1503,0.666188,0.660794,0.671807,0.0421809,9.999e-05,0.00079992
+comparison_set,R-cat,M7,"multilingual-E5-large, full report",P@5,1503,0.507518,0.489554,0.525482,-0.067332,9.999e-05,0.00079992
+comparison_set,R-cat,M7,"multilingual-E5-large, full report",P@10,1503,0.457951,0.44185,0.473786,-0.0486361,9.999e-05,0.00079992
+comparison_set,R-cat,M7,"multilingual-E5-large, full report",R@5,1503,0.0220266,0.0204935,0.0236614,-0.00273259,9.999e-05,0.00079992
+comparison_set,R-cat,M7,"multilingual-E5-large, full report",R@10,1503,0.0383521,0.0358483,0.0410746,-0.0039516,0.00019998,0.00079992
+comparison_set,R-cat,M7,"multilingual-E5-large, full report",MAP,1503,0.253788,0.245714,0.261988,0.00938109,0.00889911,0.00889911
+comparison_set,R-cat,M7,"multilingual-E5-large, full report",MRR,1503,0.695346,0.676288,0.714565,-0.068584,9.999e-05,0.00079992
+comparison_set,R-cat,M7,"multilingual-E5-large, full report",nDCG@10,1503,0.483682,0.467087,0.499961,-0.0581275,9.999e-05,0.00079992
+comparison_set,R-cat,M7,"multilingual-E5-large, full report",mAR,1503,0.641825,0.63609,0.647445,0.0178177,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M1,TF-IDF,P@5,1503,0.590419,0.57179,0.608786,0.0326015,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M1,TF-IDF,P@10,1503,0.533733,0.516833,0.550965,0.038523,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M1,TF-IDF,R@5,1503,0.0270225,0.0253119,0.0288025,0.00183827,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M1,TF-IDF,R@10,1503,0.0482352,0.0450604,0.0515421,0.00487663,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M1,TF-IDF,MAP,1503,0.312642,0.302551,0.322739,0.070841,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M1,TF-IDF,MRR,1503,0.75759,0.738923,0.775597,0.0088854,0.253975,0.253975
+comparison_set,R-cat-mistral,M1,TF-IDF,nDCG@10,1503,0.561935,0.544848,0.579047,0.0339186,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M1,TF-IDF,mAR,1503,0.689098,0.683628,0.694694,0.0658147,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M2,BM25,P@5,1503,0.557818,0.540386,0.57525,,,
+comparison_set,R-cat-mistral,M2,BM25,P@10,1503,0.49521,0.479772,0.511111,,,
+comparison_set,R-cat-mistral,M2,BM25,R@5,1503,0.0251842,0.0237179,0.0267702,,,
+comparison_set,R-cat-mistral,M2,BM25,R@10,1503,0.0433585,0.0408139,0.0460691,,,
+comparison_set,R-cat-mistral,M2,BM25,MAP,1503,0.241801,0.234301,0.249643,,,
+comparison_set,R-cat-mistral,M2,BM25,MRR,1503,0.748705,0.730803,0.766765,,,
+comparison_set,R-cat-mistral,M2,BM25,nDCG@10,1503,0.528016,0.512325,0.544027,,,
+comparison_set,R-cat-mistral,M2,BM25,mAR,1503,0.623283,0.617971,0.628686,,,
+comparison_set,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,1503,0.614371,0.596806,0.632202,0.0565536,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,1503,0.579375,0.563207,0.595808,0.084165,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,1503,0.0275482,0.0257484,0.0296667,0.002364,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,1503,0.0498994,0.0471598,0.052864,0.0065409,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,1503,0.332503,0.322394,0.34274,0.090702,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,1503,0.772314,0.754758,0.78996,0.0236093,0.010299,0.0205979
+comparison_set,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,1503,0.599449,0.583332,0.6161,0.0714325,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,1503,0.699904,0.693817,0.70592,0.0766211,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,1503,0.711776,0.695143,0.728147,0.153959,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,1503,0.672056,0.655888,0.688024,0.176846,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,1503,0.0325394,0.0306075,0.0347567,0.00735517,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,1503,0.0593304,0.0562377,0.0625622,0.0159718,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,1503,0.427741,0.415431,0.439905,0.18594,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,1503,0.840153,0.824757,0.855538,0.0914482,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,1503,0.693317,0.677428,0.709011,0.165301,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,1503,0.754797,0.748363,0.760927,0.131514,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,1503,0.681969,0.664937,0.699135,0.124152,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,1503,0.634864,0.618628,0.651297,0.139654,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,1503,0.0302011,0.028399,0.0323175,0.00501691,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,1503,0.0540965,0.0513278,0.0570258,0.010738,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,1503,0.388994,0.377413,0.400677,0.147193,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,1503,0.82358,0.807725,0.839376,0.0748746,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,1503,0.658803,0.642761,0.675068,0.130786,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,1503,0.729796,0.723571,0.735834,0.106512,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,1503,0.643513,0.625815,0.661211,0.0856953,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,1503,0.597006,0.580304,0.613706,0.101796,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,1503,0.0283215,0.0267513,0.0299653,0.00313728,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,1503,0.0511545,0.0484139,0.0540384,0.00779597,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,1503,0.365043,0.353933,0.37639,0.123242,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,1503,0.786227,0.769057,0.803219,0.0375223,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,1503,0.619837,0.603115,0.636495,0.0918204,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,1503,0.724764,0.718613,0.730751,0.101481,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M5,"gemini-embedding-001, full report",P@5,1503,0.652295,0.634597,0.669993,0.0944777,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M5,"gemini-embedding-001, full report",P@10,1503,0.612176,0.595476,0.628743,0.116966,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M5,"gemini-embedding-001, full report",R@5,1503,0.0291963,0.027602,0.0309093,0.00401204,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M5,"gemini-embedding-001, full report",R@10,1503,0.0535091,0.0506395,0.0566373,0.0101506,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M5,"gemini-embedding-001, full report",MAP,1503,0.383588,0.371971,0.395189,0.141787,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M5,"gemini-embedding-001, full report",MRR,1503,0.786533,0.769096,0.803521,0.0378279,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M5,"gemini-embedding-001, full report",nDCG@10,1503,0.631503,0.61483,0.648249,0.103487,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M5,"gemini-embedding-001, full report",mAR,1503,0.735435,0.729106,0.741524,0.112151,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M6,"BGE-M3 (dense), full report",P@5,1503,0.533866,0.515635,0.552099,-0.0239521,0.00129987,0.00129987
+comparison_set,R-cat-mistral,M6,"BGE-M3 (dense), full report",P@10,1503,0.493746,0.476713,0.510447,-0.00146374,0.818818,0.818818
+comparison_set,R-cat-mistral,M6,"BGE-M3 (dense), full report",R@5,1503,0.0233049,0.0218396,0.0248383,-0.00187929,0.00019998,0.00079992
+comparison_set,R-cat-mistral,M6,"BGE-M3 (dense), full report",R@10,1503,0.0417977,0.0392755,0.0444492,-0.00156085,0.039796,0.039796
+comparison_set,R-cat-mistral,M6,"BGE-M3 (dense), full report",MAP,1503,0.277527,0.26828,0.286955,0.0357259,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M6,"BGE-M3 (dense), full report",MRR,1503,0.709968,0.690975,0.728858,-0.0387365,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M6,"BGE-M3 (dense), full report",nDCG@10,1503,0.515714,0.498501,0.532718,-0.0123021,0.0531947,0.0531947
+comparison_set,R-cat-mistral,M6,"BGE-M3 (dense), full report",mAR,1503,0.663225,0.657614,0.668974,0.0399416,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M7,"multilingual-E5-large, full report",P@5,1503,0.498337,0.480106,0.516434,-0.059481,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M7,"multilingual-E5-large, full report",P@10,1503,0.454092,0.437924,0.470461,-0.0411178,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M7,"multilingual-E5-large, full report",R@5,1503,0.0212437,0.0198667,0.0226825,-0.0039405,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M7,"multilingual-E5-large, full report",R@10,1503,0.0375417,0.0352184,0.0400292,-0.0058168,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M7,"multilingual-E5-large, full report",MAP,1503,0.252371,0.24415,0.260719,0.0105694,0.00239976,0.00239976
+comparison_set,R-cat-mistral,M7,"multilingual-E5-large, full report",MRR,1503,0.683791,0.664355,0.703203,-0.064914,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M7,"multilingual-E5-large, full report",nDCG@10,1503,0.477914,0.461222,0.49476,-0.0501019,9.999e-05,0.00079992
+comparison_set,R-cat-mistral,M7,"multilingual-E5-large, full report",mAR,1503,0.64164,0.635846,0.647387,0.0183571,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M1,TF-IDF,P@5,1503,0.710978,0.694345,0.727615,-0.0102462,0.10239,0.10239
+comparison_set,R-cat-multi,M1,TF-IDF,P@10,1503,0.657219,0.641583,0.673054,-0.00352628,0.523048,0.523048
+comparison_set,R-cat-multi,M1,TF-IDF,R@5,1503,0.0219731,0.0205552,0.0234905,0.000761188,0.106589,0.213179
+comparison_set,R-cat-multi,M1,TF-IDF,R@10,1503,0.0402254,0.0375045,0.0431564,0.00269975,0.00419958,0.00839916
+comparison_set,R-cat-multi,M1,TF-IDF,MAP,1503,0.399877,0.390324,0.409616,0.0637066,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M1,TF-IDF,MRR,1503,0.85818,0.843287,0.872708,-0.00854649,0.223078,0.50395
+comparison_set,R-cat-multi,M1,TF-IDF,nDCG@10,1503,0.685548,0.670237,0.701093,-0.00657364,0.206379,0.206379
+comparison_set,R-cat-multi,M1,TF-IDF,mAR,1503,0.679981,0.675059,0.684938,0.0548581,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M2,BM25,P@5,1503,0.721224,0.705256,0.736926,,,
+comparison_set,R-cat-multi,M2,BM25,P@10,1503,0.660745,0.645509,0.675848,,,
+comparison_set,R-cat-multi,M2,BM25,R@5,1503,0.0212119,0.0200482,0.0224284,,,
+comparison_set,R-cat-multi,M2,BM25,R@10,1503,0.0375257,0.0354939,0.0396796,,,
+comparison_set,R-cat-multi,M2,BM25,MAP,1503,0.336171,0.327787,0.344403,,,
+comparison_set,R-cat-multi,M2,BM25,MRR,1503,0.866726,0.852169,0.880803,,,
+comparison_set,R-cat-multi,M2,BM25,nDCG@10,1503,0.692122,0.677291,0.706914,,,
+comparison_set,R-cat-multi,M2,BM25,mAR,1503,0.625123,0.620226,0.629994,,,
+comparison_set,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,1503,0.739987,0.724285,0.755559,0.0187625,0.0121988,0.0243976
+comparison_set,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,1503,0.709381,0.694943,0.723886,0.0486361,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,1503,0.0230969,0.0217026,0.0246556,0.00188501,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,1503,0.042568,0.0401879,0.0451992,0.0050423,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,1503,0.421427,0.411969,0.431017,0.0852566,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,1503,0.870892,0.856807,0.884741,0.00416609,0.589941,0.589941
+comparison_set,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,1503,0.728358,0.714049,0.742556,0.0362359,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,1503,0.688159,0.682864,0.693499,0.0630366,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,1503,0.836194,0.823154,0.849238,0.11497,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,1503,0.795609,0.782435,0.808649,0.134864,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,1503,0.0269615,0.0252775,0.0288128,0.00574966,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,1503,0.050177,0.0471677,0.0535219,0.0126513,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,1503,0.502906,0.492223,0.513728,0.166736,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,1503,0.927675,0.916954,0.938272,0.0609489,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,1503,0.816058,0.803617,0.82861,0.123936,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,1503,0.725641,0.719766,0.731529,0.100518,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,1503,0.799867,0.785629,0.814371,0.0786427,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,1503,0.755888,0.741384,0.770592,0.095143,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,1503,0.0252974,0.0236689,0.0270944,0.00408549,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,1503,0.0462841,0.0434609,0.0493787,0.00875846,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,1503,0.462839,0.452266,0.473407,0.126668,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,1503,0.908301,0.89622,0.92017,0.0415748,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,1503,0.778464,0.76467,0.792529,0.0863423,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,1503,0.702132,0.696418,0.707927,0.077009,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,1503,0.762209,0.746903,0.777512,0.0409847,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,1503,0.715303,0.700399,0.730274,0.0545576,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,1503,0.0242209,0.0226188,0.0259833,0.00300904,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,1503,0.0437812,0.0411422,0.0466598,0.00625554,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,1503,0.441173,0.431009,0.451395,0.105003,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,1503,0.881374,0.867948,0.894795,0.0146476,0.0642936,0.257174
+comparison_set,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,1503,0.738596,0.724135,0.753096,0.0464737,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,1503,0.696264,0.690658,0.701942,0.0711413,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M5,"gemini-embedding-001, full report",P@5,1503,0.770858,0.755955,0.785895,0.0496341,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M5,"gemini-embedding-001, full report",P@10,1503,0.730539,0.716101,0.744844,0.0697937,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M5,"gemini-embedding-001, full report",R@5,1503,0.0249807,0.0233305,0.0267716,0.00376878,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M5,"gemini-embedding-001, full report",R@10,1503,0.046433,0.0434769,0.049717,0.00890731,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M5,"gemini-embedding-001, full report",MAP,1503,0.459454,0.448914,0.469996,0.123284,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M5,"gemini-embedding-001, full report",MRR,1503,0.877906,0.864459,0.89129,0.0111801,0.167983,0.50395
+comparison_set,R-cat-multi,M5,"gemini-embedding-001, full report",nDCG@10,1503,0.750153,0.735944,0.764413,0.0580305,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M5,"gemini-embedding-001, full report",mAR,1503,0.707376,0.701588,0.713281,0.0822537,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M6,"BGE-M3 (dense), full report",P@5,1503,0.652428,0.635662,0.669062,-0.0687957,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M6,"BGE-M3 (dense), full report",P@10,1503,0.613972,0.598402,0.629607,-0.0467731,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M6,"BGE-M3 (dense), full report",R@5,1503,0.020634,0.0191237,0.0222954,-0.000577839,0.351365,0.351365
+comparison_set,R-cat-multi,M6,"BGE-M3 (dense), full report",R@10,1503,0.0375526,0.0350266,0.0403201,2.69518e-05,0.978902,0.978902
+comparison_set,R-cat-multi,M6,"BGE-M3 (dense), full report",MAP,1503,0.35908,0.350203,0.367992,0.022909,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M6,"BGE-M3 (dense), full report",MRR,1503,0.813097,0.797199,0.829273,-0.0536294,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M6,"BGE-M3 (dense), full report",nDCG@10,1503,0.635632,0.620086,0.650942,-0.0564898,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M6,"BGE-M3 (dense), full report",mAR,1503,0.656518,0.651435,0.661776,0.0313947,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M7,"multilingual-E5-large, full report",P@5,1503,0.604524,0.587226,0.621823,-0.1167,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M7,"multilingual-E5-large, full report",P@10,1503,0.556886,0.541118,0.572721,-0.103859,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M7,"multilingual-E5-large, full report",R@5,1503,0.0184478,0.0170891,0.0199332,-0.0027641,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M7,"multilingual-E5-large, full report",R@10,1503,0.0327216,0.0304941,0.0351565,-0.00480411,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M7,"multilingual-E5-large, full report",MAP,1503,0.318172,0.309874,0.326493,-0.0179991,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M7,"multilingual-E5-large, full report",MRR,1503,0.777704,0.760405,0.794783,-0.0890222,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M7,"multilingual-E5-large, full report",nDCG@10,1503,0.582176,0.566207,0.598158,-0.109946,9.999e-05,0.00079992
+comparison_set,R-cat-multi,M7,"multilingual-E5-large, full report",mAR,1503,0.619436,0.614038,0.624956,-0.00568663,0.0828917,0.0828917
+comparison_set,R-cat-multi-mistral,M1,TF-IDF,P@5,1503,0.745709,0.729741,0.761544,-0.0212908,0.00039996,0.00119988
+comparison_set,R-cat-multi-mistral,M1,TF-IDF,P@10,1503,0.697073,0.681836,0.712176,-0.00745176,0.162184,0.162184
+comparison_set,R-cat-multi-mistral,M1,TF-IDF,R@5,1503,0.0196616,0.0184884,0.0209035,0.000209179,0.49575,0.49575
+comparison_set,R-cat-multi-mistral,M1,TF-IDF,R@10,1503,0.0361674,0.0339524,0.0385451,0.00153678,0.0133987,0.0133987
+comparison_set,R-cat-multi-mistral,M1,TF-IDF,MAP,1503,0.428308,0.41914,0.437526,0.058668,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M1,TF-IDF,MRR,1503,0.876906,0.862983,0.890361,-0.0195735,0.00329967,0.0131987
+comparison_set,R-cat-multi-mistral,M1,TF-IDF,nDCG@10,1503,0.722099,0.707282,0.73675,-0.0129017,0.0106989,0.0106989
+comparison_set,R-cat-multi-mistral,M1,TF-IDF,mAR,1503,0.670252,0.665738,0.674817,0.0475306,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M2,BM25,P@5,1503,0.766999,0.752628,0.781371,,,
+comparison_set,R-cat-multi-mistral,M2,BM25,P@10,1503,0.704524,0.690419,0.718696,,,
+comparison_set,R-cat-multi-mistral,M2,BM25,R@5,1503,0.0194524,0.0184247,0.0205536,,,
+comparison_set,R-cat-multi-mistral,M2,BM25,R@10,1503,0.0346306,0.0328027,0.0365633,,,
+comparison_set,R-cat-multi-mistral,M2,BM25,MAP,1503,0.36964,0.361438,0.378078,,,
+comparison_set,R-cat-multi-mistral,M2,BM25,MRR,1503,0.89648,0.883746,0.909214,,,
+comparison_set,R-cat-multi-mistral,M2,BM25,nDCG@10,1503,0.735001,0.721371,0.748777,,,
+comparison_set,R-cat-multi-mistral,M2,BM25,mAR,1503,0.622721,0.618201,0.627322,,,
+comparison_set,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,1503,0.777379,0.763007,0.79175,0.0103792,0.133187,0.133187
+comparison_set,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,1503,0.742981,0.729741,0.756487,0.0384564,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,1503,0.0201693,0.0190243,0.0214488,0.000716923,0.0809919,0.161984
+comparison_set,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,1503,0.0373108,0.03542,0.039386,0.00268017,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,1503,0.444504,0.435434,0.453489,0.0748646,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,1503,0.895341,0.882812,0.907758,-0.00113818,0.871113,1
+comparison_set,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,1503,0.762822,0.749533,0.776216,0.0278218,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,1503,0.673573,0.668274,0.679039,0.0508516,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,1503,0.855755,0.843377,0.868263,0.0887558,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,1503,0.820027,0.807385,0.832601,0.115502,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,1503,0.0225386,0.0212823,0.0239079,0.00308625,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,1503,0.0420481,0.0398935,0.0443499,0.00741742,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,1503,0.520349,0.510092,0.530735,0.150709,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,1503,0.933068,0.922873,0.94317,0.0365886,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,1503,0.8375,0.825453,0.84949,0.102499,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,1503,0.706078,0.700292,0.71196,0.083357,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,1503,0.82475,0.811045,0.838456,0.0577512,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,1503,0.783766,0.770259,0.797472,0.0792415,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,1503,0.0212451,0.020036,0.022554,0.00179268,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,1503,0.0391423,0.0371362,0.0412799,0.00451167,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,1503,0.483113,0.472865,0.493464,0.113473,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,1503,0.918254,0.906823,0.929456,0.0217743,0.00229977,0.0114989
+comparison_set,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,1503,0.8036,0.790463,0.816684,0.0685996,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,1503,0.684893,0.679346,0.690562,0.0621717,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,1503,0.785895,0.771257,0.800665,0.0188955,0.00809919,0.0161984
+comparison_set,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,1503,0.74358,0.729208,0.757553,0.0390552,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,1503,0.0202043,0.0191007,0.0214055,0.000751956,0.0141986,0.0425957
+comparison_set,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,1503,0.0374794,0.0354807,0.0396213,0.00284874,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,1503,0.462873,0.452881,0.473021,0.0932334,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,1503,0.894501,0.881629,0.907041,-0.00197807,0.781822,1
+comparison_set,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,1503,0.764855,0.750994,0.778497,0.0298539,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,1503,0.681628,0.676082,0.687196,0.0589063,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",P@5,1503,0.801198,0.787359,0.815569,0.0341983,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",P@10,1503,0.761211,0.747505,0.77505,0.0566866,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",R@5,1503,0.0209552,0.0198296,0.0221632,0.00150277,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",R@10,1503,0.0391547,0.0370491,0.0413998,0.0045241,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",MAP,1503,0.478986,0.468938,0.489285,0.109347,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",MRR,1503,0.898909,0.886431,0.91137,0.00242951,0.742726,1
+comparison_set,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",nDCG@10,1503,0.780215,0.766815,0.793638,0.0452143,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",mAR,1503,0.688973,0.683333,0.694719,0.066252,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",P@5,1503,0.694212,0.678377,0.709914,-0.0727878,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",P@10,1503,0.655556,0.640918,0.67006,-0.0489687,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",R@5,1503,0.0177928,0.0167627,0.0189113,-0.00165961,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",R@10,1503,0.0327011,0.030885,0.0346862,-0.00192955,0.00029997,0.00079992
+comparison_set,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",MAP,1503,0.385547,0.377191,0.393998,0.015907,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",MRR,1503,0.836221,0.821684,0.850773,-0.060259,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",nDCG@10,1503,0.67582,0.661159,0.69019,-0.0591805,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",mAR,1503,0.64617,0.641322,0.651179,0.023449,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",P@5,1503,0.639122,0.622355,0.656154,-0.127878,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",P@10,1503,0.594478,0.579308,0.610113,-0.110047,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",R@5,1503,0.0159169,0.0149486,0.0169415,-0.00353548,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",R@10,1503,0.0287549,0.0270741,0.0305646,-0.0058757,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",MAP,1503,0.345814,0.337499,0.353988,-0.0238252,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",MRR,1503,0.808341,0.791983,0.824499,-0.088139,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",nDCG@10,1503,0.618933,0.603564,0.634497,-0.116068,9.999e-05,0.00079992
+comparison_set,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",mAR,1503,0.611105,0.606,0.61619,-0.0116165,9.999e-05,0.00079992
+v2,R-base,M1,TF-IDF,P@5,1381,0.32643,0.309486,0.343085,0.026937,9.999e-05,0.00079992
+v2,R-base,M1,TF-IDF,P@10,1381,0.274801,0.259812,0.289428,0.0283128,9.999e-05,0.00079992
+v2,R-base,M1,TF-IDF,R@5,1381,0.155138,0.141162,0.169442,0.0229334,9.999e-05,0.00079992
+v2,R-base,M1,TF-IDF,R@10,1381,0.215484,0.198726,0.232433,0.040033,9.999e-05,0.00079992
+v2,R-base,M1,TF-IDF,MAP,1381,0.263466,0.24903,0.277819,0.0611021,9.999e-05,0.00079992
+v2,R-base,M1,TF-IDF,MRR,1381,0.52019,0.497739,0.542019,0.0207373,0.00689931,0.0206979
+v2,R-base,M1,TF-IDF,nDCG@10,1381,0.368702,0.351117,0.38593,0.0360659,9.999e-05,0.00079992
+v2,R-base,M1,TF-IDF,mAR,1381,0.851621,0.843705,0.859148,0.106656,9.999e-05,0.00079992
+v2,R-base,M2,BM25,P@5,1381,0.299493,0.282549,0.315713,,,
+v2,R-base,M2,BM25,P@10,1381,0.246488,0.231716,0.260681,,,
+v2,R-base,M2,BM25,R@5,1381,0.132204,0.118902,0.145456,,,
+v2,R-base,M2,BM25,R@10,1381,0.175451,0.160241,0.190382,,,
+v2,R-base,M2,BM25,MAP,1381,0.202364,0.188628,0.216008,,,
+v2,R-base,M2,BM25,MRR,1381,0.499453,0.476711,0.521859,,,
+v2,R-base,M2,BM25,nDCG@10,1381,0.332636,0.315469,0.349242,,,
+v2,R-base,M2,BM25,mAR,1381,0.744966,0.734877,0.754957,,,
+v2,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,1381,0.334685,0.317741,0.351484,0.0351919,9.999e-05,0.00079992
+v2,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,1381,0.290587,0.275525,0.305648,0.0440985,9.999e-05,0.00079992
+v2,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,1381,0.150316,0.136331,0.164557,0.0181115,0.00069993,0.00349965
+v2,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,1381,0.213143,0.196963,0.229714,0.0376918,9.999e-05,0.00079992
+v2,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,1381,0.27785,0.263773,0.291949,0.0754866,9.999e-05,0.00079992
+v2,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,1381,0.529327,0.507492,0.551562,0.0298743,0.0019998,0.0079992
+v2,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,1381,0.380986,0.363695,0.398012,0.0483498,9.999e-05,0.00079992
+v2,R-base,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,1381,0.867332,0.860351,0.874262,0.122366,9.999e-05,0.00079992
+v2,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,1381,0.378856,0.361043,0.396235,0.0793628,9.999e-05,0.00079992
+v2,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,1381,0.329109,0.313106,0.344533,0.0826213,9.999e-05,0.00079992
+v2,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,1381,0.17176,0.157305,0.186417,0.0395557,9.999e-05,0.00079992
+v2,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,1381,0.242288,0.225683,0.259096,0.0668368,9.999e-05,0.00079992
+v2,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,1381,0.335947,0.321019,0.350931,0.133583,9.999e-05,0.00079992
+v2,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,1381,0.579325,0.557441,0.601074,0.0798727,9.999e-05,0.00079992
+v2,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,1381,0.428314,0.410851,0.445544,0.0956773,9.999e-05,0.00079992
+v2,R-base,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,1381,0.909828,0.903947,0.915494,0.164863,9.999e-05,0.00079992
+v2,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,1381,0.34714,0.329327,0.364663,0.0476466,9.999e-05,0.00079992
+v2,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,1381,0.303548,0.288052,0.318899,0.0570601,9.999e-05,0.00079992
+v2,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,1381,0.133762,0.121585,0.146341,0.00155786,0.788821,1
+v2,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,1381,0.200584,0.185784,0.215454,0.0251325,9.999e-05,0.00079992
+v2,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,1381,0.284099,0.270589,0.297826,0.0817347,9.999e-05,0.00079992
+v2,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,1381,0.53238,0.51021,0.553935,0.0329273,0.00119988,0.0059994
+v2,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,1381,0.380436,0.363443,0.397319,0.0478,9.999e-05,0.00079992
+v2,R-base,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,1381,0.889835,0.883361,0.896219,0.144869,9.999e-05,0.00079992
+v2,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,1381,0.340188,0.322665,0.357277,0.0406951,9.999e-05,0.00079992
+v2,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,1381,0.2979,0.282259,0.313324,0.051412,9.999e-05,0.00079992
+v2,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,1381,0.150341,0.136615,0.164455,0.0181368,0.00109989,0.00439956
+v2,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,1381,0.209861,0.194048,0.22546,0.0344091,9.999e-05,0.00079992
+v2,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,1381,0.285587,0.271722,0.299177,0.083223,9.999e-05,0.00079992
+v2,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,1381,0.533858,0.511645,0.555495,0.0344056,0.00019998,0.00119988
+v2,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,1381,0.384746,0.367137,0.401651,0.0521099,9.999e-05,0.00079992
+v2,R-base,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,1381,0.881083,0.874604,0.887372,0.136117,9.999e-05,0.00079992
+v2,R-base,M5,"gemini-embedding-001, full report",P@5,1381,0.354236,0.336713,0.371474,0.0547429,9.999e-05,0.00079992
+v2,R-base,M5,"gemini-embedding-001, full report",P@10,1381,0.310934,0.295293,0.32643,0.0644461,9.999e-05,0.00079992
+v2,R-base,M5,"gemini-embedding-001, full report",R@5,1381,0.159809,0.146031,0.17431,0.0276043,9.999e-05,0.00079992
+v2,R-base,M5,"gemini-embedding-001, full report",R@10,1381,0.224592,0.208186,0.241001,0.0491404,9.999e-05,0.00079992
+v2,R-base,M5,"gemini-embedding-001, full report",MAP,1381,0.30936,0.294877,0.324066,0.106996,9.999e-05,0.00079992
+v2,R-base,M5,"gemini-embedding-001, full report",MRR,1381,0.554056,0.531904,0.575834,0.0546034,9.999e-05,0.00079992
+v2,R-base,M5,"gemini-embedding-001, full report",nDCG@10,1381,0.40463,0.386855,0.422087,0.0719934,9.999e-05,0.00079992
+v2,R-base,M5,"gemini-embedding-001, full report",mAR,1381,0.896234,0.889992,0.902257,0.151269,9.999e-05,0.00079992
+v2,R-base,M6,"BGE-M3 (dense), full report",P@5,1381,0.306155,0.289356,0.32281,0.00666184,0.254275,0.508549
+v2,R-base,M6,"BGE-M3 (dense), full report",P@10,1381,0.26336,0.248805,0.27777,0.0168718,9.999e-05,0.00079992
+v2,R-base,M6,"BGE-M3 (dense), full report",R@5,1381,0.128859,0.11627,0.141278,-0.00334508,0.527847,1
+v2,R-base,M6,"BGE-M3 (dense), full report",R@10,1381,0.186582,0.17155,0.20166,0.0111301,0.0452955,0.0905909
+v2,R-base,M6,"BGE-M3 (dense), full report",MAP,1381,0.232707,0.21961,0.245411,0.030343,9.999e-05,0.00079992
+v2,R-base,M6,"BGE-M3 (dense), full report",MRR,1381,0.498371,0.475858,0.520746,-0.00108178,0.906409,1
+v2,R-base,M6,"BGE-M3 (dense), full report",nDCG@10,1381,0.341249,0.324224,0.357586,0.00861306,0.158984,0.317968
+v2,R-base,M6,"BGE-M3 (dense), full report",mAR,1381,0.831514,0.823157,0.839728,0.0865479,9.999e-05,0.00079992
+v2,R-base,M7,"multilingual-E5-large, full report",P@5,1381,0.29819,0.28197,0.31441,-0.0013034,0.853315,0.853315
+v2,R-base,M7,"multilingual-E5-large, full report",P@10,1381,0.25076,0.23693,0.264301,0.00427227,0.372163,0.372163
+v2,R-base,M7,"multilingual-E5-large, full report",R@5,1381,0.131226,0.11838,0.144215,-0.000978211,0.866813,1
+v2,R-base,M7,"multilingual-E5-large, full report",R@10,1381,0.184866,0.169515,0.200045,0.00941479,0.133387,0.133387
+v2,R-base,M7,"multilingual-E5-large, full report",MAP,1381,0.219112,0.206765,0.231508,0.0167481,0.00319968,0.00319968
+v2,R-base,M7,"multilingual-E5-large, full report",MRR,1381,0.495234,0.472532,0.517512,-0.00421833,0.676132,1
+v2,R-base,M7,"multilingual-E5-large, full report",nDCG@10,1381,0.333106,0.316695,0.349196,0.000469432,0.942806,0.942806
+v2,R-base,M7,"multilingual-E5-large, full report",mAR,1381,0.824101,0.815924,0.832241,0.0791348,9.999e-05,0.00079992
+v2,R-base-relaxed,M1,TF-IDF,P@5,1780,0.347303,0.331348,0.363258,0.0293258,9.999e-05,0.00079992
+v2,R-base-relaxed,M1,TF-IDF,P@10,1780,0.298989,0.284438,0.313876,0.0302247,9.999e-05,0.00079992
+v2,R-base-relaxed,M1,TF-IDF,R@5,1780,0.128754,0.118438,0.139716,0.017191,9.999e-05,0.00079992
+v2,R-base-relaxed,M1,TF-IDF,R@10,1780,0.184851,0.172437,0.1979,0.0297335,9.999e-05,0.00079992
+v2,R-base-relaxed,M1,TF-IDF,MAP,1780,0.257278,0.245139,0.269661,0.0582017,9.999e-05,0.00079992
+v2,R-base-relaxed,M1,TF-IDF,MRR,1780,0.5301,0.510673,0.549723,0.0149528,0.0222978,0.0668933
+v2,R-base-relaxed,M1,TF-IDF,nDCG@10,1780,0.37421,0.358706,0.390122,0.0310393,9.999e-05,0.00079992
+v2,R-base-relaxed,M1,TF-IDF,mAR,1780,0.840864,0.83436,0.847225,0.101656,9.999e-05,0.00079992
+v2,R-base-relaxed,M2,BM25,P@5,1780,0.317978,0.302472,0.333708,,,
+v2,R-base-relaxed,M2,BM25,P@10,1780,0.268764,0.254775,0.283146,,,
+v2,R-base-relaxed,M2,BM25,R@5,1780,0.111563,0.101834,0.121702,,,
+v2,R-base-relaxed,M2,BM25,R@10,1780,0.155117,0.143539,0.167085,,,
+v2,R-base-relaxed,M2,BM25,MAP,1780,0.199077,0.187852,0.21056,,,
+v2,R-base-relaxed,M2,BM25,MRR,1780,0.515148,0.494709,0.535662,,,
+v2,R-base-relaxed,M2,BM25,nDCG@10,1780,0.343171,0.32772,0.359044,,,
+v2,R-base-relaxed,M2,BM25,mAR,1780,0.739208,0.730905,0.747301,,,
+v2,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,1780,0.356629,0.340449,0.372584,0.0386517,9.999e-05,0.00079992
+v2,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,1780,0.312697,0.298146,0.327586,0.0439326,9.999e-05,0.00079992
+v2,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,1780,0.123123,0.112858,0.133578,0.0115606,0.00759924,0.0227977
+v2,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,1780,0.180562,0.167963,0.193183,0.025445,9.999e-05,0.00079992
+v2,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,1780,0.273228,0.260681,0.285616,0.074151,9.999e-05,0.00079992
+v2,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,1780,0.532866,0.512997,0.552416,0.0177182,0.0321968,0.0668933
+v2,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,1780,0.382927,0.36721,0.398697,0.0397559,9.999e-05,0.00079992
+v2,R-base-relaxed,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,1780,0.848741,0.842314,0.855103,0.109533,9.999e-05,0.00079992
+v2,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,1780,0.399775,0.383258,0.416629,0.0817978,9.999e-05,0.00079992
+v2,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,1780,0.35309,0.338146,0.368483,0.0843258,9.999e-05,0.00079992
+v2,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,1780,0.150847,0.139366,0.162201,0.039284,9.999e-05,0.00079992
+v2,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,1780,0.212776,0.199489,0.22601,0.057659,9.999e-05,0.00079992
+v2,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,1780,0.337914,0.324155,0.351734,0.138837,9.999e-05,0.00079992
+v2,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,1780,0.588044,0.568962,0.607772,0.072896,9.999e-05,0.00079992
+v2,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,1780,0.43743,0.421178,0.453742,0.0942593,9.999e-05,0.00079992
+v2,R-base-relaxed,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,1780,0.890548,0.884987,0.896053,0.15134,9.999e-05,0.00079992
+v2,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,1780,0.366966,0.350674,0.383483,0.0489888,9.999e-05,0.00079992
+v2,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,1780,0.325787,0.311067,0.34073,0.0570225,9.999e-05,0.00079992
+v2,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,1780,0.120039,0.110097,0.130109,0.00847685,0.069993,0.139986
+v2,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,1780,0.177684,0.166145,0.189411,0.0225669,9.999e-05,0.00079992
+v2,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,1780,0.287161,0.27477,0.29973,0.0880846,9.999e-05,0.00079992
+v2,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,1780,0.542038,0.522559,0.561565,0.0268907,0.00229977,0.0114989
+v2,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,1780,0.393222,0.37752,0.409209,0.0500508,9.999e-05,0.00079992
+v2,R-base-relaxed,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,1780,0.866702,0.860573,0.872585,0.127494,9.999e-05,0.00079992
+v2,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,1780,0.358764,0.342247,0.375056,0.0407865,9.999e-05,0.00079992
+v2,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,1780,0.316517,0.301966,0.331461,0.0477528,9.999e-05,0.00079992
+v2,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,1780,0.124469,0.114236,0.13497,0.0129064,0.00409959,0.0163984
+v2,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,1780,0.178632,0.166686,0.190865,0.0235145,9.999e-05,0.00079992
+v2,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,1780,0.281174,0.268493,0.293737,0.0820977,9.999e-05,0.00079992
+v2,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,1780,0.543387,0.523662,0.563084,0.0282394,0.00089991,0.00539946
+v2,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,1780,0.388773,0.3729,0.405088,0.0456018,9.999e-05,0.00079992
+v2,R-base-relaxed,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,1780,0.858715,0.852442,0.864874,0.119508,9.999e-05,0.00079992
+v2,R-base-relaxed,M5,"gemini-embedding-001, full report",P@5,1780,0.37618,0.359551,0.393034,0.0582022,9.999e-05,0.00079992
+v2,R-base-relaxed,M5,"gemini-embedding-001, full report",P@10,1780,0.332978,0.317865,0.348202,0.0642135,9.999e-05,0.00079992
+v2,R-base-relaxed,M5,"gemini-embedding-001, full report",R@5,1780,0.134707,0.123752,0.145854,0.0231446,9.999e-05,0.00079992
+v2,R-base-relaxed,M5,"gemini-embedding-001, full report",R@10,1780,0.19508,0.182468,0.207836,0.0399626,9.999e-05,0.00079992
+v2,R-base-relaxed,M5,"gemini-embedding-001, full report",MAP,1780,0.304787,0.291571,0.318004,0.10571,9.999e-05,0.00079992
+v2,R-base-relaxed,M5,"gemini-embedding-001, full report",MRR,1780,0.560618,0.541003,0.580116,0.0454705,9.999e-05,0.00079992
+v2,R-base-relaxed,M5,"gemini-embedding-001, full report",nDCG@10,1780,0.4094,0.393127,0.42569,0.0662292,9.999e-05,0.00079992
+v2,R-base-relaxed,M5,"gemini-embedding-001, full report",mAR,1780,0.875265,0.869293,0.881163,0.136058,9.999e-05,0.00079992
+v2,R-base-relaxed,M6,"BGE-M3 (dense), full report",P@5,1780,0.329551,0.313146,0.345618,0.011573,0.0253975,0.0507949
+v2,R-base-relaxed,M6,"BGE-M3 (dense), full report",P@10,1780,0.285056,0.270449,0.299663,0.0162921,0.00019998,0.00079992
+v2,R-base-relaxed,M6,"BGE-M3 (dense), full report",R@5,1780,0.10634,0.0969763,0.115735,-0.00522296,0.210579,0.210579
+v2,R-base-relaxed,M6,"BGE-M3 (dense), full report",R@10,1780,0.151469,0.140259,0.162623,-0.00364843,0.463154,0.463154
+v2,R-base-relaxed,M6,"BGE-M3 (dense), full report",MAP,1780,0.228212,0.216842,0.239774,0.0291353,9.999e-05,0.00079992
+v2,R-base-relaxed,M6,"BGE-M3 (dense), full report",MRR,1780,0.509202,0.489114,0.529234,-0.00594605,0.465553,0.465553
+v2,R-base-relaxed,M6,"BGE-M3 (dense), full report",nDCG@10,1780,0.348463,0.332575,0.364516,0.00529259,0.315568,0.315568
+v2,R-base-relaxed,M6,"BGE-M3 (dense), full report",mAR,1780,0.81064,0.803507,0.817701,0.0714318,9.999e-05,0.00079992
+v2,R-base-relaxed,M7,"multilingual-E5-large, full report",P@5,1780,0.311798,0.296404,0.327416,-0.00617978,0.259074,0.259074
+v2,R-base-relaxed,M7,"multilingual-E5-large, full report",P@10,1780,0.268202,0.254719,0.281573,-0.000561798,0.907609,0.907609
+v2,R-base-relaxed,M7,"multilingual-E5-large, full report",R@5,1780,0.0970101,0.0880094,0.106232,-0.0145525,0.00059994,0.0029997
+v2,R-base-relaxed,M7,"multilingual-E5-large, full report",R@10,1780,0.142605,0.131767,0.153595,-0.012512,0.00989901,0.019798
+v2,R-base-relaxed,M7,"multilingual-E5-large, full report",MAP,1780,0.203423,0.193338,0.213838,0.00434599,0.345865,0.345865
+v2,R-base-relaxed,M7,"multilingual-E5-large, full report",MRR,1780,0.490868,0.470752,0.511248,-0.0242798,0.0049995,0.019998
+v2,R-base-relaxed,M7,"multilingual-E5-large, full report",nDCG@10,1780,0.32862,0.31348,0.343782,-0.0145505,0.00979902,0.019598
+v2,R-base-relaxed,M7,"multilingual-E5-large, full report",mAR,1780,0.800128,0.792911,0.8073,0.0609201,9.999e-05,0.00079992
+v2,R-prov,M1,TF-IDF,P@5,1682,0.317836,0.30214,0.333413,0.020214,9.999e-05,0.00079992
+v2,R-prov,M1,TF-IDF,P@10,1682,0.259631,0.246195,0.273127,0.0218193,9.999e-05,0.00079992
+v2,R-prov,M1,TF-IDF,R@5,1682,0.155868,0.14401,0.168148,0.0157313,9.999e-05,0.00079992
+v2,R-prov,M1,TF-IDF,R@10,1682,0.217431,0.203332,0.232013,0.029596,9.999e-05,0.00079992
+v2,R-prov,M1,TF-IDF,MAP,1682,0.254417,0.241415,0.267308,0.0427341,9.999e-05,0.00079992
+v2,R-prov,M1,TF-IDF,MRR,1682,0.534402,0.513486,0.555022,0.0192409,0.00559944,0.0223978
+v2,R-prov,M1,TF-IDF,nDCG@10,1682,0.359981,0.343999,0.375691,0.0279972,9.999e-05,0.00079992
+v2,R-prov,M1,TF-IDF,mAR,1682,0.853147,0.845974,0.859946,0.0791126,9.999e-05,0.00079992
+v2,R-prov,M2,BM25,P@5,1682,0.297622,0.282402,0.312726,,,
+v2,R-prov,M2,BM25,P@10,1682,0.237812,0.224673,0.250832,,,
+v2,R-prov,M2,BM25,R@5,1682,0.140137,0.128653,0.15208,,,
+v2,R-prov,M2,BM25,R@10,1682,0.187835,0.174814,0.201169,,,
+v2,R-prov,M2,BM25,MAP,1682,0.211683,0.199238,0.224214,,,
+v2,R-prov,M2,BM25,MRR,1682,0.515161,0.494167,0.53614,,,
+v2,R-prov,M2,BM25,nDCG@10,1682,0.331984,0.316415,0.347065,,,
+v2,R-prov,M2,BM25,mAR,1682,0.774034,0.765029,0.782687,,,
+v2,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,1682,0.300476,0.285256,0.315815,0.00285375,0.610139,0.610139
+v2,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,1682,0.250713,0.237574,0.264031,0.0129013,0.0009999,0.0019998
+v2,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,1682,0.13619,0.125015,0.147706,-0.00394662,0.434657,0.444556
+v2,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,1682,0.191528,0.17848,0.204753,0.00369352,0.517048,1
+v2,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,1682,0.244649,0.231931,0.257467,0.0329658,9.999e-05,0.00079992
+v2,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,1682,0.504869,0.484531,0.525807,-0.0102921,0.231977,0.69593
+v2,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,1682,0.33837,0.323209,0.354049,0.00638635,0.260174,0.260174
+v2,R-prov,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,1682,0.845265,0.838086,0.852285,0.0712304,9.999e-05,0.00079992
+v2,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,1682,0.344828,0.329251,0.360526,0.0472057,9.999e-05,0.00079992
+v2,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,1682,0.290963,0.277111,0.304756,0.053151,9.999e-05,0.00079992
+v2,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,1682,0.162283,0.150582,0.174371,0.0221461,9.999e-05,0.00079992
+v2,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,1682,0.224608,0.211155,0.238332,0.0367736,9.999e-05,0.00079992
+v2,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,1682,0.292551,0.279279,0.305573,0.0808677,9.999e-05,0.00079992
+v2,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,1682,0.56623,0.54543,0.586675,0.051069,9.999e-05,0.00079992
+v2,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,1682,0.391581,0.375712,0.407429,0.0595968,9.999e-05,0.00079992
+v2,R-prov,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,1682,0.878086,0.87123,0.884653,0.104051,9.999e-05,0.00079992
+v2,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,1682,0.314269,0.298692,0.330083,0.0166468,0.00339966,0.010199
+v2,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,1682,0.267598,0.254101,0.281214,0.029786,9.999e-05,0.00079992
+v2,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,1682,0.131905,0.12143,0.142742,-0.0082317,0.0990901,0.29727
+v2,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,1682,0.190294,0.177817,0.202817,0.00245934,0.661534,1
+v2,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,1682,0.248731,0.236519,0.260862,0.037048,9.999e-05,0.00079992
+v2,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,1682,0.520466,0.499555,0.541241,0.00530458,0.556044,1
+v2,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,1682,0.350402,0.33485,0.36571,0.0184177,0.00219978,0.00659934
+v2,R-prov,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,1682,0.85271,0.845306,0.859808,0.0786754,9.999e-05,0.00079992
+v2,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,1682,0.309156,0.293698,0.324732,0.0115339,0.0285971,0.0571943
+v2,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,1682,0.259156,0.245779,0.272652,0.0213436,9.999e-05,0.00079992
+v2,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,1682,0.134249,0.12348,0.1456,-0.00588739,0.222278,0.444556
+v2,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,1682,0.187114,0.174918,0.200017,-0.000721102,0.89891,1
+v2,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,1682,0.244646,0.232354,0.256823,0.0329631,9.999e-05,0.00079992
+v2,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,1682,0.517096,0.495595,0.537825,0.00193529,0.819518,1
+v2,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,1682,0.344321,0.328636,0.359667,0.0123368,0.0250975,0.050195
+v2,R-prov,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,1682,0.850216,0.843106,0.857199,0.0761816,9.999e-05,0.00079992
+v2,R-prov,M5,"gemini-embedding-001, full report",P@5,1682,0.321165,0.305826,0.336742,0.0235434,9.999e-05,0.00079992
+v2,R-prov,M5,"gemini-embedding-001, full report",P@10,1682,0.271106,0.257491,0.28478,0.0332937,9.999e-05,0.00079992
+v2,R-prov,M5,"gemini-embedding-001, full report",R@5,1682,0.149597,0.138015,0.161501,0.00946016,0.0542946,0.217178
+v2,R-prov,M5,"gemini-embedding-001, full report",R@10,1682,0.208956,0.195855,0.222645,0.0211209,0.00019998,0.00119988
+v2,R-prov,M5,"gemini-embedding-001, full report",MAP,1682,0.271634,0.258614,0.284757,0.059951,9.999e-05,0.00079992
+v2,R-prov,M5,"gemini-embedding-001, full report",MRR,1682,0.541627,0.520901,0.562157,0.0264657,0.00179982,0.0089991
+v2,R-prov,M5,"gemini-embedding-001, full report",nDCG@10,1682,0.367903,0.351748,0.383731,0.0359189,9.999e-05,0.00079992
+v2,R-prov,M5,"gemini-embedding-001, full report",mAR,1682,0.868224,0.861356,0.874949,0.0941893,9.999e-05,0.00079992
+v2,R-prov,M6,"BGE-M3 (dense), full report",P@5,1682,0.276694,0.261356,0.291798,-0.0209275,9.999e-05,0.00079992
+v2,R-prov,M6,"BGE-M3 (dense), full report",P@10,1682,0.228359,0.215398,0.24132,-0.00945303,0.00729927,0.00729927
+v2,R-prov,M6,"BGE-M3 (dense), full report",R@5,1682,0.12185,0.111165,0.13267,-0.0182869,0.00019998,0.00119988
+v2,R-prov,M6,"BGE-M3 (dense), full report",R@10,1682,0.169121,0.156565,0.18156,-0.0187135,0.00029997,0.00119988
+v2,R-prov,M6,"BGE-M3 (dense), full report",MAP,1682,0.207806,0.195728,0.219771,-0.00387733,0.324768,0.324768
+v2,R-prov,M6,"BGE-M3 (dense), full report",MRR,1682,0.474958,0.454159,0.495358,-0.0402027,9.999e-05,0.00079992
+v2,R-prov,M6,"BGE-M3 (dense), full report",nDCG@10,1682,0.307719,0.292543,0.322704,-0.0242645,9.999e-05,0.00079992
+v2,R-prov,M6,"BGE-M3 (dense), full report",mAR,1682,0.803017,0.794893,0.810693,0.0289828,9.999e-05,0.00079992
+v2,R-prov,M7,"multilingual-E5-large, full report",P@5,1682,0.270987,0.256121,0.285734,-0.026635,9.999e-05,0.00079992
+v2,R-prov,M7,"multilingual-E5-large, full report",P@10,1682,0.222057,0.209572,0.234484,-0.0157551,9.999e-05,0.00079992
+v2,R-prov,M7,"multilingual-E5-large, full report",R@5,1682,0.120932,0.110193,0.132061,-0.0192051,0.00019998,0.00119988
+v2,R-prov,M7,"multilingual-E5-large, full report",R@10,1682,0.166176,0.153949,0.17891,-0.0216584,0.00019998,0.00119988
+v2,R-prov,M7,"multilingual-E5-large, full report",MAP,1682,0.196783,0.185324,0.208192,-0.0148998,0.00229977,0.00459954
+v2,R-prov,M7,"multilingual-E5-large, full report",MRR,1682,0.470234,0.449337,0.491137,-0.0449273,9.999e-05,0.00079992
+v2,R-prov,M7,"multilingual-E5-large, full report",nDCG@10,1682,0.300019,0.285001,0.31485,-0.0319645,9.999e-05,0.00079992
+v2,R-prov,M7,"multilingual-E5-large, full report",mAR,1682,0.798106,0.789852,0.806042,0.0240713,9.999e-05,0.00079992
+v2,R-cat,M1,TF-IDF,P@5,2390,0.613222,0.598745,0.627531,0.0286192,9.999e-05,0.00079992
+v2,R-cat,M1,TF-IDF,P@10,2390,0.557029,0.543431,0.57046,0.0316318,9.999e-05,0.00079992
+v2,R-cat,M1,TF-IDF,R@5,2390,0.0178,0.0169554,0.0186762,0.0010345,9.999e-05,0.00079992
+v2,R-cat,M1,TF-IDF,R@10,2390,0.0318907,0.0303791,0.0334572,0.00244513,9.999e-05,0.00079992
+v2,R-cat,M1,TF-IDF,MAP,2390,0.301277,0.293709,0.309087,0.0699902,9.999e-05,0.00079992
+v2,R-cat,M1,TF-IDF,MRR,2390,0.769742,0.755622,0.783899,0.00604194,0.30457,0.30457
+v2,R-cat,M1,TF-IDF,nDCG@10,2390,0.583972,0.570331,0.597372,0.0277266,9.999e-05,0.00079992
+v2,R-cat,M1,TF-IDF,mAR,2390,0.683801,0.679419,0.688115,0.067414,9.999e-05,0.00079992
+v2,R-cat,M2,BM25,P@5,2390,0.584603,0.570458,0.598326,,,
+v2,R-cat,M2,BM25,P@10,2390,0.525397,0.512594,0.537992,,,
+v2,R-cat,M2,BM25,R@5,2390,0.0167655,0.0160035,0.0175504,,,
+v2,R-cat,M2,BM25,R@10,2390,0.0294455,0.0281503,0.0307556,,,
+v2,R-cat,M2,BM25,MAP,2390,0.231287,0.225238,0.237478,,,
+v2,R-cat,M2,BM25,MRR,2390,0.7637,0.74937,0.777455,,,
+v2,R-cat,M2,BM25,nDCG@10,2390,0.556246,0.543221,0.568862,,,
+v2,R-cat,M2,BM25,mAR,2390,0.616387,0.612167,0.620668,,,
+v2,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,2390,0.640251,0.626025,0.654059,0.0556485,9.999e-05,0.00079992
+v2,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,2390,0.605565,0.592259,0.618829,0.0801674,9.999e-05,0.00079992
+v2,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,2390,0.018532,0.0176809,0.019422,0.00176647,9.999e-05,0.00079992
+v2,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,2390,0.0344221,0.0329078,0.0359888,0.00497655,9.999e-05,0.00079992
+v2,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,2390,0.32492,0.317002,0.332963,0.0936326,9.999e-05,0.00079992
+v2,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,2390,0.786411,0.772878,0.800037,0.0227109,0.00119988,0.00359964
+v2,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,2390,0.624427,0.611115,0.637671,0.0681811,9.999e-05,0.00079992
+v2,R-cat,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,2390,0.699085,0.694479,0.703581,0.0826977,9.999e-05,0.00079992
+v2,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,2390,0.740669,0.727531,0.753389,0.156067,9.999e-05,0.00079992
+v2,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,2390,0.70205,0.689205,0.714394,0.176653,9.999e-05,0.00079992
+v2,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,2390,0.021793,0.0207901,0.0228348,0.00502752,9.999e-05,0.00079992
+v2,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,2390,0.0404658,0.0387422,0.0422368,0.0110203,9.999e-05,0.00079992
+v2,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,2390,0.418157,0.408561,0.427738,0.18687,9.999e-05,0.00079992
+v2,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,2390,0.857293,0.845463,0.868509,0.0935935,9.999e-05,0.00079992
+v2,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,2390,0.721392,0.708821,0.733427,0.165146,9.999e-05,0.00079992
+v2,R-cat,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,2390,0.749985,0.744971,0.754926,0.133598,9.999e-05,0.00079992
+v2,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,2390,0.707448,0.693638,0.720586,0.122845,9.999e-05,0.00079992
+v2,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,2390,0.670962,0.657782,0.683682,0.145565,9.999e-05,0.00079992
+v2,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,2390,0.0204954,0.0195449,0.021491,0.00372987,9.999e-05,0.00079992
+v2,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,2390,0.0383349,0.0366096,0.0400988,0.00888933,9.999e-05,0.00079992
+v2,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,2390,0.38114,0.372076,0.390142,0.149853,9.999e-05,0.00079992
+v2,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,2390,0.82966,0.81693,0.841946,0.0659601,9.999e-05,0.00079992
+v2,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,2390,0.689586,0.676547,0.70214,0.13334,9.999e-05,0.00079992
+v2,R-cat,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,2390,0.731164,0.726255,0.73598,0.114777,9.999e-05,0.00079992
+v2,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,2390,0.66954,0.655565,0.683013,0.0849372,9.999e-05,0.00079992
+v2,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,2390,0.627531,0.6141,0.640586,0.102134,9.999e-05,0.00079992
+v2,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,2390,0.0194123,0.0184421,0.0204247,0.00264677,9.999e-05,0.00079992
+v2,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,2390,0.0355967,0.0339822,0.0372657,0.00615121,9.999e-05,0.00079992
+v2,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,2390,0.356106,0.347402,0.364859,0.124819,9.999e-05,0.00079992
+v2,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,2390,0.816383,0.803032,0.82891,0.0526834,9.999e-05,0.00079992
+v2,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,2390,0.649598,0.636136,0.662334,0.0933523,9.999e-05,0.00079992
+v2,R-cat,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,2390,0.717693,0.712921,0.722441,0.101306,9.999e-05,0.00079992
+v2,R-cat,M5,"gemini-embedding-001, full report",P@5,2390,0.67523,0.661255,0.688787,0.0906276,9.999e-05,0.00079992
+v2,R-cat,M5,"gemini-embedding-001, full report",P@10,2390,0.637866,0.62456,0.650711,0.112469,9.999e-05,0.00079992
+v2,R-cat,M5,"gemini-embedding-001, full report",R@5,2390,0.0198034,0.0188133,0.0208301,0.00303789,9.999e-05,0.00079992
+v2,R-cat,M5,"gemini-embedding-001, full report",R@10,2390,0.0366327,0.0349365,0.0383448,0.00718721,9.999e-05,0.00079992
+v2,R-cat,M5,"gemini-embedding-001, full report",MAP,2390,0.372654,0.363657,0.381775,0.141367,9.999e-05,0.00079992
+v2,R-cat,M5,"gemini-embedding-001, full report",MRR,2390,0.813534,0.800434,0.826318,0.0498345,9.999e-05,0.00079992
+v2,R-cat,M5,"gemini-embedding-001, full report",nDCG@10,2390,0.657865,0.644533,0.670695,0.101619,9.999e-05,0.00079992
+v2,R-cat,M5,"gemini-embedding-001, full report",mAR,2390,0.729917,0.725005,0.734839,0.11353,9.999e-05,0.00079992
+v2,R-cat,M6,"BGE-M3 (dense), full report",P@5,2390,0.582008,0.567197,0.596402,-0.00259414,0.682932,0.682932
+v2,R-cat,M6,"BGE-M3 (dense), full report",P@10,2390,0.537322,0.52389,0.550587,0.0119247,0.0226977,0.0226977
+v2,R-cat,M6,"BGE-M3 (dense), full report",R@5,2390,0.01698,0.0161143,0.0178623,0.000214545,0.462654,0.462654
+v2,R-cat,M6,"BGE-M3 (dense), full report",R@10,2390,0.030647,0.029121,0.0321975,0.00120148,0.0178982,0.0178982
+v2,R-cat,M6,"BGE-M3 (dense), full report",MAP,2390,0.28124,0.273669,0.288927,0.0499526,9.999e-05,0.00079992
+v2,R-cat,M6,"BGE-M3 (dense), full report",MRR,2390,0.745198,0.730438,0.759246,-0.0185019,0.0109989,0.0219978
+v2,R-cat,M6,"BGE-M3 (dense), full report",nDCG@10,2390,0.560844,0.547074,0.574169,0.00459837,0.376662,0.376662
+v2,R-cat,M6,"BGE-M3 (dense), full report",mAR,2390,0.669786,0.665224,0.674379,0.0533983,9.999e-05,0.00079992
+v2,R-cat,M7,"multilingual-E5-large, full report",P@5,2390,0.532218,0.517992,0.54636,-0.0523849,9.999e-05,0.00079992
+v2,R-cat,M7,"multilingual-E5-large, full report",P@10,2390,0.488243,0.474937,0.501088,-0.0371548,9.999e-05,0.00079992
+v2,R-cat,M7,"multilingual-E5-large, full report",R@5,2390,0.0148484,0.01408,0.0156371,-0.00191709,9.999e-05,0.00079992
+v2,R-cat,M7,"multilingual-E5-large, full report",R@10,2390,0.0266831,0.0253449,0.0280877,-0.00276245,9.999e-05,0.00079992
+v2,R-cat,M7,"multilingual-E5-large, full report",MAP,2390,0.243603,0.237231,0.249968,0.0123165,9.999e-05,0.00079992
+v2,R-cat,M7,"multilingual-E5-large, full report",MRR,2390,0.709129,0.694057,0.724188,-0.0545708,9.999e-05,0.00079992
+v2,R-cat,M7,"multilingual-E5-large, full report",nDCG@10,2390,0.511722,0.498273,0.524879,-0.0445238,9.999e-05,0.00079992
+v2,R-cat,M7,"multilingual-E5-large, full report",mAR,2390,0.642084,0.63771,0.646433,0.0256969,9.999e-05,0.00079992
+v2,R-cat-mistral,M1,TF-IDF,P@5,2390,0.607782,0.592887,0.622343,0.0305439,9.999e-05,0.00079992
+v2,R-cat-mistral,M1,TF-IDF,P@10,2390,0.556904,0.543138,0.570294,0.0368619,9.999e-05,0.00079992
+v2,R-cat-mistral,M1,TF-IDF,R@5,2390,0.0176484,0.0168876,0.0184329,0.000936954,9.999e-05,0.00079992
+v2,R-cat-mistral,M1,TF-IDF,R@10,2390,0.0322989,0.0308377,0.03382,0.00255998,9.999e-05,0.00079992
+v2,R-cat-mistral,M1,TF-IDF,MAP,2390,0.303715,0.295647,0.311956,0.0729378,9.999e-05,0.00079992
+v2,R-cat-mistral,M1,TF-IDF,MRR,2390,0.759102,0.744928,0.773399,0.00845143,0.150585,0.150585
+v2,R-cat-mistral,M1,TF-IDF,nDCG@10,2390,0.581517,0.567791,0.594944,0.0323497,9.999e-05,0.00079992
+v2,R-cat-mistral,M1,TF-IDF,mAR,2390,0.68604,0.681547,0.69051,0.0697253,9.999e-05,0.00079992
+v2,R-cat-mistral,M2,BM25,P@5,2390,0.577238,0.562762,0.591046,,,
+v2,R-cat-mistral,M2,BM25,P@10,2390,0.520042,0.506986,0.532972,,,
+v2,R-cat-mistral,M2,BM25,R@5,2390,0.0167114,0.0159793,0.0174549,,,
+v2,R-cat-mistral,M2,BM25,R@10,2390,0.0297389,0.028393,0.0310889,,,
+v2,R-cat-mistral,M2,BM25,MAP,2390,0.230778,0.224322,0.237275,,,
+v2,R-cat-mistral,M2,BM25,MRR,2390,0.75065,0.736076,0.764811,,,
+v2,R-cat-mistral,M2,BM25,nDCG@10,2390,0.549167,0.535841,0.561963,,,
+v2,R-cat-mistral,M2,BM25,mAR,2390,0.616315,0.611991,0.620729,,,
+v2,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,2390,0.633473,0.619163,0.647448,0.0562343,9.999e-05,0.00079992
+v2,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,2390,0.602803,0.589204,0.616151,0.0827615,9.999e-05,0.00079992
+v2,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,2390,0.018177,0.0172165,0.0193728,0.00146561,9.999e-05,0.00079992
+v2,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,2390,0.033781,0.0323156,0.0354077,0.00404212,9.999e-05,0.00079992
+v2,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,2390,0.321682,0.313649,0.32968,0.0909047,9.999e-05,0.00079992
+v2,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,2390,0.775221,0.761041,0.788686,0.024571,0.00069993,0.00209979
+v2,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,2390,0.619492,0.605814,0.632754,0.0703245,9.999e-05,0.00079992
+v2,R-cat-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,2390,0.699413,0.69468,0.704023,0.083098,9.999e-05,0.00079992
+v2,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,2390,0.736653,0.723347,0.749289,0.159414,9.999e-05,0.00079992
+v2,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,2390,0.698703,0.685732,0.71113,0.178661,9.999e-05,0.00079992
+v2,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,2390,0.0212597,0.0202715,0.022483,0.00454822,9.999e-05,0.00079992
+v2,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,2390,0.0395754,0.0379877,0.0412777,0.0098365,9.999e-05,0.00079992
+v2,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,2390,0.414726,0.404992,0.424418,0.183948,9.999e-05,0.00079992
+v2,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,2390,0.849825,0.837815,0.861363,0.0991751,9.999e-05,0.00079992
+v2,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,2390,0.71782,0.705014,0.730001,0.168652,9.999e-05,0.00079992
+v2,R-cat-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,2390,0.751069,0.746099,0.755998,0.134754,9.999e-05,0.00079992
+v2,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,2390,0.701757,0.68795,0.715146,0.124519,9.999e-05,0.00079992
+v2,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,2390,0.666151,0.652635,0.678954,0.146109,9.999e-05,0.00079992
+v2,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,2390,0.0198911,0.0189189,0.0211009,0.00317966,9.999e-05,0.00079992
+v2,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,2390,0.037028,0.0355022,0.0386614,0.00728916,9.999e-05,0.00079992
+v2,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,2390,0.378593,0.369397,0.387702,0.147816,9.999e-05,0.00079992
+v2,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,2390,0.8279,0.814963,0.840078,0.0772499,9.999e-05,0.00079992
+v2,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,2390,0.68518,0.671756,0.697777,0.136013,9.999e-05,0.00079992
+v2,R-cat-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,2390,0.731358,0.726443,0.736129,0.115043,9.999e-05,0.00079992
+v2,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,2390,0.665941,0.651632,0.679331,0.0887029,9.999e-05,0.00079992
+v2,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,2390,0.626276,0.612677,0.639332,0.106234,9.999e-05,0.00079992
+v2,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,2390,0.0186162,0.0178934,0.0193476,0.00190474,9.999e-05,0.00079992
+v2,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,2390,0.0346636,0.0332745,0.0360535,0.00492474,9.999e-05,0.00079992
+v2,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,2390,0.353446,0.34473,0.362229,0.122668,9.999e-05,0.00079992
+v2,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,2390,0.808199,0.794678,0.821139,0.0575485,9.999e-05,0.00079992
+v2,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,2390,0.646846,0.633099,0.65973,0.0976789,9.999e-05,0.00079992
+v2,R-cat-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,2390,0.719799,0.71504,0.724547,0.103484,9.999e-05,0.00079992
+v2,R-cat-mistral,M5,"gemini-embedding-001, full report",P@5,2390,0.670377,0.656234,0.684184,0.0931381,9.999e-05,0.00079992
+v2,R-cat-mistral,M5,"gemini-embedding-001, full report",P@10,2390,0.636109,0.622427,0.649163,0.116067,9.999e-05,0.00079992
+v2,R-cat-mistral,M5,"gemini-embedding-001, full report",R@5,2390,0.0188942,0.0181548,0.0196363,0.00218281,9.999e-05,0.00079992
+v2,R-cat-mistral,M5,"gemini-embedding-001, full report",R@10,2390,0.0355581,0.0341447,0.0369925,0.0058192,9.999e-05,0.00079992
+v2,R-cat-mistral,M5,"gemini-embedding-001, full report",MAP,2390,0.369277,0.3601,0.378452,0.138499,9.999e-05,0.00079992
+v2,R-cat-mistral,M5,"gemini-embedding-001, full report",MRR,2390,0.799639,0.785916,0.812748,0.0489886,9.999e-05,0.00079992
+v2,R-cat-mistral,M5,"gemini-embedding-001, full report",nDCG@10,2390,0.653192,0.639524,0.666175,0.104025,9.999e-05,0.00079992
+v2,R-cat-mistral,M5,"gemini-embedding-001, full report",mAR,2390,0.730747,0.72582,0.735627,0.114432,9.999e-05,0.00079992
+v2,R-cat-mistral,M6,"BGE-M3 (dense), full report",P@5,2390,0.578159,0.563513,0.592636,0.000920502,0.891511,0.891511
+v2,R-cat-mistral,M6,"BGE-M3 (dense), full report",P@10,2390,0.535397,0.521632,0.548787,0.0153556,0.00229977,0.00229977
+v2,R-cat-mistral,M6,"BGE-M3 (dense), full report",R@5,2390,0.0162714,0.0155397,0.017,-0.000440016,0.040396,0.040396
+v2,R-cat-mistral,M6,"BGE-M3 (dense), full report",R@10,2390,0.0297534,0.0284192,0.031096,1.4563e-05,0.970903,0.970903
+v2,R-cat-mistral,M6,"BGE-M3 (dense), full report",MAP,2390,0.279685,0.27216,0.287337,0.0489077,9.999e-05,0.00079992
+v2,R-cat-mistral,M6,"BGE-M3 (dense), full report",MRR,2390,0.733719,0.718935,0.748095,-0.0169313,0.0179982,0.0359964
+v2,R-cat-mistral,M6,"BGE-M3 (dense), full report",nDCG@10,2390,0.556792,0.543118,0.570265,0.00762428,0.130887,0.130887
+v2,R-cat-mistral,M6,"BGE-M3 (dense), full report",mAR,2390,0.669099,0.664533,0.673621,0.0527838,9.999e-05,0.00079992
+v2,R-cat-mistral,M7,"multilingual-E5-large, full report",P@5,2390,0.52569,0.511213,0.540251,-0.0515481,9.999e-05,0.00079992
+v2,R-cat-mistral,M7,"multilingual-E5-large, full report",P@10,2390,0.48523,0.471715,0.498661,-0.0348117,9.999e-05,0.00079992
+v2,R-cat-mistral,M7,"multilingual-E5-large, full report",R@5,2390,0.0143291,0.0136726,0.0149863,-0.00238234,9.999e-05,0.00079992
+v2,R-cat-mistral,M7,"multilingual-E5-large, full report",R@10,2390,0.0259436,0.0247551,0.0271472,-0.00379526,9.999e-05,0.00079992
+v2,R-cat-mistral,M7,"multilingual-E5-large, full report",MAP,2390,0.241969,0.235617,0.248415,0.0111912,9.999e-05,0.00079992
+v2,R-cat-mistral,M7,"multilingual-E5-large, full report",MRR,2390,0.700686,0.685242,0.716186,-0.049964,9.999e-05,0.00079992
+v2,R-cat-mistral,M7,"multilingual-E5-large, full report",nDCG@10,2390,0.507781,0.494002,0.52133,-0.0413859,9.999e-05,0.00079992
+v2,R-cat-mistral,M7,"multilingual-E5-large, full report",mAR,2390,0.641898,0.637596,0.646219,0.0255828,9.999e-05,0.00079992
+v2,R-cat-multi,M1,TF-IDF,P@5,2390,0.715146,0.701841,0.728287,0.00753138,0.120988,0.120988
+v2,R-cat-multi,M1,TF-IDF,P@10,2390,0.664603,0.652008,0.67728,0.0111715,0.00809919,0.0161984
+v2,R-cat-multi,M1,TF-IDF,R@5,2390,0.0150959,0.0143234,0.0159024,0.000615077,0.00219978,0.00439956
+v2,R-cat-multi,M1,TF-IDF,R@10,2390,0.0275334,0.0261816,0.0289545,0.00167199,9.999e-05,0.00079992
+v2,R-cat-multi,M1,TF-IDF,MAP,2390,0.375347,0.368201,0.382656,0.0693082,9.999e-05,0.00079992
+v2,R-cat-multi,M1,TF-IDF,MRR,2390,0.84851,0.836579,0.860431,-0.00639358,0.235276,0.235276
+v2,R-cat-multi,M1,TF-IDF,nDCG@10,2390,0.689499,0.677063,0.701896,0.00749099,0.0552945,0.0552945
+v2,R-cat-multi,M1,TF-IDF,mAR,2390,0.677497,0.673497,0.681442,0.0586141,9.999e-05,0.00079992
+v2,R-cat-multi,M2,BM25,P@5,2390,0.707615,0.694728,0.72,,,
+v2,R-cat-multi,M2,BM25,P@10,2390,0.653431,0.641338,0.665146,,,
+v2,R-cat-multi,M2,BM25,R@5,2390,0.0144808,0.0137828,0.0151901,,,
+v2,R-cat-multi,M2,BM25,R@10,2390,0.0258614,0.0247269,0.0270087,,,
+v2,R-cat-multi,M2,BM25,MAP,2390,0.306039,0.299783,0.312418,,,
+v2,R-cat-multi,M2,BM25,MRR,2390,0.854904,0.84329,0.866351,,,
+v2,R-cat-multi,M2,BM25,nDCG@10,2390,0.682008,0.670071,0.693456,,,
+v2,R-cat-multi,M2,BM25,mAR,2390,0.618882,0.614925,0.622885,,,
+v2,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,2390,0.748787,0.736151,0.761004,0.0411715,9.999e-05,0.00079992
+v2,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,2390,0.716402,0.704519,0.728117,0.0629707,9.999e-05,0.00079992
+v2,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,2390,0.0156848,0.014952,0.016457,0.00120397,9.999e-05,0.00079992
+v2,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,2390,0.0294811,0.0281105,0.0309193,0.00361969,9.999e-05,0.00079992
+v2,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,2390,0.397681,0.390381,0.405097,0.0916423,9.999e-05,0.00079992
+v2,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,2390,0.866725,0.855423,0.877883,0.0118212,0.0512949,0.10259
+v2,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,2390,0.733629,0.721852,0.745344,0.0516207,9.999e-05,0.00079992
+v2,R-cat-multi,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,2390,0.689528,0.685273,0.69382,0.0706451,9.999e-05,0.00079992
+v2,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,2390,0.843347,0.832971,0.853556,0.135732,9.999e-05,0.00079992
+v2,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,2390,0.805858,0.795105,0.816234,0.152427,9.999e-05,0.00079992
+v2,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,2390,0.0178233,0.0170139,0.0186609,0.00334251,9.999e-05,0.00079992
+v2,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,2390,0.0336396,0.0321402,0.035217,0.00777815,9.999e-05,0.00079992
+v2,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,2390,0.475656,0.467388,0.484134,0.169617,9.999e-05,0.00079992
+v2,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,2390,0.929071,0.920381,0.937224,0.0741678,9.999e-05,0.00079992
+v2,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,2390,0.82461,0.814423,0.834513,0.142602,9.999e-05,0.00079992
+v2,R-cat-multi,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,2390,0.725126,0.720317,0.729905,0.106243,9.999e-05,0.00079992
+v2,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,2390,0.808452,0.796904,0.819665,0.100837,9.999e-05,0.00079992
+v2,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,2390,0.773013,0.76159,0.784143,0.119582,9.999e-05,0.00079992
+v2,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,2390,0.0168634,0.0160715,0.0176828,0.00238253,9.999e-05,0.00079992
+v2,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,2390,0.0319514,0.0304653,0.0335121,0.00609,9.999e-05,0.00079992
+v2,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,2390,0.436388,0.428448,0.444479,0.130349,9.999e-05,0.00079992
+v2,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,2390,0.905791,0.89595,0.915244,0.0508873,9.999e-05,0.00079992
+v2,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,2390,0.791641,0.780577,0.802436,0.109633,9.999e-05,0.00079992
+v2,R-cat-multi,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,2390,0.705207,0.700509,0.709813,0.0863246,9.999e-05,0.00079992
+v2,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,2390,0.770377,0.75841,0.782178,0.0627615,9.999e-05,0.00079992
+v2,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,2390,0.728243,0.716611,0.739791,0.0748117,9.999e-05,0.00079992
+v2,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,2390,0.0162644,0.0154667,0.0170967,0.00178353,9.999e-05,0.00079992
+v2,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,2390,0.0301302,0.0287013,0.0316157,0.00426873,9.999e-05,0.00079992
+v2,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,2390,0.414735,0.406857,0.422577,0.108696,9.999e-05,0.00079992
+v2,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,2390,0.889504,0.879014,0.8996,0.0346008,9.999e-05,0.00079992
+v2,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,2390,0.74935,0.738015,0.760588,0.0673425,9.999e-05,0.00079992
+v2,R-cat-multi,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,2390,0.694119,0.689419,0.698659,0.0752363,9.999e-05,0.00079992
+v2,R-cat-multi,M5,"gemini-embedding-001, full report",P@5,2390,0.774393,0.762092,0.786025,0.0667782,9.999e-05,0.00079992
+v2,R-cat-multi,M5,"gemini-embedding-001, full report",P@10,2390,0.738243,0.726484,0.749456,0.0848117,9.999e-05,0.00079992
+v2,R-cat-multi,M5,"gemini-embedding-001, full report",R@5,2390,0.0165055,0.0157038,0.0173611,0.00202463,9.999e-05,0.00079992
+v2,R-cat-multi,M5,"gemini-embedding-001, full report",R@10,2390,0.0310697,0.0295821,0.032633,0.00520827,9.999e-05,0.00079992
+v2,R-cat-multi,M5,"gemini-embedding-001, full report",MAP,2390,0.433036,0.424813,0.441307,0.126997,9.999e-05,0.00079992
+v2,R-cat-multi,M5,"gemini-embedding-001, full report",MRR,2390,0.884695,0.874154,0.894887,0.0297913,9.999e-05,0.00079992
+v2,R-cat-multi,M5,"gemini-embedding-001, full report",nDCG@10,2390,0.756945,0.745409,0.767811,0.0749375,9.999e-05,0.00079992
+v2,R-cat-multi,M5,"gemini-embedding-001, full report",mAR,2390,0.706682,0.70184,0.711446,0.0877991,9.999e-05,0.00079992
+v2,R-cat-multi,M6,"BGE-M3 (dense), full report",P@5,2390,0.682594,0.669205,0.695816,-0.0250209,9.999e-05,0.00079992
+v2,R-cat-multi,M6,"BGE-M3 (dense), full report",P@10,2390,0.639205,0.626946,0.651548,-0.0142259,0.00829917,0.0161984
+v2,R-cat-multi,M6,"BGE-M3 (dense), full report",R@5,2390,0.0145075,0.0137368,0.0153035,2.67113e-05,0.908309,0.908309
+v2,R-cat-multi,M6,"BGE-M3 (dense), full report",R@10,2390,0.026686,0.0253112,0.0281336,0.000824589,0.0717928,0.0717928
+v2,R-cat-multi,M6,"BGE-M3 (dense), full report",MAP,2390,0.34703,0.340152,0.354184,0.0409913,9.999e-05,0.00079992
+v2,R-cat-multi,M6,"BGE-M3 (dense), full report",MRR,2390,0.825869,0.813292,0.837868,-0.0290349,9.999e-05,0.00079992
+v2,R-cat-multi,M6,"BGE-M3 (dense), full report",nDCG@10,2390,0.661306,0.648966,0.673557,-0.0207016,0.00019998,0.00079992
+v2,R-cat-multi,M6,"BGE-M3 (dense), full report",mAR,2390,0.662054,0.657883,0.666315,0.0431715,9.999e-05,0.00079992
+v2,R-cat-multi,M7,"multilingual-E5-large, full report",P@5,2390,0.618661,0.605105,0.632301,-0.088954,9.999e-05,0.00079992
+v2,R-cat-multi,M7,"multilingual-E5-large, full report",P@10,2390,0.574603,0.562007,0.587113,-0.0788285,9.999e-05,0.00079992
+v2,R-cat-multi,M7,"multilingual-E5-large, full report",R@5,2390,0.0126759,0.0119947,0.0133821,-0.00180491,9.999e-05,0.00079992
+v2,R-cat-multi,M7,"multilingual-E5-large, full report",R@10,2390,0.0230915,0.021875,0.0243864,-0.00276989,9.999e-05,0.00079992
+v2,R-cat-multi,M7,"multilingual-E5-large, full report",MAP,2390,0.298781,0.292634,0.305056,-0.00725804,0.00829917,0.00829917
+v2,R-cat-multi,M7,"multilingual-E5-large, full report",MRR,2390,0.790262,0.776653,0.803821,-0.0646416,9.999e-05,0.00079992
+v2,R-cat-multi,M7,"multilingual-E5-large, full report",nDCG@10,2390,0.599569,0.587009,0.612116,-0.0824387,9.999e-05,0.00079992
+v2,R-cat-multi,M7,"multilingual-E5-large, full report",mAR,2390,0.623926,0.61977,0.628172,0.00504365,0.0262974,0.0262974
+v2,R-cat-multi-mistral,M1,TF-IDF,P@5,2390,0.743013,0.730293,0.755649,-0.00845188,0.0689931,0.0689931
+v2,R-cat-multi-mistral,M1,TF-IDF,P@10,2390,0.699079,0.686903,0.711046,0.000167364,0.973903,0.973903
+v2,R-cat-multi-mistral,M1,TF-IDF,R@5,2390,0.013166,0.0125871,0.0137528,0.000152343,0.251675,0.251675
+v2,R-cat-multi-mistral,M1,TF-IDF,R@10,2390,0.0247376,0.0236178,0.0258805,0.000913125,0.00049995,0.0009999
+v2,R-cat-multi-mistral,M1,TF-IDF,MAP,2390,0.400308,0.393189,0.407583,0.0637569,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M1,TF-IDF,MRR,2390,0.863997,0.852566,0.875072,-0.0162473,0.00149985,0.0059994
+v2,R-cat-multi-mistral,M1,TF-IDF,nDCG@10,2390,0.720509,0.708363,0.732305,-0.0047034,0.212679,0.212679
+v2,R-cat-multi-mistral,M1,TF-IDF,mAR,2390,0.669892,0.666143,0.673724,0.0500747,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M2,BM25,P@5,2390,0.751464,0.739414,0.763096,,,
+v2,R-cat-multi-mistral,M2,BM25,P@10,2390,0.698912,0.687448,0.710378,,,
+v2,R-cat-multi-mistral,M2,BM25,R@5,2390,0.0130137,0.0124667,0.0135647,,,
+v2,R-cat-multi-mistral,M2,BM25,R@10,2390,0.0238245,0.0228018,0.024857,,,
+v2,R-cat-multi-mistral,M2,BM25,MAP,2390,0.336551,0.330351,0.342853,,,
+v2,R-cat-multi-mistral,M2,BM25,MRR,2390,0.880244,0.869658,0.890278,,,
+v2,R-cat-multi-mistral,M2,BM25,nDCG@10,2390,0.725212,0.713906,0.736216,,,
+v2,R-cat-multi-mistral,M2,BM25,mAR,2390,0.619817,0.616077,0.623601,,,
+v2,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",P@5,2390,0.774142,0.762008,0.785358,0.0226778,0.00019998,0.00079992
+v2,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",P@10,2390,0.743138,0.731464,0.754142,0.0442259,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",R@5,2390,0.0135856,0.0129499,0.014304,0.000571967,0.00319968,0.00639936
+v2,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",R@10,2390,0.0256109,0.0245472,0.0267343,0.00178639,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",MAP,2390,0.414036,0.407069,0.421075,0.077485,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",MRR,2390,0.884412,0.873698,0.894766,0.00416783,0.458854,0.458854
+v2,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",nDCG@10,2390,0.760237,0.748821,0.770882,0.0350255,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M3,"text-multilingual-embedding-002, full report (version 1)",mAR,2390,0.67696,0.672711,0.681222,0.0571429,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@5,2390,0.8559,0.845523,0.865774,0.104435,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",P@10,2390,0.823598,0.813095,0.833558,0.124686,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@5,2390,0.0151331,0.014462,0.0158685,0.00211948,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",R@10,2390,0.0286792,0.0275207,0.0298843,0.00485475,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MAP,2390,0.487507,0.479414,0.495614,0.150956,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",MRR,2390,0.930354,0.92191,0.938292,0.0501097,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",nDCG@10,2390,0.839479,0.829415,0.849061,0.114267,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4,"gemini-embedding-001, full report + Gemini 3.7 Flash compression summed (version 2)",mAR,2390,0.706833,0.702206,0.711352,0.087016,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@5,2390,0.823347,0.811967,0.834226,0.0718828,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",P@10,2390,0.789874,0.778577,0.800586,0.0909623,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@5,2390,0.0143431,0.0136982,0.015066,0.00132943,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",R@10,2390,0.0271726,0.0260617,0.0283313,0.00334814,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MAP,2390,0.452645,0.444727,0.460439,0.116094,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",MRR,2390,0.913338,0.903966,0.922378,0.0330937,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",nDCG@10,2390,0.807215,0.796344,0.817557,0.0820028,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4c,"gemini-embedding-001, Gemini 3.7 Flash compression alone (version 2 until v2.2)",mAR,2390,0.689148,0.684685,0.693579,0.069331,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@5,2390,0.787029,0.774979,0.798159,0.0355649,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",P@10,2390,0.749833,0.738116,0.761046,0.0509205,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@5,2390,0.0136144,0.0130606,0.0141886,0.000600784,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",R@10,2390,0.0257525,0.0246904,0.0268387,0.00192799,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MAP,2390,0.42965,0.421893,0.437298,0.0930992,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",MRR,2390,0.895516,0.885367,0.905449,0.0152714,0.00449955,0.0134987
+v2,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",nDCG@10,2390,0.76886,0.75741,0.779726,0.0436482,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M4b,"gemini-embedding-001, Gemini 2.5 Flash-Lite compression (production)",mAR,2390,0.67885,0.674404,0.683262,0.059033,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",P@5,2390,0.795816,0.784017,0.806946,0.0443515,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",P@10,2390,0.761925,0.750544,0.772595,0.0630126,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",R@5,2390,0.0139382,0.0133766,0.014517,0.000924536,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",R@10,2390,0.0265256,0.0254375,0.0276474,0.00270118,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",MAP,2390,0.445234,0.437313,0.453233,0.108683,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",MRR,2390,0.893953,0.883662,0.903744,0.0137082,0.0142986,0.0285971
+v2,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",nDCG@10,2390,0.778564,0.767342,0.788929,0.0533522,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M5,"gemini-embedding-001, full report",mAR,2390,0.68833,0.683744,0.692891,0.0685127,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",P@5,2390,0.711381,0.698494,0.723766,-0.0400837,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",P@10,2390,0.669916,0.657907,0.681381,-0.0289958,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",R@5,2390,0.0124966,0.0119422,0.0130499,-0.000517101,0.00029997,0.00089991
+v2,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",R@10,2390,0.0231567,0.0221305,0.0241822,-0.000667784,0.010099,0.010099
+v2,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",MAP,2390,0.368671,0.362258,0.375241,0.0321198,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",MRR,2390,0.840475,0.828313,0.852091,-0.0397694,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",nDCG@10,2390,0.690168,0.678185,0.701526,-0.0350443,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M6,"BGE-M3 (dense), full report",mAR,2390,0.654663,0.650774,0.658648,0.0348456,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",P@5,2390,0.646025,0.63272,0.659247,-0.105439,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",P@10,2390,0.602678,0.590251,0.615021,-0.0962343,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",R@5,2390,0.0110008,0.0104989,0.0115148,-0.00201282,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",R@10,2390,0.0201538,0.0192569,0.0210976,-0.00367067,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",MAP,2390,0.319316,0.31331,0.325422,-0.0172348,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",MRR,2390,0.81163,0.798484,0.824376,-0.0686141,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",nDCG@10,2390,0.627159,0.61472,0.639371,-0.0980527,9.999e-05,0.00079992
+v2,R-cat-multi-mistral,M7,"multilingual-E5-large, full report",mAR,2390,0.614651,0.610686,0.618667,-0.00516632,0.0155984,0.0155984

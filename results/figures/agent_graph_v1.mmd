@@ -1,0 +1,20 @@
+%% JurisMap v1 (tag v1-expert-eval, backend 3c417ff): defense generation.
+%% LangGraph StateGraph(MessagesState) with a fixed sequence (agents/router.py). Source: scripts/20 evidence.
+flowchart TD
+    IN[/"Request /API_generate_defense<br/>human_message + session: template, case file,<br/>case description, filtered cases (≤ 10)"/]
+    S1["1 · Defense structure interpreter<br/><i>gemini-2.0-flash</i><br/>reads: template (or default JSON)"]
+    S2["2 · Case interpreter<br/><i>gemini-2.0-flash</i><br/>reads: case, precedents (17 fields each)"]
+    S3a["3a · Legal searcher: query extraction<br/><i>gemini-2.0-flash</i><br/>≤ 3 queries from the last message"]
+    T[("Tavily search<br/>advanced, ≤ 10 results per query<br/>planalto.gov.br + CRSNSP legislation")]
+    S3b["3b · Legal searcher: answer<br/><i>gemini-2.0-flash</i><br/>search results + message history"]
+    S4["4 · Defense creator<br/><i>gemini-2.5-flash-preview-04-17</i><br/>message history + case file / description"]
+    S5["5 · Supervisor review<br/><i>gemini-2.5-flash-preview-04-17</i><br/>whole history → final draft"]
+    OUT[/"SSE stream: last message after each node<br/>final draft = supervisor's message"/]
+
+    IN --> S1 --> S2 --> S3a --> T --> S3b --> S4 --> S5 --> OUT
+    STATE[("Shared state: MessagesState<br/>list of messages; each node appends its output")]
+    S1 -.-> STATE
+    S2 -.-> STATE
+    S3b -.-> STATE
+    S4 -.-> STATE
+    S5 -.-> STATE

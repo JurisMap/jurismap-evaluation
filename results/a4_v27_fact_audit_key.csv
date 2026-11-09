@@ -1,0 +1,51 @@
+audit_id,notice_id,mode,run,item,kind
+F01,N06,no_precedents,3,"""sua interposição estritamente dentro do prazo regulamentar""",procedural
+F02,N12,single_prompt,3,"""não capta poupança popular de modo especulativo""",assertion
+F03,N02,no_precedents,1,"""a regularização imediata do envio das informações""",assertion
+F04,N13,no_legal_search,2,"""conforme certidão de intimação/Aviso de Recebimento constante dos autos""",procedural
+F05,N01,no_template,1,"""com lapso de meras 24 horas""",in_notice
+F06,N01,no_precedents,3,"""inexistindo dolo, má-fé ou auferimento de qualquer vantagem econômica indevida""",assertion
+F07,N05,single_prompt,1,"""A conduta não causou impacto nocivo ao equilíbrio das operações do mercado""",assertion
+F08,N04,no_template,3,"""avaliação técnica realizada nos limites da apólice""",assertion
+F09,N08,no_template,3,"""imputando à Recorrente a conduta de \""descumprir os compromissos resultantes dos contratos comercializados\""""",in_notice
+F10,N01,single_prompt,2,"""A presente manifestação é tempestiva""",procedural
+F11,N13,full,2,"""consoante comprovam as certidões e os documentos instrutórios anexos""",procedural
+F12,N12,full,1,"""teve início a partir de provocação""",in_notice
+F13,N03,no_precedents,2,"não havendo qualquer imputação de fraude contábil, dolo, má-fé, sonegação de informações patrimoniais ou prejuízo concreto",in_notice
+F14,N02,no_legal_search,1,"""não comprometeu a higidez das provisões técnicas""",assertion
+F15,N10,no_template,1,"""celebrou composição visando à satisfação do prejuízo""",in_notice
+F16,N01,no_template,1,"""muito antes do encerramento das datas de consolidação e publicação das demonstrações de balanço""",invented
+F17,N08,full,2,"""A divergência quanto ao dever de indenizar repousou sobre análise documental do risco""",invented
+F18,N11,no_precedents,3,"""pessoa jurídica de direito privado constituída sob a forma de associação civil sem fins econômicos""",invented
+F19,N02,no_template,1,"""transmissão dos dados tenha se aperfeiçoado de forma voluntária e integral""",assertion
+F20,N12,single_prompt,2,"""A Recorrente não atua como garantidora contratual""",assertion
+F21,N08,no_precedents,2,"""conforme se verifica pelo Aviso de Recebimento/documento anexo""",procedural
+F22,N02,no_template,2,"""atraso ínfimo de apenas 5 (cinco) dias""",assertion
+F23,N01,no_precedents,3,"""independentemente de qualquer notificação ou ação coercitiva por parte da SUSEP""",invented
+F24,N01,no_legal_search,3,"""não acarretou qualquer embaraço à fiscalização indireta da SUSEP""",assertion
+F25,N13,no_precedents,2,"""a entidade diligenciou para realizar os ajustes técnicos requeridos""",invented
+F26,N13,no_precedents,1,"""ao constatar a inconsistência do processamento do arquivo, mobilizou suas equipes técnicas para sanar a inconsistência""",invented
+F27,N12,no_precedents,2,"""associação sem fins econômicos constituída por transportadores de âmbito local""",invented
+F28,N01,no_template,1,"""perfazendo uma divergência temporal de apenas 1 (um) dia""",in_notice
+F29,N03,no_precedents,1,"""a conduta objeto da autuação não causou qualquer prejuízo econômico, financeiro, sistêmico ou operacional""",assertion
+F30,N12,no_legal_search,2,"""compromete o patrimônio de dezenas de famílias de trabalhadores associados""",invented
+F31,N12,no_legal_search,2,"""inadimplemento de socorro aos membros associados""",invented
+F32,N10,no_legal_search,1,"""adimplemento voluntário de R$ 12.426,00""",in_notice
+F33,N13,full,1,"""sob a alegação de inconsistências formais nos registros""",invented
+F34,N12,single_prompt,2,"""Com base exclusivamente na documentação apresentada por tal entidade de classe""",in_notice
+F35,N12,no_legal_search,1,"""A utilização de vocábulos e termos contratuais assemelhados decorreu exclusivamente de imperfeição redacional leiga""",assertion
+F36,N01,no_precedents,2,"""apenas 1 (um) dia""",in_notice
+F37,N08,no_legal_search,2,"""Sua representação processual encontra-se hígida mediante a procuração anexada""",procedural
+F38,N09,single_prompt,1,"""mediante instrumento de mandato anexo""",procedural
+F39,N15,full,2,"""Instaurado o procedimento e finalizada a etapa de instrução perante a primeira instância administrativa""",in_notice
+F40,N15,single_prompt,2,"""inexistindo qualquer indício de dolo ou má-fé corporativa""",assertion
+F41,N09,no_legal_search,2,"""consoante certidão e aviso de recebimento acostados aos autos""",invented
+F42,N12,no_template,2,"""Trata-se de agrupamento fechado de transportadores""",invented
+F43,N05,single_prompt,2,interposto no prazo regulamentar de 30 (trinta) dias contados da regular intimação,procedural
+F44,N12,no_legal_search,2,"""versando sobre a atuação da Recorrente no município de Matão/SP""",invented
+F45,N04,no_precedents,3,"""conforme instrumento de mandato anexo""",procedural
+F46,N01,no_precedents,1,"""instrumento de mandato anexo""",procedural
+F47,N01,no_legal_search,2,"""A representação processual encontra-se regularizada mediante procuração acostada aos autos.""",procedural
+F48,N02,full,3,configurando um atraso de apenas 5 (cinco) dias,in_notice
+F49,N09,no_precedents,1,"""filha da titular de apólice de seguro de vida em grupo""",in_notice
+F50,N03,no_template,1,"""mediante instrumento de mandato anexo""",procedural

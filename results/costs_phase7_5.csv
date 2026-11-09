@@ -1,0 +1,33 @@
+phase,setting,step,model,calls,input_tokens,output_tokens,cost_usd,max_input_tokens,served_by_primary_key,basis
+7,k5,chatbot answers,gemini-3.7-flash,25.0,779392.0,67206.0,0.8366,60573,1.0,answers tables (every paid run); includes the case summaries of the hierarchical mode
+7,k20,chatbot answers,gemini-3.7-flash,36.0,4193089.0,117373.0,3.585,223654,1.0,answers tables (every paid run); includes the case summaries of the hierarchical mode
+7,k30,chatbot answers,gemini-3.7-flash,36.0,6138151.0,130460.0,5.0928,328703,1.0,answers tables (every paid run); includes the case summaries of the hierarchical mode
+7,h30,chatbot answers,gemini-3.7-flash,36.0,2773901.0,620465.0,4.4072,365839,1.0,answers tables (every paid run); includes the case summaries of the hierarchical mode
+7,all,key_points,mistral-medium-3,120.0,436613.0,29723.0,0.2341,6040,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,all,reference,mistral-medium-3,35.0,173261.0,18430.0,0.1062,8451,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,h30,completeness,gpt-5.4,12.0,43069.0,11256.0,0.2765,6614,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,h30,completeness,mistral-medium-3,12.0,54809.0,1744.0,0.0254,7986,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,h30,decomposition,mistral-medium-3,12.0,48918.0,65424.0,0.1504,7408,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,h30,miss_control,gpt-5.4,81.0,280001.0,35664.0,1.235,4968,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,h30,verification,gpt-5.4,233.0,851814.0,210368.0,5.2851,5020,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,h30,verification,mistral-medium-3,233.0,1008092.0,25832.0,0.4549,6156,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k10,miss_control,gpt-5.4,42.0,145051.0,26103.0,0.7542,4554,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k20,completeness,gpt-5.4,12.0,36593.0,12471.0,0.2785,4307,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k20,completeness,mistral-medium-3,12.0,47120.0,1654.0,0.0222,5597,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k20,decomposition,mistral-medium-3,12.0,39646.0,69375.0,0.1546,4867,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k20,miss_control,gpt-5.4,47.0,148759.0,23902.0,0.7304,4770,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k20,verification,gpt-5.4,235.0,839175.0,184524.0,4.8658,4664,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k20,verification,mistral-medium-3,235.0,999228.0,25496.0,0.4507,5819,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k30,completeness,gpt-5.4,12.0,43537.0,11217.0,0.2771,5286,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k30,completeness,mistral-medium-3,12.0,54818.0,1711.0,0.0253,6399,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k30,decomposition,mistral-medium-3,12.0,48927.0,89394.0,0.1984,5821,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k30,miss_control,gpt-5.4,96.0,327317.0,49378.0,1.559,4887,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k30,verification,gpt-5.4,315.0,1133418.0,254210.0,6.6467,4691,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k30,verification,mistral-medium-3,315.0,1340487.0,34280.0,0.6047,5775,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k5,completeness,gpt-5.4,11.0,18885.0,9538.0,0.1903,2207,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k5,completeness,mistral-medium-3,11.0,22995.0,1300.0,0.0118,2704,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k5,decomposition,mistral-medium-3,11.0,18564.0,29593.0,0.0666,2395,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k5,miss_control,gpt-5.4,58.0,204115.0,32664.0,1.0002,4633,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k5,verification,gpt-5.4,100.0,349443.0,74636.0,1.9931,4652,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,k5,verification,mistral-medium-3,100.0,412910.0,10186.0,0.1855,5679,0.0,run manifests: calls not served from the cache; output tokens include reasoning
+7,all,TOTAL,,,,,41.7043,8451,,plan line for Phase 7: 37 USD; k = 10 reuses Phase 6's answers (counted there); max_input_tokens here is the largest judge prompt

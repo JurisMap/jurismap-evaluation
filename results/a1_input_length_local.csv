@@ -1,0 +1,5 @@
+scope,method,model,text,limit_tokens,inputs,truncated,share_truncated,tokens_median,tokens_mean,tokens_p90,tokens_max,share_of_tokens_read
+comparison_set,M6,BAAI/bge-m3,report,8192,1503,43,0.0286,1593.0,2304.4,4601.4,43480,0.955
+comparison_set,M7,intfloat/multilingual-e5-large,report,512,1503,1449,0.9641,1596.0,2307.4,4604.4,43483,0.2198
+v2,M6,BAAI/bge-m3,report,8192,2390,56,0.0234,1380.5,2060.6,4267.899999999998,43480,0.961
+v2,M7,intfloat/multilingual-e5-large,report,512,2390,2229,0.9326,1383.5,2063.6,4270.899999999998,43483,0.2431

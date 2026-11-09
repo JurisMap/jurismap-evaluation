@@ -1,0 +1,22 @@
+{
+  "decisions": 2390,
+  "max_chars": 5000,
+  "chunks": 5012,
+  "decisions_with_one_chunk": 1132,
+  "chunks_per_decision": {
+    "mean": 2.1,
+    "median": 2.0,
+    "p90": 4.0,
+    "max": 38
+  },
+  "chunks_halved_because_truncated": 68,
+  "chunks_truncated": 0,
+  "tokens_max": 2047,
+  "input_tokens": 5645029,
+  "input_chars": 18759578,
+  "calls_not_cached": 3678,
+  "tokens_not_cached": 4346535,
+  "credentials": {
+    "primary": 5012
+  }
+}

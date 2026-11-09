@@ -1,0 +1,13 @@
+theme,label,E1,E2,E3,E4,E5,n_experts
+T01,Precedent identification or filtering valued,1,0,0,1,1,3
+T02,Chatbot synthesis valued,0,1,1,1,0,3
+T03,Domain specificity vs generic tools,0,1,1,1,0,3
+T04,Time saving,1,0,0,0,1,2
+T05,Interface / UX needs work,1,0,1,1,0,3
+T06,"List or table view of precedents, clickable map",1,0,0,1,0,2
+T07,Legislation or normative-act corpus,0,1,1,0,0,2
+T08,Free-text or real-case seeded search,0,0,0,1,0,1
+T09,Trend or outcome prediction,0,0,1,0,1,2
+T10,Regulatory change or knowledge-base staleness,1,0,1,0,0,2
+T11,"Market barrier (low fines, declining caseload)",1,1,0,0,0,2
+T12,"Extend to other regulators (ANS, CVM, BACEN)",0,1,0,0,0,1

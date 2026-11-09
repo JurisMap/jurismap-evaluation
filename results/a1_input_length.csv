@@ -1,0 +1,9 @@
+scope,method,model,text,inputs,truncated,share_truncated,tokens_median,tokens_mean,tokens_p90,tokens_max,share_of_tokens_read,chars_per_token
+comparison_set,M3,text-multilingual-embedding-002,report,1503,681,0.4531,1851.0,2678.1,5403.2,50735,0.5981,3.278
+comparison_set,M4,gemini-embedding-001,compressed_v2,1503,46,0.0306,473.0,649.8,1175.0,8165,0.9341,3.947
+comparison_set,M4b,gemini-embedding-001,compressed_production,1503,3,0.002,1147.0,1141.2,1802.0,2066,1.0,3.753
+comparison_set,M5,gemini-embedding-001,report,1503,665,0.4424,1800.0,2651.7,5367.5999999999985,51264,0.5982,3.31
+v2,M3,text-multilingual-embedding-002,report,2390,916,0.3833,1592.0,2393.2,5084.9,50735,0.6238,3.28
+v2,M4,gemini-embedding-001,compressed_v2,2390,58,0.0243,434.0,592.0,1096.1999999999998,8165,0.9421,4.007
+v2,M4b,gemini-embedding-001,compressed_production,2390,11,0.0046,1002.5,1052.9,1800.1999999999998,2066,1.0,3.782
+v2,M5,gemini-embedding-001,report,2390,893,0.3736,1554.5,2362.1,5077.2,51264,0.6236,3.323

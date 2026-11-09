@@ -1,0 +1,43 @@
+# A2, Phase 5.1: the UMAP configuration for version 2's map (the author, 2026-10-09: version 2 may be
+# improved; UMAP stays, because a new case must be placed on the existing map).
+# The selection rule below was written before any candidate of this file was fitted.
+version: 1
+
+set: v2_full                       # the served map is fitted on all of version 2's decisions (config/a2_map.yaml)
+# The vectors the map is fitted on. First run (2026-10-09): version 2's stored vectors (M4), the
+# set's own method. Since Phase 4.1 selected new vectors, the selection is repeated on them (M4f).
+method: M4f
+current: {n_neighbors: 30, min_dist: 0.01}
+
+candidates:
+  umap:
+    metric: cosine
+    n_neighbors: [5, 10, 15, 20, 30, 50]
+    min_dist: [0.0, 0.01, 0.05, 0.1, 0.25]
+# After the grid: the selected setting fitted for longer (umap-learn's default is 500 epochs for a
+# corpus of this size), to see whether the default fit has converged.
+refine_n_epochs: [1000, 2000]
+
+# Not candidates: fitted and scored the same way for reference (Phase 5's alternatives).
+references:
+  tsne: {perplexity: 30, metric: cosine, neighbors: exact}
+  pacmap: {}
+
+# Placing unseen cases: the decisions are split into folds; the map is fitted on the other folds
+# with production's seed and the held-out decisions are projected onto it, as an uploaded case is.
+# Each held-out decision is scored against the fitted decisions only.
+holdout:
+  folds: 5
+
+# Selection. Every metric is standardised over the grid (z-score) and the candidate with the
+# highest mean wins; a tie goes to the setting nearest the current one. Labels take no part: the
+# same-label shares are reported only, so the choice is not fitted to the A1 labels.
+selection:
+  metrics:
+    - trustworthiness@10           # fitted map, mean over the seeds (config/a2_map.yaml, `headline`)
+    - continuity@10
+    - knn_jaccard@10
+    - distance_spearman
+    - holdout_trustworthiness@10   # projected decisions, mean over the folds
+    - holdout_continuity@10
+    - holdout_knn_jaccard@10

@@ -1,0 +1,79 @@
+{
+  "rule": "highest development score; it replaces the current vectors only if the bootstrap 95% interval of the paired score difference is above zero",
+  "scope": "v2",
+  "metric": "nDCG@10",
+  "families": {
+    "legal_basis": [
+      "R-base"
+    ],
+    "category": [
+      "R-cat",
+      "R-cat-mistral"
+    ]
+  },
+  "queries": {
+    "development": {
+      "R-base": 678,
+      "R-cat": 1195,
+      "R-cat-mistral": 1195
+    },
+    "held_out": {
+      "R-base": 703,
+      "R-cat": 1195,
+      "R-cat-mistral": 1195
+    },
+    "all": {
+      "R-base": 1381,
+      "R-cat": 2390,
+      "R-cat-mistral": 2390
+    }
+  },
+  "development_scores": {
+    "compressed": 0.5380764220265348,
+    "full": 0.5328730656935742,
+    "full_chunked": 0.520429196718484,
+    "fused_25": 0.5647696796147318,
+    "fused_50": 0.576517144114981,
+    "fused_75": 0.5648091245426131,
+    "fused_chunked_25": 0.5629982890493962,
+    "fused_chunked_50": 0.5745256318114921,
+    "fused_chunked_75": 0.5584731520164019
+  },
+  "best_on_development": "fused_50",
+  "current": "compressed",
+  "development_difference_to_current": {
+    "difference": 0.03844072208844618,
+    "ci_low": 0.031762255582989465,
+    "ci_high": 0.045460445851584236
+  },
+  "replace_current": true,
+  "selected": "fused_50",
+  "held_out_scores": {
+    "compressed": 0.5298285888199911,
+    "full": 0.5272028103624175,
+    "full_chunked": 0.5130830540139568,
+    "fused_25": 0.5569183090264906,
+    "fused_50": 0.5714580844938483,
+    "fused_75": 0.5606869541260873,
+    "fused_chunked_25": 0.553843584126338,
+    "fused_chunked_50": 0.5632664108105826,
+    "fused_chunked_75": 0.5460863496059407
+  },
+  "held_out_difference_to_current": {
+    "difference": 0.04162949567385643,
+    "ci_low": 0.03457646074019124,
+    "ci_high": 0.048668411894383416
+  },
+  "best_on_held_out": "fused_50",
+  "neighbours_kept_of_10_after_a_second_compression": {
+    "compressed": 5.54,
+    "full": 10.0,
+    "full_chunked": 10.0,
+    "fused_25": 6.34,
+    "fused_50": 7.86,
+    "fused_75": 8.92,
+    "fused_chunked_25": 6.24,
+    "fused_chunked_50": 7.48,
+    "fused_chunked_75": 9.12
+  }
+}

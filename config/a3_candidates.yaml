@@ -1,0 +1,62 @@
+# Phase 6.1: strategies to remove or sharply reduce unsupported statements in the chatbot's answers
+# (the author, 2026-10-11; DECISIONS.md). As in Phases 4.1 and 5.1, the candidates and the rule below were
+# fixed before any candidate was scored, and everything is measured on the development sets only
+# (D1 to D3: 30 decisions that are in no evaluated case set). The evaluated question set is not used.
+version: 1
+
+development_sets: [D1, D2, D3]          # per set: 10 templated, 2 unanswerable and 4 open questions (3 in D2), one run each
+
+# The strategies are implemented in the backend behind CHAT_STRATEGY (utils/chat_grounding.py); the
+# evaluation chooses one per request with `chat_strategy`. `version` is part of the cache key of the
+# answers: raise it when a strategy's implementation changes.
+backend_branch: feature/chat_grounding
+candidates:
+  baseline:
+    label: Version 2 as frozen (v2.4)
+    version: 1
+  grounded:
+    label: Grounding rules in the system prompt
+    version: 1
+  grounded_t0:
+    label: Grounding rules, temperature 0
+    version: 1
+  quoted:
+    label: Grounding rules, a literal quote per statement, unfound quotes removed
+    version: 1
+  verified:
+    label: Grounding rules, then a second call that revises the draft against the cases
+    version: 1
+  # Second round (the author, 2026-10-12, option 3 of PHASE_6_1B_SUMMARY.md): `quoted` left the fewest claims
+  # unsupported but covered fewer reference points than the rule allows. One variant tries to restore
+  # the coverage; it was written before it was scored, and the rule below applies to it unchanged.
+  quoted_full:
+    label: Quotes as in `quoted`, with rules asking for every part of the question and every pertinent case instead of a short answer
+    version: 1
+
+# What is measured, with the Phase 6 pipeline (config/a3_chatbot.yaml): claims by Mistral Medium 3,
+# evidence passages, labels by GPT-5.4 (judge A since 2026-10-11) and Mistral Medium 3, the retrieval-miss control.
+measure:
+  judges: [judge_a, judge_b]            # no same-family judge in the selection
+  # unsupported rate: share of the claims that are not supported after the retrieval-miss control,
+  # mean of the two judges. It is the quantity to minimise.
+  primary: unsupported_rate
+
+# Outcomes:
+# - first round (PHASE_6_1A_SUMMARY.md): the rule selected grounded_t0, adopted as v2.5. A defect of the
+#   evidence retrieval had biased that comparison (PHASE_6_1B_SUMMARY.md); corrected, the rule selected
+#   `verified`, within noise of grounded_t0, and excluded `quoted`, the lowest by far, for its coverage.
+# - second round (PHASE_6_1C_SUMMARY.md): quoted_full is eligible and has the lowest unsupported rate.
+#   It is the default chat of version 2 from the v2.6 freeze on.
+rule:
+  # A candidate is eligible only if it does not buy its faithfulness by saying less or by breaking
+  # what already works:
+  constraints:
+    coverage_drop_max: 0.10             # coverage of the reference points (mean of the judges) at most this far below the baseline's
+    templated_correct_drop_max: 1       # at most one templated answer fewer than the baseline (of 30)
+    abstention_drop_max: 0              # no unanswerable question answered that the baseline abstained on (of 6)
+  # Among the eligible candidates the lowest unsupported rate is selected. Candidates within
+  # `tie_margin` of it count as tied, and the tie goes to the lowest cost per open answer.
+  tie_margin: 0.01
+  # The selected candidate replaces the baseline only if the 95% interval of the difference in the
+  # unsupported rate (bootstrap over the open questions, paired) lies below zero.
+  bootstrap_resamples: 10000

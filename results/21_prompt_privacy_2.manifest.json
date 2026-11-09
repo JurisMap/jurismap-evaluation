@@ -1,0 +1,152 @@
+{
+  "run_id": "20260927T233829Z-52d5d3fc",
+  "script": "21_prompt_privacy",
+  "argv": [
+    "scripts/21_prompt_privacy.py"
+  ],
+  "models": {},
+  "params": {
+    "revisions": {
+      "v1": "v1-expert-eval",
+      "v2": "v2.2-eval-frozen"
+    },
+    "min_run": 10,
+    "max_excerpt_words": 25
+  },
+  "seeds": {
+    "default": 20260926,
+    "umap_v2": 42,
+    "bootstrap": 20260926
+  },
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "results/prompt_privacy_check_2.json"
+    }
+  ],
+  "summary": {
+    "prompt_files": 34,
+    "excerpts": 22,
+    "passed": true
+  },
+  "started_utc": "2026-09-27T23:38:29.425+00:00",
+  "git": {
+    "eval": {
+      "path": "/home/user/eval",
+      "sha": "3aaec3b132ec6fedcb036fd84f228e303865e005",
+      "branch": "work-branch",
+      "tag": null,
+      "dirty": true
+    },
+    "backend": {
+      "path": "/home/user/backend",
+      "sha": "4dce1abecbfdd8ba5b6836644a519ff855dab409",
+      "branch": "work-branch",
+      "tag": "v2.2-eval-frozen",
+      "dirty": false
+    },
+    "frontend_v2": {
+      "path": "/home/user/frontend",
+      "sha": "e9a2483df1aff6e97c2e11571cecfcffc8e92596",
+      "branch": "work-branch",
+      "tag": null,
+      "dirty": false
+    },
+    "frontend_v1": {
+      "path": "/home/user/frontend",
+      "sha": "e9a2483df1aff6e97c2e11571cecfcffc8e92596",
+      "branch": "work-branch",
+      "tag": null,
+      "dirty": false
+    },
+    "scrapers": {
+      "path": "/home/user/scrapers",
+      "sha": "69385a32283c7c70757ab8029c20a4994f1836d6",
+      "branch": "work-branch",
+      "tag": "v2.2-eval-frozen",
+      "dirty": false
+    }
+  },
+  "config_hash": {
+    "combined": "007895991ed95bf0052899da343cf6ed24eac6219a74092e139b7c817d3e7850",
+    "files": {
+      "models.yaml": "259aee26d68567f0d60afb50eb0e8714e3f92cf765117408fd4c14eb23772485",
+      "paths.yaml": "61c3de817460329805badbdaac43b7f295fca5c7a966f1c32821a20e8048c94f",
+      "prices.yaml": "65100e6ef49f456dc11d89de09d47e8cef69d8ea7418ad5f7466eb436ce77e26",
+      "seeds.yaml": "e37add963e67df07b85615c2fc173a473631b9b35b33b75f4b3a75f4ae64f832",
+      "v2.1_freeze.json": "e457af1b02bf6c631ea514ebd6fc25cd99a059704fa2d18f3888eb92119846de",
+      "v2.2_freeze.json": "37b912a3d2631129bb5fbdd6f05991ef59d426a7bf4c33e9e9ed9517322f28b5",
+      "v2_freeze.json": "c71f13f49d320ecec4c6003ff073c83ae60c99019ab0ea1d456116d4344fb3e3"
+    }
+  },
+  "python": {
+    "version": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+    "executable": "/home/user/eval/.venv/bin/python3",
+    "platform": "Linux-6.18.44-fc-v37-x86_64-with-glibc2.39"
+  },
+  "ended_utc": "2026-09-27T23:38:29.903+00:00",
+  "status": "ok",
+  "packages": [
+    "-e file:///home/user/eval",
+    "annotated-types==0.8.0",
+    "anyio==4.15.1",
+    "certifi==2026.7.22",
+    "cffi==2.1.1",
+    "cfgv==3.5.0",
+    "charset-normalizer==3.5.1",
+    "cloudpickle==3.1.2",
+    "cryptography==50.0.1",
+    "db-dtypes==1.7.1",
+    "distlib==0.4.3",
+    "distro==1.9.0",
+    "filelock==4.0.3",
+    "google-api-core==2.39.0",
+    "google-auth==2.58.1",
+    "google-cloud-bigquery==3.45.2",
+    "google-cloud-core==2.7.0",
+    "google-crc32c==1.9.0",
+    "google-genai==1.55.0",
+    "google-resumable-media==2.10.2",
+    "googleapis-common-protos==1.75.4",
+    "grpcio-status==1.84.0",
+    "grpcio==1.84.0",
+    "h11==0.16.0",
+    "httpcore==1.0.9",
+    "httpx==0.28.1",
+    "identify==2.6.19",
+    "idna==3.20",
+    "iniconfig==2.3.0",
+    "joblib==1.6.0",
+    "nodeenv==1.11.0",
+    "numpy==2.5.3",
+    "opentelemetry-api==1.45.0",
+    "packaging==26.3",
+    "pandas==3.0.6",
+    "platformdirs==4.11.15",
+    "pluggy==1.6.0",
+    "pre-commit==4.6.2",
+    "proto-plus==1.28.4",
+    "protobuf==7.36.2",
+    "pyarrow==25.0.1",
+    "pyasn1-modules==0.4.2",
+    "pyasn1==0.6.4",
+    "pycparser==3.0",
+    "pydantic-core==2.46.5",
+    "pydantic==2.13.5",
+    "pygments==2.21.0",
+    "pytest==9.1.1",
+    "python-dateutil==2.9.0.post0",
+    "python-discovery==1.6.1",
+    "python-dotenv==1.2.3",
+    "pyyaml==6.0.3",
+    "requests==2.34.2",
+    "six==1.17.0",
+    "sniffio==1.3.1",
+    "tenacity==9.1.4",
+    "typing-extensions==4.16.0",
+    "typing-inspection==0.4.4",
+    "urllib3==2.8.0",
+    "virtualenv==21.12.1",
+    "websockets==15.0.1"
+  ]
+}
