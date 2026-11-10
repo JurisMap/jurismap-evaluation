@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this code or data, please cite the paper and this archive."
 title: "JurisMap evaluation: code, data and results"
 type: software
-version: 1.0.0
+version: 1.1.0
 license: MIT
 # The data and results are CC BY 4.0 (LICENSE-DATA.md).
 repository-code: https://github.com/JurisMap/jurismap-evaluation

@@ -73,3 +73,18 @@ def test_check_flags_unknown_or_long_excerpts(tmp_path):
     report = privacy.check({"p": "alfa beta gama " + long_excerpt}, results)
     assert len(report["bad_excerpts"]) == 2  # one not in any prompt, one over 25 words
     assert report["leaks"] == []  # the long run is declared as an excerpt (reported above instead)
+
+
+def test_check_sets_accepted_runs_apart(tmp_path, monkeypatch):
+    monkeypatch.setattr(privacy, "REPO_ROOT", tmp_path)
+    results = tmp_path / "results"
+    results.mkdir()
+    (results / "prompt_specs.md").write_text("no excerpts", encoding="utf-8")
+    prompt = "um dois tres quatro cinco seis sete oito nove dez onze doze treze"
+    (results / "a.md").write_text("antes um dois tres quatro cinco seis sete oito nove dez onze depois", encoding="utf-8")
+    (results / "b.md").write_text("antes tres quatro cinco seis sete oito nove dez onze doze treze", encoding="utf-8")
+    first = privacy.run_sha256(privacy.words("um dois tres quatro cinco seis sete oito nove dez onze"))
+    report = privacy.check({"p": prompt}, results, {first: "accepted for the test"})
+    assert [r["file"] for r in report["accepted_runs"]] == ["results/a.md"]
+    assert [r["file"] for r in report["leaks"]] == ["results/b.md"]   # other words: another fingerprint
+    assert "start" not in report["accepted_runs"][0]                 # an accepted run's text is not written

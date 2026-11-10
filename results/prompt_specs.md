@@ -2,12 +2,14 @@
 
 Phase 2, task 4 (plan C2). The prompts are commercially sensitive, so this file **describes** them and quotes at most two short excerpts per prompt (≤ 25 words each, marked «…», with an English translation). Verbatim copies stay in `data/private/prompts_verbatim/` (git-ignored). `scripts/21_prompt_privacy.py` writes them there and checks this folder: every «…» excerpt must occur in a source prompt and be ≤ 25 words, and no other run of prompt text of 10 or more words may appear anywhere in `results/`.
 
-Versions: v1 = `v1-expert-eval` (backend `3c417ff`, scrapers `2734e6b`); v2 = `v2.2-eval-frozen` (backend `4dce1ab`, scrapers `69385a3`). All prompts are in Portuguese unless marked (EN). Placeholders are written `{name}`.
+Versions: v1 = `v1-expert-eval` (backend `3c417ff`, scrapers `2734e6b`); v2 = `v2.2-eval-frozen` (backend `4dce1ab`, scrapers `69385a3`), with the later prompt changes up to `v2.7-eval-frozen` (backend `c48f07c`), the version evaluated in A4 and deployed. From v2.2 to v2.7 only three things changed in the prompts (section *Version 2: later changes*); every other v2 prompt below is v2.2's, byte for byte. All prompts are in Portuguese unless marked (EN). Placeholders are written `{name}`. Entry numbers (v1.1, v2.1, …) number the prompts, not the releases; releases are written with their tag or as "freeze v2.6".
 
 How prompts are assembled:
 
 - **v1:** `utils/system_prompt.py` renders only the sections `your_role`, `members`, `goal`, `rules`, `examples`, `other_notes` and `answer`, under fixed Portuguese headings. Other sections are dropped.
 - **v2:** the same loader renders every section in file order (the consolidated ADK prompts), and keeps the agents' results as placeholders to be filled from state.
+- **v2, chat (from freeze v2.5):** the rules of `prompts/chat_grounding.yaml` are appended to the chat system prompt under one heading, by the code of `utils/chat_grounding.py` (entry v2.10).
+- **v2, defense (freeze v2.7):** `utils/fact_controls.py` fills two placeholders at the end of the case-facts rule of the DefenseCreator and the MergerAgent, and adds two model calls, one before the agents and one after the final draft (entries v2.11 to v2.13).
 
 See `agent_protocol.md` for what is appended at run time.
 
@@ -198,6 +200,7 @@ v1.1 plus one rule: questions about defense strategies are answered only from th
   - rules on document quality, legal integration, formatting (placeholders when data is missing) and consistency with the user's case;
   - integration guidelines per research agent; quality checks;
   - **case-facts rule (v2.2):** process and document numbers, names, CPF/CNPJ, addresses, dates and fine amounts only from the user's case, never invented and never copied from precedents; otherwise keep the template's marker or write `[A PREENCHER: …]`.
+  - freeze v2.7 ends this rule with two placeholders, `{case_facts_block}` and `{premise_rule}`, filled by the fact controls (entries v2.11, v2.12) and empty when they are off.
 - **Output:** the defense in Markdown, following the interpreted structure.
 - **Excerpt:** «Nunca invente esses dados e nunca os copie dos casos similares (precedentes).»
   - EN: "Never invent these data and never copy them from the similar cases (precedents)."
@@ -209,7 +212,7 @@ v1.1 plus one rule: questions about defense strategies are answered only from th
 - **Constraints:**
   - integration priorities: the creator's draft as the base, then the legal research, the case analysis, the structure;
   - quality-assurance steps; how to handle missing information (placeholders) and conflicting precedents;
-  - the same case-facts rule as v2.7.
+  - the same case-facts rule as v2.7, with the same two placeholders from freeze v2.7.
 - **Output:** only the final defense, in Markdown, with a formal header and a closing with date, lawyer and OAB number.
 - **Excerpt:** «Use a minuta do Defense Creator como estrutura base principal»
   - EN: "Use the Defense Creator's draft as the main base structure."
@@ -222,6 +225,68 @@ v1.1 plus one rule: questions about defense strategies are answered only from th
 - **Output:** the final defense.
 - **Excerpt:** «Realize mentalmente as tarefas 1 a 4, usando o resultado de cada uma nas seguintes, e escreva apenas o resultado final da tarefa 5.»
   - EN: "Carry out tasks 1 to 4 mentally, using each result in the following ones, and write only the final result of task 5."
+
+## Version 2: later changes (freezes v2.5 to v2.7)
+
+Three changes, each chosen on development material with a rule fixed beforehand (`DECISIONS.md`):
+
+- freeze v2.5 added `prompts/chat_grounding.yaml` (grounding rules for the chat);
+- freeze v2.6 extended it with quoting and completeness rules, the default chat strategy `quoted_full` since then;
+- freeze v2.7 added `prompts/fact_controls.yaml` and the two placeholders in the DefenseCreator and the MergerAgent (entries v2.7, v2.8).
+
+With the chat strategy `baseline` and every fact control off, the prompts are those of v2.2.
+
+### v2.10 Chat grounding rules (`prompts/chat_grounding.yaml`; strategy `quoted_full`)
+
+- **Role:** adds rules to the chat system prompt (v2.1), under a heading saying that they prevail over the earlier rules in case of conflict.
+- **Inputs:** none interpolated; the chat's inputs are unchanged (the data dictionary, the top 10 decisions, the history and the question).
+- **Constraints, `quoted_full`:**
+  - six grounding rules: state only what the cases state expressly; name the case of every statement; make a statement about several cases only when each one supports it; reproduce outcomes, penalties, amounts, dates, names and legal provisions exactly; report what the appellant argued and what the Council decided instead of judging a strategy effective; say when the cases do not give the information;
+  - three quoting rules: after each statement about a case, a literal quote of that case of at most 30 words, in double quotes, copied exactly; no statement about a case without such a quote;
+  - three completeness rules, in place of a rule preferring a short answer: answer every part of the question; leave out no pertinent case or requested information for brevity; close a comparison with statements built only on the quoted ones.
+- **After the answer (code, no model call):** each sentence whose quote is not found literally in the supplied cases is removed, and a one-line notice tells the user how many statements were removed.
+- **Other strategies in the file (evaluation only):** `grounded_t0` (the grounding rules plus the brevity rule, at temperature 0; the default of freeze v2.5) and `verified` (a second call in which a legal reviewer rewrites the draft, keeping only what the cases support).
+- **Output:** free text, as v2.1.
+- **Excerpt:** «Afirme apenas o que consta expressamente dos casos fornecidos.»
+  - EN: "State only what is expressly in the cases supplied."
+- **Excerpt:** «Depois de cada afirmação sobre um caso, transcreva entre aspas duplas um trecho literal desse caso que a comprove, com no máximo 30 palavras.»
+  - EN: "After each statement about a case, transcribe in double quotes a literal passage of that case that proves it, of at most 30 words."
+
+### v2.11 Premise rule (`prompts/fact_controls.yaml`, `premise_rule`; freeze v2.7)
+
+- **Role:** appended to the case-facts rule of the DefenseCreator and the MergerAgent; the single prompt (v2.9) gets it through their rendered prompts.
+- **Inputs:** none interpolated.
+- **Constraints:**
+  - a ground taken from a precedent applies to this case only if the facts it rests on are in the case supplied;
+  - a fact the case does not give is either written as a premise to confirm, `[VERIFICAR: …]`, or the ground is not used;
+  - examples of such facts (past offences not reported, a document delivered, a deadline extended, the cause of a failure or delay);
+  - no invented causes, events, documents, dates or circumstances.
+- **Excerpt:** «Não invente causas, eventos, documentos, datas ou circunstâncias que o caso não informa.»
+  - EN: "Do not invent causes, events, documents, dates or circumstances that the case does not state."
+
+### v2.12 Case fact sheet (`prompts/fact_controls.yaml`, `case_facts_extraction` and `case_facts_rule`; freeze v2.7)
+
+- **Role:** one model call before the agents run extracts a sheet of the case's facts; a rule then gives the sheet to the DefenseCreator and the MergerAgent.
+- **Inputs:** `{case}` (the document sent by the user) for the extraction; `{facts}` (the sheet) in the rule.
+- **Constraints:**
+  - extraction: a numbered list of every fact the document states about the party and the case (the party; what SUSEP found, with dates, amounts and documents; the provisions charged; the penalty and how it was computed), in the document's words where possible, adding, interpreting and judging nothing;
+  - rule: the facts of the case are only those of the sheet; a fact an argument needs and the sheet lacks is written as `[VERIFICAR: …]`.
+- **Output:** the sheet (a numbered list), placed in the two agents' prompts.
+- **Excerpt:** «Os fatos do caso são apenas os da ficha abaixo, extraída do documento enviado pelo usuário.»
+  - EN: "The facts of the case are only those of the sheet below, extracted from the document sent by the user."
+
+### v2.13 Premise check (EN; `prompts/fact_controls.yaml`, `premise_check`; freeze v2.7)
+
+- **Role:** one model call after the final draft lists the passages that state facts the case document does not.
+- **Inputs:** `{case}`, `{draft}`.
+- **Constraints:**
+  - find the draft's statements of fact about the case (events, circumstances, documents, dates, amounts, procedural acts) that the case document lacks;
+  - do not list the party's account of its own conduct or intent, arguments and legal qualifications, provisions, precedents, placeholders, figures computed from the case's amounts, or what any appeal implies;
+  - copy each passage exactly (at most 25 words) and say, in Portuguese, what must be confirmed.
+- **Output:** JSON (`passages`: quote and what to verify). The code places `[VERIFICAR: …]` after each passage found verbatim in the draft; the text is kept. The fact guard runs afterwards, as in v2.2.
+- **Excerpt (EN):** «List the passages of the draft that state, as a fact about this case, an event, a circumstance, a document, a date, an amount…»
+
+In production all three controls are on (`FACT_CONTROLS=premise_rule,case_facts,premise_check` in the backend's `config/runtime.env`).
 
 ## Data pipeline prompts
 

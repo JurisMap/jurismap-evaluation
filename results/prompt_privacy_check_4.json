@@ -1,0 +1,198 @@
+{
+  "min_run_words": 10,
+  "max_excerpt_words": 25,
+  "excerpts": 27,
+  "max_excerpt_len": 25,
+  "bad_excerpts": [],
+  "leaks": [],
+  "accepted_runs": [
+    {
+      "file": "results/QUOTES.md",
+      "words": 11,
+      "sha256": "c2dd2482fca0d4e754263ac1f03e2b4262583ffb98bbaa76f19430dc591f5999",
+      "accepted": "a phrase of a public decision quoted in an A3 question, which also occurs in an example of a v1 curation prompt"
+    },
+    {
+      "file": "results/QUOTES.md",
+      "words": 17,
+      "sha256": "017d548064428a23de70080f0433ad542a273b0644b190c08f1bd84ad71c65bc",
+      "accepted": "the notice the v2.6 chat appends when its quote check removes sentences (system output users see; chat_grounding.yaml removed_note)"
+    },
+    {
+      "file": "results/QUOTES.md",
+      "words": 17,
+      "sha256": "017d548064428a23de70080f0433ad542a273b0644b190c08f1bd84ad71c65bc",
+      "accepted": "the notice the v2.6 chat appends when its quote check removes sentences (system output users see; chat_grounding.yaml removed_note)"
+    },
+    {
+      "file": "results/QUOTES.md",
+      "words": 17,
+      "sha256": "017d548064428a23de70080f0433ad542a273b0644b190c08f1bd84ad71c65bc",
+      "accepted": "the notice the v2.6 chat appends when its quote check removes sentences (system output users see; chat_grounding.yaml removed_note)"
+    },
+    {
+      "file": "results/a3_examples_4.md",
+      "words": 11,
+      "sha256": "c2dd2482fca0d4e754263ac1f03e2b4262583ffb98bbaa76f19430dc591f5999",
+      "accepted": "a phrase of a public decision quoted in an A3 question, which also occurs in an example of a v1 curation prompt"
+    },
+    {
+      "file": "results/a3_examples_4.md",
+      "words": 17,
+      "sha256": "017d548064428a23de70080f0433ad542a273b0644b190c08f1bd84ad71c65bc",
+      "accepted": "the notice the v2.6 chat appends when its quote check removes sentences (system output users see; chat_grounding.yaml removed_note)"
+    },
+    {
+      "file": "results/a3_examples_4.md",
+      "words": 17,
+      "sha256": "017d548064428a23de70080f0433ad542a273b0644b190c08f1bd84ad71c65bc",
+      "accepted": "the notice the v2.6 chat appends when its quote check removes sentences (system output users see; chat_grounding.yaml removed_note)"
+    },
+    {
+      "file": "results/a3_examples_4.md",
+      "words": 17,
+      "sha256": "017d548064428a23de70080f0433ad542a273b0644b190c08f1bd84ad71c65bc",
+      "accepted": "the notice the v2.6 chat appends when its quote check removes sentences (system output users see; chat_grounding.yaml removed_note)"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    },
+    {
+      "file": "results/a3_questions.csv",
+      "words": 11,
+      "sha256": "0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d",
+      "accepted": "the same decision phrase as the entry above, in the question file"
+    }
+  ],
+  "prompt_files": 49,
+  "passed": true
+}

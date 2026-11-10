@@ -2,6 +2,8 @@
 
 Phase 2, task 3 (plan C1). Read from the code at `v1-expert-eval` (backend `3c417ff`, Streamlit frontend `203376f`) and `v2.2-eval-frozen` (backend `4dce1ab`, React frontend `e9a2483`). ADK behaviour was checked in the source of the pinned `google-adk==1.3.0`. File references are `repo:path`. The graphs are `figures/agent_graph_v1.mmd` and `figures/agent_graph_v2.mmd` (SVG alongside). The settings are in `reproducibility_table.md`. No prompt is quoted here; see `prompt_specs.md`.
 
+Version 2 is described at `v2.2-eval-frozen` in §§ 1 to 3, with notes where a later freeze changed it. § 3.9 gives the changes up to `v2.7-eval-frozen` (backend `c48f07c`), the version evaluated in A4, and the configuration deployed to production. They were read from the code at the v2.7 tag and are recorded with their reasons in `CHANGELOG.md` (entries 4 to 8). The graph `figures/agent_graph_v27.mmd` (SVG alongside) is `agent_graph_v2.mmd` with those changes.
+
 ## 1. Inputs common to both versions
 
 A draft is requested with `POST /API_generate_defense` after three optional uploads, which are stored in the Flask session:
@@ -13,7 +15,7 @@ A draft is requested with `POST /API_generate_defense` after three optional uplo
 | `case_description` | `/API_upload_case_description` | Free text typed by the user |
 | `context_cases` | request field `selected_cases_ids` (v2 eval: `case_hashes`) | The selected decisions, each reduced to the 17 context fields (session, parties, rapporteur, lawyer, ementa, penalty, legal basis, acórdão, participants, **full report, full vote**, outcome) |
 
-Both frontends cap the selection at **10 decisions**. v1 (Streamlit) refuses to call the API when the dashboard filters leave more than 10. v2 (React) lets the user click up to 10 decisions on the map.
+Both frontends cap the selection at **10 decisions**. v1 (Streamlit) refuses to call the API when the dashboard filters leave more than 10. v2 (React) lets the user click up to 10 decisions on the map. From freeze v2.4, after a case is uploaded, v2 pre-selects the 10 decisions most similar to it (cosine similarity of the retrieval vectors), and the user confirms or changes them (§ 3.9).
 
 ## 2. Version 1: LangGraph fixed sequence
 
@@ -126,7 +128,7 @@ Consequences for the evaluation:
   3. MergerAgent.
 - **Research completion order varies** between runs. The smoke-test logs record, for example, DefenseStructureInterpreter → CaseInterpreter → LegalSearcher in `full`, and CaseInterpreter → DefenseStructureInterpreter → LegalSearcher in `no_precedents`.
 - **Termination:** the sequential agent ends after the merger. There are no loops, no agent transfer, and no tools other than Google Search grounding on the LegalSearcher.
-- **The draft** is the MergerAgent's text, after the fact guard (§ 3.4).
+- **The draft** is the MergerAgent's text, after the fact guard (§ 3.4); from freeze v2.7, after the premise check and then the fact guard (§ 3.9).
   - If that text is empty (for example, blocked twice for recitation), the stream ends with an `error` message and no draft ("A defesa final não foi gerada pelo modelo…"), and the eval log records the error.
 
 ### 3.4 Fact guard (v2.2)
@@ -147,7 +149,7 @@ Consequences for the evaluation:
 | `no_legal_search` | LegalSearcher not created; `legal_search_result` preset to a fixed notice ("Pesquisa de legislação não realizada nesta execução.") |
 | `no_precedents` | `context_cases` and `selected_cases_ids` emptied for the generation agents (the supervisor still sees the original inputs) |
 | `no_template` | DefenseStructureInterpreter not created and no template passed; `structure_analysis_result` preset to the structure prompt's `default_template` |
-| `single_prompt` | One `gemini-3.7-flash` call. The system instruction is a header, then the five generation agents' rendered prompts in pipeline order (their `{…_result}` placeholders replaced by "the result of task N"), then a footer. Google Search grounding is on; the fact guard runs on the output. |
+| `single_prompt` | One `gemini-3.7-flash` call. The system instruction is a header, then the five generation agents' rendered prompts in pipeline order (their `{…_result}` placeholders replaced by "the result of task N"), then a footer. Google Search grounding is on; the fact guard runs on the output (from freeze v2.7, after the premise check). |
 
 ### 3.6 Retries, timeouts and errors
 
@@ -161,7 +163,7 @@ Consequences for the evaluation:
   - Inside the ADK run: caught by the coordinator, which yields `{"role": "system", "status": "error", …}`, and the stream ends.
   - Event-processing errors are logged and skipped.
 - **Request timeouts:**
-  - **Production:** Cloud Run `--timeout 300` and gunicorn `--timeout 300`. The smoke test's full draft through the supervisor took **307 s**, so production can hit this limit.
+  - **Production:** Cloud Run `--timeout 300` and gunicorn `--timeout 300`. The smoke test's full draft through the supervisor took **307 s**, so production can hit this limit. The production configuration of v2.7 raises both to 600 s (§ 3.9).
   - **Evaluation server:** Flask `app.run` (`jm_eval/server.py`), with **no request timeout**. Phases 8–9 should report the share of runs over 300 s as would-be production timeouts.
 
 ### 3.7 Streaming
@@ -182,12 +184,44 @@ Consequences for the evaluation:
 - **Default (`full_text`):** as v1 (§ 2.5), with these differences:
   - Gemini 3.7 Flash;
   - question embedded with `SEMANTIC_SIMILARITY` at 3,072 dimensions;
-  - decisions ranked on the compressed-report embeddings;
+  - decisions ranked on the retrieval vectors: the compressed-report embeddings at v2.2; from freeze v2.3, the fused vector stored in the same field (§ 3.9);
   - context fields as extracted (no `*_curated` copies);
-  - one extra system-prompt rule.
+  - one extra system-prompt rule;
+  - from freeze v2.5, grounding rules appended to the system prompt; from freeze v2.6, rules to quote the cases, and a check of the quotes after the answer (§ 3.9).
 - **Evaluation-only `hierarchical_summary`:**
   - each of up to 30 retrieved decisions is first summarised to at most 300 tokens (8 calls in parallel, cached per server process);
   - the answer is written over the summaries plus 12 metadata fields.
+
+### 3.9 Changes up to v2.7, and the production configuration
+
+Freezes v2.3 to v2.7 changed four things in the protocol above. The agents, their order, what each one sees (§ 3.2), the retries and the streaming are those of v2.2.
+
+| Freeze | Change | Where in the code (backend) |
+| --- | --- | --- |
+| v2.3 | **Retrieval vector:** the unit-length sum of the full-report and the compressed-report embeddings, for the corpus and for an uploaded case. It is stored in the field that held the compressed-report embedding, so the chat ranks on it unchanged. | `utils/vector_fusion.py`; `app.py` (uploaded case) |
+| v2.4 | **Pre-selected context cases:** after an upload, the 10 decisions most similar to the case are offered as the selected cases; the user confirms or changes them on the map (at most 10). The defense and the chat receive whichever cases are selected, as before. | `utils/similar_cases.py`, `UMAPPlot.most_similar_cases`; `/API_get_uploaded_case_data` (`similar_cases`) |
+| v2.5, v2.6 | **Grounded, quoting chat** (strategy `quoted_full` from v2.6). See below. | `utils/chat_grounding.py`, `prompts/chat_grounding.yaml` |
+| v2.7 | **Fact controls of the defense:** a case fact sheet before the agents, a premise rule in the creator and merger, and a premise check after the final draft. See below. | `utils/fact_controls.py`, `prompts/fact_controls.yaml`; `app.py`, `workflow_coordinator.py`, `single_prompt.py` |
+
+**Chat (from v2.6).**
+
+- The same single call as § 3.8. The system prompt gets the grounding, quoting and completeness rules (`prompt_specs.md`, entry v2.10). The model's default temperature is used.
+- After the answer, the code checks every quote. A quote passes if it occurs literally, after lower-casing and removing accents and punctuation, in the text given to the model. The text searched is the named case's when a sentence names exactly one case, otherwise any supplied case. A sentence with a quote that is not found is removed. If any sentence is removed, a one-line notice with the count ends the answer. Sentences without quotes are kept. The counts are logged (`quote_check`).
+- No second model call (the `verified` strategy, with a reviewing call, is available in evaluation mode only). `CHAT_STRATEGY`, or in evaluation mode the request's `chat_strategy`, selects another strategy; `baseline` is the chat of § 3.8. The number of decisions given to the chat stays 10 (`CHAT_TOP_K`; the request's `top_k` in evaluation mode, used by A5).
+
+**Defense (v2.7).** All three controls are selected by `FACT_CONTROLS` (`config/runtime.env`: all three), or in evaluation mode by the request's `fact_controls`; with none, the pipeline and prompts are v2.6's.
+
+1. **Case fact sheet:** before anything else in the request, one model call (`gemini-3.7-flash`, step `case_facts`) extracts a numbered list of the facts stated by the uploaded notice and the typed description. It runs before the supervisor check. A request that ends with clarification questions therefore also makes this call, and each new request makes it again (it is not cached across requests).
+2. The sheet and its rule fill a placeholder at the end of the case-facts rule of the **DefenseCreator** and the **MergerAgent**. The **premise rule** fills a second placeholder. The single prompt gets both through those agents' rendered prompts. The supervisor, the research agents and the structure interpreter do not see the sheet.
+3. **Premise check:** after the MergerAgent's text (or the single prompt's output), one model call (step `premise_check`, JSON) lists passages that state facts the case does not. `[VERIFICAR: …]` is inserted after each listed passage found verbatim in the draft (first occurrence); the text is kept. A passage not found verbatim is logged as unmatched and not marked. The fact guard (§ 3.4) then runs on the marked draft.
+
+So a full v2.7 draft makes two model calls more than v2.6. The extra steps appear in the evaluation log as calls of role `fact_control`, with their tokens and latency.
+
+**Production configuration** (backend `main`, tag `v2.7`, beyond `v2.7-eval-frozen`; `DECISIONS.md` 2026-10-25):
+
+- `ABLATION_MODE=no_legal_search`: the LegalSearcher is not created and its result is the fixed notice (§ 3.5). The frontend sends no `ablation_mode`, so production runs this evaluated configuration (Phase 8, 45 drafts).
+- Cloud Run and gunicorn request timeouts of 600 s (300 s at the freeze).
+- Everything else as the v2.7 freeze, including the three fact controls and the quoting chat.
 
 ## 4. Protocol differences that matter for Phases 6–9
 
@@ -197,6 +231,9 @@ Consequences for the evaluation:
 | Who sees the uploaded notice | Case interpreter and creator (appended); the others through earlier outputs | Supervisor and case interpreter; creator and merger through the case analysis; **legal searcher: no** |
 | Legal-search topic | The case analysis (sequential) | The typed description and the precedents only (parallel) |
 | Silent degradations | Tavily error → no legislation, no signal | Second block of a research or creator response → empty input to the next agent, no signal |
+| Checks of the draft | None | Fact guard (v2.2); from v2.7 also the case fact sheet, the premise rule and the premise check (§ 3.9) |
+| Checks of the chat answer | None | From v2.6: quotes of the cases required after each statement; sentences whose quote is not found are removed (§ 3.9) |
 | Visible failure | Exception → system message | Empty final draft → error message; exception → error message |
 | Human in the loop | None | Supervisor may ask questions (skipped in the ablation runs) |
-| Request time limit | None in code | 300 s in production; none on the evaluation server |
+| Request time limit | None in code | 300 s in production at v2.2, 600 s with v2.7; none on the evaluation server |
+| Legal search in production | Tavily, every draft | Google Search grounding to v2.6; none in v2.7's production configuration (`no_legal_search`) |

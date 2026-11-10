@@ -1,0 +1,121 @@
+# Phase 11: the paper's tables and figures, and the records of its numbers and quotations.
+#
+# Read by scripts/99_build_paper_assets.py (tables and figures) and scripts/98_results_and_quotes.py
+# (results/RESULTS.md, results/QUOTES.md). Every asset is rebuilt from the files of results/ named below; no
+# script here makes a model call or reads data/, except the B2 workbook (an aggregate of the questionnaire).
+version: 1
+
+# Where the assets go. Relative paths are taken from paths.yaml `paper_folder`; --out-dir overrides both.
+output:
+  figures: ISWA/figures
+  tables: ISWA/tables
+  figure_formats: [pdf, png]            # PDF for the journal, PNG (300 dpi) for the Word manuscript
+  png_dpi: 300
+
+# The source files, pinned by exact name. The scripts stop if a pinned file is not the newest version of its
+# family in results/ (the rule every analysis script reads by), unless --allow-stale is given: a rerun that
+# writes a new version must be pinned here before the paper's numbers move to it.
+sources:
+  # versions and corpus
+  reproducibility: results/reproducibility_table_8.csv
+  corpus_freeze: results/v2_corpus_freeze_summary.json
+  v1_v2_match: results/v1_v2_match_summary.json
+  failure_modes: results/failure_modes_5.csv
+  # B2, B3 (expert evaluation of version 1)
+  b2_workbook: data/b2_rerun/b2_statistics.xlsx          # identical to ISWA/B2/b2_statistics.xlsx (results/b2_reproduction_check.json)
+  b2_check: results/b2_reproduction_check.json
+  b3_matrix: results/b3_prevalence_matrix_2.csv
+  b3_quotes: results/b3_quotes.csv
+  # A1 retrieval
+  a1_main: results/a1_retrieval_main_5.csv
+  a1_contrasts: results/a1_retrieval_contrasts_5.csv
+  a1_complexity_contrasts: results/a1_retrieval_by_complexity_contrasts_2.csv
+  a1_outcome: results/a1_outcome_consistency_5.csv
+  a1_candidates: results/a1_candidates.csv
+  a1_candidates_contrasts: results/a1_candidates_contrasts.csv
+  a1_selection: results/a1_candidates_selection.json
+  a1_label_audit: results/a1_label_audit_2.json
+  a1_label_review: results/a1_label_review_4.json
+  a1_compression: results/a1_compression_stability.json
+  a1_susep: results/a1_retrieval_susep.csv
+  # A2 map
+  a2_metrics: results/a2_map_metrics_2.csv
+  a2_seed: results/a2_seed_stability_2.csv
+  a2_candidates: results/a2_candidates_2.csv
+  a2_selection: results/a2_candidates_selection_2.json
+  a2_reproduction: results/a2_served_map_reproduction_2.json
+  # A3 chatbot
+  a3_strategies: results/a3_candidates_4.csv
+  a3_selection: results/a3_candidates_selection_4.json
+  a3_chatbot: results/a3_chatbot_4.csv
+  a3_agreement: results/a3_judge_agreement_4.csv
+  a3_controls: results/a3_judge_controls_2.csv
+  a3_audit: results/a3_claim_audit.csv
+  a3_examples: results/a3_examples_4.md
+  # A5 context size
+  a5_context: results/a5_context_size_5.csv
+  a5_paired: results/a5_context_size_paired_5.csv
+  # A4 drafting (v2.6 and v2.7)
+  a4_versions: results/a4_versions.csv
+  a4_v26_scores: results/a4_drafting_scores_3.csv
+  a4_v27_scores: results/a4_v27_drafting_scores.csv
+  a4_v26_by_mode: results/a4_drafting_by_mode_10.csv
+  a4_v27_by_mode: results/a4_v27_drafting_by_mode.csv
+  a4_v26_ablation: results/a4_ablation_stats_3.csv
+  a4_v27_ablation: results/a4_v27_ablation_stats.csv
+  a4_v26_invented: results/a4_invented_facts_3.csv
+  a4_v27_invented: results/a4_v27_invented_facts_2.csv
+  a4_v26_audit: results/a4_fact_audit_agreement_3.csv
+  a4_v27_audit: results/a4_v27_fact_audit_agreement_2.csv
+  a4_v26_agreement: results/a4_judge_agreement_2.csv
+  a4_v27_agreement: results/a4_v27_judge_agreement.csv
+  a4_dev_arms: results/a4_dev_arms_2.csv
+  a4_examples: results/a4_examples.md
+  # A6 latency and cost
+  a6_latency: results/a6_latency_cost.csv
+  a6_paired: results/a6_latency_paired.csv
+  # C1, C2 documentation
+  prompt_specs: results/prompt_specs.md
+  agent_graph_v1: results/figures/agent_graph_v1.svg
+  agent_graph_v27: results/figures/agent_graph_v27.svg      # v2.2's graph (agent_graph_v2.svg) plus the fact controls of v2.7
+  # release (C3)
+  release_verify: results/release_verify_10.json
+  release_reference: results/release_reference_check.json
+
+# Sources that may be absent: the tables, figures and RESULTS.md sections that read them are skipped,
+# with this note, instead of stopping the build (the public release has no B2 workbook).
+optional_sources:
+  b2_workbook: the expert questionnaire's workbook is not in the public data archive (B2 results are in the paper and results/b2_reproduction_check.json)
+  release_verify: the reports of the release's own packaging and verification are not part of the release (they are described in its README)
+  release_reference: the reports of the release's own packaging and verification are not part of the release (they are described in its README)
+
+# How the files that no run manifest records were written (reported in RESULTS.md and ASSETS.csv)
+source_notes:
+  b2_workbook: written by analysis/b2/b2_expert_statistics.py, run by hand in Phase 3 (no manifest); identical to the cloud workbook (results/b2_reproduction_check.json)
+  release_reference: written by release/reference/check_reference.py in a fresh environment (Phase 10; no manifest); see PHASE_10_SUMMARY.md
+  agent_graph_v1: rendered with mermaid-cli from results/figures/agent_graph_v1.mmd (Phase 2)
+  agent_graph_v27: rendered with mermaid-cli 11.4.2 from results/figures/agent_graph_v27.mmd (Phase 11)
+
+# Names the paper's tables give the methods and modes (ground rule 9: "v1" and "v2" only).
+labels:
+  methods:
+    M1: TF-IDF
+    M2: BM25
+    M3: v1 (text-multilingual-embedding-002, full report)
+    M4: v2 (gemini-embedding-001, full report + compression)
+    M4c: v2 compression alone
+    M4b: v2 compression, production model
+    M5: v2 full report alone
+    M6: BGE-M3
+    M7: multilingual-E5-large
+  modes:
+    full: Full pipeline
+    single_prompt: Single prompt
+    no_legal_search: No legal search
+    no_precedents: No precedents
+    no_template: No template
+  judges:
+    judge_a: GPT-5.4
+    judge_b: Mistral Medium 3
+    judge_gemini: Gemini 3.8 Flash (same family)
+    nli: NLI model

@@ -1,0 +1,13 @@
+version_a,version_b,metric,label,notices,drafts_a,drafts_b,mean_a,mean_b,difference,notices_higher_in_b,notices_lower_in_b,pooled_mean_a,pooled_mean_b,wilcoxon_statistic,wilcoxon_p
+v2.6,v2.7,estimated_invented,Invented case facts per draft (estimated; each version corrected by its own audit),15,212,213,3.33489,0.415946,-2.91894,0,15,3.30237,0.413146,0,6.10352e-05
+v2.6,v2.7,judge_a_fidelity_to_facts,"Fidelity to facts, GPT-5.4 (1-5)",15,212,213,1.74889,2.45841,0.709524,15,0,1.73585,2.4507,0,0.000650024
+v2.6,v2.7,judge_gemini_fidelity_to_facts,"Fidelity to facts, Gemini 3.8 Flash (1-5; same family as the system)",15,212,213,2.99889,4.54603,1.54714,15,0,2.95283,4.53991,0,0.000651666
+v2.6,v2.7,judge_a_legal_accuracy,"Legal accuracy, GPT-5.4 (1-5)",15,212,213,2.43556,2.55698,0.121429,11,3,2.4434,2.55869,11.5,0.00992921
+v2.6,v2.7,judge_a_use_of_precedents,"Use of precedents, GPT-5.4 (1-5)",15,212,213,2.14444,2.05317,-0.0912698,3,12,2.15566,2.07512,20.5,0.0244611
+v2.6,v2.7,judge_a_structure,"Structure, GPT-5.4 (1-5)",15,212,213,4.92222,4.78302,-0.139206,2,13,4.91981,4.78873,4,0.00143107
+v2.6,v2.7,judge_a_persuasiveness,"Persuasiveness, GPT-5.4 (1-5)",15,212,213,2.32444,2.34175,0.0173016,6,6,2.32075,2.34742,38.5,0.968591
+v2.6,v2.7,judge_a_rubric_mean,"Rubric mean, GPT-5.4 (1-5)",15,212,213,2.71511,2.83867,0.123556,14,1,2.71509,2.84413,2,0.000975481
+v2.6,v2.7,recall,"Argument recall (majority of GPT-5.4, Mistral Medium 3 and the NLI model)",15,212,213,0.515369,0.469001,-0.0463684,3,9,0.520539,0.478118,13,0.0413894
+v2.6,v2.7,accepted_raised,Accepted argument raised (granted notices only),9,122,123,0.690741,0.717196,0.026455,3,3,0.696721,0.719512,10,1
+v2.6,v2.7,template_coverage,Template coverage (share of the template's sections),15,212,213,0.8675,0.877381,0.00988095,9,6,0.867335,0.879108,50,0.569594
+v2.6,v2.7,cost_usd,Cost per draft (USD),15,212,213,0.182769,0.191065,0.00829589,14,1,0.179023,0.189095,15,0.00836182

@@ -1,0 +1,37 @@
+%% JurisMap v2 (tag v2.7-eval-frozen, backend c48f07c): defense generation.
+%% agent_graph_v2.mmd (v2.2) plus the fact controls of v2.7 (utils/fact_controls.py; agent_protocol.md § 3.9).
+%% Google ADK 1.3.0 (agents_adk/workflow_coordinator.py, router_adk.py). All models gemini-3.7-flash (global endpoint).
+flowchart TD
+    IN[/"Request /API_generate_defense<br/>session: template, case file, case description,<br/>selected cases (≤ 10, pre-selected after an upload); eval flags: ablation_mode, fact_controls, case_hashes, skip_supervisor"/]
+    CF["Case fact sheet (one call)<br/>numbered facts of the notice and description<br/>→ creator and merger prompts, with the premise rule"]
+    SUP{"SupervisorAgent<br/>checks the inputs, answers JSON<br/><i>all agents: gemini-3.7-flash</i>"}
+    ASK[/"clarification_needed:<br/>questions back to the user"/]
+
+    subgraph SEQ ["SequentialAgent: JurisMapDefenseGenerationPipeline"]
+        direction TB
+        subgraph PAR ["ParallelAgent: ParallelResearchTeam (isolated branches)"]
+            direction LR
+            CI["CaseInterpreter<br/>→ state.case_analysis_result"]
+            LS["LegalSearcher + Google Search grounding<br/>→ state.legal_search_result<br/><i>not run in production (no_legal_search)</i>"]
+            DS["DefenseStructureInterpreter<br/>→ state.structure_analysis_result"]
+        end
+        DC["DefenseCreator<br/>reads the three results (prompt + history)<br/>+ fact sheet and premise rule<br/>→ state.defense_creation_result"]
+        MG["MergerAgent<br/>final draft (from history)<br/>+ fact sheet and premise rule"]
+        PAR --> DC --> MG
+    end
+
+    PC["Premise check (one call)<br/>marks unsupported factual passages<br/>with [VERIFICAR: …], text kept"]
+    FG["Fact guard (deterministic, utils/fact_guard.py)<br/>replaces unsupported case identifiers,<br/>flags unsupported dates, amounts, acts"]
+    OUT[/"SSE stream: one message per agent event,<br/>'Verificação de Fatos', end message"/]
+
+    IN --> CF --> SUP
+    SUP -- "clarification_needed" --> ASK
+    ASK -. "user answers (phase=clarification)" .-> IN
+    SUP -- "ready" --> PAR
+    CF -. "skip_supervisor (EVAL_MODE=1)" .-> PAR
+    MG --> PC --> FG --> OUT
+
+    SP["single_prompt ablation: one call with all agent prompts<br/>concatenated + Google Search grounding"]
+    CF -. "ablation_mode=single_prompt" .-> SP -.-> PC
+    ABL["Ablations: no_legal_search → LegalSearcher skipped, fixed notice in state<br/>no_template → DefenseStructureInterpreter skipped, default structure in state<br/>no_precedents → no selected cases passed to any agent"]
+    SP ~~~ ABL

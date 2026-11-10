@@ -37,8 +37,9 @@ decomposition and verification, completeness, key points and reference points), 
 notices and the appellants' argument lists). The rubric's scales and the judging settings are in
 `config/a4_drafting.yaml` and `config/a3_chatbot.yaml`.
 
-**The system's prompts** are described in `results/prompt_specs.md` and `results/agent_protocol.md`,
-quoting at most 25 words of any prompt.
+**The system's prompts and agent protocol** are described in `results/prompt_specs.md` and
+`results/agent_protocol.md` (version 1, and version 2 up to its final freeze, v2.7, with the configuration
+deployed), quoting at most 25 words of any prompt. The agent graphs are in `results/figures/`.
 
 ## Setup
 
@@ -91,11 +92,21 @@ compared with the released ones (see "Verification" below).
 | A4 invented facts | `90_a4_invented_facts.py` | `a4_fact_audit_agreement_*.csv`, `a4_invented_facts_*.csv` (and `a4_v27_*`) |
 | A4 development arms | `92_a4_dev_selection.py` | `a4_dev_arms_*.csv` |
 | A6 latency and cost | `94_a6_report.py` | `a6_latency_cost.csv`, `a6_latency_paired.csv`, `a6_latency_by_round.csv`, `costs_phase9.csv` |
+| A4 drafting before and after the fact controls (v2.6 against v2.7) | `97_a4_version_comparison.py` | `a4_versions.csv` |
 
 (a) The labels were computed on the version 2.2 corpus file (same decisions and texts, rows in another
 order); the 60-decision development sample is drawn by row order, so the labels file is reproduced only
 from that file, which the data archive includes. (b) The cost tables sum every run manifest of their phase. `costs_phase6_*.csv` (from `68_a3_report.py
 --costs-only`) read the whole LLM response cache, which is not released.
+
+**The paper's numbers, tables and figures.** Two scripts read only the result files above, pinned by name in
+`config/paper_assets.yaml` (they stop if a newer version of a pinned file exists, as after a rerun: pin it
+first). `98_results_and_quotes.py` writes `results/RESULTS.md`, every number the paper quotes with the
+file, selector, script and run manifest it comes from (`config/paper_numbers.yaml`), and `results/QUOTES.md`,
+the Portuguese quotations with their English translations. `99_build_paper_assets.py --out-dir <folder>`
+writes the paper's tables (CSV) and figures (PDF, PNG) with an index of their sources (`tables/ASSETS.csv`).
+The B2 table and numbers need the questionnaire's workbook, which is not released; both scripts skip them
+and say so.
 
 Steps that compute without calling a model but take long are reproducible the same way: the A2 projections
 (`50_a2_projections.py`, `53_a2_candidate_fits.py`; their fitted outputs are in the data archive) and the
@@ -167,8 +178,8 @@ Before release, the two trees were checked:
   decisions re-embedded;
 - secret scanning (gitleaks) and a scan for file names and content that must not be released.
 
-Outcome (8 Nov 2026): the 238 tests passed; all files of the data archive matched `data/MANIFEST.csv`;
-the 16 scripts of group 1 were rerun once for each released run manifest that wrote a released file (21 runs): 20 reproduced every output exactly (tables cell by cell within 1e-9; figures written but not compared), and 1 differs for a known reason: one development report of A3
+Outcome (v1.1.0, 10 Nov 2026): the 278 tests passed; all files of the data archive matched `data/MANIFEST.csv`;
+the 17 scripts of group 1 were rerun once for each released run manifest that wrote a released file (22 runs): 21 reproduced every output exactly (tables cell by cell within 1e-9; figures written but not compared), and 1 differs for a known reason: one development report of A3
 (`data/v2/a3_dev/report/`) written before the development sets were extended, which is not a result of the
 paper. The reference pipeline reproduced the stored vectors exactly (maximum difference 1e-16), gave the
 same top 10 for every decision from the released float32 and float64 vectors, refitted the served map
@@ -202,7 +213,7 @@ separately as a same-family check (`config/models.yaml`). Prices and their sourc
   implementation plan". These are the authors' internal working records and are not released; the
   decisions that matter for the results are described in the paper and fixed in `config/`.
 - Portuguese texts that the paper quotes carry an English translation (`results/*_examples*.md`,
-  `results/b3_quotes.csv`).
+  `results/b3_quotes.csv`); `results/QUOTES.md` collects them, and marks which translations the authors reviewed.
 - Data protection: the corpus reproduces the decisions as the board published them, with the names of
   parties, lawyers and board members (`LICENSE-DATA.md`).
 

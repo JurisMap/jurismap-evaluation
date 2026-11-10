@@ -1,0 +1,18 @@
+# Prompt-privacy check (scripts/21_prompt_privacy.py): runs of 10 or more prompt words found in results/
+# outside a declared excerpt that the author accepted (2026-11-09, answer to PHASE_11_SUMMARY.md point 3).
+# Each run is recorded by the sha256 of its normalised words (scripts/21 `run_sha256`), never by its text;
+# the same words in another context make another run, so one passage can have more than one entry.
+version: 1
+accepted_runs:
+  - sha256: 017d548064428a23de70080f0433ad542a273b0644b190c08f1bd84ad71c65bc
+    words: 17
+    files: [results/a3_examples_4.md, results/QUOTES.md]
+    reason: the notice the v2.6 chat appends when its quote check removes sentences (system output users see; chat_grounding.yaml removed_note)
+  - sha256: c2dd2482fca0d4e754263ac1f03e2b4262583ffb98bbaa76f19430dc591f5999
+    words: 11
+    files: [results/a3_examples_4.md, results/QUOTES.md]
+    reason: a phrase of a public decision quoted in an A3 question, which also occurs in an example of a v1 curation prompt
+  - sha256: 0d21d8bc467ea4d3db8329cb4dfeb9ac97ad4365add03ada82195c27d687d71d
+    words: 11
+    files: [results/a3_questions.csv]
+    reason: the same decision phrase as the entry above, in the question file
