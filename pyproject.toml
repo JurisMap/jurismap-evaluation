@@ -3,7 +3,7 @@ name = "jm-eval"
 version = "0.1.0"
 description = "Evaluation harness for JurisMap (ISWA revision). Talks to JurisMap v2 only via HTTP and exported data files."
 authors = [
-    { name = "the author Mentzingen", email = "hsilva@novaims.unl.pt" }
+    { name = "Hugo Mentzingen", email = "hsilva@novaims.unl.pt" }
 ]
 requires-python = ">=3.12,<3.13"
 dependencies = [
